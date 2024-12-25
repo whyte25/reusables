@@ -1,0 +1,14 @@
+[build]
+  command = "pnpm build:admin"
+  publish = "apps/admin/.next"
+
+[dev]
+  command = "pnpm dev:web"
+  publish = "apps/web/.next"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--version"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

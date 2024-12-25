@@ -1,0 +1,40 @@
+{
+  "name": "reusables",
+  "private": true,
+  "scripts": {
+    "preinstall": "node ./check-pnpm.ts",
+    "build": "turbo build",
+    "dev": "turbo run dev",
+    "start": "turbo run start",
+    "dev:web": "turbo run dev --filter=web",
+    "dev:admin": "turbo run dev --filter=admin",
+    "build:web": "turbo run build --filter=web",
+    "build:admin": "turbo run build --filter=admin",
+    "start:web": "turbo run start --filter=web",
+    "start:admin": "turbo run start --filter=admin",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "clean": "turbo clean",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "turbo": "^2.2.3"
+  },
+  "packageManager": "pnpm@8.15.6",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@t3-oss/env-nextjs": "^0.11.1",
+    "@tanstack/react-query": "^5.59.18",
+    "@tanstack/react-query-devtools": "^5.59.18",
+    "embla-carousel-autoplay": "^8.3.1",
+    "lucide-react": "^0.454.0",
+    "sonner": "^1.5.0",
+    "zod": "^3.23.8",
+    "zustand": "^5.0.1"
+  }
+}

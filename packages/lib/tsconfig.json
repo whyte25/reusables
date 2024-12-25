@@ -1,0 +1,10 @@
+{
+  "extends": "@through-motion/typescript-config/react-library.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["."]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@reusables/assets",
+  "version": "0.1.0",
+  "private": true,
+  "sideEffects": false,
+  "files": [
+    "src/**/*"
+  ],
+  "exports": {
+    "./images": "./src/images.ts",
+    "./icons": "./src/icons.ts"
+  },
+  "devDependencies": {
+    "@reusables/eslint-config": "workspace:*",
+    "@reusables/typescript-config": "workspace:*",
+    "typescript": "^5.0.4"
+  }
+}
