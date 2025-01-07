@@ -1,26 +1,13 @@
-# fumadocs-app
+# Reusables
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+Welcome to Reusables! This is a setup for a collection of reusable components, libs, hooks, and utility functions for react.
 
-Run development server:
+The idea came to stop moving my reusables from one project to another. Why not have a platform where it can be accessed by me and others, and others can contribute to it?
 
-```bash
-npm run dev
-# or
-pnpm dev
-# or
-yarn dev
-```
+## Setup
 
-Open http://localhost:3000 with your browser to see the result.
+Reusables uses Next.js and Tailwind CSS. It uses the Shadcn CLI to install components or any block of code, just like you have in Shadcn and FumaDocs for easy documentation.
 
-## Learn More
+## Documentation
 
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.vercel.app) - learn about Fumadocs
+Visit [Reusables Documentation](https://reusables.vercel.app/docs) to view the documentation and see what we have for you.
