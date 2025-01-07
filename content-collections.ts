@@ -6,36 +6,36 @@ import {
 } from "@fumadocs/content-collections/configuration";
 import { rehypeCode } from "fumadocs-core/mdx-plugins";
 import { remarkInstall } from "fumadocs-docgen";
-import rehypePrettyCode, { type Options } from "rehype-pretty-code";
+// import rehypePrettyCode, { type Options } from "rehype-pretty-code";
 import remarkSmartypants from "remark-smartypants";
-import { createHighlighter } from "shiki";
+import { rehypeCodeOptions } from "./rehype-code.config";
 
-const prettyCodeOptions: Options = {
-  theme: "github-dark",
-  getHighlighter: (options) =>
-    createHighlighter({
-      ...options,
-    }),
-  onVisitLine(node) {
-    // Prevent lines from collapsing in `display: grid` mode, and allow empty
-    // lines to be copy/pasted
-    if (node.children.length === 0) {
-      node.children = [{ type: "text", value: " " }];
-    }
-  },
-  onVisitHighlightedLine(node) {
-    if (!node.properties.className) {
-      node.properties.className = [];
-    }
-    node.properties.className.push("line--highlighted");
-  },
-  onVisitHighlightedChars(node) {
-    if (!node.properties.className) {
-      node.properties.className = [];
-    }
-    node.properties.className = ["word--highlighted"];
-  },
-};
+// const prettyCodeOptions: Options = {
+//   theme: "github-dark",
+//   getHighlighter: (options) =>
+//     createHighlighter({
+//       ...options,
+//     }),
+//   onVisitLine(node) {
+//     // Prevent lines from collapsing in `display: grid` mode, and allow empty
+//     // lines to be copy/pasted
+//     if (node.children.length === 0) {
+//       node.children = [{ type: "text", value: " " }];
+//     }
+//   },
+//   onVisitHighlightedLine(node) {
+//     if (!node.properties.className) {
+//       node.properties.className = [];
+//     }
+//     node.properties.className.push("line--highlighted");
+//   },
+//   onVisitHighlightedChars(node) {
+//     if (!node.properties.className) {
+//       node.properties.className = [];
+//     }
+//     node.properties.className = ["word--highlighted"];
+//   },
+// };
 
 const docs = defineCollection({
   name: "docs",
@@ -57,7 +57,7 @@ export default defineConfig({
   collections: [docs, metas],
   lastModifiedTime: "git",
   mdxOptions: {
-    rehypeCodeOptions: prettyCodeOptions,
+    rehypeCodeOptions,
     remarkPlugins: [
       remarkInstall,
       remarkSmartypants,
@@ -67,6 +67,9 @@ export default defineConfig({
         },
       },
     ],
-    rehypePlugins: [rehypeCode, [rehypePrettyCode, prettyCodeOptions]],
+    rehypePlugins: [
+      rehypeCode,
+      // [rehypePrettyCode, prettyCodeOptions]
+    ],
   },
 });
