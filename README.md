@@ -2,6 +2,8 @@
 
 A collection of production-ready components, hooks, and utilities that you can seamlessly integrate into your applications.
 
+![hero-image](public/images/hero.png)
+
 ## Overview
 
 Reusables is **NOT** just another component library. It's a carefully curated collection of building blocks that developers can copy, paste, and adapt for their specific needs. Think of it like Shadcn UI but with more than just components.
