@@ -1,11 +1,12 @@
 export const siteConfig = {
   title: "Reusables",
   name: "Reusables",
-  author: "fas",
-  url: "https://demo-url.com",
-  ogImage: "https://demo-image.com/image.png",
+  author: "Fas",
+  author_url: "https://fasifeoluwa.netlify.app",
+  url: "https://fasifeoluwa.vercel.app",
+  ogImage: "https://ik.imagekit.io/ltrteacsu/reusables.png?tr=w-2000",
   description:
-    "reusables is a collection of reusable components and utilities.",
+    "Reusables is a curated collection of production-ready components, hooks, and utilities that you can seamlessly integrate into your apps.",
   keywords: [
     "React",
     "Next.js",
@@ -16,10 +17,9 @@ export const siteConfig = {
     "components",
   ],
   links: {
-    twitter: "https://demo-twitter.com",
-    linkedin: "https://demo-linkedin.com",
-    instagram: "https://demo-instagram.com",
-    facebook: "https://demo-facebook.com",
+    twitter: "https://x.com/fasifeoluwa",
+    linkedin: "https://linkedin.com/fas-ifeoluwa",
+    instagram: "https://instagram.com/whyte25",
     github: "https://github.com/whyte25/reusables",
   },
 };

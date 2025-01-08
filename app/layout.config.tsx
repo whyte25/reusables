@@ -1,3 +1,4 @@
+import { siteConfig } from "@/constant/site-config";
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 
 /**
@@ -11,6 +12,7 @@ export const baseOptions: BaseLayoutProps = {
   nav: {
     title: "Reusables",
   },
+  githubUrl: siteConfig.links.github,
   links: [
     {
       text: "Documentation",
