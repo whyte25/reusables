@@ -7,16 +7,11 @@ import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
 import { ImageZoom } from "fumadocs-ui/components/image-zoom";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { TypeTable } from "fumadocs-ui/components/type-table";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
 import { Suspense } from "react";
-import {
-  getPackageNames,
-  isNpxCommand,
-  isPackageInstall,
-} from "../utils/package-manager";
-import { PackageManagerTabs } from "./package-manager-tabs";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -24,19 +19,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ...components,
     Suspense,
     pre: ({ ...props }) => {
-      const content = String(props?.children?.props?.children || "");
-      const packages = getPackageNames(content);
-
-      if (isPackageInstall(props)) {
-        return <PackageManagerTabs packages={packages} type="install" />;
-      }
-
-      if (isNpxCommand(props)) {
-        return <PackageManagerTabs packages={packages} type="npx" />;
-      }
-
       return (
-        <CodeBlock {...props}>
+        <CodeBlock className="" {...props}>
           <Pre>{props.children}</Pre>
         </CodeBlock>
       );
@@ -66,5 +50,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       />
     ),
     img: (props) => <ImageZoom {...(props as any)} />,
+    TypeTable,
   };
 }

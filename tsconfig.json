@@ -15,8 +15,7 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./*"],
-      "content-collections": ["./.content-collections/generated"]
+      "@/*": ["./*"]
     },
     "plugins": [
       {
@@ -29,7 +28,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".content-colletions/generated",
     "next.config.mjs"
   ],
   "exclude": ["node_modules", "./scripts/build-registry.mts", "__registry__"]

@@ -1,4 +1,5 @@
 import { siteConfig } from "@/constant/site-config";
+import "fumadocs-twoslash/twoslash.css";
 import { RootProvider } from "fumadocs-ui/provider";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";

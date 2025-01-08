@@ -1,6 +1,6 @@
 import { useMDXComponents } from "@/components/mdx-components";
 import { source } from "@/lib/source";
-import { MDXContent } from "@content-collections/mdx/react";
+
 import { getGithubLastEdit } from "fumadocs-core/server";
 import {
   DocsBody,
@@ -17,6 +17,8 @@ export default async function Page(props: {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
+
+  const MDXContent = page.data.body;
 
   const components = useMDXComponents({});
 
