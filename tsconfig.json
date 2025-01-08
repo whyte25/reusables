@@ -29,7 +29,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated"
+    ".content-colletions/generated",
+    "next.config.mjs"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "./scripts/build-registry.mts", "__registry__"]
 }

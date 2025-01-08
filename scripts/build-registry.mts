@@ -1,4 +1,4 @@
-// @sts-nocheck
+// @ts-nocheck
 import { existsSync, promises as fs } from "fs";
 import template from "lodash.template";
 import { tmpdir } from "os";

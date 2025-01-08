@@ -1,5 +1,4 @@
 import { Popup, PopupContent, PopupTrigger } from "fumadocs-twoslash/ui";
-import { createTypeTable } from "fumadocs-typescript/ui";
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
 import { cn } from "fumadocs-ui/components/api";
 import { Callout } from "fumadocs-ui/components/callout";
@@ -20,8 +19,6 @@ import {
 import { PackageManagerTabs } from "./package-manager-tabs";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
-  const { AutoTypeTable } = createTypeTable();
-
   return {
     ...defaultMdxComponents,
     ...components,
@@ -44,7 +41,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         </CodeBlock>
       );
     },
-    AutoTypeTable,
     Popup,
     PopupContent,
     PopupTrigger,
