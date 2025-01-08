@@ -15,7 +15,7 @@ Components are styled using Tailwind CSS. You need to install Tailwind CSS in yo
 
 Add the following dependencies to your project:
 
-```bash
+```package-install
 npm install tailwindcss-animate class-variance-authority clsx tailwind-merge
 ```
 
@@ -23,13 +23,13 @@ npm install tailwindcss-animate class-variance-authority clsx tailwind-merge
 
 If you're using the `default` style, install `lucide-react`:
 
-```bash
+```package-install
 npm install lucide-react
 ```
 
 If you're using the `new-york` style, install `@radix-ui/react-icons`:
 
-```bash
+```package-install
 npm install @radix-ui/react-icons
 ```
 
@@ -218,9 +218,7 @@ Add the following to your styles/globals.css file. You can learn more about usin
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 ```

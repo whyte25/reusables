@@ -9,6 +9,10 @@ export default function Layout({ children }: { children: ReactNode }) {
       githubUrl="https://github.com"
       tree={source.pageTree}
       {...baseOptions}
+      sidebar={{
+        collapsible: false,
+        prefetch: false,
+      }}
     >
       {children}
     </DocsLayout>

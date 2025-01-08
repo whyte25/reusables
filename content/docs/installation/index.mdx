@@ -114,9 +114,8 @@ This project and the components are written in TypeScript. We recommend using Ty
 However we provide a JavaScript version of the components as well. The JavaScript version is available via the [cli](/docs/cli).
 
 To opt-out of TypeScript, you can use the `tsx` flag in your `components.json` file.
-`console.log("Hello World"){:js}`
 
-```json [!code tsx] title="components.json"
+```json title="components.json"
 {
   "style": "default",
   "tailwind": {
@@ -126,7 +125,7 @@ To opt-out of TypeScript, you can use the `tsx` flag in your `components.json` f
     "cssVariables": true
   },
   "rsc": false,
-  "tsx": false,
+  "tsx": false, // [!code highlight]
   "aliases": {
     "utils": "~/lib/utils",
     "components": "~/components"

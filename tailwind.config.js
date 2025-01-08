@@ -13,9 +13,9 @@ export default {
   ],
   presets: [
     createPreset({
-      //   addGlobalColors: true,
-      //   cssPrefix: "",
-      preset: "default",
+      addGlobalColors: true,
+      cssPrefix: "",
+      // preset: "ocean",
       layoutWidth: "1600px",
     }),
   ],
