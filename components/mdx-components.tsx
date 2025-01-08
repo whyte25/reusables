@@ -9,7 +9,7 @@ import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { TypeTable } from "fumadocs-ui/components/type-table";
 import defaultMdxComponents from "fumadocs-ui/mdx";
-import type { MDXComponents } from "mdx/types";
+import type { MDXComponents, MDXProps } from "mdx/types";
 import Link from "next/link";
 import { Suspense } from "react";
 
@@ -52,4 +52,17 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     img: (props) => <ImageZoom {...(props as any)} />,
     TypeTable,
   };
+}
+
+// Add this new component at the bottom of the file
+export function MDXRenderer({
+  code,
+}: {
+  code: (props: MDXProps) => React.ReactElement;
+}) {
+  const components = useMDXComponents({});
+
+  const MDXContent = code;
+
+  return <MDXContent code={code} components={components} />;
 }
