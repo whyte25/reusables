@@ -15,14 +15,16 @@ export const Hero = () => {
       <div className=" flex w-full items-center justify-center overflow-hidden rounded-lg ">
         <div className="relative px-4">
           <div className="text-center">
-            <motion.a
-              href="#pricing"
+            <motion.div
               className="relative z-10 mb-4 inline-block"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="z-10 flex items-center justify-center">
+              <Link
+                href={paths.docs}
+                className="z-10 flex items-center justify-center"
+              >
                 <AnimatedGradientText className="border rounded-full">
                   🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
                   <span className={cn("inline animate-gradient ")}>
@@ -30,8 +32,8 @@ export const Hero = () => {
                   </span>
                   <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
                 </AnimatedGradientText>
-              </div>
-            </motion.a>
+              </Link>
+            </motion.div>
 
             <motion.h1
               className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight sm:text-7xl"
