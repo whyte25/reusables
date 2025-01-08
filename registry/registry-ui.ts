@@ -5,12 +5,12 @@ export const ui: Registry = [
     name: "animated-beam",
     type: "registry:ui",
     dependencies: ["motion"],
-    files: ["magicui/animated-beam.tsx"],
+    files: ["reusables/animated-beam.tsx"],
   },
   {
     name: "animated-gradient-text",
     type: "registry:ui",
-    files: ["magicui/animated-gradient-text.tsx"],
+    files: ["reusables/animated-gradient-text.tsx"],
     tailwind: {
       config: {
         theme: {

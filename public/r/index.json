@@ -7,7 +7,7 @@
     ],
     "files": [
       {
-        "path": "magicui/animated-beam.tsx",
+        "path": "reusables/animated-beam.tsx",
         "type": "registry:ui"
       }
     ]
@@ -17,7 +17,7 @@
     "type": "registry:ui",
     "files": [
       {
-        "path": "magicui/animated-gradient-text.tsx",
+        "path": "reusables/animated-gradient-text.tsx",
         "type": "registry:ui"
       }
     ],
