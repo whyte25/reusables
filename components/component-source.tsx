@@ -5,16 +5,12 @@ import * as React from "react";
 import { CodeBlockWrapper } from "@/components/code-block-wrapper";
 import { cn } from "@/lib/utils";
 
-interface ComponentSourceProps extends React.HTMLAttributes<HTMLDivElement> {
-  src?: string;
-  name?: string;
-}
+interface ComponentSourceProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function ComponentSource({
   children,
   className,
-  src,
-  name,
+
   ...props
 }: ComponentSourceProps) {
   return (

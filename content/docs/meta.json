@@ -6,6 +6,7 @@
     "index",
     "test",
     "installation",
-    "---Components---"
+    "---Utils---",
+    "cookies"
   ]
 }

@@ -1,0 +1,257 @@
+---
+title: Cookies
+description: Tools to handle cookies in client and server environments.
+---
+
+## Client
+
+Simple methods to manage cookies in the browser.
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/cookies-client"
+````
+
+</Tab>
+<Tab value="Manual">
+<Steps>
+<Step>
+ 
+ Install the following dependency:
+
+```package-install
+npm install js-cookies
+```
+
+</Step>
+ 
+<Step>
+ 
+ Copy and paste the following code into your project.
+
+```tsx ts2js
+import Cookies from "js-cookie";
+
+type SameSiteOption = "lax" | "strict" | "none";
+
+interface CookieOptions {
+  path?: string;
+  secure?: boolean;
+  sameSite?: SameSiteOption;
+  domain?: string;
+}
+
+const COOKIES_DEFAULT_OPTIONS: Required<Omit<CookieOptions, "domain">> = {
+  path: "/",
+  secure: true,
+  sameSite: "lax",
+};
+
+export const ClientCookies = {
+  set(name: string, value: string, options: Partial<CookieOptions> = {}) {
+    Cookies.set(name, value, COOKIES_DEFAULT_OPTIONS);
+  },
+
+  get(name: string) {
+    return Cookies.get(name) || null;
+  },
+
+  delete(name: string) {
+    Cookies.remove(name, COOKIES_DEFAULT_OPTIONS);
+  },
+};
+```
+
+</Step>
+</Steps>
+
+</Tab> 
+</Tabs>
+
+### Usage
+
+```tsx
+const handleSetCookie = () => {
+  // Set a cookie
+  ClientCookies.set("user-preference", "dark-mode");
+};
+
+const handleGetCookie = () => {
+  // Get the value of cookie named 'user-preference'
+  const preference = ClientCookies.get("user-preference");
+  console.log("Cookie value:", preference);
+};
+
+const handleDeleteCookie = () => {
+  // Delete the cookie named 'user-preference'
+  ClientCookies.delete("user-preference");
+};
+```
+
+## Server
+
+Functions to manage cookies in Next.js server and server components.
+
+<Callout>
+  If you're using Next.js 15, use `ServerCookiesNext15` as it requires
+  `async/await`.
+</Callout>
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/cookies-server"
+````
+
+</Tab>
+<Tab value="Manual">
+<Steps>
+
+<Step>
+ 
+ Copy and paste the following code into your project.
+
+```tsx ts2js
+import { ResponseCookie } from "next/dist/compiled/@edge-runtime/cookies";
+import { cookies } from "next/headers";
+
+type SameSiteOption = "lax" | "strict" | "none";
+
+interface CookieOptions {
+  path?: string;
+  secure?: boolean;
+  sameSite?: SameSiteOption;
+  domain?: string;
+}
+
+const COOKIES_DEFAULT_OPTIONS: Required<Omit<CookieOptions, "domain">> = {
+  path: "/",
+  secure: true,
+  sameSite: "lax",
+};
+
+/**
+ * This module provides a way to interact with cookies on the server.
+ * The first ServerCookies object is for Next.js 12 and later. while the second set is for Next.js 15.
+ * you will get error if you use the first set in Next.js 15 because async/await is expected.
+ *
+ * - `set` sets a cookie with the given name and value.
+ * - `get` gets the value of a cookie with the given name.
+ * - `delete` deletes a cookie with the given name.
+ */
+
+export const ServerCookies = {
+  set(name: string, value: string, options: Partial<CookieOptions> = {}) {
+    const cookieOptions: ResponseCookie = {
+      name,
+      value,
+      path: options.path || COOKIES_DEFAULT_OPTIONS.path,
+      secure: options.secure ?? COOKIES_DEFAULT_OPTIONS.secure,
+      sameSite: options.sameSite || COOKIES_DEFAULT_OPTIONS.sameSite,
+    };
+
+    if (options.domain) {
+      cookieOptions.domain = options.domain;
+    }
+
+    cookies().set(cookieOptions);
+  },
+
+  get(name: string) {
+    return cookies().get(name)?.value ?? null;
+  },
+
+  delete(name: string) {
+    cookies().delete(name);
+  },
+};
+
+export const ServerCookiesNext15 = {
+  async set(name: string, value: string, options: Partial<CookieOptions> = {}) {
+    const cookieOptions: ResponseCookie = {
+      name,
+      value,
+      path: options.path || COOKIES_DEFAULT_OPTIONS.path,
+      secure: options.secure ?? COOKIES_DEFAULT_OPTIONS.secure,
+      sameSite: options.sameSite || COOKIES_DEFAULT_OPTIONS.sameSite,
+    };
+
+    if (options.domain) {
+      cookieOptions.domain = options.domain;
+    }
+
+    (await cookies()).set(cookieOptions);
+  },
+
+  async get(name: string) {
+    return (await cookies()).get(name)?.value ?? null;
+  },
+
+  async delete(name: string) {
+    (await cookies()).delete(name);
+  },
+};
+```
+
+</Step>
+</Steps>
+
+</Tab>
+</Tabs>
+
+### Usage
+
+Next.js 15
+
+```tsx
+export default async function CookiesServerNext15Example() {
+  //Set a cookie
+  await ServerCookiesNext15.set("language", "en");
+
+  // Get a cookie
+  const language = await ServerCookiesNext15.get("language");
+  console.log("Current language:", language);
+
+  // Delete a cookie
+  await ServerCookiesNext15.delete("language");
+
+  return (
+    <div className="space-y-4">
+      <div>
+        <h3>Next.js 15+ Cookie Values:</h3>
+      </div>
+    </div>
+  );
+}
+```
+
+Next.js 12-14.
+
+```tsx
+export default async function CookiesServerExample() {
+  // Set a cookie
+  ServerCookies.set("theme", "dark");
+
+  // Get a cookie
+  const theme = ServerCookies.get("theme");
+
+  // Delete a cookie
+  ServerCookies.delete("theme");
+
+  return (
+    <div className="space-y-4">
+      <div>
+        <h3>Legacy Server Cookie Values:</h3>
+      </div>
+    </div>
+  );
+}
+```
+
+### Features
+
+- Type-safe cookie operations
+- Secure by default (HTTPS only)
+- Configurable options (path, domain, sameSite)
+- Server-side rendering compatible

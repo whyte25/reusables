@@ -12,4 +12,26 @@ export const lib: Registry = [
       },
     ],
   },
+  {
+    name: "cookies-client",
+    type: "registry:lib",
+    dependencies: ["js-cookie"],
+    devDependencies: ["@types/js-cookie"],
+    files: [
+      {
+        path: "lib/cookies.client.ts",
+        type: "registry:lib",
+      },
+    ],
+  },
+  {
+    name: "cookies-server",
+    type: "registry:lib",
+    files: [
+      {
+        path: "lib/cookies.server.ts",
+        type: "registry:lib",
+      },
+    ],
+  },
 ];
