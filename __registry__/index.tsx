@@ -104,5 +104,16 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "permission": {
+      name: "permission",
+      type: "registry:lib",
+      registryDependencies: undefined,
+      files: ["registry/default/lib/permission.ts"],
+      component: React.lazy(() => import("@/registry/default/lib/permission.ts")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
   },
 }

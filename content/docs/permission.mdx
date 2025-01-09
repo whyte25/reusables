@@ -1,0 +1,99 @@
+---
+title: Permission
+description: Role-based permission system for managing user access control
+---
+
+## Overview
+
+A lightweight permission system that:
+
+- Defines roles with specific permissions
+- Checks if users have access to certain actions
+- Uses a simple `role:action` permission format
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/permission"
+````
+
+</Tab>
+<Tab value="Manual">
+
+<Tabs items={["TypeScript", "Javascript"]}>
+
+<Tab value="TypeScript">
+```ts twoslash
+export type User = { authorisation: Role; id: string };
+
+type Role = keyof typeof ROLES;
+type Permission = (typeof ROLES)[Role][number];
+
+const ROLES = {
+superadmin: ["create:blog", "delete:blog"],
+admin: ["create:blog"]
+} as const;
+
+export function hasPermission(user: User, permission: Permission) {
+  return [user.authorisation].some((role) =>
+    (ROLES[role] as readonly Permission[])?.includes(permission),
+  );
+}
+
+````
+</Tab>
+
+<Tab value="Javascript">
+```js
+const ROLES = {
+	superadmin: ["create:blog", "delete:blog"],
+	admin: ["create:blog"]
+};
+export function hasPermission(user, permission) {
+	return [user.authorisation].some((role) => ROLES[role]?.includes(permission));
+}
+````
+
+</Tab>
+</Tabs>
+
+</Tab> 
+</Tabs>
+
+## Usage
+
+Define your role-based permissions:
+
+```ts
+//This will be from backend
+
+const user = {
+  id: "user_123",
+  authorisation: "admin", // Must match a role from ROLES
+};
+```
+
+### Check Permissions
+
+```tsx
+function PrinterControl() {
+  // Simple permission check
+  const canUpdate = hasPermission(user, "update:blog");
+
+  return (
+    <div>
+      {/* Basic permission guard */}
+      {hasPermission(user, "update:blog") && <button>Update Blog</button>}
+
+      {/* With fallback content */}
+      {hasPermission(user, "delete:blog") ? (
+        <button>Delete Blog</button>
+      ) : (
+        <p>No permission to delete</p>
+      )}
+    </div>
+  );
+}
+```

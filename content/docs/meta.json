@@ -7,6 +7,7 @@
     "test",
     "installation",
     "---Utils---",
-    "cookies"
+    "cookies",
+    "permission"
   ]
 }

@@ -34,4 +34,14 @@ export const lib: Registry = [
       },
     ],
   },
+  {
+    name: "permission",
+    type: "registry:lib",
+    files: [
+      {
+        path: "lib/permission.ts",
+        type: "registry:lib",
+      },
+    ],
+  },
 ];
