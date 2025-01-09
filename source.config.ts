@@ -2,7 +2,13 @@ import {
   rehypeCode,
   rehypeCodeDefaultOptions,
 } from "fumadocs-core/mdx-plugins";
-import { remarkInstall, remarkTypeScriptToJavaScript } from "fumadocs-docgen";
+import {
+  fileGenerator,
+  remarkDocGen,
+  remarkInstall,
+  remarkTypeScriptToJavaScript,
+  typescriptGenerator,
+} from "fumadocs-docgen";
 import { defineConfig } from "fumadocs-mdx/config";
 import remarkSmartypants from "remark-smartypants";
 
@@ -40,12 +46,14 @@ export default defineConfig({
     rehypePlugins: [rehypeCode],
     remarkPlugins: [
       [
-        remarkInstall,
-        remarkTypeScriptToJavaScript,
-        remarkSmartypants,
-
-        { persist: { id: "package-manager" } },
+        remarkDocGen,
+        {
+          generators: [fileGenerator(), typescriptGenerator()],
+        },
       ],
+      [remarkTypeScriptToJavaScript],
+      [remarkSmartypants],
+      [remarkInstall, { persist: { id: "package-manager" } }],
     ],
   },
 });
