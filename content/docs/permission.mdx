@@ -78,18 +78,14 @@ const user = {
 ### Check Permissions
 
 ```tsx
-function PrinterControl() {
+function Example() {
   // Simple permission check
   const canUpdate = hasPermission(user, "update:blog");
 
   return (
     <div>
-      {/* Basic permission guard */}
-      {hasPermission(user, "update:blog") && <button>Update Blog</button>}
-
-      {/* With fallback content */}
-      {hasPermission(user, "delete:blog") ? (
-        <button>Delete Blog</button>
+      {canUpdate ? (
+        <button>Update Blog</button>
       ) : (
         <p>No permission to delete</p>
       )}
