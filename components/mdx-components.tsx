@@ -12,6 +12,7 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { MDXComponents, MDXProps } from "mdx/types";
 import Link from "next/link";
 import { Suspense } from "react";
+import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -38,7 +39,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Callout,
     Card,
     Cards,
-    ComponentSource: (props: any) => <ComponentSource {...props} />,
+    ComponentSource,
+    ComponentPreview,
     LinkedCard: ({
       className,
       ...props
