@@ -1,5 +1,22 @@
 [
   {
+    "name": "copy-button",
+    "type": "registry:ui",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "cn"
+    ],
+    "files": [
+      {
+        "path": "reusables/copy-button.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "animated-beam",
     "type": "registry:ui",
     "dependencies": [
