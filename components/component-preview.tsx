@@ -70,7 +70,7 @@ export function ComponentPreview({
       {...props}
     >
       <Tabs
-        defaultValue="preview"
+        defaultValue="Preview"
         items={["Preview", "Code"]}
         defaultIndex={1}
         className="relative mr-auto w-full"

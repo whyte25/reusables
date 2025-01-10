@@ -9,16 +9,9 @@ const ComponentWrapper = ({ className, children }: ComponentWrapperProps) => {
     <div
       className={cn(
         "max-w-screen relative flex flex-col items-center justify-center rounded-xl bg-background p-0 md:border md:p-16",
-        className,
+        className
       )}
     >
-      <div
-        className={cn(
-          `absolute inset-0 size-full`,
-          `bg-[radial-gradient(#00000022_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff22_1px,transparent_1px)]`,
-          "lab-bg pointer-events-none [background-size:16px_16px]",
-        )}
-      />
       {children}
     </div>
   );
