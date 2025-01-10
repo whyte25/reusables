@@ -8,6 +8,7 @@
     "installation",
     "---Utils---",
     "cookies",
-    "permission"
+    "permission",
+    "platform-detector"
   ]
 }

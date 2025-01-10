@@ -44,4 +44,14 @@ export const lib: Registry = [
       },
     ],
   },
+  {
+    name: "platform-detector",
+    type: "registry:lib",
+    files: [
+      {
+        path: "lib/platform-detector.ts",
+        type: "registry:lib",
+      },
+    ],
+  },
 ];

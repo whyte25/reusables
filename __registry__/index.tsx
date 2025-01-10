@@ -115,5 +115,16 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "platform-detector": {
+      name: "platform-detector",
+      type: "registry:lib",
+      registryDependencies: undefined,
+      files: ["registry/default/lib/platform-detector.ts"],
+      component: React.lazy(() => import("@/registry/default/lib/platform-detector.ts")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
   },
 }

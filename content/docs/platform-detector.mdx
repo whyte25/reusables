@@ -1,0 +1,137 @@
+---
+title: Platform Detection
+description: A lightweight utility function to detect browser and operating system.
+---
+
+## Installation
+
+<Callout type="warn">
+  This can be used in client-side components only, as it requires access to the
+  window object.
+</Callout>{" "}
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/platform-detector"
+```
+</Tab>
+
+<Tab value="Manual">
+
+<ComponentSource>
+
+```ts ts2js  title="platform-detector.ts"
+type PlatformInfo = {
+  browser: {
+    chrome: boolean;
+    firefox: boolean;
+    safari: boolean;
+    edge: boolean;
+    name: "chrome" | "firefox" | "safari" | "edge" | "unknown";
+  };
+  os: {
+    ios: boolean;
+    android: boolean;
+    windows: boolean;
+    macos: boolean;
+    name: "android" | "windows" | "ios" | "macos" | "unknown";
+  };
+};
+
+const getPlatform = (): PlatformInfo => {
+  if (typeof window === "undefined") {
+    return {
+      browser: {
+        chrome: false,
+        firefox: false,
+        safari: false,
+        edge: false,
+        name: "unknown",
+      },
+      os: {
+        ios: false,
+        android: false,
+        windows: false,
+        macos: false,
+        name: "unknown",
+      },
+    };
+  }
+
+  const ua = window.navigator.userAgent.toLowerCase();
+
+  const browser = {
+    chrome: ua.includes("chrome") && !ua.includes("edg"),
+    firefox: ua.includes("firefox"),
+    safari: ua.includes("safari") && !ua.includes("chrome"),
+    edge: ua.includes("edg"),
+    get name() {
+      if (this.chrome) return "chrome";
+      if (this.firefox) return "firefox";
+      if (this.safari) return "safari";
+      if (this.edge) return "edge";
+      return "unknown";
+    },
+  };
+
+  const os = {
+    ios: ua.includes("iphone") || ua.includes("ipad") || ua.includes("ipod"),
+    android: ua.includes("android"),
+    windows: ua.includes("windows"),
+    macos: ua.includes("mac"),
+    get name() {
+      if (this.ios) return "ios";
+      if (this.android) return "android";
+      if (this.windows) return "windows";
+      if (this.macos) return "macos";
+      return "unknown";
+    },
+  };
+
+  return { browser, os };
+};
+
+export const platform = getPlatform();
+```
+
+<br />
+</ComponentSource>
+</Tab>
+
+</Tabs>
+
+## Usage
+
+```js
+import { platform } from "@/lib/platform-detector";
+
+// Basic OS checks
+if (platform.os.ios) {
+  // iOS specific code
+}
+
+// Browser checks
+if (platform.browser.chrome) {
+  // Chrome specific code
+}
+
+// Get platform names
+console.log(platform.browser.name); // 'chrome', 'firefox', 'safari', 'edge'
+console.log(platform.os.name); // 'ios', 'android', 'windows', 'macos'
+```
+
+```ts
+const HeaderTailwind = () => {
+  return (
+    <header
+      className={`
+      bg-white
+      ${platform.os.ios ? "p-10" : "p-5"}
+    `}
+    >
+      <h1>My App</h1>
+    </header>
+  );
+};
+```
