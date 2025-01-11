@@ -53,12 +53,12 @@ export function ComponentPreview({
     return <Component />;
   }, [name, d_style]);
 
-  const codeContent = React.useMemo(() => {
-    const content =
-      // @ts-expect-error error is expected as typescript cannot suggest the nesting.
-      Code?.props?.children?._owner?.props?.children?.props?.children;
-    return content || "";
-  }, [Code]);
+  // const codeContent = React.useMemo(() => {
+  //   const content =
+  //     // @ts-expect-error error is expected as typescript cannot suggest the nesting.
+  //     Code?.props?.children?._owner?.props?.children?.props?.children;
+  //   return content || "";
+  // }, [Code]);
 
   return (
     <div
