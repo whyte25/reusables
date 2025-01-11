@@ -2,6 +2,13 @@ import { Registry } from "@/registry/schema";
 
 export const ui: Registry = [
   {
+    name: "copy-button",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "cn"],
+    files: ["reusables/copy-button.tsx"],
+  },
+  {
     name: "animated-beam",
     type: "registry:ui",
     dependencies: ["motion"],

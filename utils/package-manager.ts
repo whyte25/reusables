@@ -1,3 +1,5 @@
+import { MDXProps } from "@/types";
+
 export function isPackageInstall(props: MDXProps) {
   const className = props?.children?.props?.className;
   return className === "language-package-install";

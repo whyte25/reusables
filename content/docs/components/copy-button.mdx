@@ -1,0 +1,69 @@
+---
+title: Copy Button
+description: A button component to copy text to clipboard
+---
+
+<ComponentPreview reTrigger={false} name="copy-button" />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/copy-button"
+```
+</Tab>
+
+<Tab value="Manual">
+
+```json doc-gen:file
+{
+  "file": "registry/default/reusables/copy-button.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"copy-button.tsx\""
+  }
+}
+```
+
+</Tab>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { CopyButton } from "@/components/ui/copy-button";
+```
+
+```tsx
+const Example = () => {
+  return (
+    <div>
+      <CopyButton value="Text to copy" />
+    </div>
+  );
+};
+```
+
+## Reference
+
+<TypeTable
+  type={{
+    value: {
+      description: "The value to be copied to clipboard",
+      type: "string",
+      default: "",
+    },
+    className: {
+      description: "Class name to style the button",
+      type: "string",
+      default: "",
+    },
+    variant: {
+      description: "The button style variant",
+      type: '"default" | "outline" | "ghost"',
+      default: '"ghost"',
+    },
+  }}
+/>

@@ -6,6 +6,8 @@
     "index",
     "test",
     "installation",
+    "---Components---",
+    "components/copy-button",
     "---Utils---",
     "cookies",
     "permission",
