@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { styles } from "@/registry/registry-styles";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
-import { CodeBlock } from "./code-block-client";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
@@ -72,7 +71,6 @@ export function ComponentPreview({
       <Tabs
         defaultValue="Preview"
         items={["Preview", "Code"]}
-        defaultIndex={1}
         className="relative mr-auto w-full"
       >
         <Tab value="Preview" className="relative rounded-md" key={key}>
@@ -99,7 +97,8 @@ export function ComponentPreview({
           </ComponentWrapper>
         </Tab>
         <Tab value="Code">
-          <CodeBlock code={codeContent} compact />
+          {/* <CodeBlock code={codeContent} compact /> */}
+          {Code}
         </Tab>
       </Tabs>
     </div>
