@@ -4,10 +4,9 @@
   "pages": [
     "---Getting started---",
     "index",
-    "test",
     "installation",
     "---Components---",
-    "components/copy-button",
+    "components/buttons",
     "---Utils---",
     "cookies",
     "permission",
