@@ -2,6 +2,18 @@ import { Registry } from "@/registry/schema";
 
 export const examples: Registry = [
   {
+    name: "submit-button-hidetext-demo",
+    type: "registry:example",
+    registryDependencies: ["submit-button"],
+    files: ["example/submit-button-hidetext-demo.tsx"],
+  },
+  {
+    name: "submit-button-demo",
+    type: "registry:example",
+    registryDependencies: ["submit-button"],
+    files: ["example/submit-button-demo.tsx"],
+  },
+  {
     name: "animated-beam-demo",
     type: "registry:example",
     registryDependencies: ["animated-beam"],

@@ -5,6 +5,32 @@ import * as React from "react";
 
 export const Index: Record<string, any> = {
   default: {
+    spinner: {
+      name: "spinner",
+      type: "registry:ui",
+      registryDependencies: ["cn"],
+      files: ["registry/default/reusables/spinner.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/reusables/spinner.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "submit-button": {
+      name: "submit-button",
+      type: "registry:ui",
+      registryDependencies: ["button", "cn", "spinner"],
+      files: ["registry/default/reusables/submit-button.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/reusables/submit-button.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
     "copy-button": {
       name: "copy-button",
       type: "registry:ui",
@@ -38,6 +64,33 @@ export const Index: Record<string, any> = {
       files: ["registry/default/reusables/animated-gradient-text.tsx"],
       component: React.lazy(
         () => import("@/registry/default/reusables/animated-gradient-text.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "submit-button-hidetext-demo": {
+      name: "submit-button-hidetext-demo",
+      type: "registry:example",
+      registryDependencies: ["submit-button"],
+      files: ["registry/default/example/submit-button-hidetext-demo.tsx"],
+      component: React.lazy(
+        () =>
+          import("@/registry/default/example/submit-button-hidetext-demo.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "submit-button-demo": {
+      name: "submit-button-demo",
+      type: "registry:example",
+      registryDependencies: ["submit-button"],
+      files: ["registry/default/example/submit-button-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/submit-button-demo.tsx")
       ),
       source: "",
       category: "undefined",

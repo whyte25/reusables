@@ -4,6 +4,7 @@ import { u } from "unist-builder";
 import { visit } from "unist-util-visit";
 
 import { UnistNode, UnistTree } from "@/types";
+
 import { Index } from "../__registry__";
 import { styles } from "../registry/registry-styles";
 
@@ -106,6 +107,7 @@ export function rehypeComponent() {
 
             // Read the source file.
             const filePath = path.join(process.cwd(), src);
+
             let source = fs.readFileSync(filePath, "utf8");
 
             // Replace imports.

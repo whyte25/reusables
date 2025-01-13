@@ -1,5 +1,37 @@
 [
   {
+    "name": "spinner",
+    "type": "registry:ui",
+    "dependencies": [
+      "class-variance-authority",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "cn"
+    ],
+    "files": [
+      {
+        "path": "reusables/spinner.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "submit-button",
+    "type": "registry:ui",
+    "registryDependencies": [
+      "button",
+      "cn",
+      "spinner"
+    ],
+    "files": [
+      {
+        "path": "reusables/submit-button.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "copy-button",
     "type": "registry:ui",
     "dependencies": [

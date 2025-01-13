@@ -15,7 +15,7 @@ export async function CodeBlock({
   const demoCode = await highlight(code, lang);
   return (
     <FumaDocsCodeBlock
-      // @ts-expect-error
+      // @ts-expect-error bypass custom error
       custom={compact ? "compact" : undefined}
       {...props}
     >

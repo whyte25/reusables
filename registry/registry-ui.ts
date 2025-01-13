@@ -2,6 +2,19 @@ import { Registry } from "@/registry/schema";
 
 export const ui: Registry = [
   {
+    name: "spinner",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority", "lucide-react"],
+    registryDependencies: ["cn"],
+    files: ["reusables/spinner.tsx"],
+  },
+  {
+    name: "submit-button",
+    type: "registry:ui",
+    registryDependencies: ["button", "cn", "spinner"],
+    files: ["reusables/submit-button.tsx"],
+  },
+  {
     name: "copy-button",
     type: "registry:ui",
     dependencies: ["lucide-react"],

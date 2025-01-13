@@ -28,7 +28,7 @@ export function CodeBlock({
   }, [code, lang, highlight]);
   return (
     <FumaDocsCodeBlock
-      // @ts-expect-error
+      // @ts-expect-error bypass this
       custom={compact ? "compact" : undefined}
       {...props}
     >

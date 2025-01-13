@@ -1,0 +1,74 @@
+---
+title: Submit Button
+description: Submit button to indicate loading state.
+---
+
+<ComponentSource name="example/submit-button-demo" reTrigger={false} />
+<ComponentSource name="example/submit-button-hidetext-demo" reTrigger={false} />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/submit-button"
+```
+</Tab>
+
+<Tab value="Manual">
+
+```json doc-gen:file
+{
+  "file": "registry/default/reusables/submit-button.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"submit-button.tsx\""
+  }
+}
+```
+
+</Tab>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import SubmitButton from "@/components/ui/submit-button";
+```
+
+```json doc-gen:file
+{
+  "file": "registry/default/example/submit-button-demo.tsx",
+  "codeblock": {
+    "lang": "tsx"
+  }
+}
+```
+
+## Reference
+
+<TypeTable
+  type={{
+    value: {
+      children: "",
+      type: "ReactNode",
+      default: "",
+    },
+    className: {
+      description: "Class name to style the button",
+      type: "string",
+      default: "",
+    },
+    spinnerClassName: {
+      description: "Class name to style the spinner",
+      type: "string",
+      default: "",
+    },
+    hideText: {
+      description: "hide the text and shwo only the spinner",
+      type: "boolean",
+      default: "false",
+    },
+  }}
+/>
