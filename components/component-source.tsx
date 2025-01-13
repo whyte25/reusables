@@ -17,6 +17,8 @@ export async function ComponentSource({
   const [folder, componentName] = name.split("/");
   const style = "default";
 
+  console.log(folder);
+
   // Get component details from registry
   const component = Index[style][componentName];
 
@@ -45,13 +47,11 @@ export async function ComponentSource({
   console.log(sourceCode);
 
   return (
-    <>
-      <ComponentPreview
-        name={componentName}
-        sourceCode={sourceCode}
-        preview={preview}
-        reTrigger={reTrigger}
-      />
-    </>
+    <ComponentPreview
+      name={componentName}
+      sourceCode={sourceCode}
+      preview={preview}
+      reTrigger={reTrigger}
+    />
   );
 }

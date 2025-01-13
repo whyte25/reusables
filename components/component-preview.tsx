@@ -39,15 +39,15 @@ export function ComponentPreview({
     return <Component />;
   }, [name]);
 
-  // Simplified code display
-  const Code = React.useMemo(
-    () => (
-      <pre className="language-tsx">
-        <code className="language-tsx">{sourceCode}</code>
-      </pre>
-    ),
-    [sourceCode]
-  );
+  // // Simplified code display
+  // const Code = React.useMemo(
+  //   () => (
+  //     <pre className="language-tsx">
+  //       <code className="language-tsx">{sourceCode}</code>
+  //     </pre>
+  //   ),
+  //   [sourceCode]
+  // );
 
   return preview ? (
     <ComponentWrapper className={className}>
