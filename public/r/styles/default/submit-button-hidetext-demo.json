@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "example/submit-button-hidetext-demo.tsx",
-      "content": "import { SubmitButton } from \"@/components/ui/submit-button\";\n\nexport default function SubmitButtonTextDemo() {\n  return (\n    <SubmitButton hideText={true} isSubmitting={true}>\n      Loading\n    </SubmitButton>\n  );\n}\n",
+      "content": "\"use client\";\nimport { SubmitButton } from \"@/components/ui/submit-button\";\nimport { useState } from \"react\";\n\nexport default function SubmitButtonTextDemo() {\n  const [isSubmitting, setIsSubmitting] = useState(false);\n\n  const handleClick = () => {\n    setIsSubmitting(true);\n  };\n\n  return (\n    <SubmitButton\n      onClick={handleClick}\n      hideText={true}\n      isSubmitting={isSubmitting}\n    >\n      Click Me\n    </SubmitButton>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }
