@@ -14,7 +14,7 @@ export async function ComponentSource({
   preview,
   reTrigger,
 }: ComponentSourceProps) {
-  const [folder, componentName] = name.split("/");
+  const componentName = name.split("/")[1];
   const style = "default";
 
   // console.log(folder);
