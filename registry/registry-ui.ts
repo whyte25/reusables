@@ -2,6 +2,12 @@ import { Registry } from "@/registry/schema";
 
 export const ui: Registry = [
   {
+    name: "theme-image",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: ["reusables/theme-image.tsx"],
+  },
+  {
     name: "spinner",
     type: "registry:ui",
     dependencies: ["class-variance-authority", "lucide-react"],

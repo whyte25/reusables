@@ -1,5 +1,18 @@
 [
   {
+    "name": "theme-image",
+    "type": "registry:ui",
+    "registryDependencies": [
+      "utils"
+    ],
+    "files": [
+      {
+        "path": "reusables/theme-image.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "spinner",
     "type": "registry:ui",
     "dependencies": [
