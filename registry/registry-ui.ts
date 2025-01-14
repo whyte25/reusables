@@ -5,20 +5,20 @@ export const ui: Registry = [
     name: "spinner",
     type: "registry:ui",
     dependencies: ["class-variance-authority", "lucide-react"],
-    registryDependencies: ["cn"],
+    registryDependencies: ["utils"],
     files: ["reusables/spinner.tsx"],
   },
   {
     name: "submit-button",
     type: "registry:ui",
-    registryDependencies: ["button", "cn", "spinner"],
+    registryDependencies: ["button", "utils", "spinner"],
     files: ["reusables/submit-button.tsx"],
   },
   {
     name: "copy-button",
     type: "registry:ui",
     dependencies: ["lucide-react"],
-    registryDependencies: ["button", "cn"],
+    registryDependencies: ["button", "utils"],
     files: ["reusables/copy-button.tsx"],
   },
   {

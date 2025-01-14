@@ -7,7 +7,7 @@
       "lucide-react"
     ],
     "registryDependencies": [
-      "cn"
+      "utils"
     ],
     "files": [
       {
@@ -21,7 +21,7 @@
     "type": "registry:ui",
     "registryDependencies": [
       "button",
-      "cn",
+      "utils",
       "spinner"
     ],
     "files": [
@@ -39,7 +39,7 @@
     ],
     "registryDependencies": [
       "button",
-      "cn"
+      "utils"
     ],
     "files": [
       {

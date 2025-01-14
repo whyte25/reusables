@@ -8,7 +8,7 @@ export const Index: Record<string, any> = {
     "spinner": {
       name: "spinner",
       type: "registry:ui",
-      registryDependencies: ["cn"],
+      registryDependencies: ["utils"],
       files: ["registry/default/reusables/spinner.tsx"],
       component: React.lazy(() => import("@/registry/default/reusables/spinner.tsx")),
       source: "",
@@ -19,7 +19,7 @@ export const Index: Record<string, any> = {
     "submit-button": {
       name: "submit-button",
       type: "registry:ui",
-      registryDependencies: ["button","cn","spinner"],
+      registryDependencies: ["button","utils","spinner"],
       files: ["registry/default/reusables/submit-button.tsx"],
       component: React.lazy(() => import("@/registry/default/reusables/submit-button.tsx")),
       source: "",
@@ -30,7 +30,7 @@ export const Index: Record<string, any> = {
     "copy-button": {
       name: "copy-button",
       type: "registry:ui",
-      registryDependencies: ["button","cn"],
+      registryDependencies: ["button","utils"],
       files: ["registry/default/reusables/copy-button.tsx"],
       component: React.lazy(() => import("@/registry/default/reusables/copy-button.tsx")),
       source: "",
