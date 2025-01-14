@@ -1,0 +1,90 @@
+---
+title: Submit Button
+description: Submit button to indicate loading state.
+---
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/submit-button"
+```
+</Tab>
+
+<Tab value="Manual">
+
+```json doc-gen:file
+{
+  "file": "registry/default/reusables/submit-button.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"submit-button.tsx\""
+  }
+}
+```
+
+</Tab>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import SubmitButton from "@/components/ui/submit-button";
+```
+
+```tsx
+<SubmitButton isSubmitting={isSubmitting}> Loading </SubmitButton>
+```
+
+## Examples
+
+### Default
+
+<ComponentSource name="example/submit-button-demo" reTrigger={false} />
+
+### Position Left
+
+<ComponentSource name="example/submit-button-position-left" reTrigger={false} />
+
+### Hide Text
+
+<ComponentSource name="example/submit-button-hidetext-demo" reTrigger={false} />
+
+## Reference
+
+<TypeTable
+  type={{
+    value: {
+      children: "",
+      type: "ReactNode",
+      default: "",
+    },
+    hideText: {
+      description: "hide the text and show only the spinner",
+      type: "boolean",
+      default: "false",
+    },
+    className: {
+      description: "Class name to style the button",
+      type: "string",
+      default: "",
+    },
+    spinnerClassName: {
+      description: "Class name to style the spinner",
+      type: "string",
+      default: "",
+    },
+    spinnerSize: {
+      description: "Spinner size",
+      type: "default | sm | lg | icon",
+      default: "default",
+    },
+    position: {
+      description: "Spinner position",
+      type: "right | left",
+      default: "right",
+    },
+  }}
+/>

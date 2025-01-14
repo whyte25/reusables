@@ -1,25 +1,54 @@
-"use client";
+import { Index } from "__registry__";
+import fs from "node:fs";
+import path from "path";
+import { ComponentPreview } from "./component-preview";
 
-import * as React from "react";
+interface ComponentSourceProps {
+  name: string; // Format: "folder/component-name" (e.g. "example/submit-button-demo")
+  preview?: boolean;
+  reTrigger?: boolean;
+}
 
-import { CodeBlockWrapper } from "@/components/code-block-wrapper";
-import { cn } from "@/lib/utils";
-
-interface ComponentSourceProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export function ComponentSource({
-  children,
-  className,
-
-  ...props
+export async function ComponentSource({
+  name,
+  preview,
+  reTrigger,
 }: ComponentSourceProps) {
+  const componentName = name.split("/")[1];
+  const style = "default";
+
+  // console.log(folder);
+
+  // Get component details from registry
+  const component = Index[style][componentName];
+
+  if (!component) {
+    console.error(`Component ${componentName} not found in registry`);
+    return null;
+  }
+
+  // Read source code
+  const filePath = path.join(process.cwd(), component.files[0]);
+
+  let sourceCode = "";
+
+  try {
+    sourceCode = await fs.promises.readFile(filePath, "utf8");
+
+    // Clean up imports
+    sourceCode = sourceCode
+      .replaceAll(`@/registry/${style}/`, "@/components/")
+      .replaceAll("export default", "export");
+  } catch (error) {
+    console.error(`Error reading component source: ${error}`);
+  }
+
   return (
-    <CodeBlockWrapper
-      expandButtonTitle="Expand"
-      className={cn("overflow-hidden rounded-md ", className)}
-      {...props}
-    >
-      {children}
-    </CodeBlockWrapper>
+    <ComponentPreview
+      name={componentName}
+      sourceCode={sourceCode}
+      preview={preview}
+      reTrigger={reTrigger}
+    />
   );
 }

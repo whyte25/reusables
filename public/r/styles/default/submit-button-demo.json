@@ -1,0 +1,15 @@
+{
+  "name": "submit-button-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "submit-button"
+  ],
+  "files": [
+    {
+      "path": "example/submit-button-demo.tsx",
+      "content": "import { SubmitButton } from \"@/components/ui/submit-button\";\n\nexport default function SubmitButtonDemo() {\n  return <SubmitButton isSubmitting={true}>Loading</SubmitButton>;\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

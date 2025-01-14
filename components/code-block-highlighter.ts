@@ -1,3 +1,4 @@
+import { rehypeCodeOptions } from "@/rehype-code.config";
 import {
   transformerNotationHighlight,
   transformerNotationWordHighlight,
@@ -7,14 +8,7 @@ import { codeToHtml } from "shiki/bundle/web";
 
 export async function highlight(code: string, lang: BundledLanguage) {
   return await codeToHtml(code, {
-    ...{
-      themes: {
-        light: "catppuccin-latte",
-        dark: "catppuccin-mocha",
-      },
-      inline: "tailing-curly-colon",
-      defaultColor: false,
-    },
+    ...rehypeCodeOptions,
     lang,
     transformers: [
       transformerNotationHighlight(),

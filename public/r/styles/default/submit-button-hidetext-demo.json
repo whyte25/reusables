@@ -1,0 +1,15 @@
+{
+  "name": "submit-button-hidetext-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "submit-button"
+  ],
+  "files": [
+    {
+      "path": "example/submit-button-hidetext-demo.tsx",
+      "content": "import { SubmitButton } from \"@/components/ui/submit-button\";\n\nexport default function SubmitButtonTextDemo() {\n  return (\n    <SubmitButton hideText={true} isSubmitting={true}>\n      Loading\n    </SubmitButton>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

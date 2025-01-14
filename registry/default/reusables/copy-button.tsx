@@ -31,10 +31,7 @@ export default function CopyButton({
     <Button
       size="icon"
       variant={variant}
-      className={cn(
-        "relative z-10 size-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 [&_svg]:size-3",
-        className
-      )}
+      className={cn("relative z-10 size-6 [&_svg]:size-3", className)}
       onClick={() => {
         copyToClipboard(value);
         setHasCopied(true);
