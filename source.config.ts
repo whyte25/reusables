@@ -19,8 +19,6 @@ import {
 } from "fumadocs-mdx/config";
 import { transformerTwoslash } from "fumadocs-twoslash";
 
-import { rehypeComponent } from "./lib/rehype-component";
-
 export const docs = defineCollections({
   type: "doc",
   dir: "content/docs",
@@ -45,7 +43,7 @@ export default defineConfig({
         transformerTwoslash(),
       ],
     },
-    rehypePlugins: [rehypeCode, rehypeComponent],
+    rehypePlugins: [rehypeCode],
     remarkPlugins: [
       [
         remarkDocGen,
