@@ -2,6 +2,12 @@ import { Registry } from "@/registry/schema";
 
 export const examples: Registry = [
   {
+    name: "submit-button-position-left",
+    type: "registry:example",
+    registryDependencies: ["submit-button"],
+    files: ["example/submit-button-position-left.tsx"],
+  },
+  {
     name: "submit-button-hidetext-demo",
     type: "registry:example",
     registryDependencies: ["submit-button"],

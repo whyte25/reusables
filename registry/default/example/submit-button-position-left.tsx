@@ -1,8 +1,8 @@
 import { SubmitButton } from "@/components/ui/submit-button";
 
-export default function SubmitButtonTextDemo() {
+export default function SubmitButtonPositionLeft() {
   return (
-    <SubmitButton hideText={true} isSubmitting={true}>
+    <SubmitButton position="left" isSubmitting={true}>
       Loading
     </SubmitButton>
   );

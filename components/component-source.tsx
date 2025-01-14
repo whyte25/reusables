@@ -17,7 +17,7 @@ export async function ComponentSource({
   const [folder, componentName] = name.split("/");
   const style = "default";
 
-  console.log(folder);
+  // console.log(folder);
 
   // Get component details from registry
   const component = Index[style][componentName];
@@ -29,7 +29,6 @@ export async function ComponentSource({
 
   // Read source code
   const filePath = path.join(process.cwd(), component.files[0]);
-  console.log(filePath, "hello");
 
   let sourceCode = "";
 
@@ -43,8 +42,6 @@ export async function ComponentSource({
   } catch (error) {
     console.error(`Error reading component source: ${error}`);
   }
-
-  console.log(sourceCode);
 
   return (
     <ComponentPreview
