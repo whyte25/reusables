@@ -31,7 +31,7 @@ npx shadcn@latest add "https://reusables.vercel.app/r/copy-button"
 ## Usage
 
 ```tsx
-import { CopyButton } from "@/components/ui/copy-button";
+import CopyButton from "@/components/ui/copy-button";
 ```
 
 ```tsx
@@ -46,14 +46,14 @@ const Example = () => {
 
 ## Example
 
-<ComponentSource name="reusables/copy-button" reTrigger={false} />
+<ComponentSource name="reusables/copy-button-demo" reTrigger={false} />
 
 ## Reference
 
 <TypeTable
   type={{
     value: {
-      description: "The value to be copied to clipboard",
+      description: "The value to be copy",
       type: "string",
       default: "",
     },
@@ -64,8 +64,8 @@ const Example = () => {
     },
     variant: {
       description: "The button style variant",
-      type: '"default" | "outline" | "ghost"',
-      default: '"ghost"',
+      type: "default | outline | ghost",
+      default: "ghost",
     },
   }}
 />

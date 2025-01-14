@@ -60,6 +60,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "copy-button-demo": {
+      name: "copy-button-demo",
+      type: "registry:example",
+      registryDependencies: ["copy-button"],
+      files: ["registry/default/example/copy-button-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/copy-button-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "submit-button-position-left": {
       name: "submit-button-position-left",
       type: "registry:example",

@@ -1,0 +1,15 @@
+{
+  "name": "copy-button-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "copy-button"
+  ],
+  "files": [
+    {
+      "path": "example/copy-button-demo.tsx",
+      "content": "import CopyButton from \"@/components/ui/copy-button\";\n\nexport default function CopyButtonDemo() {\n  const text = \"Built by fas\";\n\n  return (\n    <div className=\"flex items-center gap-3\">\n      <p>{text}</p>\n      <CopyButton value={text} />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
