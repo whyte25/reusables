@@ -1,0 +1,61 @@
+---
+title: Theme Image
+description: An Image component for seamless theme switching.
+---
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/theme-image"
+```
+</Tab>
+
+<Tab value="Manual">
+
+```json doc-gen:file
+{
+  "file": "registry/default/reusables/theme-image.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"theme-image.tsx\""
+  }
+}
+```
+
+</Tab>
+</Tabs>
+
+## Usage
+
+```tsx
+import ThemeImage from "@/components/ui/theme-image";
+```
+
+```tsx
+<ThemeImage darkSrc={"/image.png"} lightSrc={"image.png"} alt="image" />
+```
+
+## Example
+
+Toggle the icon on the sidebar to demo.
+
+<ComponentSource reTrigger={false} name="example/theme-image-demo" />
+
+## Reference
+
+<TypeTable
+  type={{
+    lightSrc: {
+      description: "Light theme image source",
+      type: "string",
+      default: "",
+    },
+    darkSrc: {
+      description: "Dark theme image source",
+      type: "string",
+      default: "",
+    },
+  }}
+/>

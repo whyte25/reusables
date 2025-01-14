@@ -5,6 +5,17 @@ import * as React from "react"
 
 export const Index: Record<string, any> = {
   "default": {
+    "theme-image": {
+      name: "theme-image",
+      type: "registry:ui",
+      registryDependencies: ["utils"],
+      files: ["registry/default/reusables/theme-image.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/theme-image.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "spinner": {
       name: "spinner",
       type: "registry:ui",
@@ -55,6 +66,17 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       files: ["registry/default/reusables/animated-gradient-text.tsx"],
       component: React.lazy(() => import("@/registry/default/reusables/animated-gradient-text.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "theme-image-demo": {
+      name: "theme-image-demo",
+      type: "registry:example",
+      registryDependencies: ["theme-image"],
+      files: ["registry/default/example/theme-image-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/theme-image-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
