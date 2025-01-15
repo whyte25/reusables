@@ -1,0 +1,117 @@
+---
+title: Use Online Status
+description: A React hook for monitoring network connectivity and connection quality
+---
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/use-online-status"
+````
+
+</Tab>
+<Tab value="Manual">
+
+```json doc-gen:file
+{
+  "file": "registry/default/hooks/use-online-status.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"use-online-status.tsx\""
+  }
+}
+```
+
+</Tab>
+
+</Tabs>
+
+## Usage
+
+The hook provides real-time network status monitoring with connection quality metrics.
+
+```ts
+import useOnlineStatus from "@/hooks/use-online-status";
+```
+
+```ts
+const {
+  isOnline,
+  lastChanged,
+  connectionQuality,
+  latency,
+  isRetrying,
+  checkConnectionNow,
+  retryConnection,
+} = useOnlineStatus();
+```
+
+## Example
+
+<ComponentSource name="example/online-status-demo" />
+
+## Reference
+
+### Options
+
+<TypeTable
+  type={{
+    debounceTime: {
+      type: "number",
+      default: "1000",
+      description: "Delay before status update (ms)",
+    },
+    pingInterval: {
+      type: "number",
+      default: "30000",
+      description: "Time between quality checks (ms)",
+    },
+    pingTimeout: {
+      type: "number",
+      default: "5000",
+      description: "Max time for ping request (ms)",
+    },
+    pingURL: {
+      type: "string",
+      default: "https://www.google.com/favicon.ico",
+      description: "URL to ping for status check",
+    },
+  }}
+/>
+
+### Return Values
+
+<TypeTable
+  type={{
+    isOnline: {
+      type: "boolean",
+      description: "Current connection status",
+    },
+    lastChanged: {
+      type: "string",
+      description: "ISO timestamp of last status change",
+    },
+    connectionQuality: {
+      type: "'excellent' | 'good' | 'poor' | 'unknown'",
+      description: "Network quality based on latency",
+    },
+    latency: {
+      type: "number",
+      description: "Connection latency in milliseconds",
+    },
+    isRetrying: {
+      type: "boolean",
+      description: "Connection retry in progress",
+    },
+    checkConnectionNow: {
+      type: "() => void",
+      description: "Manually check connection",
+    },
+    retryConnection: {
+      type: "() => void",
+      description: "Retry when offline",
+    },
+  }}
+/>
