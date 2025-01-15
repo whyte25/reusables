@@ -8,6 +8,8 @@
     "---Components---",
     "components/buttons",
     "components/theme-image",
+    "---Hooks---",
+    "hooks/use-online-status",
     "---Utils---",
     "cookies",
     "permission",

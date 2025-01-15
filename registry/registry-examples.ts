@@ -2,6 +2,12 @@ import { Registry } from "@/registry/schema";
 
 export const examples: Registry = [
   {
+    name: "online-status-demo",
+    type: "registry:example",
+    registryDependencies: ["submit-button"],
+    files: ["example/online-status-demo.tsx"],
+  },
+  {
     name: "theme-image-demo",
     type: "registry:example",
     registryDependencies: ["theme-image"],

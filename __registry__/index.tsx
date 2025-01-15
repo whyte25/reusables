@@ -71,6 +71,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "online-status-demo": {
+      name: "online-status-demo",
+      type: "registry:example",
+      registryDependencies: ["submit-button"],
+      files: ["registry/default/example/online-status-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/online-status-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "theme-image-demo": {
       name: "theme-image-demo",
       type: "registry:example",
@@ -220,6 +231,17 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       files: ["registry/default/lib/platform-detector.ts"],
       component: React.lazy(() => import("@/registry/default/lib/platform-detector.ts")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "use-online-status": {
+      name: "use-online-status",
+      type: "registry:hook",
+      registryDependencies: undefined,
+      files: ["registry/default/hooks/use-online-status.tsx"],
+      component: React.lazy(() => import("@/registry/default/hooks/use-online-status.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
