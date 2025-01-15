@@ -34,21 +34,15 @@ export function SubmitButton({
       disabled={isSubmitting}
       className={cn(
         props.className,
-        "relative flex items-center justify-center"
+        "relative flex items-center justify-center",
+        position === "left" && "flex-row-reverse"
       )}
       {...props}
     >
-      {position === "left" && isSubmitting && (
-        <LoadingSpinner
-          size={spinnerSize}
-          className={spinnerClassName}
-          hideText={hideText}
-        />
-      )}
       <span className={hideText && isSubmitting ? "invisible" : "visible"}>
         {children}
       </span>
-      {position === "right" && isSubmitting && (
+      {isSubmitting && (
         <LoadingSpinner
           size={spinnerSize}
           className={spinnerClassName}

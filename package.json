@@ -2,6 +2,7 @@
   "name": "reusables",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -26,7 +27,6 @@
     "fumadocs-typescript": "^3.0.2",
     "fumadocs-ui": "^14.7.1",
     "js-cookie": "^3.0.5",
-    "lodash": "^4.17.21",
     "lodash.template": "^4.5.0",
     "lucide-react": "^0.469.0",
     "motion": "^11.16.0",
