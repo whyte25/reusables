@@ -22,4 +22,15 @@ export const hooks: Registry = [
       },
     ],
   },
+  {
+    name: "use-inview",
+    type: "registry:hook",
+    dependencies: ["react-intersection-observer"],
+    files: [
+      {
+        path: "hooks/use-inview.tsx",
+        type: "registry:hook",
+      },
+    ],
+  },
 ];

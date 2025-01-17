@@ -1,0 +1,80 @@
+---
+title: Use InView
+description: A React hook for detecting when elements enter the viewport
+---
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+    ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/use-inview"
+````
+</Tab> 
+<Tab value="Manual">
+
+```json doc-gen:file
+{
+  "file": "registry/default/hooks/use-inview.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"use-inview.tsx\""
+  }
+}
+```
+
+</Tab> 
+</Tabs>
+
+## Usage
+
+The hook provides viewport intersection detection with react observer.
+
+```tsx
+import useInViewState from "@/hooks/use-inview";
+```
+
+```tsx
+const { ref, isInView } = useInViewState({
+  triggerOnce: true,
+  threshold: 0.5,
+});
+```
+
+## Example
+
+<ComponentSource name="example/inview-state-demo" />
+
+## Reference
+
+Options
+
+<TypeTable
+  type={{
+    triggerOnce: {
+      type: "boolean",
+      default: "true",
+      description: "Only trigger the inView callback once",
+    },
+    threshold: {
+      type: "number",
+      default: "0.1",
+      description: "Percentage of element visible before triggering (0-1)",
+    },
+  }}
+/>
+
+## Return Values
+
+<TypeTable
+  type={{
+    ref: {
+      type: "(node: Element | null) => void",
+      description: "Ref callback for the target element",
+    },
+    isInView: {
+      type: "boolean",
+      description: "Whether the element is in viewport",
+    },
+  }}
+/>
