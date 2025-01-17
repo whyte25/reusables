@@ -1,0 +1,70 @@
+---
+title: Use Screen Size
+description: A React hook for detecting screen sizes and responsive breakpoints
+---
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/use-screen-size"
+````
+
+</Tab>
+<Tab value="Manual">
+
+```json doc-gen:file
+{
+  "file": "registry/default/hooks/use-screen-size.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"use-screen-size.tsx\""
+  }
+}
+```
+
+</Tab>
+</Tabs>
+
+## Usage
+
+The hook provides screen size detection with predefined breakpoints.
+
+```tsx
+import useScreenSize from "@/hooks/use-screen-size";
+```
+
+```tsx
+const { screenSize, isMobile } = useScreenSize();
+```
+
+## Reference
+
+Return Values
+
+<TypeTable
+  type={{
+    screenSize: {
+      type: "'xs' | 'sm' | 'md' | 'lg' | '2xl' | '4k' | undefined",
+      description: "Current screen size breakpoint",
+    },
+    isMobile: {
+      type: "boolean",
+      description: "Whether the current device is mobile (<= 600px)",
+    },
+  }}
+/>
+
+Breakpoints
+
+<TypeTable
+  type={{
+    xs: { type: "≤ 425px", description: "Extra small devices" },
+    sm: { type: "≤ 600px", description: "Small devices" },
+    md: { type: "≤ 758px", description: "Medium devices" },
+    lg: { type: "≤ 1200px", description: "Large devices" },
+    "2xl": { type: "≤ 1400px", description: "Extra large devices" },
+    "4k": { type: "≥ 1800px", description: "4K and ultra-wide screens" },
+  }}
+/>

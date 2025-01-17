@@ -10,6 +10,7 @@
     "components/theme-image",
     "---Hooks---",
     "hooks/use-online-status",
+    "hooks/use-screen-size",
     "---Utils---",
     "cookies",
     "permission",

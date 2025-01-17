@@ -181,6 +181,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "screen-size-demo": {
+      name: "screen-size-demo",
+      type: "registry:example",
+      registryDependencies: ["use-screen-size"],
+      files: ["registry/default/example/screen-size-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/screen-size-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       type: "registry:lib",
@@ -242,6 +253,17 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       files: ["registry/default/hooks/use-online-status.tsx"],
       component: React.lazy(() => import("@/registry/default/hooks/use-online-status.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "use-screen-size": {
+      name: "use-screen-size",
+      type: "registry:hook",
+      registryDependencies: undefined,
+      files: ["registry/default/hooks/use-screen-size.tsx"],
+      component: React.lazy(() => import("@/registry/default/hooks/use-screen-size.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
