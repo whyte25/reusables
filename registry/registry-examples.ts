@@ -62,4 +62,11 @@ export const examples: Registry = [
     registryDependencies: ["animated-beam"],
     files: ["example/animated-beam-multiple-inputs.tsx"],
   },
+  {
+    name: "screen-size-demo",
+    type: "registry:example",
+    registryDependencies: ["use-screen-size"],
+    dependencies: ["lucide-react"],
+    files: ["example/screen-size-demo.tsx"],
+  },
 ];

@@ -12,4 +12,14 @@ export const hooks: Registry = [
       },
     ],
   },
+  {
+    name: "use-screen-size",
+    type: "registry:hook",
+    files: [
+      {
+        path: "hooks/use-screen-size.tsx",
+        type: "registry:hook",
+      },
+    ],
+  },
 ];
