@@ -30,7 +30,7 @@ npm install js-cookies
  
  Copy and paste the following code into your project.
 
-```tsx ts2js
+```tsx ts2js title="cookies-client.ts"
 import Cookies from "js-cookie";
 
 type SameSiteOption = "lax" | "strict" | "none";
@@ -112,7 +112,7 @@ npx shadcn@latest add "https://reusables.vercel.app/r/cookies-server"
  
  Copy and paste the following code into your project.
 
-```tsx ts2js
+```tsx ts2js title="cookies-server.ts"
 import { ResponseCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import { cookies } from "next/headers";
 
