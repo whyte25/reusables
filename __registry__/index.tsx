@@ -192,6 +192,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "inview-demo": {
+      name: "inview-demo",
+      type: "registry:example",
+      registryDependencies: ["use-inview"],
+      files: ["registry/default/example/inview-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/inview-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       type: "registry:lib",
@@ -264,6 +275,17 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       files: ["registry/default/hooks/use-screen-size.tsx"],
       component: React.lazy(() => import("@/registry/default/hooks/use-screen-size.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "use-inview": {
+      name: "use-inview",
+      type: "registry:hook",
+      registryDependencies: undefined,
+      files: ["registry/default/hooks/use-inview.tsx"],
+      component: React.lazy(() => import("@/registry/default/hooks/use-inview.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",

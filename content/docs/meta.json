@@ -11,6 +11,7 @@
     "---Hooks---",
     "hooks/use-online-status",
     "hooks/use-screen-size",
+    "hooks/use-inview",
     "---Utils---",
     "cookies",
     "permission",

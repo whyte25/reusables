@@ -69,4 +69,11 @@ export const examples: Registry = [
     dependencies: ["lucide-react"],
     files: ["example/screen-size-demo.tsx"],
   },
+  {
+    name: "inview-demo",
+    type: "registry:example",
+    registryDependencies: ["use-inview"],
+    dependencies: ["framer-motion"],
+    files: ["example/inview-demo.tsx"],
+  },
 ];
