@@ -1,0 +1,20 @@
+{
+  "name": "file-upload-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "use-file-upload",
+    "progress",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "example/file-upload-demo.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { Progress } from \"@/components/ui/progress\";\nimport { Upload, X } from \"lucide-react\";\nimport useFileUpload from \"../hooks/use-file-upload\";\n\nexport default function FileUploadDemo() {\n  const {\n    handleFileUpload,\n    cancelUpload,\n    selectedFile,\n    isUploading,\n    progress,\n    error,\n  } = useFileUpload({\n    onSuccess: (url) => console.log(\"File uploaded:\", url),\n  });\n\n  return (\n    <div className=\"w-full max-w-md mx-auto space-y-4\">\n      <div className=\"flex items-center justify-center w-full\">\n        <label\n          htmlFor=\"dropzone-file\"\n          className={`flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-lg cursor-pointer\n            ${isUploading ? \"bg-gray-50\" : \"bg-gray-50 hover:bg-gray-100\"} \n            ${error ? \"border-red-500\" : \"border-gray-300\"}`}\n        >\n          <div className=\"flex flex-col items-center justify-center pt-5 pb-6\">\n            <Upload className=\"w-10 h-10 mb-3 text-gray-400\" />\n            <p className=\"mb-2 text-sm text-gray-500\">\n              <span className=\"font-semibold\">Click to upload</span> or drag and\n              drop\n            </p>\n            <p className=\"text-xs text-gray-500\">Any file up to 10MB</p>\n          </div>\n          <input\n            id=\"dropzone-file\"\n            type=\"file\"\n            className=\"hidden\"\n            onChange={(e) => handleFileUpload(e.target.files?.[0]!)}\n            disabled={isUploading}\n          />\n        </label>\n      </div>\n\n      {(isUploading || selectedFile) && (\n        <div className=\"p-4 bg-white rounded-lg shadow-sm border space-y-3\">\n          <div className=\"flex items-center justify-between\">\n            <div className=\"flex items-center space-x-2\">\n              <div className=\"flex-1 min-w-0\">\n                <p className=\"text-sm font-medium text-gray-900 truncate\">\n                  {selectedFile?.name}\n                </p>\n                <p className=\"text-xs text-gray-500\">\n                  {(selectedFile?.size! / 1024 / 1024).toFixed(2)} MB\n                </p>\n              </div>\n            </div>\n            {isUploading && (\n              <Button\n                variant=\"ghost\"\n                size=\"sm\"\n                onClick={cancelUpload}\n                className=\"text-gray-500 hover:text-gray-700\"\n              >\n                <X className=\"h-4 w-4\" />\n              </Button>\n            )}\n          </div>\n\n          {isUploading && <Progress value={progress} className=\"h-2\" />}\n        </div>\n      )}\n\n      {error && (\n        <div className=\"p-3 text-sm text-red-500 bg-red-50 rounded-lg\">\n          {error}\n        </div>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

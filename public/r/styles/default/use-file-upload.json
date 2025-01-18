@@ -1,0 +1,15 @@
+{
+  "name": "use-file-upload",
+  "type": "registry:hook",
+  "dependencies": [
+    "axios",
+    "sonner"
+  ],
+  "files": [
+    {
+      "path": "hooks/use-file-upload.tsx",
+      "content": "import axios from \"axios\";\r\nimport { useRef, useState } from \"react\";\r\nimport { toast } from \"sonner\";\r\n\r\ninterface UseFileUploadParams {\r\n  onSuccess?: (url: string) => void;\r\n  onError?: (error: string) => void;\r\n}\r\n\r\nconst useFileUpload = ({ onSuccess, onError }: UseFileUploadParams = {}) => {\r\n  const [selectedFile, setSelectedFile] = useState<File | null>(null);\r\n  const [isUploading, setIsUploading] = useState(false);\r\n  const [progress, setProgress] = useState(0);\r\n  const [error, setError] = useState<string | null>(null);\r\n  const abortControllerRef = useRef<AbortController | null>(null);\r\n\r\n  const handleFileUpload = async (file: File | null) => {\r\n    if (!file) {\r\n      throw new Error(\"No file selected\");\r\n    }\r\n\r\n    setSelectedFile(file);\r\n    setIsUploading(true);\r\n    setError(null);\r\n\r\n    abortControllerRef.current = new AbortController();\r\n\r\n    try {\r\n      const formData = new FormData();\r\n      formData.append(\"file\", file, file.name);\r\n\r\n      const response = await axios.post(\"/uploadfile\", formData, {\r\n        signal: abortControllerRef.current.signal,\r\n        onUploadProgress: (progressEvent) => {\r\n          const percentCompleted = Math.round(\r\n            (progressEvent.loaded * 100) / progressEvent.total!\r\n          );\r\n          setProgress(percentCompleted);\r\n        },\r\n      });\r\n\r\n      const uploadedUrl = response?.data?.data?.path;\r\n      onSuccess?.(uploadedUrl);\r\n      setIsUploading(false);\r\n      setProgress(0);\r\n      abortControllerRef.current = null;\r\n    } catch (error: any) {\r\n      if (axios.isCancel(error)) {\r\n        const cancelMessage = \"Upload cancelled\";\r\n        setError(cancelMessage);\r\n        console.log(cancelMessage);\r\n      } else {\r\n        const errorMessage = error.response?.data?.message || \"Upload failed\";\r\n        setError(errorMessage);\r\n        onError?.(errorMessage);\r\n        toast.error(errorMessage);\r\n      }\r\n      setIsUploading(false);\r\n      setSelectedFile(null);\r\n      setProgress(0);\r\n      abortControllerRef.current = null;\r\n    }\r\n  };\r\n\r\n  const cancelUpload = () => {\r\n    if (abortControllerRef.current) {\r\n      abortControllerRef.current.abort();\r\n    }\r\n    setSelectedFile(null);\r\n    setIsUploading(false);\r\n    setProgress(0);\r\n    setError(null);\r\n  };\r\n\r\n  return {\r\n    selectedFile,\r\n    isUploading,\r\n    progress,\r\n    error,\r\n    handleFileUpload,\r\n    cancelUpload,\r\n  };\r\n};\r\n\r\nexport default useFileUpload;\r\n",
+      "type": "registry:hook"
+    }
+  ]
+}

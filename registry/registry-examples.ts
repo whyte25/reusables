@@ -76,4 +76,11 @@ export const examples: Registry = [
     dependencies: ["framer-motion"],
     files: ["example/inview-demo.tsx"],
   },
+  {
+    name: "file-upload-demo",
+    type: "registry:example",
+    registryDependencies: ["use-file-upload", "progress", "button"],
+    dependencies: ["lucide-react"],
+    files: ["example/file-upload-demo.tsx"],
+  },
 ];

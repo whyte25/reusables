@@ -203,6 +203,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "file-upload-demo": {
+      name: "file-upload-demo",
+      type: "registry:example",
+      registryDependencies: ["use-file-upload","progress","button"],
+      files: ["registry/default/example/file-upload-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/file-upload-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       type: "registry:lib",
@@ -286,6 +297,17 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       files: ["registry/default/hooks/use-inview.tsx"],
       component: React.lazy(() => import("@/registry/default/hooks/use-inview.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "use-file-upload": {
+      name: "use-file-upload",
+      type: "registry:hook",
+      registryDependencies: undefined,
+      files: ["registry/default/hooks/use-file-upload.tsx"],
+      component: React.lazy(() => import("@/registry/default/hooks/use-file-upload.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
