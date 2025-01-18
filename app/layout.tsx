@@ -1,4 +1,5 @@
 import { siteConfig } from "@/constant/site-config";
+import { Analytics } from "@vercel/analytics/react";
 import "fumadocs-twoslash/twoslash.css";
 import { RootProvider } from "fumadocs-ui/provider";
 import { Metadata } from "next";
@@ -61,6 +62,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
         <RootProvider>{children}</RootProvider>
+        <Analytics />
       </body>
     </html>
   );
