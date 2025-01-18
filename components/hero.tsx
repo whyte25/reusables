@@ -50,8 +50,9 @@ export const Hero = () => {
               transition={{ duration: 0.3, delay: 0.2 }}
             >
               A curated collection of reusable components, hooks, and utility
-              functions for React, TypeScript, Tailwind CSS, and Framer Motion.
-              Copy, customize, and integrate directly into your projects.
+              functions built with React, TypeScript, Tailwind CSS, and Framer
+              Motion. Copy, customize, and integrate directly into your
+              projects.
             </motion.p>
             <motion.div
               className="flex flex-col items-center justify-center mt-6 sm:flex-row sm:space-x-4 sm:space-y-0"

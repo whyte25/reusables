@@ -1,0 +1,105 @@
+---
+title: Use File Upload
+description: A React hook for handling file uploads with progress tracking and cancellation
+---
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+    ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/use-file-upload"
+````
+</Tab> 
+<Tab value="Manual">
+<Steps>
+<Step>
+
+Copy and paste this code into your `use-file-upload.tsx` file.
+
+```json doc-gen:file
+{
+  "file": "registry/default/hooks/use-file-upload.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"use-file-upload.tsx\""
+  }
+}
+```
+
+</Step>
+<Step>
+Update the endpoint to your upload URL and adjust the data to match what your endpoint is returning. 
+In this hook, It's `response?.data?.secure_url`.
+</Step>
+</Steps>
+
+</Tab> 
+</Tabs>
+
+## Usage
+
+```tsx
+import useFileUpload from "@/hooks/useFileUpload";
+```
+
+```tsx
+const { handleFileUpload, cancelUpload, isUploading, progress, error, data } =
+  useFileUpload({
+    onSuccess: (url) => console.log("Uploaded:", url),
+    onError: (error) => console.log("Error:", error),
+  });
+```
+
+### Example
+
+<ComponentSource name="example/file-upload-demo" />
+
+### Reference
+
+Options
+
+<TypeTable
+  type={{
+    onSuccess: {
+      type: "(url: string) => void",
+      description: "Callback when upload completes successfully",
+    },
+    onError: {
+      type: "(error: string) => void",
+      description: "Callback when upload fails",
+    },
+  }}
+/>
+
+Return Values
+
+<TypeTable
+  type={{
+    data: {
+      type: "string",
+      description: "Image url if upload is successfull",
+    },
+    selectedFile: {
+      type: "File | null",
+      description: "Currently selected file",
+    },
+    isUploading: { type: "boolean", description: "Upload in progress status" },
+    progress: {
+      type: "number",
+      description: "Upload progress percentage (0-100)",
+    },
+    error: {
+      type: "string | null",
+      description: "Error message if upload failed",
+    },
+    handleFileUpload: {
+      type: "(file: File) => Promise<void>",
+      description: "Function to handle file upload",
+    },
+    cancelUpload: {
+      type: "() => void",
+      description: "Function to cancel ongoing upload",
+    },
+  }}
+/>
