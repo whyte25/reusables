@@ -18,22 +18,20 @@ export default function FileUploadDemo() {
   } = useFileUpload();
 
   return (
-    <div className="w-full max-w-md mx-auto space-y-4">
-      <div className="flex items-center justify-center w-full">
+    <div className="w-full max-w-md  mx-auto space-y-4">
+      <div className="flex items-center   justify-center w-full">
         {data ? (
           <Image
-            height={400}
+            height={1000}
             width={1000}
             src={data}
             alt="image"
-            className="max-h-[400px] h-full object-contain"
+            className="max-h-[400px] h-full object-cover"
           />
         ) : (
           <label
             className={cn(
-              `flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-lg cursor-pointer`,
-              isUploading ? "bg-gray-50" : "bg-gray-50 hover:bg-gray-100",
-              error ? "border-red-500" : "border-gray-300"
+              `flex flex-col items-center  justify-center w-full  rounded-lg cursor-pointer`
             )}
           >
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
