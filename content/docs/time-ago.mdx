@@ -1,0 +1,88 @@
+---
+title: Time Ago
+description: A TypeScript utility for converting timestamps into human-readable relative time strings
+---
+
+## Installation
+
+<Tabs items={["CLI", "Manual"]}>
+  <Tab value="CLI">
+    ```package-install
+     npx shadcn@latest add "https://reusables.vercel.app/r/time-ago" 
+    ```
+  </Tab>
+  <Tab value="Manual">
+ ```json doc-gen:file
+{
+  "file": "registry/default/lib/time-ago.ts",
+  "codeblock": {
+    "lang": "ts",
+    "meta": "title=\"time-ago.ts\""
+  }
+}
+```
+  </Tab>
+</Tabs>
+
+## Usage
+
+Basic usage with default options:
+
+```tsx
+const time = timeAgo(date);
+// "2 hours ago"
+```
+
+Enhanced formatting with options:
+
+```tsx
+const time = formatTimeAgo(date, {
+  short: true,
+  maxUnits: 2,
+});
+// "2h 30m ago"
+```
+
+## Example
+
+<ComponentSource className="md:px-0" name="example/time-ago-demo" />
+
+## API Reference
+
+### timeAgo(date)
+
+<TypeTable
+  type={{
+    date: {
+      type: "Date | string | number",
+      description: "Input date to convert",
+    },
+  }}
+/>
+
+### formatTimeAgo(date, options)
+
+<TypeTable
+  type={{
+    short: {
+      type: "boolean",
+      default: "false",
+      description: "Use shortened format (2h vs 2 hours)",
+    },
+    maxUnits: {
+      type: "number",
+      default: "1",
+      description: "Maximum time units to display",
+    },
+    future: {
+      type: "boolean",
+      default: "true",
+      description: "Handle future dates",
+    },
+    round: {
+      type: "boolean",
+      default: "true",
+      description: "Round values to integers",
+    },
+  }}
+/>

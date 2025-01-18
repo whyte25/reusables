@@ -85,7 +85,7 @@ export function ComponentPreview({
         className="relative mr-auto w-full"
       >
         <Tab value="Preview" className="relative rounded-md" key={key}>
-          <ComponentWrapper>
+          <ComponentWrapper className={className}>
             {reTrigger && (
               <Button
                 onClick={() => setKey((prev) => prev + 1)}

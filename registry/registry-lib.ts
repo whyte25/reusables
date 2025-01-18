@@ -2,6 +2,16 @@ import { Registry } from "@/registry/schema";
 
 export const lib: Registry = [
   {
+    name: "time-ago",
+    type: "registry:lib",
+    files: [
+      {
+        path: "lib/time-ago.ts",
+        type: "registry:lib",
+      },
+    ],
+  },
+  {
     name: "utils",
     type: "registry:lib",
     dependencies: ["clsx", "tailwind-merge"],

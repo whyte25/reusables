@@ -7,12 +7,14 @@ interface ComponentSourceProps {
   name: string; // Format: "folder/component-name" (e.g. "example/submit-button-demo")
   preview?: boolean;
   reTrigger?: boolean;
+  className?: string;
 }
 
 export async function ComponentSource({
   name,
   preview,
   reTrigger,
+  className,
 }: ComponentSourceProps) {
   const componentName = name.split("/")[1];
   const style = "default";
@@ -45,6 +47,7 @@ export async function ComponentSource({
 
   return (
     <ComponentPreview
+      className={className}
       name={componentName}
       sourceCode={sourceCode}
       preview={preview}
