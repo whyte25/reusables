@@ -71,6 +71,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "time-ago-demo": {
+      name: "time-ago-demo",
+      type: "registry:example",
+      registryDependencies: ["time-ago"],
+      files: ["registry/default/example/time-ago-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/time-ago-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "online-status-demo": {
       name: "online-status-demo",
       type: "registry:example",
@@ -209,6 +220,17 @@ export const Index: Record<string, any> = {
       registryDependencies: ["use-file-upload","progress","button"],
       files: ["registry/default/example/file-upload-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/example/file-upload-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "time-ago": {
+      name: "time-ago",
+      type: "registry:lib",
+      registryDependencies: undefined,
+      files: ["registry/default/lib/time-ago.ts"],
+      component: React.lazy(() => import("@/registry/default/lib/time-ago.ts")),
       source: "",
       category: "undefined",
       subcategory: "undefined",

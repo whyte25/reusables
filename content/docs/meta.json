@@ -15,7 +15,8 @@
     "hooks/use-file-upload",
     "---Utils---",
     "cookies",
-    "permission",
-    "platform-detector"
+    "time-ago",
+    "platform-detector",
+    "permission"
   ]
 }
