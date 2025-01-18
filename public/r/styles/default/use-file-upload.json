@@ -2,8 +2,7 @@
   "name": "use-file-upload",
   "type": "registry:hook",
   "dependencies": [
-    "axios",
-    "sonner"
+    "axios"
   ],
   "files": [
     {

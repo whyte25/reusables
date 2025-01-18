@@ -36,7 +36,7 @@ export const hooks: Registry = [
   {
     name: "use-file-upload",
     type: "registry:hook",
-    dependencies: ["axios", "sonner"],
+    dependencies: ["axios"],
     files: [
       {
         path: "hooks/use-file-upload.tsx",
