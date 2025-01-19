@@ -50,9 +50,7 @@ export const metadata: Metadata = {
     creator: "@fasifeoluwa",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.png",
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
 };

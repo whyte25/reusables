@@ -1,3 +1,4 @@
+import { Logo } from "@/components/logo";
 import { siteConfig } from "@/constant/site-config";
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 
@@ -10,7 +11,7 @@ import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
  */
 export const baseOptions: BaseLayoutProps = {
   nav: {
-    title: "Reusables",
+    title: Logo(),
   },
   githubUrl: siteConfig.links.github,
   links: [
