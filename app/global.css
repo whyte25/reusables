@@ -65,31 +65,35 @@
   }
 }
 
-.dark {
-  --headless-color: 250 100% 80%;
-  --mdx-color: 0 0% 100%;
-  --ui-color: 217deg 92% 76%;
+.highlight-link {
+  position: relative;
+  padding-right: 2.5rem;
 }
 
-.uwu {
-  --background: 240 80% 94% !important;
-  --popover: 240 80% 94% !important;
-  --primary: 230 90% 72% !important;
-  --border: 230 30% 87% !important;
-  --accent: 250 80% 90% !important;
-  --secondary: 230 40% 94% !important;
-  --muted: 230 80% 92% !important;
-  --card: 230 90% 94% !important;
+.highlight-link::after {
+  content: "New";
+  position: absolute;
+  right: 0.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(59, 180, 75, 0.2);
+  color: #3bb44b;
+  padding: 0.05rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.uwu.dark {
-  --background: 240 40% 20% !important;
-  --popover: 240 20% 20% !important;
-  --primary: 250 70% 94% !important;
-  --border: 230 30% 30% !important;
-  --muted: 230 30% 36.3% !important;
-  --secondary: 250 30% 36.3% !important;
-  --accent: 250 20% 38.3% !important;
-  --muted-foreground: 230 80% 84% !important;
-  --card: 230 40% 26.3% !important;
+a[href="/docs/time-ago"] {
+  @apply highlight-link;
+}
+
+a[href="/docs/hooks/use-inview"] {
+  @apply highlight-link;
+}
+
+a[href="/docs/hooks/use-file-upload"] {
+  @apply highlight-link;
 }
