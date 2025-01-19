@@ -65,12 +65,12 @@
   }
 }
 
-.highlight-link {
+.highlight-link[data-active] {
   position: relative;
   padding-right: 2.5rem;
 }
 
-.highlight-link::after {
+.highlight-link[data-active]::after {
   content: "New";
   position: absolute;
   right: 0.2rem;
