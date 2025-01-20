@@ -149,7 +149,7 @@ export function ToastProvider({
   return (
     <ToastContext.Provider value={value}>
       {children}
-      <div className="fixed inset-0 pointer-events-none">
+      <div className="fixed inset-0 pointer-events-none  !z-[9999999]">
         <div
           className={cn(
             toastPositionVariants({ position }),
