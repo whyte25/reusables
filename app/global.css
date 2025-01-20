@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -95,5 +96,8 @@ a[href="/docs/hooks/use-inview"] {
 }
 
 a[href="/docs/hooks/use-file-upload"] {
+  @apply highlight-link;
+}
+a[href="/docs/components/toast"] {
   @apply highlight-link;
 }

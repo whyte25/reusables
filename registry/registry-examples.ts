@@ -2,6 +2,12 @@ import { Registry } from "@/registry/schema";
 
 export const examples: Registry = [
   {
+    name: "toast-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-demo.tsx"],
+  },
+  {
     name: "time-ago-demo",
     type: "registry:example",
     registryDependencies: ["time-ago"],
@@ -42,31 +48,6 @@ export const examples: Registry = [
     type: "registry:example",
     registryDependencies: ["submit-button"],
     files: ["example/submit-button-demo.tsx"],
-  },
-  {
-    name: "animated-beam-demo",
-    type: "registry:example",
-    registryDependencies: ["animated-beam"],
-    dependencies: ["@radix-ui/react-icons"],
-    files: ["example/animated-beam-demo.tsx"],
-  },
-  {
-    name: "animated-beam-bidirectional",
-    type: "registry:example",
-    registryDependencies: ["animated-beam"],
-    files: ["example/animated-beam-bidirectional.tsx"],
-  },
-  {
-    name: "animated-beam-multiple-outputs",
-    type: "registry:example",
-    registryDependencies: ["animated-beam"],
-    files: ["example/animated-beam-multiple-outputs.tsx"],
-  },
-  {
-    name: "animated-beam-multiple-inputs",
-    type: "registry:example",
-    registryDependencies: ["animated-beam"],
-    files: ["example/animated-beam-multiple-inputs.tsx"],
   },
   {
     name: "screen-size-demo",

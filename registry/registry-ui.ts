@@ -2,6 +2,20 @@ import { Registry } from "@/registry/schema";
 
 export const ui: Registry = [
   {
+    name: "toast",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "class-variance-authority"],
+    registryDependencies: ["utils"],
+    files: ["reusables/toast/toast.tsx"],
+  },
+  {
+    name: "toast-provider",
+    type: "registry:ui",
+    dependencies: ["framer-motion"],
+    registryDependencies: ["toast"],
+    files: ["reusables/toast/toast-provider.tsx"],
+  },
+  {
     name: "theme-image",
     type: "registry:ui",
     registryDependencies: ["utils"],
@@ -27,33 +41,28 @@ export const ui: Registry = [
     registryDependencies: ["button", "utils"],
     files: ["reusables/copy-button.tsx"],
   },
-  {
-    name: "animated-beam",
-    type: "registry:ui",
-    dependencies: ["motion"],
-    files: ["reusables/animated-beam.tsx"],
-  },
-  {
-    name: "animated-gradient-text",
-    type: "registry:ui",
-    files: ["reusables/animated-gradient-text.tsx"],
-    tailwind: {
-      config: {
-        theme: {
-          extend: {
-            animation: {
-              gradient: "gradient 8s linear infinite",
-            },
-            keyframes: {
-              gradient: {
-                to: {
-                  backgroundPosition: "var(--bg-size) 0",
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
+
+  // {
+  //   name: "animated-gradient-text",
+  //   type: "registry:ui",
+  //   files: ["reusables/animated-gradient-text.tsx"],
+  //   tailwind: {
+  //     config: {
+  //       theme: {
+  //         extend: {
+  //           animation: {
+  //             gradient: "gradient 8s linear infinite",
+  //           },
+  //           keyframes: {
+  //             gradient: {
+  //               to: {
+  //                 backgroundPosition: "var(--bg-size) 0",
+  //               },
+  //             },
+  //           },
+  //         },
+  //       },
+  //     },
+  //   },
+  // },
 ];
