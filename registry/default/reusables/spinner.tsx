@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-export const spinnerVariants = cva("animate-spin text-white", {
+const spinnerVariants = cva("animate-spin dark:text-black text-white", {
   variants: {
     size: {
       default: "h-4 w-4",
@@ -22,6 +22,6 @@ interface SpinnerProps extends VariantProps<typeof spinnerVariants> {
   className?: string;
 }
 
-export default function Spinner({ size, className }: SpinnerProps) {
+export const Spinner = ({ size, className }: SpinnerProps) => {
   return <Loader className={cn(spinnerVariants({ size, className }))} />;
-}
+};

@@ -11,7 +11,7 @@ export const ui: Registry = [
   {
     name: "toast-provider",
     type: "registry:ui",
-    dependencies: ["framer-motion"],
+    dependencies: ["framer-motion", "class-variance-authority"],
     registryDependencies: ["toast"],
     files: ["reusables/toast/toast-provider.tsx"],
   },

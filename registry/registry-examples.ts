@@ -70,4 +70,22 @@ export const examples: Registry = [
     dependencies: ["lucide-react"],
     files: ["example/file-upload-demo.tsx"],
   },
+  {
+    name: "toast-with-description-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-with-description-demo.tsx"],
+  },
+  {
+    name: "toast-positions-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-positions-demo.tsx"],
+  },
+  {
+    name: "toast-promise-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-promise-demo.tsx"],
+  },
 ];

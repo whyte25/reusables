@@ -1,10 +1,196 @@
 ---
 title: Toast
-description: An Image component for seamless theme switching.
+description: A toast component for displaying brief notifications.
 ---
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+    ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/use-file-upload"
+````
+</Tab> 
+<Tab value="Manual">
+<Steps>
+<Step>
+
+Copy and paste this code into your `toast-provider.tsx` file.
+
+<CodeBlockWrapper>
+```json doc-gen:file
+{
+  "file": "registry/default/reusables/toast/toast-provider.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"toast-provider.tsx\""
+  }
+}
+```
+</CodeBlockWrapper>
+
+</Step>
+<Step>
+Copy and paste this code into your `toast.tsx` file.
+<CodeBlockWrapper>
+```json doc-gen:file
+{
+  "file": "registry/default/reusables/toast/toast.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"toast.tsx\""
+  }
+}
+```
+</CodeBlockWrapper>
+
+</Step>
+</Steps>
+
+</Tab> 
+</Tabs>
+
+Add provider to your layout
+
+<Tabs items={["Next.js", "React"]}>
+  <Tab value="Next.js">
+  ```tsx title="layout.tsx"
+  import { Providers } from "./providers";
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}
+  ```
+  </Tab> <Tab value="React">
+  ```tsx title="src/app.tsx"
+import { ToastProviders } from "./providers/toast-provider";
+
+function App() {
+return (
+
+ <ToastProviders>
+ <YourApp />
+ </ToastProviders>
+);
+}
+```
+</Tab> 
+</Tabs>
+
+## Usage
+
+```tsx
+const toast = useToast();
+```
+
+```tsx
+toast.push({
+  title: "Information",
+  status: "info",
+});
+```
+
+### Basic Toast
+
+<ComponentSource className="md:px-0" name="example/toast-demo" />
+
+### Toast with Description
 
 <ComponentSource
   className="md:px-0"
-  reTrigger={false}
-  name="example/toast-demo"
+  name="example/toast-with-description-demo"
+/>
+
+### Toast Positions
+
+<ComponentSource className="md:px-0" name="example/toast-positions-demo" />
+
+### Promise Toast
+
+<ComponentSource className="md:px-0" name="example/toast-promise-demo" />
+
+## Styling
+
+You can customize the appearance using the classNames prop:
+
+```tsx
+<ToastProvider
+  classNames={{
+    error: "bg-red-100 text-red-900",
+    success: "bg-green-100 text-green-900",
+    title: "font-bold",
+    description: "text-sm",
+    closeButton: "hover:bg-gray-200",
+    containerClassName: "gap-2",
+  }}
+>
+  {children}
+</ToastProvider>
+```
+
+## Reference
+
+ToastProvider Props
+
+<TypeTable
+  type={{
+    position: {
+      type: '"top-left" | "top-center" | "top-right" | "bottom-left" | "bottom-center" | "bottom-right"',
+      default: '"bottom-right"',
+      description: "Default position for toasts",
+    },
+    duration: {
+      type: "number",
+      default: "5000",
+      description: "Duration in milliseconds before toast auto-dismisses",
+    },
+    closable: {
+      type: "boolean",
+      default: "true",
+      description: "Whether toasts can be manually closed",
+    },
+    classNames: {
+      type: "ToastClassNames",
+      description: "Object containing class names for styling",
+    },
+  }}
+/>
+
+## Toast Parameters
+
+<TypeTable
+  type={{
+    title: {
+      type: "string",
+      required: true,
+      description: "Main message of the toast",
+    },
+    description: {
+      type: "React.ReactNode",
+      description: "Additional details below the title",
+    },
+    status: {
+      type: '"error" | "warning" | "success" | "info" | "default" | "loading"',
+      default: '"default"',
+      description: "Visual style of the toast",
+    },
+    duration: {
+      type: "number",
+      description: "Override default duration for this toast",
+    },
+    position: {
+      type: "ToastPosition",
+      description: "Override default position for this toast",
+    },
+  }}
 />

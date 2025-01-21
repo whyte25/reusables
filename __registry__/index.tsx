@@ -192,6 +192,39 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "toast-with-description-demo": {
+      name: "toast-with-description-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-with-description-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-with-description-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-positions-demo": {
+      name: "toast-positions-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-positions-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-positions-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-promise-demo": {
+      name: "toast-promise-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-promise-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-promise-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "time-ago": {
       name: "time-ago",
       type: "registry:lib",

@@ -8,11 +8,6 @@ import { useToast } from "../reusables/toast/toast-provider";
 export default function ToastDemo() {
   const toast = useToast();
 
-  const promise = () =>
-    new Promise((resolve) =>
-      setTimeout(() => resolve({ name: "Sonner" }), 2000)
-    );
-
   return (
     <div className="p-4 flex  flex-wrap justify-center gap-3 w-full ">
       <Button
@@ -23,7 +18,6 @@ export default function ToastDemo() {
             closable: true,
             title: "Information",
             status: "info",
-            description: "This is an information message.",
           })
         }
       >
@@ -35,10 +29,8 @@ export default function ToastDemo() {
         className={cn("w-32", statusStyles["success"])}
         onClick={() =>
           toast.push({
-            closable: true,
             title: "Success",
             status: "success",
-            description: "Operation completed successfully!",
           })
         }
       >
@@ -50,10 +42,8 @@ export default function ToastDemo() {
         className={cn("w-32", statusStyles["warning"])}
         onClick={() =>
           toast.push({
-            closable: true,
             title: "Warning",
             status: "warning",
-            description: "Please be cautious with this action.",
           })
         }
       >
@@ -65,10 +55,8 @@ export default function ToastDemo() {
         className={cn("w-32", statusStyles["error"])}
         onClick={() =>
           toast.push({
-            closable: true,
             title: "Error",
             status: "error",
-            description: "An error occurred while processing your request.",
           })
         }
       >
@@ -80,9 +68,7 @@ export default function ToastDemo() {
         className={cn("w-32", statusStyles["default"])}
         onClick={() =>
           toast.push({
-            closable: true,
-            title: "Default Message",
-            description: "This is a default toast message.",
+            title: "Default Toast",
           })
         }
       >
@@ -104,10 +90,10 @@ export default function ToastDemo() {
         variant="outline"
         className={cn("w-32", statusStyles["loading"])}
         onClick={() =>
-          toast.promise(promise, {
-            loading: "Loading...",
-            success: () => `${"IFE"} toast has been added`,
-            error: "Error",
+          toast.push({
+            status: "loading",
+            title: "Loading...",
+            loaderVariant: "loader-2",
           })
         }
       >
