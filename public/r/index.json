@@ -20,7 +20,8 @@
     "name": "toast-provider",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "class-variance-authority"
     ],
     "registryDependencies": [
       "toast"

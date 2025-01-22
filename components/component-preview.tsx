@@ -86,15 +86,18 @@ export function ComponentPreview({
       >
         <Tab value="Preview" className="relative rounded-md" key={key}>
           <ComponentWrapper className={className}>
-            {reTrigger && (
-              <Button
-                onClick={() => setKey((prev) => prev + 1)}
-                className="absolute right-1.5 top-1.5 z-10 ml-4 flex items-center rounded-lg px-3 py-1"
-                variant="ghost"
-              >
-                <RotateCcw aria-label="restart-btn" size={16} />
-              </Button>
-            )}
+            <div className="absolute right-1.5 top-1.5 z-10 ml-4 flex items-center gap-2">
+              {/* <OpenInV0Button name={name} /> */}
+              {reTrigger && (
+                <Button
+                  onClick={() => setKey((prev) => prev + 1)}
+                  className=" rounded-lg px-3 py-1"
+                  variant="ghost"
+                >
+                  <RotateCcw aria-label="restart-btn" size={16} />
+                </Button>
+              )}
+            </div>
             <React.Suspense
               fallback={
                 <div className="flex items-center text-sm text-muted-foreground">

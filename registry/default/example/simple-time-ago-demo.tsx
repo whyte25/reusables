@@ -12,7 +12,7 @@ const SimpleTimeAgo = ({ date }: { date: Date }) => {
   }, []);
 
   return (
-    <Card className="!mt-5">
+    <Card className="">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Clock className="w-5 h-5" />
