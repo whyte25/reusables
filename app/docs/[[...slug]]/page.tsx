@@ -1,6 +1,7 @@
 import { MDXRenderer } from "@/components/mdx-components";
 import { source } from "@/lib/source";
 
+import { getGithubLastEdit } from "fumadocs-core/server";
 import {
   DocsBody,
   DocsDescription,
@@ -17,16 +18,16 @@ export default async function Page(props: {
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
-  // const time = await getGithubLastEdit({
-  //   owner: "whyte25",
-  //   repo: "reusables",
-  //   path: `content/docs/${page.file.path}`,
-  // });
+  const time = await getGithubLastEdit({
+    owner: "whyte25",
+    repo: "reusables",
+    path: `content/docs/${page.file.path}`,
+  });
 
   return (
     <DocsPage
       toc={page.data.toc}
-      // lastUpdate={new Date(time!)}
+      lastUpdate={new Date(time!)}
       full={page.data.full}
       editOnGithub={{
         owner: "whyte25",
