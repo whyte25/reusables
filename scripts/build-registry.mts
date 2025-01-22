@@ -1,6 +1,5 @@
-// @ts-nocheck
 import { existsSync, promises as fs } from "fs";
-import template from "lodash.template";
+import template from "lodash/template";
 import { tmpdir } from "os";
 import path from "path";
 import { cwd } from "process";
