@@ -4,7 +4,7 @@ export const ui: Registry = [
   {
     name: "toast-utils",
     type: "registry:ui",
-    files: ["reusables/toast/toast.tsx"],
+    files: ["reusables/toast/toast-utils.ts"],
   },
   {
     name: "toast",
