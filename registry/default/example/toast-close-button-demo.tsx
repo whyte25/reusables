@@ -5,8 +5,9 @@ import { toast } from "@/components/ui/toast-provider";
 
 export default function ToastCloseButtonDemo() {
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap  gap-2 md:gap-4">
       <Button
+        className="w-full md:w-auto"
         onClick={() =>
           toast.success("Closable toast", {
             closable: true,
@@ -17,6 +18,7 @@ export default function ToastCloseButtonDemo() {
       </Button>
 
       <Button
+        className="w-full md:w-auto"
         onClick={() =>
           toast.info("Non-closable toast", {
             closable: false,

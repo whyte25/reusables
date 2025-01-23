@@ -5,8 +5,9 @@ import { toast } from "@/components/ui/toast-provider";
 
 export default function ToastProgressDemo() {
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap  gap-2 md:gap-4">
       <Button
+        className="w-full md:w-auto"
         onClick={() =>
           toast.info("Toast with progress", {
             hideProgressBar: false,
@@ -17,6 +18,7 @@ export default function ToastProgressDemo() {
       </Button>
 
       <Button
+        className="w-full md:w-auto"
         onClick={() =>
           toast.info("Toast without progress", {
             hideProgressBar: true,

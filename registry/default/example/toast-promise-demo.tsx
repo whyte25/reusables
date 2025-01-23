@@ -40,8 +40,9 @@ export default function ToastPromiseDemo() {
   };
 
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap  gap-2 md:gap-4">
       <Button
+        className="w-full md:w-auto"
         onClick={() =>
           toast.promise(fetchTodo, {
             loading: "Fetching todo...",
@@ -54,6 +55,7 @@ export default function ToastPromiseDemo() {
       </Button>
 
       <Button
+        className="w-full md:w-auto"
         variant="destructive"
         onClick={() =>
           toast.promise(createTodo, {

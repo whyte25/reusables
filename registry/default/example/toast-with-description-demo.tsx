@@ -6,7 +6,6 @@ import { toast } from "@/components/ui/toast-provider";
 export default function ToastWithDescriptionDemo() {
   return (
     <Button
-      variant="outline"
       onClick={() =>
         toast.info("Event has been created", {
           description:
