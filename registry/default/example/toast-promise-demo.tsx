@@ -1,49 +1,69 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useToast } from "../reusables/toast/toast-provider";
+import { toast } from "@/components/ui/toast-provider";
+
+interface Todo {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
 
 export default function ToastPromiseDemo() {
-  const toast = useToast();
+  const fetchTodo = async () => {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/todos/1"
+    );
+    if (!response.ok) {
+      throw new Error("Failed to fetch todo");
+    }
+    return response.json() as Promise<Todo>;
+  };
 
-  const simulateSuccess = () =>
-    new Promise((resolve) => {
-      setTimeout(() => {
-        resolve("Success!");
-      }, 2000);
+  const createTodo = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos", {
+      method: "POST",
+      body: JSON.stringify({
+        title: "New Todo",
+        completed: false,
+        userId: 1,
+      }),
+      headers: {
+        "Content-type": "application/json",
+      },
     });
-
-  const simulateError = () =>
-    new Promise((_, reject) => {
-      setTimeout(() => {
-        reject(new Error("Failed!"));
-      }, 2000);
-    });
+    if (response.ok) {
+      throw new Error("Failed to create todo");
+    }
+    return response.json() as Promise<Todo>;
+  };
 
   return (
     <div className="flex gap-4">
       <Button
         onClick={() =>
-          toast.promise(simulateSuccess, {
-            loading: "Processing...",
-            success: () => "Operation completed!",
-            error: "Operation failed!",
+          toast.promise(fetchTodo, {
+            loading: "Fetching todo...",
+            success: (data) => `Fetched todo: ${data.title}`,
+            error: "Failed to fetch todo!",
           })
         }
       >
-        Show Success Toast
+        Resolved Promise
       </Button>
+
       <Button
         variant="destructive"
         onClick={() =>
-          toast.promise(simulateError, {
-            loading: "Processing...",
-            success: () => "Operation completed!",
-            error: "Operation failed!",
+          toast.promise(createTodo, {
+            loading: "Creating new todo...",
+            success: (data) => `Created todo: ${data.title}`,
+            error: "Failed to create todo!",
           })
         }
       >
-        Show Error Toast
+        Rejected promise
       </Button>
     </div>
   );

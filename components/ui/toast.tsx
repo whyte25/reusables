@@ -204,6 +204,7 @@ export function Toast({
     </div>
   );
 }
+
 Toast.displayName = "Toast";
 ToastTitle.displayName = "ToastTitle";
 ToastDescription.displayName = "ToastDescription";

@@ -1,5 +1,15 @@
 [
   {
+    "name": "toast-utils",
+    "type": "registry:ui",
+    "files": [
+      {
+        "path": "reusables/toast/toast.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "toast",
     "type": "registry:ui",
     "dependencies": [
@@ -24,7 +34,8 @@
       "class-variance-authority"
     ],
     "registryDependencies": [
-      "toast"
+      "toast",
+      "toast-utils"
     ],
     "files": [
       {

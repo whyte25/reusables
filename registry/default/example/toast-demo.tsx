@@ -1,25 +1,15 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
+import { statusStyles, toast } from "@/components/ui/toast-provider";
 import { cn } from "@/lib/utils";
-import { statusStyles } from "../reusables/toast/toast";
-import { useToast } from "../reusables/toast/toast-provider";
 
 export default function ToastDemo() {
-  const toast = useToast();
-
   return (
     <div className="p-4 flex  flex-wrap justify-center gap-3 w-full ">
       <Button
         variant="outline"
         className={cn("w-32", statusStyles["info"])}
-        onClick={() =>
-          toast.push({
-            closable: true,
-            title: "Information",
-            status: "info",
-          })
-        }
+        onClick={() => toast.info("Information")}
       >
         Info Toast
       </Button>
@@ -27,12 +17,7 @@ export default function ToastDemo() {
       <Button
         variant="outline"
         className={cn("w-32", statusStyles["success"])}
-        onClick={() =>
-          toast.push({
-            title: "Success",
-            status: "success",
-          })
-        }
+        onClick={() => toast.success("Success")}
       >
         Success Toast
       </Button>
@@ -40,12 +25,7 @@ export default function ToastDemo() {
       <Button
         variant="outline"
         className={cn("w-32", statusStyles["warning"])}
-        onClick={() =>
-          toast.push({
-            title: "Warning",
-            status: "warning",
-          })
-        }
+        onClick={() => toast.warning("Warning")}
       >
         Warning Toast
       </Button>
@@ -53,12 +33,7 @@ export default function ToastDemo() {
       <Button
         variant="outline"
         className={cn("w-32", statusStyles["error"])}
-        onClick={() =>
-          toast.push({
-            title: "Error",
-            status: "error",
-          })
-        }
+        onClick={() => toast.error("Error")}
       >
         Error Toast
       </Button>
@@ -66,23 +41,14 @@ export default function ToastDemo() {
       <Button
         variant="outline"
         className={cn("w-32", statusStyles["default"])}
-        onClick={() =>
-          toast.push({
-            title: "Default Toast",
-          })
-        }
+        onClick={() => toast.default("Default Toast")}
       >
         Default Toast
       </Button>
       <Button
         variant="outline"
         className={cn("w-32", statusStyles["loading"])}
-        onClick={() =>
-          toast.push({
-            status: "loading",
-            title: "Loading...",
-          })
-        }
+        onClick={() => toast.loading("loading")}
       >
         Loading Toast 1
       </Button>
@@ -90,9 +56,7 @@ export default function ToastDemo() {
         variant="outline"
         className={cn("w-32", statusStyles["loading"])}
         onClick={() =>
-          toast.push({
-            status: "loading",
-            title: "Loading...",
+          toast.loading("loading", {
             loaderVariant: "loader-2",
           })
         }

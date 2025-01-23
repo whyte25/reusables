@@ -1,6 +1,6 @@
 ---
 title: Toast
-description: A toast component for displaying brief notifications.
+description: A toast notification system with customizable positioning and styling, inspired by Sanity UI's Toast.
 ---
 
 ## Installation
@@ -8,7 +8,7 @@ description: A toast component for displaying brief notifications.
 <Tabs items={['CLI', 'Manual']}>
   <Tab value="CLI">
     ```package-install
-npx shadcn@latest add "https://reusables.vercel.app/r/use-file-upload"
+npx shadcn@latest add "https://reusables.vercel.app/r/toast"
 ````
 </Tab> 
 <Tab value="Manual">
@@ -45,17 +45,33 @@ Copy and paste this code into your `toast.tsx` file.
 </CodeBlockWrapper>
 
 </Step>
+
+<Step>
+Copy and paste this code into your `toast-utils.ts` file.
+<CodeBlockWrapper>
+```json doc-gen:file
+{
+  "file": "registry/default/reusables/toast/toast-utils.ts",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"toast-utils.ts\""
+  }
+}
+```
+</CodeBlockWrapper>
+
+</Step>
 </Steps>
 
 </Tab> 
 </Tabs>
 
-Add provider to your layout
+Add the Toast Provider to your layout
 
 <Tabs items={["Next.js", "React"]}>
   <Tab value="Next.js">
   ```tsx title="layout.tsx"
-  import { Providers } from "./providers";
+import { ToastProvider } from "@/components/ui/toast-provider";
 
 export default function RootLayout({
   children,
@@ -65,7 +81,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <ToastProvider>{children}</ToastProvider>
       </body>
     </html>
   );
@@ -73,7 +89,7 @@ export default function RootLayout({
   ```
   </Tab> <Tab value="React">
   ```tsx title="src/app.tsx"
-import { ToastProviders } from "./providers/toast-provider";
+import { ToastProvider } from "@/components/ui/toast-provider";
 
 function App() {
 return (
@@ -90,41 +106,102 @@ return (
 ## Usage
 
 ```tsx
-const toast = useToast();
+import { toast } from "@/components/ui/toast-provider";
 ```
 
 ```tsx
-toast.push({
-  title: "Information",
-  status: "info",
-});
+toast.info("Event has been created");
 ```
 
-### Basic Toast
+## Examples
 
-<ComponentSource className="md:px-0" name="example/toast-demo" />
-
-### Toast with Description
+### Basic Usage
 
 <ComponentSource
+  reTrigger={false}
+  className="md:px-0"
+  name="example/toast-demo"
+/>
+
+### Toast With Description
+
+Enhance toast messages with additional details.
+
+<ComponentSource
+  reTrigger={false}
   className="md:px-0"
   name="example/toast-with-description-demo"
 />
 
 ### Toast Positions
 
-<ComponentSource className="md:px-0" name="example/toast-positions-demo" />
+Control where toasts appear on the screen.
 
-### Promise Toast
+<ComponentSource
+  reTrigger={false}
+  className="md:px-0"
+  name="example/toast-positions-demo"
+/>
 
-<ComponentSource className="md:px-0" name="example/toast-promise-demo" />
+### Progress Bar
 
-## Styling
+Control the visibility of the countdown indicator.
 
-You can customize the appearance using the classNames prop:
+<ComponentSource
+  reTrigger={false}
+  className="md:px-0"
+  name="example/toast-progress-demo"
+/>
+
+### Close Button
+
+Configure manual dismissal options.
+
+<ComponentSource
+  reTrigger={false}
+  className="md:px-0"
+  name="example/toast-close-button-demo"
+/>
+
+### Prevent Duplicates
+
+Enable `preventDuplicates` to avoid displaying toasts with identical messages more than once.
+
+<ComponentSource
+  reTrigger={false}
+  className="md:px-0"
+  name="example/toast-prevent-duplicates-demo"
+/>
+
+### Max Toasts
+
+Limit the number of visible toasts.
+
+<ComponentSource
+  reTrigger={false}
+  className="md:px-0"
+  name="example/toast-custom-config-demo"
+/>
+
+### Promise Handling
+
+The `toast.promise` method provides a convenient way to display toast notifications for asynchronous operations.
+
+<ComponentSource
+  reTrigger={false}
+  className="md:px-0"
+  name="example/toast-promise-demo"
+/>
+
+## Toast Provider
+
+Override default toast behavior using the ToastProvider.
 
 ```tsx
 <ToastProvider
+  position="bottom-right"
+  duration={4000}
+  closable={true}
   classNames={{
     error: "bg-red-100 text-red-900",
     success: "bg-green-100 text-green-900",
@@ -133,14 +210,37 @@ You can customize the appearance using the classNames prop:
     closeButton: "hover:bg-gray-200",
     containerClassName: "gap-2",
   }}
+  preventDuplicates={true}
+  maxToast={4}
 >
   {children}
 </ToastProvider>
 ```
 
+## Toast Push Method
+
+For complete control over toast configuration, use the `toast.push` method:
+
+```tsx
+toast.push({
+  title: "Custom Toast",
+  status: "info", // 'error' | 'warning' | 'success' | 'info' | 'default' | 'loading'
+  position: "top-right",
+  duration: 5000,
+  description: "This is a custom toast",
+  closable: true,
+  hideProgressBar: false,
+  classNames: {
+    title: "font-bold",
+    description: "text-sm",
+    closeButton: "hover:bg-gray-200",
+  },
+});
+```
+
 ## Reference
 
-ToastProvider Props
+### ToastProvider Props
 
 <TypeTable
   type={{
@@ -151,7 +251,7 @@ ToastProvider Props
     },
     duration: {
       type: "number",
-      default: "5000",
+      default: "4000",
       description: "Duration in milliseconds before toast auto-dismisses",
     },
     closable: {
@@ -163,10 +263,60 @@ ToastProvider Props
       type: "ToastClassNames",
       description: "Object containing class names for styling",
     },
+    preventDuplicates: {
+      type: "boolean",
+      default: "true",
+      description: "Prevent duplicate toast messages globally",
+    },
+    maxToast: {
+      type: "number",
+      default: "",
+      description: "Maximum number of toasts shown at once globally",
+    },
   }}
 />
 
-## Toast Parameters
+### Toast Methods
+
+<TypeTable
+  type={{
+    "toast.success": {
+      type: "(title: string, options?: ToastParams) => string",
+      description: "Display a success toast notification",
+    },
+    "toast.error": {
+      type: "(title: string, options?: ToastParams) => string",
+      description: "Display an error toast notification",
+    },
+    "toast.warning": {
+      type: "(title: string, options?: ToastParams) => string",
+      description: "Display a warning toast notification",
+    },
+    "toast.info": {
+      type: "(title: string, options?: ToastParams) => string",
+      description: "Display an info toast notification",
+    },
+    "toast.loading": {
+      type: "(title: string, options?: ToastParams) => string",
+      description: "Display a loading toast notification",
+    },
+    "toast.default": {
+      type: "(title: string, options?: ToastParams) => string",
+      description: "Display a default toast notification",
+    },
+    "toast.push": {
+      type: "(params: ToastParams) => string",
+      description: "Create a custom toast with full configuration control",
+    },
+    "toast.promise": {
+      type: "<T>(promise: () => Promise<T>, options: ToastPromiseOptions<T>) => string",
+      description:
+        "Handle async operations with loading, success, and error states",
+    },
+  }}
+/>
+
+### Toast Params
 
 <TypeTable
   type={{
@@ -186,11 +336,25 @@ ToastProvider Props
     },
     duration: {
       type: "number",
+      default: '"4000"',
       description: "Override default duration for this toast",
     },
     position: {
       type: "ToastPosition",
       description: "Override default position for this toast",
+    },
+    preventDuplicates: {
+      type: "boolean",
+      description: "Override global duplicate prevention for this toast",
+    },
+    maxToast: {
+      type: "number",
+      description: "Override global maximum toast count for this toast",
+    },
+    hideProgressBar: {
+      type: "boolean",
+      default: "false",
+      description: "Hide the progress bar for this toast",
     },
   }}
 />

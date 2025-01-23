@@ -5,6 +5,17 @@ import * as React from "react"
 
 export const Index: Record<string, any> = {
   "default": {
+    "toast-utils": {
+      name: "toast-utils",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/reusables/toast/toast.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/toast/toast.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "toast": {
       name: "toast",
       type: "registry:ui",
@@ -19,7 +30,7 @@ export const Index: Record<string, any> = {
     "toast-provider": {
       name: "toast-provider",
       type: "registry:ui",
-      registryDependencies: ["toast"],
+      registryDependencies: ["toast","toast-utils"],
       files: ["registry/default/reusables/toast/toast-provider.tsx"],
       component: React.lazy(() => import("@/registry/default/reusables/toast/toast-provider.tsx")),
       source: "",
@@ -220,6 +231,50 @@ export const Index: Record<string, any> = {
       registryDependencies: ["toast"],
       files: ["registry/default/example/toast-promise-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/example/toast-promise-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-prevent-duplicates-demo": {
+      name: "toast-prevent-duplicates-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-prevent-duplicates-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-prevent-duplicates-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-custom-config-demo": {
+      name: "toast-custom-config-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-custom-config-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-custom-config-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-progress-demo": {
+      name: "toast-progress-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-progress-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-progress-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-close-button-demo": {
+      name: "toast-close-button-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-close-button-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-close-button-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",

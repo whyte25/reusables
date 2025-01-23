@@ -1,13 +1,6 @@
 {
-  "name": "toast",
+  "name": "toast-utils",
   "type": "registry:ui",
-  "dependencies": [
-    "lucide-react",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "reusables/toast/toast.tsx",

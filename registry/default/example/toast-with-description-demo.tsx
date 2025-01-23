@@ -1,17 +1,18 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useToast } from "../reusables/toast/toast-provider";
+import { toast } from "@/components/ui/toast-provider";
 
 export default function ToastWithDescriptionDemo() {
-  const { push } = useToast();
-
   return (
     <Button
+      variant="outline"
       onClick={() =>
-        push({
-          title: "New message received",
-          description: "You have a new message from John Doe",
+        toast.info("Event has been created", {
+          description:
+            "We've created your event and sent invitations to your guests.",
+          duration: 5000,
+          position: "bottom-right",
         })
       }
     >

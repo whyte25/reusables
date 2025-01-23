@@ -1,0 +1,15 @@
+{
+  "name": "toast-custom-config-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "toast"
+  ],
+  "files": [
+    {
+      "path": "example/toast-custom-config-demo.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { toast } from \"@/components/ui/toast-provider\";\n\nexport default function ToastCustomConfigDemo() {\n  return (\n    <div className=\"flex gap-4\">\n      <Button\n        onClick={() => {\n          toast.info(`Toast `, {\n            maxToast: 3,\n            description: \"Max 3 toasts will show\",\n          });\n        }}\n      >\n        Max 3 Toasts\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

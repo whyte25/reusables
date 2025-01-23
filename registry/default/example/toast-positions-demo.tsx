@@ -1,11 +1,9 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useToast } from "../reusables/toast/toast-provider";
+import { toast } from "@/components/ui/toast-provider";
 
 export default function ToastPositionsDemo() {
-  const { push } = useToast();
-
   const positions = [
     "top-left",
     "top-center",
@@ -21,7 +19,7 @@ export default function ToastPositionsDemo() {
         <Button
           key={position}
           onClick={() =>
-            push({
+            toast.push({
               title: `Toast - ${position}`,
               position,
               status: "success",

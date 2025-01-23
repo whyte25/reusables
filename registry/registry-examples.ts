@@ -88,4 +88,28 @@ export const examples: Registry = [
     registryDependencies: ["toast"],
     files: ["example/toast-promise-demo.tsx"],
   },
+  {
+    name: "toast-prevent-duplicates-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-prevent-duplicates-demo.tsx"],
+  },
+  {
+    name: "toast-custom-config-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-custom-config-demo.tsx"],
+  },
+  {
+    name: "toast-progress-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-progress-demo.tsx"],
+  },
+  {
+    name: "toast-close-button-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-close-button-demo.tsx"],
+  },
 ];

@@ -2,6 +2,11 @@ import { Registry } from "@/registry/schema";
 
 export const ui: Registry = [
   {
+    name: "toast-utils",
+    type: "registry:ui",
+    files: ["reusables/toast/toast.tsx"],
+  },
+  {
     name: "toast",
     type: "registry:ui",
     dependencies: ["lucide-react", "class-variance-authority"],
@@ -12,7 +17,7 @@ export const ui: Registry = [
     name: "toast-provider",
     type: "registry:ui",
     dependencies: ["framer-motion", "class-variance-authority"],
-    registryDependencies: ["toast"],
+    registryDependencies: ["toast", "toast-utils"],
     files: ["reusables/toast/toast-provider.tsx"],
   },
   {
