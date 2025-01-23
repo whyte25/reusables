@@ -1,5 +1,50 @@
 [
   {
+    "name": "toast-utils",
+    "type": "registry:ui",
+    "files": [
+      {
+        "path": "reusables/toast/toast.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "toast",
+    "type": "registry:ui",
+    "dependencies": [
+      "lucide-react",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "utils"
+    ],
+    "files": [
+      {
+        "path": "reusables/toast/toast.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "toast-provider",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "toast",
+      "toast-utils"
+    ],
+    "files": [
+      {
+        "path": "reusables/toast/toast-provider.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "theme-image",
     "type": "registry:ui",
     "registryDependencies": [
@@ -60,46 +105,5 @@
         "type": "registry:ui"
       }
     ]
-  },
-  {
-    "name": "animated-beam",
-    "type": "registry:ui",
-    "dependencies": [
-      "motion"
-    ],
-    "files": [
-      {
-        "path": "reusables/animated-beam.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
-    "name": "animated-gradient-text",
-    "type": "registry:ui",
-    "files": [
-      {
-        "path": "reusables/animated-gradient-text.tsx",
-        "type": "registry:ui"
-      }
-    ],
-    "tailwind": {
-      "config": {
-        "theme": {
-          "extend": {
-            "animation": {
-              "gradient": "gradient 8s linear infinite"
-            },
-            "keyframes": {
-              "gradient": {
-                "to": {
-                  "backgroundPosition": "var(--bg-size) 0"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   }
 ]

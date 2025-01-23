@@ -9,6 +9,8 @@
     "postinstall": "fumadocs-mdx",
     "build:registry": "tsx ./scripts/build-registry.mts"
   },
+  "publisher": "fas",
+  "licence": "MIT",
   "dependencies": {
     "@radix-ui/react-collapsible": "^1.1.2",
     "@radix-ui/react-label": "^2.1.1",
@@ -35,7 +37,7 @@
     "fumadocs-typescript": "^3.0.2",
     "fumadocs-ui": "^14.7.1",
     "js-cookie": "^3.0.5",
-    "lodash.template": "^4.5.0",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.469.0",
     "motion": "^11.16.0",
     "next": "15.1.3",

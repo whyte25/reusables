@@ -5,6 +5,39 @@ import * as React from "react"
 
 export const Index: Record<string, any> = {
   "default": {
+    "toast-utils": {
+      name: "toast-utils",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/reusables/toast/toast.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/toast/toast.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast": {
+      name: "toast",
+      type: "registry:ui",
+      registryDependencies: ["utils"],
+      files: ["registry/default/reusables/toast/toast.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/toast/toast.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-provider": {
+      name: "toast-provider",
+      type: "registry:ui",
+      registryDependencies: ["toast","toast-utils"],
+      files: ["registry/default/reusables/toast/toast-provider.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/toast/toast-provider.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "theme-image": {
       name: "theme-image",
       type: "registry:ui",
@@ -49,23 +82,12 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "animated-beam": {
-      name: "animated-beam",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/reusables/animated-beam.tsx"],
-      component: React.lazy(() => import("@/registry/default/reusables/animated-beam.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "animated-gradient-text": {
-      name: "animated-gradient-text",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/reusables/animated-gradient-text.tsx"],
-      component: React.lazy(() => import("@/registry/default/reusables/animated-gradient-text.tsx")),
+    "toast-demo": {
+      name: "toast-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -148,50 +170,6 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "animated-beam-demo": {
-      name: "animated-beam-demo",
-      type: "registry:example",
-      registryDependencies: ["animated-beam"],
-      files: ["registry/default/example/animated-beam-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/example/animated-beam-demo.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "animated-beam-bidirectional": {
-      name: "animated-beam-bidirectional",
-      type: "registry:example",
-      registryDependencies: ["animated-beam"],
-      files: ["registry/default/example/animated-beam-bidirectional.tsx"],
-      component: React.lazy(() => import("@/registry/default/example/animated-beam-bidirectional.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "animated-beam-multiple-outputs": {
-      name: "animated-beam-multiple-outputs",
-      type: "registry:example",
-      registryDependencies: ["animated-beam"],
-      files: ["registry/default/example/animated-beam-multiple-outputs.tsx"],
-      component: React.lazy(() => import("@/registry/default/example/animated-beam-multiple-outputs.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "animated-beam-multiple-inputs": {
-      name: "animated-beam-multiple-inputs",
-      type: "registry:example",
-      registryDependencies: ["animated-beam"],
-      files: ["registry/default/example/animated-beam-multiple-inputs.tsx"],
-      component: React.lazy(() => import("@/registry/default/example/animated-beam-multiple-inputs.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "screen-size-demo": {
       name: "screen-size-demo",
       type: "registry:example",
@@ -220,6 +198,83 @@ export const Index: Record<string, any> = {
       registryDependencies: ["use-file-upload","progress","button"],
       files: ["registry/default/example/file-upload-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/example/file-upload-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-with-description-demo": {
+      name: "toast-with-description-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-with-description-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-with-description-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-positions-demo": {
+      name: "toast-positions-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-positions-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-positions-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-promise-demo": {
+      name: "toast-promise-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-promise-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-promise-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-prevent-duplicates-demo": {
+      name: "toast-prevent-duplicates-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-prevent-duplicates-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-prevent-duplicates-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-custom-config-demo": {
+      name: "toast-custom-config-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-custom-config-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-custom-config-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-progress-demo": {
+      name: "toast-progress-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-progress-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-progress-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-close-button-demo": {
+      name: "toast-close-button-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-close-button-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-close-button-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",

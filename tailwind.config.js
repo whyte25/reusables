@@ -7,6 +7,7 @@ export default {
   content: [
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
+    "./registry/**/*.{ts,tsx}",
     "./content/**/*.{md,mdx}",
     "./mdx-components.{ts,tsx}",
     "./node_modules/fumadocs-ui/dist/**/*.js",
@@ -15,7 +16,6 @@ export default {
     createPreset({
       addGlobalColors: true,
       cssPrefix: "",
-      // preset: "ocean",
       layoutWidth: "1600px",
     }),
   ],

@@ -1,0 +1,15 @@
+{
+  "name": "toast-with-description-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "toast"
+  ],
+  "files": [
+    {
+      "path": "example/toast-with-description-demo.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { toast } from \"@/components/ui/toast-provider\";\n\nexport default function ToastWithDescriptionDemo() {\n  return (\n    <Button\n      variant=\"outline\"\n      onClick={() =>\n        toast.info(\"Event has been created\", {\n          description:\n            \"We've created your event and sent invitations to your guests.\",\n          duration: 5000,\n          position: \"bottom-right\",\n        })\n      }\n    >\n      Show Toast with Description\n    </Button>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

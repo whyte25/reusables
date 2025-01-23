@@ -1,3 +1,4 @@
+import { ToastProvider } from "@/components/ui/toast-provider";
 import { siteConfig } from "@/constant/site-config";
 import { Analytics } from "@vercel/analytics/react";
 import "fumadocs-twoslash/twoslash.css";
@@ -59,7 +60,9 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
-        <RootProvider>{children}</RootProvider>
+        <RootProvider>
+          <ToastProvider>{children}</ToastProvider>
+        </RootProvider>
         <Analytics />
       </body>
     </html>
