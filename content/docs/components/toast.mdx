@@ -8,22 +8,22 @@ description: A toast notification system with customizable positioning and styli
 <Tabs items={['CLI', 'Manual']}>
   <Tab value="CLI">
     ```package-install
-npx shadcn@latest add "https://reusables.vercel.app/r/toast"
+npx shadcn@latest add "https://reusables.vercel.app/r/notify"
 ````
 </Tab> 
 <Tab value="Manual">
 <Steps>
 <Step>
 
-Copy and paste this code into your `toast-provider.tsx` file.
+Copy and paste this code into your `notify-provider.tsx` file.
 
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/default/reusables/toast/toast-provider.tsx",
+  "file": "registry/default/reusables/toast/notify-provider.tsx",
   "codeblock": {
     "lang": "tsx",
-    "meta": "title=\"toast-provider.tsx\""
+    "meta": "title=\"notify-provider.tsx\""
   }
 }
 ```
@@ -31,14 +31,14 @@ Copy and paste this code into your `toast-provider.tsx` file.
 
 </Step>
 <Step>
-Copy and paste this code into your `toast.tsx` file.
+Copy and paste this code into your `notify.tsx` file.
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/default/reusables/toast/toast.tsx",
+  "file": "registry/default/reusables/toast/notify.tsx",
   "codeblock": {
     "lang": "tsx",
-    "meta": "title=\"toast.tsx\""
+    "meta": "title=\"notify.tsx\""
   }
 }
 ```
@@ -47,14 +47,14 @@ Copy and paste this code into your `toast.tsx` file.
 </Step>
 
 <Step>
-Copy and paste this code into your `toast-utils.ts` file.
+Copy and paste this code into your `notify-utils.ts` file.
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/default/reusables/toast/toast-utils.ts",
+  "file": "registry/default/reusables/toast/notify-utils.ts",
   "codeblock": {
     "lang": "tsx",
-    "meta": "title=\"toast-utils.ts\""
+    "meta": "title=\"notify-utils.ts\""
   }
 }
 ```
@@ -71,7 +71,7 @@ Add the Toast Provider to your layout
 <Tabs items={["Next.js", "React"]}>
   <Tab value="Next.js">
   ```tsx title="layout.tsx"
-import { ToastProvider } from "@/components/ui/toast-provider";
+import { ToastProvider } from "@/components/ui/notify-provider";
 
 export default function RootLayout({
   children,
@@ -89,7 +89,7 @@ export default function RootLayout({
   ```
   </Tab> <Tab value="React">
   ```tsx title="src/app.tsx"
-import { ToastProvider } from "@/components/ui/toast-provider";
+import { ToastProvider } from "@/components/ui/notify-provider";
 
 function App() {
 return (
@@ -106,7 +106,7 @@ return (
 ## Usage
 
 ```tsx
-import { toast } from "@/components/ui/toast-provider";
+import { toast } from "@/components/ui/notify-provider";
 ```
 
 ```tsx

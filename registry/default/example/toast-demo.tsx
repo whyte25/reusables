@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { statusStyles, toast } from "@/components/ui/toast-provider";
+import { statusStyles, toast } from "@/components/ui/notify-provider";
 import { cn } from "@/lib/utils";
 
 export default function ToastDemo() {

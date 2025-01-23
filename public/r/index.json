@@ -1,19 +1,19 @@
 [
   {
-    "name": "toast-utils",
+    "name": "notify-utils",
     "type": "registry:ui",
     "registryDependencies": [
-      "toast-provider"
+      "notify-provider"
     ],
     "files": [
       {
-        "path": "reusables/toast/toast-utils.ts",
+        "path": "reusables/toast/notify-utils.ts",
         "type": "registry:ui"
       }
     ]
   },
   {
-    "name": "toast",
+    "name": "notify",
     "type": "registry:ui",
     "dependencies": [
       "lucide-react",
@@ -21,29 +21,29 @@
     ],
     "registryDependencies": [
       "utils",
-      "toast-provider"
+      "notify-provider"
     ],
     "files": [
       {
-        "path": "reusables/toast/toast.tsx",
+        "path": "reusables/toast/notify.tsx",
         "type": "registry:ui"
       }
     ]
   },
   {
-    "name": "toast-provider",
+    "name": "notify-provider",
     "type": "registry:ui",
     "dependencies": [
       "framer-motion",
       "class-variance-authority"
     ],
     "registryDependencies": [
-      "toast",
-      "toast-utils"
+      "notify",
+      "notify-utils"
     ],
     "files": [
       {
-        "path": "reusables/toast/toast-provider.tsx",
+        "path": "reusables/toast/notify-provider.tsx",
         "type": "registry:ui"
       }
     ]

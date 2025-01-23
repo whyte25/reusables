@@ -1,4 +1,4 @@
-import { ToastProvider } from "@/components/ui/toast-provider";
+import { ToastProvider } from "@/components/ui/notify-provider";
 import { siteConfig } from "@/constant/site-config";
 import { Analytics } from "@vercel/analytics/react";
 import "fumadocs-twoslash/twoslash.css";
