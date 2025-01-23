@@ -17,7 +17,9 @@
       "class-variance-authority"
     ],
     "registryDependencies": [
-      "utils"
+      "utils",
+      "toast-utils",
+      "toast-provider"
     ],
     "files": [
       {

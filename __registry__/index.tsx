@@ -19,7 +19,7 @@ export const Index: Record<string, any> = {
     "toast": {
       name: "toast",
       type: "registry:ui",
-      registryDependencies: ["utils"],
+      registryDependencies: ["utils","toast-utils","toast-provider"],
       files: ["registry/default/reusables/toast/toast.tsx"],
       component: React.lazy(() => import("@/registry/default/reusables/toast/toast.tsx")),
       source: "",
