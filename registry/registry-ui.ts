@@ -4,13 +4,14 @@ export const ui: Registry = [
   {
     name: "toast-utils",
     type: "registry:ui",
+    registryDependencies: ["toast-provider"],
     files: ["reusables/toast/toast-utils.ts"],
   },
   {
     name: "toast",
     type: "registry:ui",
     dependencies: ["lucide-react", "class-variance-authority"],
-    registryDependencies: ["utils", "toast-utils", "toast-provider"],
+    registryDependencies: ["utils", "toast-provider"],
     files: ["reusables/toast/toast.tsx"],
   },
   {
