@@ -8,7 +8,6 @@
     "---Components---",
     "components/buttons",
     "components/theme-image",
-    "components/toast",
     "---Hooks---",
     "hooks/use-online-status",
     "hooks/use-screen-size",
