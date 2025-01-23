@@ -1,6 +1,9 @@
 {
   "name": "toast-utils",
   "type": "registry:ui",
+  "registryDependencies": [
+    "toast-provider"
+  ],
   "files": [
     {
       "path": "reusables/toast/toast-utils.ts",

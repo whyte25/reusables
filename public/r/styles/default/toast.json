@@ -7,7 +7,6 @@
   ],
   "registryDependencies": [
     "utils",
-    "toast-utils",
     "toast-provider"
   ],
   "files": [
