@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Toast } from "./toast";
-import { toast } from "./toast-utils";
+import { statusStyles, Toast } from "./notify";
+import { toast } from "./notify-utils";
 
 export const DEFAULT_CONFIG = {
   duration: 4000,
@@ -216,7 +216,7 @@ export function ToastProvider({
             ...prev.filter((t) => t.id !== id),
           ]);
         })
-        .catch((error) => {
+        .catch(() => {
           setToasts((prev) => [
             {
               dismiss,
@@ -308,4 +308,4 @@ export function ToastProvider({
   );
 }
 
-export { toast };
+export { statusStyles, toast };

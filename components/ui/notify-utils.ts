@@ -1,4 +1,4 @@
-import type { ToastParams, ToastPromiseOptions } from "./toast-provider";
+import type { ToastParams, ToastPromiseOptions } from "./notify-provider";
 
 export type ToastFunction = (
   title: string,

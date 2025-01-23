@@ -2,24 +2,24 @@ import { Registry } from "@/registry/schema";
 
 export const ui: Registry = [
   {
-    name: "toast-utils",
+    name: "notify-utils",
     type: "registry:ui",
-    registryDependencies: ["toast-provider"],
-    files: ["reusables/toast/toast-utils.ts"],
+    registryDependencies: ["notify-provider"],
+    files: ["reusables/toast/notify-utils.ts"],
   },
   {
-    name: "toast",
+    name: "notify",
     type: "registry:ui",
     dependencies: ["lucide-react", "class-variance-authority"],
-    registryDependencies: ["utils", "toast-provider"],
-    files: ["reusables/toast/toast.tsx"],
+    registryDependencies: ["utils", "notify-provider"],
+    files: ["reusables/toast/notify.tsx"],
   },
   {
-    name: "toast-provider",
+    name: "notify-provider",
     type: "registry:ui",
     dependencies: ["framer-motion", "class-variance-authority"],
-    registryDependencies: ["toast", "toast-utils"],
-    files: ["reusables/toast/toast-provider.tsx"],
+    registryDependencies: ["notify", "notify-utils"],
+    files: ["reusables/toast/notify-provider.tsx"],
   },
   {
     name: "theme-image",

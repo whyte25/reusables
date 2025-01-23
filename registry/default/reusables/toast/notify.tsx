@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
 import { Loader, LoaderCircle, X } from "lucide-react";
 import * as React from "react";
-import { ToastClassNames, ToastParams } from "./toast-provider";
+import { ToastClassNames, ToastParams } from "./notify-provider";
 
 export const statusStyles = {
   error:
@@ -204,7 +204,6 @@ export function Toast({
     </div>
   );
 }
-
 Toast.displayName = "Toast";
 ToastTitle.displayName = "ToastTitle";
 ToastDescription.displayName = "ToastDescription";

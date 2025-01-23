@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { toast } from "@/components/ui/toast-provider";
+import { toast } from "@/components/ui/notify-provider";
 
 export default function ToastProgressDemo() {
   return (
