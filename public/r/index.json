@@ -60,12 +60,15 @@
     "type": "registry:ui",
     "registryDependencies": [
       "button",
-      "utils",
-      "spinner"
+      "utils"
     ],
     "files": [
       {
         "path": "reusables/submit-button.tsx",
+        "type": "registry:ui"
+      },
+      {
+        "path": "reusables/spinner.tsx",
         "type": "registry:ui"
       }
     ]

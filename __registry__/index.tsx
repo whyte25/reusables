@@ -41,8 +41,8 @@ export const Index: Record<string, any> = {
     "submit-button": {
       name: "submit-button",
       type: "registry:ui",
-      registryDependencies: ["button","utils","spinner"],
-      files: ["registry/default/reusables/submit-button.tsx"],
+      registryDependencies: ["button","utils"],
+      files: ["registry/default/reusables/submit-button.tsx","registry/default/reusables/spinner.tsx"],
       component: React.lazy(() => import("@/registry/default/reusables/submit-button.tsx")),
       source: "",
       category: "undefined",
