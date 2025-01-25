@@ -123,3 +123,7 @@ a[href="/docs/hooks/use-file-upload"] {
 a[href="/docs/components/notify"] {
   @apply badge beta;
 }
+
+a[href="/docs/components/buttons/split-button"] {
+  @apply badge new;
+}

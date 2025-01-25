@@ -112,4 +112,22 @@ export const examples: Registry = [
     registryDependencies: ["toast"],
     files: ["example/toast-close-button-demo.tsx"],
   },
+  {
+    name: "split-button-demo",
+    type: "registry:example",
+    registryDependencies: ["split-button"],
+    files: ["example/split-button-demo.tsx"],
+  },
+  {
+    name: "split-button-action-demo",
+    type: "registry:example",
+    registryDependencies: ["split-button-action"],
+    files: ["example/split-button-action-demo.tsx"],
+  },
+  {
+    name: "split-button-preview-demo",
+    type: "registry:example",
+    registryDependencies: ["split-button"],
+    files: ["example/split-button-previewe-demo.tsx"],
+  },
 ];
