@@ -37,8 +37,17 @@ export const ui: Registry = [
   {
     name: "submit-button",
     type: "registry:ui",
-    registryDependencies: ["button", "utils", "spinner"],
-    files: ["reusables/submit-button.tsx"],
+    registryDependencies: ["button", "utils"],
+    files: [
+      {
+        path: "reusables/submit-button.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "reusables/spinner.tsx",
+        type: "registry:ui",
+      },
+    ],
   },
   {
     name: "copy-button",
