@@ -120,6 +120,6 @@ a[href="/docs/hooks/use-file-upload"] {
   @apply badge new;
 }
 
-a[href="/docs/components/toast"] {
+a[href="/docs/components/notify"] {
   @apply badge beta;
 }

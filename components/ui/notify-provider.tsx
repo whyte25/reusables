@@ -199,6 +199,11 @@ export function ToastProvider({
 
       promise()
         .then((data) => {
+          // Clear any existing timeout
+          if (toastsRef.current[id]) {
+            clearTimeout(toastsRef.current[id]);
+          }
+
           setToasts((prev) => [
             {
               dismiss,
@@ -206,7 +211,7 @@ export function ToastProvider({
               params: {
                 status: "success",
                 title: options.success(data),
-                duration: toastDuration,
+                duration: toastDuration, // Reset full duration
                 closable: true,
                 classNames: toastClassNames,
                 position,
@@ -215,8 +220,18 @@ export function ToastProvider({
             },
             ...prev.filter((t) => t.id !== id),
           ]);
+
+          // Set new timeout with full duration
+          if (toastDuration !== Infinity) {
+            toastsRef.current[id] = setTimeout(dismiss, toastDuration);
+          }
         })
         .catch(() => {
+          // Clear any existing timeout
+          if (toastsRef.current[id]) {
+            clearTimeout(toastsRef.current[id]);
+          }
+
           setToasts((prev) => [
             {
               dismiss,
@@ -224,7 +239,7 @@ export function ToastProvider({
               params: {
                 status: "error",
                 title: options.error ?? "Error",
-                duration: toastDuration,
+                duration: toastDuration, // Reset full duration
                 classNames: toastClassNames,
                 position,
                 hideProgressBar: hideProgressBar,
@@ -232,6 +247,11 @@ export function ToastProvider({
             },
             ...prev.filter((t) => t.id !== id),
           ]);
+
+          // Set new timeout with full duration
+          if (toastDuration !== Infinity) {
+            toastsRef.current[id] = setTimeout(dismiss, toastDuration);
+          }
         });
 
       return id;

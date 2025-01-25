@@ -1,49 +1,26 @@
 [
   {
-    "name": "notify-utils",
-    "type": "registry:ui",
-    "registryDependencies": [
-      "notify-provider"
-    ],
-    "files": [
-      {
-        "path": "reusables/toast/notify-utils.ts",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
     "name": "notify",
     "type": "registry:ui",
     "dependencies": [
       "lucide-react",
+      "framer-motion",
       "class-variance-authority"
     ],
     "registryDependencies": [
-      "utils",
-      "notify-provider"
+      "utils"
     ],
     "files": [
       {
         "path": "reusables/toast/notify.tsx",
         "type": "registry:ui"
-      }
-    ]
-  },
-  {
-    "name": "notify-provider",
-    "type": "registry:ui",
-    "dependencies": [
-      "framer-motion",
-      "class-variance-authority"
-    ],
-    "registryDependencies": [
-      "notify",
-      "notify-utils"
-    ],
-    "files": [
+      },
       {
         "path": "reusables/toast/notify-provider.tsx",
+        "type": "registry:ui"
+      },
+      {
+        "path": "reusables/toast/notify-utils.ts",
         "type": "registry:ui"
       }
     ]
