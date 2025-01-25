@@ -10,17 +10,20 @@ description: A button component with a primary action and additional options in 
        ```package-install
 npx shadcn@latest add "https://reusables.vercel.app/r/split-button"
 ```
+
     </Tab>
     <Tab value="Manual">
       ```json doc-gen:file
+
 {
-  "file": "registry/default/reusables/split-button.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": "title=\"split-button.tsx\""
-  }
+"file": "registry/default/reusables/split-button.tsx",
+"codeblock": {
+"lang": "tsx",
+"meta": "title=\"split-button.tsx\""
 }
-```
+}
+
+````
     </Tab>
 </Tabs>
 
@@ -28,7 +31,7 @@ npx shadcn@latest add "https://reusables.vercel.app/r/split-button"
 
 ```tsx
 import SplitButton from "@/components/ui/split-button";
-```
+````
 
 ```tsx
 const options = [
@@ -48,9 +51,14 @@ const options = [
 
 <ComponentSource name="reusables/split-button-demo" reTrigger={false} />
 
-### Modern Variant
+### Split Button Action
 
 A more modern split button variant with loading states, glass morphism, and animated hover effects.
+
+```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/split-button-action"
+
+```
 
 <ComponentSource name="reusables/split-button-action-demo" reTrigger={false} />
 
@@ -161,3 +169,4 @@ A more modern split button variant with loading states, glass morphism, and anim
     },
   }}
 />
+```
