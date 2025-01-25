@@ -56,6 +56,20 @@ export const ui: Registry = [
     registryDependencies: ["button", "utils"],
     files: ["reusables/copy-button.tsx"],
   },
+  {
+    name: "split-button",
+    type: "registry:ui",
+    registryDependencies: ["button", "dropdown-menu", "utils"],
+    dependencies: ["lucide-react"],
+    files: ["reusables/split-button.tsx"],
+  },
+  {
+    name: "split-button-action",
+    type: "registry:ui",
+    registryDependencies: ["button", "dropdown-menu", "utils"],
+    dependencies: ["lucide-react"],
+    files: ["reusables/split-button-action.tsx"],
+  },
 
   // {
   //   name: "animated-gradient-text",

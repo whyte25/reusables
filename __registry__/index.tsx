@@ -60,6 +60,28 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "split-button": {
+      name: "split-button",
+      type: "registry:ui",
+      registryDependencies: ["button","dropdown-menu","utils"],
+      files: ["registry/default/reusables/split-button.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/split-button.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "split-button-action": {
+      name: "split-button-action",
+      type: "registry:ui",
+      registryDependencies: ["button","dropdown-menu","utils"],
+      files: ["registry/default/reusables/split-button-action.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/split-button-action.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "toast-demo": {
       name: "toast-demo",
       type: "registry:example",
@@ -253,6 +275,39 @@ export const Index: Record<string, any> = {
       registryDependencies: ["toast"],
       files: ["registry/default/example/toast-close-button-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/example/toast-close-button-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "split-button-demo": {
+      name: "split-button-demo",
+      type: "registry:example",
+      registryDependencies: ["split-button"],
+      files: ["registry/default/example/split-button-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/split-button-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "split-button-action-demo": {
+      name: "split-button-action-demo",
+      type: "registry:example",
+      registryDependencies: ["split-button-action"],
+      files: ["registry/default/example/split-button-action-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/split-button-action-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "split-button-preview-demo": {
+      name: "split-button-preview-demo",
+      type: "registry:example",
+      registryDependencies: ["split-button"],
+      files: ["registry/default/example/split-button-previewe-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/split-button-previewe-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",

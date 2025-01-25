@@ -89,5 +89,41 @@
         "type": "registry:ui"
       }
     ]
+  },
+  {
+    "name": "split-button",
+    "type": "registry:ui",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "dropdown-menu",
+      "utils"
+    ],
+    "files": [
+      {
+        "path": "reusables/split-button.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "split-button-action",
+    "type": "registry:ui",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "dropdown-menu",
+      "utils"
+    ],
+    "files": [
+      {
+        "path": "reusables/split-button-action.tsx",
+        "type": "registry:ui"
+      }
+    ]
   }
 ]
