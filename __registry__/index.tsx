@@ -5,34 +5,12 @@ import * as React from "react"
 
 export const Index: Record<string, any> = {
   "default": {
-    "notify-utils": {
-      name: "notify-utils",
-      type: "registry:ui",
-      registryDependencies: ["notify-provider"],
-      files: ["registry/default/reusables/toast/notify-utils.ts"],
-      component: React.lazy(() => import("@/registry/default/reusables/toast/notify-utils.ts")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "notify": {
       name: "notify",
       type: "registry:ui",
-      registryDependencies: ["utils","notify-provider"],
-      files: ["registry/default/reusables/toast/notify.tsx"],
+      registryDependencies: ["utils"],
+      files: ["registry/default/reusables/toast/notify.tsx","registry/default/reusables/toast/notify-provider.tsx","registry/default/reusables/toast/notify-utils.ts"],
       component: React.lazy(() => import("@/registry/default/reusables/toast/notify.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "notify-provider": {
-      name: "notify-provider",
-      type: "registry:ui",
-      registryDependencies: ["notify","notify-utils"],
-      files: ["registry/default/reusables/toast/notify-provider.tsx"],
-      component: React.lazy(() => import("@/registry/default/reusables/toast/notify-provider.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
