@@ -55,10 +55,28 @@ const options = [
 
 A more modern split button variant with loading states, glass morphism, and animated hover effects.
 
-```package-install
+<Tabs items={['CLI', 'Manual']}>
+    <Tab value="CLI">
+       ```package-install
 npx shadcn@latest add "https://reusables.vercel.app/r/split-button-action"
-
 ```
+
+    </Tab>
+    <Tab value="Manual">
+      ```json doc-gen:file
+
+{
+"file": "registry/default/reusables/split-button-action.tsx",
+"codeblock": {
+"lang": "tsx",
+"meta": "title=\"split-button-action.tsx\""
+}
+}
+
+````
+    </Tab>
+</Tabs>
+
 
 <ComponentSource name="reusables/split-button-action-demo" reTrigger={false} />
 
@@ -170,3 +188,4 @@ npx shadcn@latest add "https://reusables.vercel.app/r/split-button-action"
   }}
 />
 ```
+````
