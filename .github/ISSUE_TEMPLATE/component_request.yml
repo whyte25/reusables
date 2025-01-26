@@ -1,7 +1,7 @@
 name: New Component
 description: Request a new component for Reusables ✨
-title: "✨ Component: "
-labels: ["👀 Exploration Pending", "✨ component-request"]
+title: "Component: "
+labels: [" Exploration Pending", "component-request"]
 body:
   - type: markdown
     attributes:
