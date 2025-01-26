@@ -1,6 +1,7 @@
 import { ToastProvider } from "@/components/ui/notify-provider";
 import { siteConfig } from "@/constant/site-config";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "fumadocs-twoslash/twoslash.css";
 import { RootProvider } from "fumadocs-ui/provider";
 import { Metadata } from "next";
@@ -64,6 +65,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           <ToastProvider>{children}</ToastProvider>
         </RootProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
