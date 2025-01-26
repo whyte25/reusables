@@ -1,3 +1,4 @@
+import { ToastProvider } from "@/components/ui/notify-provider";
 import { siteConfig } from "@/constant/site-config";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -60,7 +61,9 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
-        <RootProvider>{children}</RootProvider>
+        <RootProvider>
+          <ToastProvider>{children}</ToastProvider>
+        </RootProvider>
         <Analytics />
         <SpeedInsights />
       </body>

@@ -25,7 +25,7 @@ function AnimatedCard({ delay = 0 }) {
 
 export default function InViewDemo() {
   return (
-    <div className="space-y-32 flex flex-col gap-10 ">
+    <div className="space-y-3 ">
       <AnimatedCard delay={0} />
       <AnimatedCard delay={0.2} />
       <AnimatedCard delay={0.4} />

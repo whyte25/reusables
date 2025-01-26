@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -27,6 +28,9 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --new-badge: 142 59% 48%;
+    --beta-badge: 231 66% 56%;
+    --updated-badge: 27 96% 61%;
     --radius: 0.5rem;
   }
   .dark {
@@ -54,6 +58,9 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --new-badge: 142 59% 48%;
+    --beta-badge: 231 66% 56%;
+    --updated-badge: 27 96% 61%;
   }
 }
 @layer base {
@@ -65,19 +72,16 @@
   }
 }
 
-.highlight-link[data-active] {
+.badge[data-active] {
   position: relative;
   padding-right: 2.5rem;
 }
 
-.highlight-link[data-active]::after {
-  content: "New";
+.badge[data-active]::after {
   position: absolute;
   right: 0.2rem;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(59, 180, 75, 0.2);
-  color: #3bb44b;
   padding: 0.05rem 0.5rem;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -86,14 +90,40 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.new[data-active]::after {
+  content: "New";
+  background-color: hsl(var(--new-badge) / 0.2);
+  color: hsl(var(--new-badge));
+}
+
+.beta[data-active]::after {
+  content: "Beta";
+  background-color: hsl(var(--beta-badge) / 0.2);
+  color: hsl(var(--beta-badge));
+}
+
+.updated[data-active]::after {
+  content: "Updated";
+  background-color: hsl(var(--updated-badge) / 0.2);
+  color: hsl(var(--updated-badge));
+}
+
 a[href="/docs/time-ago"] {
-  @apply highlight-link;
+  @apply badge new;
 }
 
 a[href="/docs/hooks/use-inview"] {
-  @apply highlight-link;
+  @apply badge new;
 }
 
 a[href="/docs/hooks/use-file-upload"] {
-  @apply highlight-link;
+  @apply badge new;
+}
+
+a[href="/docs/components/notify"] {
+  @apply badge beta;
+}
+
+a[href="/docs/components/buttons/split-button"] {
+  @apply badge new;
 }

@@ -2,6 +2,12 @@ import { Registry } from "@/registry/schema";
 
 export const examples: Registry = [
   {
+    name: "toast-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-demo.tsx"],
+  },
+  {
     name: "time-ago-demo",
     type: "registry:example",
     registryDependencies: ["time-ago"],
@@ -44,31 +50,6 @@ export const examples: Registry = [
     files: ["example/submit-button-demo.tsx"],
   },
   {
-    name: "animated-beam-demo",
-    type: "registry:example",
-    registryDependencies: ["animated-beam"],
-    dependencies: ["@radix-ui/react-icons"],
-    files: ["example/animated-beam-demo.tsx"],
-  },
-  {
-    name: "animated-beam-bidirectional",
-    type: "registry:example",
-    registryDependencies: ["animated-beam"],
-    files: ["example/animated-beam-bidirectional.tsx"],
-  },
-  {
-    name: "animated-beam-multiple-outputs",
-    type: "registry:example",
-    registryDependencies: ["animated-beam"],
-    files: ["example/animated-beam-multiple-outputs.tsx"],
-  },
-  {
-    name: "animated-beam-multiple-inputs",
-    type: "registry:example",
-    registryDependencies: ["animated-beam"],
-    files: ["example/animated-beam-multiple-inputs.tsx"],
-  },
-  {
     name: "screen-size-demo",
     type: "registry:example",
     registryDependencies: ["use-screen-size"],
@@ -88,5 +69,65 @@ export const examples: Registry = [
     registryDependencies: ["use-file-upload", "progress", "button"],
     dependencies: ["lucide-react"],
     files: ["example/file-upload-demo.tsx"],
+  },
+  {
+    name: "toast-with-description-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-with-description-demo.tsx"],
+  },
+  {
+    name: "toast-positions-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-positions-demo.tsx"],
+  },
+  {
+    name: "toast-promise-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-promise-demo.tsx"],
+  },
+  {
+    name: "toast-prevent-duplicates-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-prevent-duplicates-demo.tsx"],
+  },
+  {
+    name: "toast-custom-config-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-custom-config-demo.tsx"],
+  },
+  {
+    name: "toast-progress-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-progress-demo.tsx"],
+  },
+  {
+    name: "toast-close-button-demo",
+    type: "registry:example",
+    registryDependencies: ["toast"],
+    files: ["example/toast-close-button-demo.tsx"],
+  },
+  {
+    name: "split-button-demo",
+    type: "registry:example",
+    registryDependencies: ["split-button"],
+    files: ["example/split-button-demo.tsx"],
+  },
+  {
+    name: "split-button-action-demo",
+    type: "registry:example",
+    registryDependencies: ["split-button-action"],
+    files: ["example/split-button-action-demo.tsx"],
+  },
+  {
+    name: "split-button-preview-demo",
+    type: "registry:example",
+    registryDependencies: ["split-button"],
+    files: ["example/split-button-previewe-demo.tsx"],
   },
 ];

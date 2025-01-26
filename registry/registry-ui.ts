@@ -2,6 +2,26 @@ import { Registry } from "@/registry/schema";
 
 export const ui: Registry = [
   {
+    name: "notify",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "framer-motion", "class-variance-authority"],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "reusables/toast/notify.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "reusables/toast/notify-provider.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "reusables/toast/notify-utils.ts",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "theme-image",
     type: "registry:ui",
     registryDependencies: ["utils"],
@@ -17,8 +37,17 @@ export const ui: Registry = [
   {
     name: "submit-button",
     type: "registry:ui",
-    registryDependencies: ["button", "utils", "spinner"],
-    files: ["reusables/submit-button.tsx"],
+    registryDependencies: ["button", "utils"],
+    files: [
+      {
+        path: "reusables/submit-button.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "reusables/spinner.tsx",
+        type: "registry:ui",
+      },
+    ],
   },
   {
     name: "copy-button",
@@ -28,32 +57,41 @@ export const ui: Registry = [
     files: ["reusables/copy-button.tsx"],
   },
   {
-    name: "animated-beam",
+    name: "split-button",
     type: "registry:ui",
-    dependencies: ["motion"],
-    files: ["reusables/animated-beam.tsx"],
+    registryDependencies: ["button", "dropdown-menu", "utils"],
+    dependencies: ["lucide-react"],
+    files: ["reusables/split-button.tsx"],
   },
   {
-    name: "animated-gradient-text",
+    name: "split-button-action",
     type: "registry:ui",
-    files: ["reusables/animated-gradient-text.tsx"],
-    tailwind: {
-      config: {
-        theme: {
-          extend: {
-            animation: {
-              gradient: "gradient 8s linear infinite",
-            },
-            keyframes: {
-              gradient: {
-                to: {
-                  backgroundPosition: "var(--bg-size) 0",
-                },
-              },
-            },
-          },
-        },
-      },
-    },
+    registryDependencies: ["button", "dropdown-menu", "utils"],
+    dependencies: ["lucide-react"],
+    files: ["reusables/split-button-action.tsx"],
   },
+
+  // {
+  //   name: "animated-gradient-text",
+  //   type: "registry:ui",
+  //   files: ["reusables/animated-gradient-text.tsx"],
+  //   tailwind: {
+  //     config: {
+  //       theme: {
+  //         extend: {
+  //           animation: {
+  //             gradient: "gradient 8s linear infinite",
+  //           },
+  //           keyframes: {
+  //             gradient: {
+  //               to: {
+  //                 backgroundPosition: "var(--bg-size) 0",
+  //               },
+  //             },
+  //           },
+  //         },
+  //       },
+  //     },
+  //   },
+  // },
 ];

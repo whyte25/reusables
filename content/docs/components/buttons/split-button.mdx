@@ -1,0 +1,191 @@
+---
+title: Split Button
+description: A button component with a primary action and additional options in a dropdown menu
+---
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+    <Tab value="CLI">
+       ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/split-button"
+```
+
+    </Tab>
+    <Tab value="Manual">
+      ```json doc-gen:file
+
+{
+"file": "registry/default/reusables/split-button.tsx",
+"codeblock": {
+"lang": "tsx",
+"meta": "title=\"split-button.tsx\""
+}
+}
+
+````
+    </Tab>
+</Tabs>
+
+## Usage
+
+```tsx
+import SplitButton from "@/components/ui/split-button";
+````
+
+```tsx
+const options = [
+  { label: "Option 1", onClick: () => console.log("Option 1 clicked") },
+  { label: "Option 2", onClick: () => console.log("Option 2 clicked") },
+];
+
+<SplitButton
+  options={options}
+  mainAction={() => console.log("Main action clicked")}
+/>;
+```
+
+## Examples
+
+### Simple
+
+<ComponentSource name="reusables/split-button-demo" reTrigger={false} />
+
+### Split Button Action
+
+A more modern split button variant with loading states, glass morphism, and animated hover effects.
+
+<Tabs items={['CLI', 'Manual']}>
+    <Tab value="CLI">
+       ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/split-button-action"
+```
+
+    </Tab>
+    <Tab value="Manual">
+      ```json doc-gen:file
+
+{
+"file": "registry/default/reusables/split-button-action.tsx",
+"codeblock": {
+"lang": "tsx",
+"meta": "title=\"split-button-action.tsx\""
+}
+}
+
+````
+    </Tab>
+</Tabs>
+
+
+<ComponentSource name="reusables/split-button-action-demo" reTrigger={false} />
+
+## Reference
+
+### Default Split Button Props
+
+<TypeTable
+  type={{
+    options: {
+      description: "Array of options for the dropdown menu",
+      type: "SplitButtonOption[]",
+      required: true,
+    },
+    mainAction: {
+      description: "Function to be called when the main button is clicked",
+      type: "() => void",
+      required: true,
+    },
+    variant: {
+      description: "The button style variant",
+      type: "default | destructive | outline | secondary | ghost | link",
+      default: "default",
+    },
+    size: {
+      description: "The size of the button",
+      type: "default | sm | lg | icon",
+      default: "default",
+    },
+    dropdownAlign: {
+      description: "Alignment of the dropdown menu",
+      type: "start | center | end",
+      default: "end",
+    },
+    className: { description: "Additional CSS classes", type: "string" },
+  }}
+/>
+
+### Action Split Button Props
+
+<TypeTable
+  type={{
+    options: {
+      description: "Array of options for the dropdown menu",
+      type: "SplitButtonOption[]",
+      required: true,
+    },
+    mainAction: {
+      description: "Function to be called when the main button is clicked",
+      type: "() => void",
+      required: true,
+    },
+    variant: {
+      description: "The button style variant",
+      type: "default | destructive | outline | secondary | ghost | link",
+      default: "default",
+    },
+    size: {
+      description: "The size of the button",
+      type: "default | sm | lg | icon",
+      default: "default",
+    },
+    dropdownAlign: {
+      description: "Alignment of the dropdown menu",
+      type: "start | center | end",
+      default: "end",
+    },
+    icon: {
+      description: "Icon to display before the button text",
+      type: "React.ReactNode",
+    },
+    isLoading: {
+      description: "Show loading state",
+      type: "boolean",
+      default: "false",
+    },
+    glassMorphism: {
+      description: "Enable glass morphism effect",
+      type: "boolean",
+      default: "false",
+    },
+    className: { description: "Additional CSS classes", type: "string" },
+  }}
+/>
+
+### Split Button Option Type
+
+<TypeTable
+  type={{
+    label: {
+      description: "Text to display in the dropdown menu item",
+      type: "string",
+      required: true,
+    },
+    onClick: {
+      description: "Function to be called when the option is selected",
+      type: "() => void",
+      required: true,
+    },
+    icon: {
+      description:
+        "Icon to display next to the option label (Action variant only)",
+      type: "React.ReactNode",
+    },
+    variant: {
+      description: "Option style variant (Action variant only)",
+      type: "default | destructive",
+    },
+  }}
+/>
+```
+````

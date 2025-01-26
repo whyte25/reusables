@@ -54,7 +54,7 @@ const TimeAgoDemo = () => {
         </TabsContent>
       </Tabs>
 
-      <div className="grid md:grid-cols-2 gap-6 mt-4">
+      <div className="grid md:grid-cols-2  gap-6 mt-4">
         <SimpleTimeAgo date={selectedDate} />
         <EnhancedTimeAgo date={selectedDate} />
       </div>

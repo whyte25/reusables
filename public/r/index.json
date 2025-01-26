@@ -1,5 +1,31 @@
 [
   {
+    "name": "notify",
+    "type": "registry:ui",
+    "dependencies": [
+      "lucide-react",
+      "framer-motion",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "utils"
+    ],
+    "files": [
+      {
+        "path": "reusables/toast/notify.tsx",
+        "type": "registry:ui"
+      },
+      {
+        "path": "reusables/toast/notify-provider.tsx",
+        "type": "registry:ui"
+      },
+      {
+        "path": "reusables/toast/notify-utils.ts",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "theme-image",
     "type": "registry:ui",
     "registryDependencies": [
@@ -34,12 +60,15 @@
     "type": "registry:ui",
     "registryDependencies": [
       "button",
-      "utils",
-      "spinner"
+      "utils"
     ],
     "files": [
       {
         "path": "reusables/submit-button.tsx",
+        "type": "registry:ui"
+      },
+      {
+        "path": "reusables/spinner.tsx",
         "type": "registry:ui"
       }
     ]
@@ -62,44 +91,39 @@
     ]
   },
   {
-    "name": "animated-beam",
+    "name": "split-button",
     "type": "registry:ui",
     "dependencies": [
-      "motion"
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "dropdown-menu",
+      "utils"
     ],
     "files": [
       {
-        "path": "reusables/animated-beam.tsx",
+        "path": "reusables/split-button.tsx",
         "type": "registry:ui"
       }
     ]
   },
   {
-    "name": "animated-gradient-text",
+    "name": "split-button-action",
     "type": "registry:ui",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "dropdown-menu",
+      "utils"
+    ],
     "files": [
       {
-        "path": "reusables/animated-gradient-text.tsx",
+        "path": "reusables/split-button-action.tsx",
         "type": "registry:ui"
       }
-    ],
-    "tailwind": {
-      "config": {
-        "theme": {
-          "extend": {
-            "animation": {
-              "gradient": "gradient 8s linear infinite"
-            },
-            "keyframes": {
-              "gradient": {
-                "to": {
-                  "backgroundPosition": "var(--bg-size) 0"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+    ]
   }
 ]

@@ -5,6 +5,17 @@ import * as React from "react"
 
 export const Index: Record<string, any> = {
   "default": {
+    "notify": {
+      name: "notify",
+      type: "registry:ui",
+      registryDependencies: ["utils"],
+      files: ["registry/default/reusables/toast/notify.tsx","registry/default/reusables/toast/notify-provider.tsx","registry/default/reusables/toast/notify-utils.ts"],
+      component: React.lazy(() => import("@/registry/default/reusables/toast/notify.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "theme-image": {
       name: "theme-image",
       type: "registry:ui",
@@ -30,8 +41,8 @@ export const Index: Record<string, any> = {
     "submit-button": {
       name: "submit-button",
       type: "registry:ui",
-      registryDependencies: ["button","utils","spinner"],
-      files: ["registry/default/reusables/submit-button.tsx"],
+      registryDependencies: ["button","utils"],
+      files: ["registry/default/reusables/submit-button.tsx","registry/default/reusables/spinner.tsx"],
       component: React.lazy(() => import("@/registry/default/reusables/submit-button.tsx")),
       source: "",
       category: "undefined",
@@ -49,23 +60,34 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "animated-beam": {
-      name: "animated-beam",
+    "split-button": {
+      name: "split-button",
       type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/reusables/animated-beam.tsx"],
-      component: React.lazy(() => import("@/registry/default/reusables/animated-beam.tsx")),
+      registryDependencies: ["button","dropdown-menu","utils"],
+      files: ["registry/default/reusables/split-button.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/split-button.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
       chunks: []
     },
-    "animated-gradient-text": {
-      name: "animated-gradient-text",
+    "split-button-action": {
+      name: "split-button-action",
       type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/reusables/animated-gradient-text.tsx"],
-      component: React.lazy(() => import("@/registry/default/reusables/animated-gradient-text.tsx")),
+      registryDependencies: ["button","dropdown-menu","utils"],
+      files: ["registry/default/reusables/split-button-action.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/split-button-action.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-demo": {
+      name: "toast-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -148,50 +170,6 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "animated-beam-demo": {
-      name: "animated-beam-demo",
-      type: "registry:example",
-      registryDependencies: ["animated-beam"],
-      files: ["registry/default/example/animated-beam-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/example/animated-beam-demo.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "animated-beam-bidirectional": {
-      name: "animated-beam-bidirectional",
-      type: "registry:example",
-      registryDependencies: ["animated-beam"],
-      files: ["registry/default/example/animated-beam-bidirectional.tsx"],
-      component: React.lazy(() => import("@/registry/default/example/animated-beam-bidirectional.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "animated-beam-multiple-outputs": {
-      name: "animated-beam-multiple-outputs",
-      type: "registry:example",
-      registryDependencies: ["animated-beam"],
-      files: ["registry/default/example/animated-beam-multiple-outputs.tsx"],
-      component: React.lazy(() => import("@/registry/default/example/animated-beam-multiple-outputs.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "animated-beam-multiple-inputs": {
-      name: "animated-beam-multiple-inputs",
-      type: "registry:example",
-      registryDependencies: ["animated-beam"],
-      files: ["registry/default/example/animated-beam-multiple-inputs.tsx"],
-      component: React.lazy(() => import("@/registry/default/example/animated-beam-multiple-inputs.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "screen-size-demo": {
       name: "screen-size-demo",
       type: "registry:example",
@@ -220,6 +198,116 @@ export const Index: Record<string, any> = {
       registryDependencies: ["use-file-upload","progress","button"],
       files: ["registry/default/example/file-upload-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/example/file-upload-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-with-description-demo": {
+      name: "toast-with-description-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-with-description-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-with-description-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-positions-demo": {
+      name: "toast-positions-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-positions-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-positions-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-promise-demo": {
+      name: "toast-promise-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-promise-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-promise-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-prevent-duplicates-demo": {
+      name: "toast-prevent-duplicates-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-prevent-duplicates-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-prevent-duplicates-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-custom-config-demo": {
+      name: "toast-custom-config-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-custom-config-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-custom-config-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-progress-demo": {
+      name: "toast-progress-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-progress-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-progress-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toast-close-button-demo": {
+      name: "toast-close-button-demo",
+      type: "registry:example",
+      registryDependencies: ["toast"],
+      files: ["registry/default/example/toast-close-button-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toast-close-button-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "split-button-demo": {
+      name: "split-button-demo",
+      type: "registry:example",
+      registryDependencies: ["split-button"],
+      files: ["registry/default/example/split-button-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/split-button-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "split-button-action-demo": {
+      name: "split-button-action-demo",
+      type: "registry:example",
+      registryDependencies: ["split-button-action"],
+      files: ["registry/default/example/split-button-action-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/split-button-action-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "split-button-preview-demo": {
+      name: "split-button-preview-demo",
+      type: "registry:example",
+      registryDependencies: ["split-button"],
+      files: ["registry/default/example/split-button-previewe-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/split-button-previewe-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
