@@ -7,9 +7,9 @@ import { rimraf } from "rimraf";
 import { Project, ScriptKind, SyntaxKind } from "ts-morph";
 import { z } from "zod";
 
-import { registry } from "../registry";
-import { baseColors } from "../registry/registry-base-colors";
-import { colorMapping, colors } from "../registry/registry-colors";
+import { registry } from "../registry/index.js";
+import { baseColors } from "../registry/registry-base-colors.js";
+import { colorMapping, colors } from "../registry/registry-colors.js";
 import { styles } from "../registry/registry-styles";
 import {
   Registry,
