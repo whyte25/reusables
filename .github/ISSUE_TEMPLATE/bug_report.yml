@@ -1,7 +1,7 @@
 name: 🐛 Bug report
-description: Create a bug report to help us improve PrismUI ✨
+description: Create a bug report to help us improve Reusables ✨
 title: "Bug: "
-labels: [👀 Exploration Pending, 🐛 bug]
+labels: [Exploration Pending, bug]
 body:
   - type: markdown
     attributes:
