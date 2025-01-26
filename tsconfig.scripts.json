@@ -4,10 +4,11 @@
   "compilerOptions": {
     "target": "es6",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "esModuleInterop": true,
-    "isolatedModules": false
+    "isolatedModules": false,
+    "types": ["node"]
   },
-  "include": [".content-collections/generated", "scripts/**/*.ts"],
+  "include": ["scripts/**/*"],
   "exclude": ["node_modules"]
 }

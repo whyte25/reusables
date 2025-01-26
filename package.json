@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "preinstall": "node ./check-bun.ts",
+    "postinstall": "fumadocs-mdx",
+    "predev": "node ./check-bun.ts",
     "dev": "next dev",
     "start": "next start",
-    "postinstall": "fumadocs-mdx",
-    "build:registry": "tsx ./scripts/build-registry.mts"
+    "build:registry": "bun run ./scripts/build-registry.mts",
+    "build": "next build && bun run build:registry"
   },
   "publisher": "fas",
   "licence": "MIT",
@@ -68,6 +70,7 @@
     "tailwindcss": "^3.4.17",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
+    "ts-node": "^10.9.2",
     "unist-builder": "4.0.0",
     "unist-util-visit": "^5.0.0"
   }
