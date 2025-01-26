@@ -1,4 +1,7 @@
-// check-pnpm.js
+if (process.env.NODE_ENV !== "development") {
+  process.exit(0);
+}
+
 const runningWithBun = process.versions.bun !== undefined;
 const isUsingBunScript = process.env._ && process.env._.includes("bun");
 

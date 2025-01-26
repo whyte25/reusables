@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "preinstall": "node ./check-bun.ts",
-    "postinstall": "fumadocs-mdx",
-    "predev": "node ./check-bun.ts",
+    "preinstall": "node -e \"process.env.NODE_ENV === 'development' && require('./check-bun.ts')\"",
+    "predev": "node -e \"process.env.NODE_ENV === 'development' && require('./check-bun.ts')\"",
     "dev": "next dev",
     "start": "next start",
+    "postinstall": "fumadocs-mdx",
     "build:registry": "bun run ./scripts/build-registry.mts",
     "build": "next build && bun run build:registry"
   },
