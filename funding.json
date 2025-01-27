@@ -8,7 +8,7 @@
     "phone": "",
     "description": "I built Reusables, a curated collection of production-ready components, hooks, and utilities for faster interface design.",
     "webpageUrl": {
-      "url": "https://github.com/whyte25/reusables"
+      "url": "https://reusables.vercel.app"
     }
   },
   "projects": [
@@ -17,13 +17,21 @@
       "name": "Reusables",
       "description": "A curated collection of production-ready components, hooks, and utilities that you can seamlessly integrate into your applications.",
       "webpageUrl": {
-        "url": "https://github.com/whyte25/reusables"
+        "url": "https://reusables.vercel.app"
       },
       "repositoryUrl": {
         "url": "https://github.com/whyte25/reusables"
       },
       "licenses": ["spdx:MIT"],
-      "tags": ["components", "hooks", "utilities", "ui", "react"]
+      "tags": [
+        "components",
+        "hooks",
+        "utilities",
+        "ui",
+        "react",
+        "nextjs",
+        "typescript"
+      ]
     }
   ],
   "funding": {
