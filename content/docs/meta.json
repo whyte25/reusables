@@ -9,6 +9,7 @@
     "components/buttons",
     "components/theme-image",
     "components/notify",
+    "components/file-upload",
     "---Hooks---",
     "hooks/use-online-status",
     "hooks/use-screen-size",
