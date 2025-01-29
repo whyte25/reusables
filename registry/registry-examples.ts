@@ -130,4 +130,31 @@ export const examples: Registry = [
     registryDependencies: ["split-button"],
     files: ["example/split-button-previewe-demo.tsx"],
   },
+  {
+    name: "auto-image-upload-demo",
+    type: "registry:example",
+    registryDependencies: ["single-image-upload"],
+    files: ["example/auto-image-upload-demo.tsx"],
+  },
+  {
+    name: "manual-image-upload-demo",
+    type: "registry:example",
+    registryDependencies: ["single-image-upload"],
+    files: ["example/manual-image-upload-demo.tsx"],
+  },
+
+  {
+    name: "single-image-upload-form-demo",
+    type: "registry:example",
+    registryDependencies: [
+      "single-image-upload",
+      "button",
+      "input",
+      "textarea",
+      "form",
+      "card",
+    ],
+    dependencies: ["react-hook-form", "@hookform/resolvers/zod", "zod"],
+    files: ["/example/single-image-upload-form-demo.tsx"],
+  },
 ];

@@ -1,0 +1,70 @@
+{
+  "version": "v1.0.0",
+  "entity": {
+    "type": "individual",
+    "role": "maintainer",
+    "name": "whyte25",
+    "email": "fasifeoluwa3@gmail.com",
+    "phone": "",
+    "description": "I built Reusables, a curated collection of production-ready components, hooks, and utilities for faster interface design.",
+    "webpageUrl": {
+      "url": "https://reusables.vercel.app"
+    }
+  },
+  "projects": [
+    {
+      "guid": "reusables",
+      "name": "Reusables",
+      "description": "A curated collection of production-ready components, hooks, and utilities that you can seamlessly integrate into your applications.",
+      "webpageUrl": {
+        "url": "https://reusables.vercel.app"
+      },
+      "repositoryUrl": {
+        "url": "https://github.com/whyte25/reusables"
+      },
+      "licenses": ["spdx:MIT"],
+      "tags": [
+        "components",
+        "hooks",
+        "utilities",
+        "ui",
+        "react",
+        "nextjs",
+        "typescript"
+      ]
+    }
+  ],
+  "funding": {
+    "channels": [
+      {
+        "guid": "github",
+        "type": "other",
+        "address": "https://github.com/sponsors/whyte25",
+        "description": "Github Sponsor"
+      }
+    ],
+    "plans": [
+      {
+        "guid": "one-time-support",
+        "status": "active",
+        "name": "One-time Support",
+        "description": "One-time donation to support the project development",
+        "amount": 10,
+        "currency": "USD",
+        "frequency": "one-time",
+        "channels": ["github"]
+      },
+      {
+        "guid": "monthly-support",
+        "status": "active",
+        "name": "Monthly Support",
+        "description": "Monthly donation to support ongoing development",
+        "amount": 5,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": ["github"]
+      }
+    ],
+    "history": null
+  }
+}

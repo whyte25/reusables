@@ -1,4 +1,5 @@
 import { blocks } from "./registry-blocks";
+import { components } from "./registry-components";
 import { examples } from "./registry-examples";
 import { hooks } from "./registry-hooks";
 import { lib } from "./registry-lib";
@@ -13,4 +14,5 @@ export const registry: Registry = [
   ...lib,
   ...hooks,
   ...themes,
+  ...components,
 ];
