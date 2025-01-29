@@ -313,6 +313,39 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "auto-image-upload-demo": {
+      name: "auto-image-upload-demo",
+      type: "registry:example",
+      registryDependencies: ["single-image-upload"],
+      files: ["registry/default/example/auto-image-upload-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/auto-image-upload-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "manual-image-upload-demo": {
+      name: "manual-image-upload-demo",
+      type: "registry:example",
+      registryDependencies: ["single-image-upload"],
+      files: ["registry/default/example/manual-image-upload-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/manual-image-upload-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "single-image-upload-form-demo": {
+      name: "single-image-upload-form-demo",
+      type: "registry:example",
+      registryDependencies: ["single-image-upload","button","input","textarea","form","card"],
+      files: ["registry/default//example/single-image-upload-form-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default//example/single-image-upload-form-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "time-ago": {
       name: "time-ago",
       type: "registry:lib",
@@ -418,6 +451,17 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       files: ["registry/default/hooks/use-file-upload.tsx"],
       component: React.lazy(() => import("@/registry/default/hooks/use-file-upload.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "single-image-upload": {
+      name: "single-image-upload",
+      type: "registry:component",
+      registryDependencies: ["utils"],
+      files: ["registry/default/reusables/single-image-upload.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/single-image-upload.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",

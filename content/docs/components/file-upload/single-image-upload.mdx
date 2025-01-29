@@ -1,0 +1,127 @@
+---
+title: Single Image Upload
+description: A customizable single image upload component with drag and drop support, image preview, and upload progress.
+---
+
+## Features
+
+- Drag and drop support
+- Image preview
+- Upload progress indication
+- Direct or manual upload modes
+- Error handling
+- Customizable styles
+- Dark mode support
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/single-image-upload"
+```
+  </Tab>
+
+  <Tab value="Manual">
+
+```json doc-gen:file
+{
+  "file": "registry/default/reusables/single-image-upload.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"single-image-upload.tsx\""
+  }
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Usage
+
+```tsx
+import { SingleImageDropzone } from "@/components/ui/single-image-upload";
+```
+
+## Examples
+
+### Direct Upload
+
+This example demonstrates direct file upload upon selection with a linear progress bar indicator.
+
+<ComponentSource
+  className="md:px-0"
+  name="example/auto-image-upload-demo"
+  reTrigger={true}
+/>
+
+### Manual Upload
+
+This example shows manual upload control with a circular progress indicator.
+
+<ComponentSource
+  className="md:px-0"
+  name="example/manual-image-upload-demo"
+  reTrigger={true}
+/>
+
+### React Hook Form
+
+<ComponentSource
+  className="md:px-0"
+  name="example/single-image-upload-form-demo"
+  reTrigger={true}
+/>
+
+## Reference
+
+<TypeTable
+  type={{
+    width: {
+      type: "string",
+      required: true,
+      description: "Width of the dropzone",
+      default: "100%",
+    },
+    height: {
+      type: "string",
+      required: true,
+      description: "Height of the dropzone",
+      default: "200px",
+    },
+    className: {
+      type: "string",
+      description: "Class name to style the dropzone",
+    },
+    value: {
+      type: "File | string",
+      description: "Initial value of the dropzone (File object or image URL)",
+    },
+    onChange: {
+      type: "(file?: File) => void | Promise<void>",
+      description: "Callback function when a file is selected",
+    },
+    disabled: {
+      type: "boolean",
+      description: "Whether the dropzone is disabled",
+    },
+    dropzoneOptions: {
+      type: "Omit<DropzoneOptions, 'disabled'>",
+      description: "Options for react-dropzone",
+    },
+    directUpload: {
+      type: "boolean",
+      description: "Whether to upload directly on file selection",
+      default: "true",
+    },
+    progress: {
+      type: "number",
+      description: "Upload progress percentage (0-100)",
+    },
+    progressType: {
+      type: "'circular' | 'linear'",
+      description: "Upload progress type",
+      default: "circular",
+    },
+  }}
+/>
