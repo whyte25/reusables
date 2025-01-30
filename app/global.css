@@ -131,7 +131,7 @@ a[href="/docs/components/file-upload/single-image-upload"] {
   @apply badge new;
 }
 a[href="/docs/components/file-upload/multiple-image-upload"] {
-  @apply badge beta;
+  @apply badge new;
 }
 
 .dot[aria-controls] {
