@@ -1,6 +1,5 @@
 "use client";
 
-import { env } from "@/env";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 
@@ -67,19 +66,15 @@ export function useMultipleFileUpload({
           abortControllersRef.current.set(key, abortController);
 
           try {
-            // Create and track blob URL
             const blobUrl = URL.createObjectURL(file);
             imageUrlsRef.current.push(blobUrl);
 
             const formData = new FormData();
             formData.append("file", file);
-            formData.append(
-              "upload_preset",
-              env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET
-            );
 
+            // TODO: Replace with your own API endpoint
             const response = await axios.post(
-              `https://api.cloudinary.com/v1_1/${env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
+              `https://your-api-endpoint.com`,
               formData,
               {
                 signal: abortController.signal,
@@ -97,7 +92,7 @@ export function useMultipleFileUpload({
                 },
               }
             );
-
+            // TODO: Replace with your own API response
             const uploadedUrl = response?.data?.secure_url;
 
             // Add small delay to show complete state
