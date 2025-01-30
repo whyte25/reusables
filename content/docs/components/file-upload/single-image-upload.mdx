@@ -12,6 +12,7 @@ description: A customizable single image upload component with drag and drop sup
 - Error handling
 - Customizable styles
 - Dark mode support
+- Display modes (Grid/List)
 
 ## Installation
 
@@ -23,6 +24,13 @@ npx shadcn@latest add "https://reusables.vercel.app/r/single-image-upload"
   </Tab>
 
   <Tab value="Manual">
+  <Steps>
+
+    <Step>
+
+Create and copy the following code into your `components` folder:
+
+<CollapsibleCode>
 
 ```json doc-gen:file
 {
@@ -34,6 +42,28 @@ npx shadcn@latest add "https://reusables.vercel.app/r/single-image-upload"
 }
 ```
 
+</CollapsibleCode>
+
+</Step>
+
+<Step>
+
+Create and copy the following code into your `hooks` folder:
+
+<CollapsibleCode>
+```json doc-gen:file
+{
+  "file": "registry/default/hooks/use-file-upload.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"use-file-upload.tsx\""
+  }
+}
+```
+</CollapsibleCode>
+</Step>
+
+</Steps>
   </Tab>
 </Tabs>
 
@@ -44,6 +74,8 @@ import { SingleImageDropzone } from "@/components/ui/single-image-upload";
 ```
 
 ## Examples
+
+The examples below uses the [`useFileUpload`](/docs/hooks/use-file-upload) hook to handle the upload process.
 
 ### Direct Upload
 

@@ -1,8 +1,8 @@
 "use client";
 
+import { SingleImageDropzone } from "@/components/single-image-upload";
 import { toast } from "@/components/ui/notify-provider";
 import useFileUpload from "@/hooks/use-file-upload";
-import { SingleImageDropzone } from "../reusables/single-image-upload";
 
 export default function AutoImageUploadDemo() {
   const autoUpload = useFileUpload({
