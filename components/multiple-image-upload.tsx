@@ -77,22 +77,19 @@ const ERROR_MESSAGES = {
 };
 
 const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
-  (
-    {
-      dropzoneOptions,
-      value,
-      className,
-      disabled,
-      onChange,
-      onFilesAdded,
-      isDirectUpload,
-      onUpload,
-      width = "100%",
-      height = "240px",
-      displayMode = "grid",
-    },
-    ref
-  ) => {
+  ({
+    dropzoneOptions,
+    value,
+    className,
+    disabled,
+    onChange,
+    onFilesAdded,
+    isDirectUpload,
+    onUpload,
+    width = "100%",
+    height = "240px",
+    displayMode = "grid",
+  }) => {
     const [customError, setCustomError] = React.useState<string>();
 
     const imageUrls = React.useMemo(() => {
