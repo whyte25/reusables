@@ -1,0 +1,15 @@
+{
+  "name": "auto-multiple-image-upload-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "multiple-image-upload"
+  ],
+  "files": [
+    {
+      "path": "example/auto-multiple-image-upload-demo.tsx",
+      "content": "\"use client\";\n\nimport {\n  FileState,\n  MultiImageDropzone,\n} from \"@/components/multiple-image-upload\";\nimport { useMultipleFileUpload } from \"@/hooks/use-multiple-file-upload\";\nimport * as React from \"react\";\nexport default function AutoMultipleImageUploadDemo() {\n  const [fileStates, setFileStates] = React.useState<FileState[]>([]);\n  const { uploadMultipleFiles, uploadProgress, error } = useMultipleFileUpload({\n    onSuccess: (urls) => {\n      console.log(\"Successfully uploaded files:\", urls);\n      // Update file states with uploaded URLs\n      setFileStates((prevStates) =>\n        prevStates.map((state, index) => ({\n          ...state,\n          file: urls[index] || state.file, // Replace File with URL string\n          progress: \"COMPLETE\",\n        }))\n      );\n    },\n    onError: (error) => {\n      console.error(\"Upload error:\", error);\n    },\n  });\n\n  // Update file progress based on upload progress\n  React.useEffect(() => {\n    if (uploadProgress.length) {\n      setFileStates((fileStates) => {\n        const newFileStates = structuredClone(fileStates);\n        uploadProgress.forEach(({ key, progress }) => {\n          const fileState = newFileStates.find(\n            (fileState) => fileState.key === key\n          );\n          if (fileState) {\n            fileState.progress = progress;\n          }\n        });\n        return newFileStates;\n      });\n    }\n  }, [uploadProgress]);\n\n  const handleUpload = async (files: File[]) => {\n    // Create file states first to show immediate preview\n    const newFileStates = files.map<FileState>((file) => ({\n      file,\n      key: Math.random().toString(36).slice(2),\n      progress: \"PENDING\",\n    }));\n\n    // Update state to show previews immediately\n    setFileStates((prev) => [...prev, ...newFileStates]);\n\n    // Start upload\n    const filesToUpload = newFileStates.map(({ key, file }) => ({\n      key,\n      file: file as File,\n    }));\n\n    await uploadMultipleFiles(filesToUpload);\n  };\n\n  return (\n    <div className=\"px-10 w-full\">\n      <MultiImageDropzone\n        value={fileStates}\n        dropzoneOptions={{\n          maxFiles: 6,\n          maxSize: 1024 * 1024 * 1, // 1 MB\n        }}\n        onChange={setFileStates}\n        isDirectUpload\n        onUpload={handleUpload}\n      />\n      {error && <div className=\"mt-2 text-red-500 text-sm\">{error}</div>}\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

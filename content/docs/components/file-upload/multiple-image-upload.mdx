@@ -1,0 +1,164 @@
+---
+title: Multiple Image Upload
+description: A versatile image upload component with drag-and-drop, preview modes, progress tracking, and form integration. Supports both grid and list layouts with customizable styling.
+---
+
+## Features
+
+- Drag and drop support
+- Image previews in grid or list mode
+- Upload progress indication
+- Direct or manual upload modes
+- Error handling
+- Customizable styles
+- Dark mode support
+- Maximum file count and size limits
+- Flexible display modes (Grid/List)
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/multiple-image-upload"
+```
+  </Tab>
+
+  <Tab value="Manual">
+  <Steps>
+
+    <Step>
+
+Create and copy the following code into your `components` folder:
+
+<CollapsibleCode>
+
+```json doc-gen:file
+{
+  "file": "registry/default/reusables/multiple-image-upload.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"multiple-image-upload.tsx\""
+  }
+}
+```
+
+</CollapsibleCode>
+
+</Step>
+
+<Step>
+
+Create and copy the following code into your `hooks` folder:
+
+<CollapsibleCode>
+```json doc-gen:file
+{
+  "file": "registry/default/hooks/use-multiple-file-upload.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"use-multiple-file-upload.tsx\""
+  }
+}
+```
+</CollapsibleCode>
+</Step>
+
+</Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```tsx
+import { MultipleImageUpload } from "@/components/ui/multiple-image-upload";
+```
+
+## Examples
+
+The examples below uses the [`useMultipleFileUpload`](/docs/hooks/use-multiple-file-upload) hook to handle the upload process.
+
+### Direct Upload
+
+This example demonstrates direct file upload upon selection with a grid layout and circular progress indicators.
+
+<ComponentSource
+  className="md:px-0"
+  name="example/auto-multiple-image-upload-demo"
+  reTrigger={true}
+/>
+
+### Manual Upload
+
+This example shows manual upload control with a list layout and linear progress indicators.
+
+<ComponentSource
+  className="md:px-0"
+  name="example/manual-multiple-image-upload-demo"
+  reTrigger={true}
+/>
+
+### React Hook Form
+
+This example demonstrates integration with React Hook Form for creating an image gallery.
+
+<ComponentSource
+  className="md:px-0"
+  name="example/multiple-image-upload-form-demo"
+  reTrigger={true}
+/>
+
+## Reference
+
+<TypeTable
+  type={{
+    width: {
+      type: "string",
+      description: "Width of the dropzone",
+      default: "100%",
+    },
+    height: {
+      type: "string",
+      description: "Height of the dropzone",
+      default: "240px",
+    },
+    className: {
+      type: "string",
+      description: "Class name to style the dropzone",
+    },
+    value: {
+      type: "FileState[]",
+      description: "Array of files with their states (file, key, and progress)",
+    },
+    onChange: {
+      type: "(files: FileState[]) => void | Promise<void>",
+      description: "Callback function when files are selected or removed",
+    },
+    onFilesAdded: {
+      type: "(addedFiles: FileState[]) => void | Promise<void>",
+      description: "Callback function when new files are added",
+    },
+    disabled: {
+      type: "boolean",
+      description: "Whether the dropzone is disabled",
+    },
+    dropzoneOptions: {
+      type: "Omit<DropzoneOptions, 'disabled'>",
+      description: "Options for react-dropzone (e.g., maxFiles, maxSize)",
+    },
+    isDirectUpload: {
+      type: "boolean",
+      description: "Whether to upload directly on file selection",
+    },
+    onUpload: {
+      type: "(files: File[]) => void | Promise<void>",
+      description:
+        "Callback function when files should be uploaded (used with isDirectUpload)",
+    },
+    displayMode: {
+      type: "'grid' | 'list'",
+      description: "Display mode for file previews",
+      default: "grid",
+    },
+  }}
+/>

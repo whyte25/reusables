@@ -142,7 +142,31 @@ export const examples: Registry = [
     registryDependencies: ["single-image-upload"],
     files: ["example/manual-image-upload-demo.tsx"],
   },
-
+  {
+    name: "auto-multiple-image-upload-demo",
+    type: "registry:example",
+    registryDependencies: ["multiple-image-upload"],
+    files: ["example/auto-multiple-image-upload-demo.tsx"],
+  },
+  {
+    name: "manual-multiple-image-upload-demo",
+    type: "registry:example",
+    registryDependencies: ["multiple-image-upload"],
+    files: ["example/manual-multiple-image-upload-demo.tsx"],
+  },
+  {
+    name: "multiple-image-upload-form-demo",
+    type: "registry:example",
+    registryDependencies: [
+      "multiple-image-upload",
+      "button",
+      "input",
+      "form",
+      "card",
+    ],
+    dependencies: ["react-hook-form", "@hookform/resolvers/zod", "zod"],
+    files: ["example/multiple-image-upload-form-demo.tsx"],
+  },
   {
     name: "single-image-upload-form-demo",
     type: "registry:example",
