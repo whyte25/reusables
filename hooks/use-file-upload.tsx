@@ -1,5 +1,5 @@
 "use client";
-import { env } from "@/env";
+
 import axios from "axios";
 import { useRef, useState } from "react";
 
@@ -32,11 +32,11 @@ const useFileUpload = ({ onSuccess, onError }: UseFileUploadParams = {}) => {
       formData.append("file", file);
       formData.append(
         "upload_preset",
-        env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET
+        process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET!
       );
 
       const response = await axios.post(
-        `https://api.cloudinary.com/v1_1/${env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
+        `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
         formData,
         {
           signal: abortControllerRef.current.signal,

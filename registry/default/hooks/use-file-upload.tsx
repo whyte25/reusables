@@ -30,16 +30,21 @@ const useFileUpload = ({ onSuccess, onError }: UseFileUploadParams = {}) => {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await axios.post(`https://imgage-upload`, formData, {
-        signal: abortControllerRef.current.signal,
-        onUploadProgress: (progressEvent) => {
-          const percentCompleted = Math.round(
-            (progressEvent.loaded * 100) / progressEvent.total!
-          );
-          setProgress(percentCompleted);
-        },
-      });
-
+      // TODO: Replace with your own API endpoint
+      const response = await axios.post(
+        `https://your-api-endpoint.com`,
+        formData,
+        {
+          signal: abortControllerRef.current.signal,
+          onUploadProgress: (progressEvent) => {
+            const percentCompleted = Math.round(
+              (progressEvent.loaded * 100) / progressEvent.total!
+            );
+            setProgress(percentCompleted);
+          },
+        }
+      );
+      // TODO: Replace with your own API response
       const uploadedUrl = response?.data?.secure_url;
 
       setData(uploadedUrl);
