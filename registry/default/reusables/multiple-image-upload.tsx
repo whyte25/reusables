@@ -32,7 +32,7 @@ const dropzoneVariants = cva(
         reject:
           "border-red-500 dark:border-red-400 bg-red-50 dark:bg-red-900/20",
         image:
-          "border-0 p-0 w-full h-full relative shadow-md bg-slate-200 dark:bg-slate-900 rounded-md aspect-square",
+          "border-0 p-0 w-full h-full relative  shadow-md bg-slate-200 dark:bg-slate-900 rounded-md aspect-square",
       },
     },
     defaultVariants: {
@@ -209,19 +209,19 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
         </div>
 
         {displayMode === "grid" ? (
-          <div className="grid grid-cols-[repeat(1,1fr)] gap-2 sm:grid-cols-[repeat(2,1fr)] lg:grid-cols-[repeat(3,1fr)] xl:grid-cols-[repeat(4,1fr)]">
+          <div className="grid grid-cols-[repeat(1,1fr)] gap-4 sm:grid-cols-[repeat(2,1fr)] lg:grid-cols-[repeat(3,1fr)] xl:grid-cols-[repeat(4,1fr)]">
             {/* Images */}
             {value?.map(({ file, progress }, index) => (
               <div
                 key={index}
                 className={dropzoneVariants({ variant: "image" })}
               >
-                <div className="h-12 w-12 mr-4 rounded-md overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0">
+                <div className="h-full w-full  rounded-md overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0">
                   {typeof file !== "string" ? (
                     <img
                       src={imageUrls[index]}
                       alt={file.name}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full m-0 object-cover"
                     />
                   ) : (
                     <File className="h-full w-full p-2 text-gray-400 dark:text-gray-500" />
