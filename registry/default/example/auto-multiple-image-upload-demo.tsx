@@ -67,6 +67,7 @@ export default function AutoMultipleImageUploadDemo() {
     <div className="px-10 w-full">
       <MultiImageDropzone
         value={fileStates}
+        height="300px"
         dropzoneOptions={{
           maxFiles: 6,
           maxSize: 1024 * 1024 * 1, // 1 MB

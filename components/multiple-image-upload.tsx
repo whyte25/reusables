@@ -216,11 +216,17 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
                 key={index}
                 className={dropzoneVariants({ variant: "image" })}
               >
-                <img
-                  className="h-full w-full rounded-md my-0 object-cover"
-                  src={imageUrls[index]}
-                  alt={typeof file === "string" ? file : file.name}
-                />
+                <div className="h-12 w-12 mr-4 rounded-md overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0">
+                  {typeof file !== "string" ? (
+                    <img
+                      src={imageUrls[index]}
+                      alt={file.name}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <File className="h-full w-full p-2 text-gray-400 dark:text-gray-500" />
+                  )}
+                </div>
                 {/* Progress Bar */}
                 {typeof progress === "number" && (
                   <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center rounded-md bg-black bg-opacity-70">
@@ -255,19 +261,36 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
             {value?.map(({ file, progress, key }, index) => (
               <div
                 key={key}
-                className="relative flex items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow"
+                className="group relative flex items-center justify-between p-3 bg-zinc-900/5 dark:bg-white/5 rounded-lg hover:bg-zinc-900/10 dark:hover:bg-white/10 transition-colors"
               >
-                <File className="h-8 w-8 text-gray-500 dark:text-gray-300 mr-3" />
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm my-0 font-medium text-gray-900 dark:text-gray-100 truncate">
-                    {typeof file === "string" ? file : file.name}
-                  </p>
-                  <p className="text-sm my-0 text-gray-500 dark:text-gray-400">
-                    {typeof file !== "string" && formatFileSize(file.size)}
-                  </p>
-                  {typeof progress === "number" && (
-                    <LinearProgress progress={progress} />
-                  )}
+                <div className="flex items-center min-w-0 flex-1">
+                  <div className="flex-1 space-y-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="font-medium text-sm text-zinc-900 dark:text-zinc-100 truncate">
+                        {typeof file === "string" ? file : file.name}
+                      </span>
+                      <span className="text-xs text-zinc-500 dark:text-zinc-400">
+                        {typeof file !== "string" && formatFileSize(file.size)}
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap  items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
+                      <span>
+                        {typeof file !== "string"
+                          ? `image/${
+                              file.name.split(".").pop()?.toLowerCase() ||
+                              "unknown"
+                            }`
+                          : "image/unknown"}
+                      </span>
+                      <span>•</span>
+                      <span>modified {new Date().toLocaleDateString()}</span>
+                    </div>
+                    {typeof progress === "number" && (
+                      <div className="mt-2">
+                        <LinearProgress progress={progress} />
+                      </div>
+                    )}
+                  </div>
                 </div>
                 {!disabled && (
                   <button
@@ -275,9 +298,9 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
                       e.stopPropagation();
                       onChange?.(value.filter((_, i) => i !== index));
                     }}
-                    className="ml-4 p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
+                    className="ml-4 p-1 rounded-lg hover:bg-zinc-900/10 dark:hover:bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"
                   >
-                    <X className="h-5 w-5 text-gray-500" />
+                    <X className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
                   </button>
                 )}
               </div>
@@ -293,28 +316,6 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
   }
 );
 MultiImageDropzone.displayName = "MultiImageDropzone";
-
-const Button = React.forwardRef<
-  HTMLButtonElement,
-  React.ButtonHTMLAttributes<HTMLButtonElement>
->(({ className, ...props }, ref) => {
-  return (
-    <button
-      className={cn(
-        // base
-        "focus-visible:ring-ring inline-flex cursor-pointer items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50",
-        // color
-        "border border-gray-400 text-gray-400 shadow hover:bg-gray-100 hover:text-gray-500 dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-700",
-        // size
-        "h-6 rounded-md px-2 text-xs",
-        className
-      )}
-      ref={ref}
-      {...props}
-    />
-  );
-});
-Button.displayName = "Button";
 
 export { MultiImageDropzone };
 
@@ -344,8 +345,8 @@ function CircleProgress({ progress }: { progress: number }) {
           r={radius}
         />
         <circle
-          className="text-white transition-all duration-300 ease-in-out"
-          stroke="currentColor"
+          className="text-white stroke-green-600 transition-all duration-300 ease-in-out"
+          stroke=""
           strokeWidth={strokeWidth}
           strokeDasharray={circumference}
           strokeDashoffset={((100 - progress) / 100) * circumference}
@@ -365,7 +366,7 @@ function CircleProgress({ progress }: { progress: number }) {
 
 function LinearProgress({ progress }: { progress: number }) {
   return (
-    <div className="w-full h-1 bg-gray-200 dark:bg-gray-700 rounded-full mt-2">
+    <div className="w-full h-1 bg-zinc-200 dark:bg-zinc-700 rounded-full overflow-hidden">
       <div
         className="h-full bg-green-600 rounded-full transition-all duration-300 ease-out"
         style={{ width: `${progress}%` }}

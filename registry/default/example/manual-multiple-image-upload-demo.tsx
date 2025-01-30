@@ -46,6 +46,7 @@ export default function ManualMultipleImageUploadDemo() {
           maxFiles: 6,
           maxSize: 1024 * 1024 * 1, // 1 MB
         }}
+        height="300px"
         displayMode="list"
         onChange={setFileStates}
         onFilesAdded={async (addedFiles) => {
