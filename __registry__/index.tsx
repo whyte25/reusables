@@ -489,6 +489,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "use-multiple-file-upload": {
+      name: "use-multiple-file-upload",
+      type: "registry:hook",
+      registryDependencies: undefined,
+      files: ["registry/default/hooks/use-multiple-file-upload.tsx"],
+      component: React.lazy(() => import("@/registry/default/hooks/use-multiple-file-upload.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "single-image-upload": {
       name: "single-image-upload",
       type: "registry:component",

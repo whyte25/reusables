@@ -108,15 +108,7 @@
   color: hsl(var(--updated-badge));
 }
 
-a[href="/docs/time-ago"] {
-  @apply badge new;
-}
-
-a[href="/docs/hooks/use-inview"] {
-  @apply badge new;
-}
-
-a[href="/docs/hooks/use-file-upload"] {
+a[href="/docs/hooks/use-multiple-file-upload"] {
   @apply badge new;
 }
 
