@@ -15,6 +15,7 @@
     "hooks/use-screen-size",
     "hooks/use-inview",
     "hooks/use-file-upload",
+    "hooks/use-multiple-file-upload",
     "---Utils---",
     "cookies",
     "time-ago",

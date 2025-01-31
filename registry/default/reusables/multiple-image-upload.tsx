@@ -77,8 +77,8 @@ const ERROR_MESSAGES = {
 };
 
 const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
-  (
-    {
+  (props, ref) => {
+    const {
       dropzoneOptions,
       value,
       className,
@@ -90,9 +90,8 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
       width = "100%",
       height = "240px",
       displayMode = "grid",
-    },
-    ref
-  ) => {
+    } = props;
+
     const [customError, setCustomError] = React.useState<string>();
 
     const imageUrls = React.useMemo(() => {
@@ -186,7 +185,7 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
           className={cn(dropzoneVariants({ variant }), className)}
           style={{ width, height }}
         >
-          <input {...getInputProps()} />
+          <input ref={ref} {...getInputProps()} />
           <div className="flex flex-col items-center justify-center space-y-2 text-center">
             <UploadCloudIcon className="h-8 w-8 text-gray-600 dark:text-gray-400" />
             <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
