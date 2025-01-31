@@ -6,8 +6,10 @@ import {
 } from "@/components/multiple-image-upload";
 import { useMultipleFileUpload } from "@/hooks/use-multiple-file-upload";
 import * as React from "react";
+
 export default function AutoMultipleImageUploadDemo() {
   const [fileStates, setFileStates] = React.useState<FileState[]>([]);
+
   const { uploadMultipleFiles, uploadProgress, error } = useMultipleFileUpload({
     onSuccess: (urls) => {
       console.log("Successfully uploaded files:", urls);

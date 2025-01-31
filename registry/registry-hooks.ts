@@ -44,4 +44,15 @@ export const hooks: Registry = [
       },
     ],
   },
+  {
+    name: "use-multiple-file-upload",
+    type: "registry:hook",
+    dependencies: ["axios"],
+    files: [
+      {
+        path: "hooks/use-multiple-file-upload.tsx",
+        type: "registry:hook",
+      },
+    ],
+  },
 ];

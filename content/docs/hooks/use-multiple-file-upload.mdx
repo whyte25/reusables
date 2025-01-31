@@ -1,0 +1,108 @@
+---
+title: Use Multiple File Upload
+description: A React hook for handling multiple file uploads with progress tracking and cancellation
+---
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+    ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/use-multiple-file-upload"
+```
+  </Tab>
+  <Tab value="Manual">
+  <Steps>
+  <Step>
+  Copy and paste the code into your `use-multiple-file-upload.tsx` file.
+
+```json doc-gen:file
+{
+  "file": "registry/default/hooks/use-multiple-file-upload.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"use-multiple-file-upload.tsx\""
+  }
+}
+```
+
+  </Step>
+  <Step>
+  Update the endpoint to your upload URL and adjust the response data structure.
+  </Step>
+  </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```tsx
+import { useMultipleFileUpload } from "@/hooks/use-multiple-file-upload";
+```
+
+For a complete implementation example, check out the [Multiple Image Upload](/docs/components/file-upload/multiple-image-upload) component.
+
+```tsx
+const {
+  uploadMultipleFiles,
+  uploadProgress,
+  isUploading,
+  error,
+  uploadResults,
+} = useMultipleFileUpload({
+  onSuccess: (urls) => console.log("Uploaded:", urls),
+  onError: (error) => console.log("Error:", error),
+});
+```
+
+## Reference
+
+Options
+
+<TypeTable
+  type={{
+    onSuccess: {
+      type: "(urls: string[]) => void",
+      description: "Callback when all uploads complete successfully",
+    },
+    onError: {
+      type: "(error: string) => void",
+      description: "Callback when an upload fails",
+    },
+  }}
+/>
+
+Return Values
+
+<TypeTable
+  type={{
+    uploadMultipleFiles: {
+      type: "(files: FileToUpload[]) => Promise<void>",
+      description: "Function to handle multiple file uploads",
+    },
+    uploadProgress: {
+      type: "UploadProgress[]",
+      description: "Array of upload progress for each file",
+    },
+    uploadResults: {
+      type: "UploadResult[]",
+      description: "Array of successful upload results",
+    },
+    isUploading: {
+      type: "boolean",
+      description: "Upload in progress status",
+    },
+    error: {
+      type: "string | null",
+      description: "Error message if upload failed",
+    },
+    cancelAllUploads: {
+      type: "() => void",
+      description: "Function to cancel all ongoing uploads",
+    },
+    resetUploads: {
+      type: "() => void",
+      description: "Function to reset upload state",
+    },
+  }}
+/>{" "}
