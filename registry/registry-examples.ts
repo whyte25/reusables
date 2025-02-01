@@ -181,4 +181,11 @@ export const examples: Registry = [
     dependencies: ["react-hook-form", "@hookform/resolvers/zod", "zod"],
     files: ["/example/single-image-upload-form-demo.tsx"],
   },
+  {
+    name: "pdf-viewer-tabs-demo",
+    type: "registry:example",
+    registryDependencies: ["pdf-viewers"],
+    dependencies: ["react-pdf", "@wojtekmaj/react-hooks"],
+    files: ["example/pdf-viewer-tabs-demo.tsx"],
+  },
 ];

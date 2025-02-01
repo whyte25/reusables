@@ -379,6 +379,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "pdf-viewer-tabs-demo": {
+      name: "pdf-viewer-tabs-demo",
+      type: "registry:example",
+      registryDependencies: ["pdf-viewers"],
+      files: ["registry/default/example/pdf-viewer-tabs-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/pdf-viewer-tabs-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "time-ago": {
       name: "time-ago",
       type: "registry:lib",
@@ -517,6 +528,72 @@ export const Index: Record<string, any> = {
       registryDependencies: ["utils"],
       files: ["registry/default/reusables/multiple-image-upload.tsx","registry/default/hooks/use-multiple-file-upload.tsx"],
       component: React.lazy(() => import("@/registry/default/reusables/multiple-image-upload.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "compact-viewer": {
+      name: "compact-viewer",
+      type: "registry:component",
+      registryDependencies: ["button"],
+      files: ["registry/default/reusables/pdf-viewers/compact-viewer.tsx","registry/default/reusables/pdf-viewers/loading-spinner.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/pdf-viewers/compact-viewer.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "fullscreen-viewer": {
+      name: "fullscreen-viewer",
+      type: "registry:component",
+      registryDependencies: ["button"],
+      files: ["registry/default/reusables/pdf-viewers/fullscreen-viewer.tsx","registry/default/reusables/pdf-viewers/loading-spinner.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/pdf-viewers/fullscreen-viewer.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "hover-navigation-viewer": {
+      name: "hover-navigation-viewer",
+      type: "registry:component",
+      registryDependencies: ["button"],
+      files: ["registry/default/reusables/pdf-viewers/hover-navigation-viewer.tsx","registry/default/reusables/pdf-viewers/loading-spinner.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/pdf-viewers/hover-navigation-viewer.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "minimal-viewer": {
+      name: "minimal-viewer",
+      type: "registry:component",
+      registryDependencies: ["button"],
+      files: ["registry/default/reusables/pdf-viewers/minimal-viewer.tsx","registry/default/reusables/pdf-viewers/loading-spinner.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/pdf-viewers/minimal-viewer.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "sidebar-viewer": {
+      name: "sidebar-viewer",
+      type: "registry:component",
+      registryDependencies: ["button","scroll-area"],
+      files: ["registry/default/reusables/pdf-viewers/sidebar-viewer.tsx","registry/default/reusables/pdf-viewers/loading-spinner.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/pdf-viewers/sidebar-viewer.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "thumbnail-viewer": {
+      name: "thumbnail-viewer",
+      type: "registry:component",
+      registryDependencies: ["button"],
+      files: ["registry/default/reusables/pdf-viewers/thumbnail-viewer.tsx","registry/default/reusables/pdf-viewers/loading-spinner.tsx"],
+      component: React.lazy(() => import("@/registry/default/reusables/pdf-viewers/thumbnail-viewer.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
