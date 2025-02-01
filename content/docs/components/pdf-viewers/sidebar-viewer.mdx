@@ -1,0 +1,105 @@
+---
+title: Sidebar PDF Viewer
+description: A PDF viewer with a collapsible sidebar for page navigation and table of contents.
+---
+
+## Features
+
+- Collapsible sidebar
+- Page navigation
+- Table of contents
+- Mobile responsive
+- Dark mode support
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/pdf-viewers/sidebar-viewer"
+```
+  </Tab>
+
+  <Tab value="Manual">
+  <Steps>
+    <Step>
+    Create and copy the following code into your `components` folder:
+
+    <CollapsibleCode>
+    ```json doc-gen:file
+    {
+      "file": "registry/default/reusables/pdf-viewers/sidebar-viewer.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"sidebar-viewer.tsx\""
+      }
+    }
+    ```
+    </CollapsibleCode>
+    </Step>
+
+    <Step>
+    Copy the loading spinner component:
+
+    <CollapsibleCode>
+    ```json doc-gen:file
+    {
+      "file": "registry/default/reusables/pdf-viewers/loading-spinner.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"loading-spinner.tsx\""
+      }
+    }
+    ```
+    </CollapsibleCode>
+    </Step>
+
+    <Step>
+    Make sure you have the utils function:
+
+    <CollapsibleCode>
+    ```json doc-gen:file
+    {
+      "file": "registry/default/lib/utils.ts",
+      "codeblock": {
+        "lang": "ts",
+        "meta": "title=\"utils.ts\""
+      }
+    }
+    ```
+    </CollapsibleCode>
+    </Step>
+
+  </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```tsx
+import { SidebarViewer } from "@/components/ui/pdf-viewers/sidebar-viewer";
+
+export default function PDFViewer() {
+  return <SidebarViewer url="path/to/your.pdf" />;
+}
+```
+
+## Examples
+
+<ComponentSource name="example/pdf-viewer-tabs-demo" />
+
+## Reference
+
+<TypeTable
+  type={{
+    url: {
+      type: "string",
+      description: "URL of the PDF file to display",
+      required: true,
+    },
+    className: {
+      type: "string",
+      description: "Additional CSS classes",
+    },
+  }}
+/>{" "}
