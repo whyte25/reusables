@@ -50,6 +50,7 @@ export function useMultipleFileUpload({
   const uploadMultipleFiles = async (files: FileToUpload[]) => {
     setIsUploading(true);
     setError(null);
+    const successfulUrls: string[] = []; // Track URLs in local variable
 
     // Initialize progress for all files
     setUploadProgress(
@@ -98,6 +99,7 @@ export function useMultipleFileUpload({
             );
 
             const uploadedUrl = response?.data?.secure_url;
+            successfulUrls.push(uploadedUrl); // Add URL to local array
 
             // Add small delay to show complete state
             await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -115,6 +117,9 @@ export function useMultipleFileUpload({
                 filename: file.name,
               },
             ]);
+
+            // Call onSuccess immediately for each successful upload
+            onSuccess?.(successfulUrls);
 
             // Cleanup blob URL after successful upload
             URL.revokeObjectURL(blobUrl);
@@ -140,11 +145,6 @@ export function useMultipleFileUpload({
           }
         })
       );
-
-      const successfulUploads = uploadResults.map((result) => result.url);
-      if (successfulUploads.length > 0) {
-        onSuccess?.(successfulUploads);
-      }
     } catch (error) {
       console.error("Error in multiple file upload:", error);
     } finally {
