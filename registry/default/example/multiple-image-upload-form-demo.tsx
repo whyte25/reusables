@@ -94,7 +94,7 @@ export default function MultipleImageUploadFormDemo() {
   async function onSubmit(values: FormValues) {
     toast.promise(() => new Promise((resolve) => setTimeout(resolve, 2000)), {
       loading: "Creating gallery...",
-      success: (data) => `Gallery created successfully! ${data}`,
+      success: () => `Gallery created successfully!`,
       error: "Failed to create gallery",
     });
     console.log(values);
