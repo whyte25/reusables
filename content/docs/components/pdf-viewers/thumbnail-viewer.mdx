@@ -86,7 +86,10 @@ export default function PDFViewer() {
 
 ## Examples
 
-<ComponentSource name="example/pdf-viewer-tabs-demo" />
+<ComponentSource
+  className="md:px-0 overflow-hidden"
+  name="example/thumbnail-viewer-demo"
+/>
 
 ## Reference
 
@@ -96,10 +99,6 @@ export default function PDFViewer() {
       type: "string",
       description: "URL of the PDF file to display",
       required: true,
-    },
-    className: {
-      type: "string",
-      description: "Additional CSS classes",
     },
   }}
 />{" "}

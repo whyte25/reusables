@@ -379,12 +379,67 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "pdf-viewer-tabs-demo": {
-      name: "pdf-viewer-tabs-demo",
+    "compact-viewer-demo": {
+      name: "compact-viewer-demo",
       type: "registry:example",
-      registryDependencies: ["pdf-viewers"],
-      files: ["registry/default/example/pdf-viewer-tabs-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/example/pdf-viewer-tabs-demo.tsx")),
+      registryDependencies: ["compact-viewer"],
+      files: ["registry/default/example/compact-viewer-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/compact-viewer-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "fullscreen-viewer-demo": {
+      name: "fullscreen-viewer-demo",
+      type: "registry:example",
+      registryDependencies: ["fullscreen-viewer","button"],
+      files: ["registry/default/example/fullscreen-viewer-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/fullscreen-viewer-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "hover-navigation-demo": {
+      name: "hover-navigation-demo",
+      type: "registry:example",
+      registryDependencies: ["hover-navigation-viewer"],
+      files: ["registry/default/example/hover-navigation-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/hover-navigation-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "minimal-viewer-demo": {
+      name: "minimal-viewer-demo",
+      type: "registry:example",
+      registryDependencies: ["minimal-viewer"],
+      files: ["registry/default/example/minimal-viewer-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/minimal-viewer-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "sidebar-viewer-demo": {
+      name: "sidebar-viewer-demo",
+      type: "registry:example",
+      registryDependencies: ["sidebar-viewer"],
+      files: ["registry/default/example/sidebar-viewer-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/sidebar-viewer-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "thumbnail-viewer-demo": {
+      name: "thumbnail-viewer-demo",
+      type: "registry:example",
+      registryDependencies: ["thumbnail-viewer"],
+      files: ["registry/default/example/thumbnail-viewer-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/thumbnail-viewer-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",

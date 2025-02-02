@@ -44,44 +44,41 @@ export const SidebarViewer = ({ url }: SidebarViewerProps) => {
     setNumPages(numPages);
   };
 
-  // Update the width calculation to consider sidebar visibility
   const pageWidth = containerWidth
-    ? Math.min(containerWidth - (showSidebar ? 256 + 16 : 0), maxWidth)
+    ? Math.min(containerWidth - 48, maxWidth)
     : maxWidth;
 
   return (
     <div
       className={cn(
-        "relative flex min-h-[600px] w-full max-w-6xl mx-auto",
-        "bg-background rounded-lg shadow-lg overflow-hidden",
-        showSidebar ? "gap-4" : "gap-0"
+        "relative min-h-[600px] w-full max-w-6xl mx-auto",
+        "bg-background rounded-lg shadow-lg overflow-hidden"
       )}
       ref={setContainerRef}
     >
       {/* Mobile Overlay */}
       {showSidebar && (
         <div
-          className="md:hidden fixed inset-0 bg-black/20 dark:bg-black/50 z-40"
+          className="absolute inset-0 bg-black/20 dark:bg-black/50 z-40"
           onClick={() => setShowSidebar(false)}
         />
       )}
-
       {/* Sidebar */}
       <div
         className={cn(
-          "fixed md:relative inset-y-0 left-0 w-64 bg-secondary/30 border-r z-50",
+          "absolute top-0 left-0 h-full w-64 bg-background/95 backdrop-blur-sm border-r z-50",
           "transform transition-transform duration-300 ease-in-out",
-          showSidebar ? "translate-x-0" : "-translate-x-full",
-          !showSidebar && "md:-translate-x-full hidden"
+          showSidebar ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        <div className="flex items-center justify-between p-4 border-b backdrop-blur-sm">
-          <h2 className="font-medium text-foreground">Table of Contents</h2>
+        <div className="flex items-center justify-between p-4 border-b">
+          <h2 className="font-medium text-base not-prose text-foreground">
+            Table of Contents
+          </h2>
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setShowSidebar(false)}
-            className="md:hidden"
           >
             <X className="h-4 w-4" />
           </Button>
@@ -94,9 +91,7 @@ export const SidebarViewer = ({ url }: SidebarViewerProps) => {
                 key={index}
                 onClick={() => {
                   setPageNumber(index + 1);
-                  if (isMobile) {
-                    setShowSidebar(false);
-                  }
+                  setShowSidebar(false);
                 }}
                 className={cn(
                   "w-full text-left px-4 py-2 rounded-lg transition-colors",
@@ -110,23 +105,15 @@ export const SidebarViewer = ({ url }: SidebarViewerProps) => {
             ))}
           </div>
         </ScrollArea>
-      </div>
-
+      </div>{" "}
       {/* Main Content */}
-      <div
-        className={cn(
-          "flex-1 min-w-0 p-4 transition-all  duration-300",
-          !showSidebar && "md:pl-4"
-        )}
-      >
+      <div className="w-full p-4">
         <div className="flex items-center justify-between mb-4">
           <Button
             variant="outline"
             size="icon"
-            onClick={() => {
-              setShowSidebar((prev) => !prev);
-            }}
-            className={cn("h-8 w-8")}
+            onClick={() => setShowSidebar(true)}
+            className="h-8 w-8"
           >
             <List className="h-4 w-4" />
           </Button>
@@ -164,7 +151,13 @@ export const SidebarViewer = ({ url }: SidebarViewerProps) => {
           <Document
             file={url}
             onLoadSuccess={onDocumentLoadSuccess}
-            loading={<LoadingSpinner />}
+            loading={
+              <LoadingSpinner
+                minHeight={pageHeight ? `${pageHeight}px` : "600px"}
+                minWidth={pageWidth ? `${pageWidth}px` : "800px"}
+                spinnerClassName="dark:text-black"
+              />
+            }
             className={cn(
               "flex justify-center",
               "[&_.react-pdf__Page]:my-0",
@@ -180,6 +173,7 @@ export const SidebarViewer = ({ url }: SidebarViewerProps) => {
               loading={
                 <LoadingSpinner
                   minHeight={pageHeight ? `${pageHeight}px` : "600px"}
+                  minWidth={pageWidth ? `${pageWidth}px` : "800px"}
                   spinnerClassName="dark:text-black"
                 />
               }

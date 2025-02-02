@@ -18,7 +18,7 @@ interface FullscreenViewerProps {
 }
 const maxWidth = 800;
 
-export const FullscreenViewer = ({ url, onClose }: FullscreenViewerProps) => {
+export const FullscreenViewer = ({ url }: FullscreenViewerProps) => {
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [scale, setScale] = useState(1);
@@ -125,7 +125,13 @@ export const FullscreenViewer = ({ url, onClose }: FullscreenViewerProps) => {
           <Document
             file={url}
             onLoadSuccess={onDocumentLoadSuccess}
-            loading={<LoadingSpinner />}
+            loading={
+              <LoadingSpinner
+                minHeight={pageHeight ? `${pageHeight}px` : "600px"}
+                minWidth={pageWidth ? `${pageWidth}px` : "800px"}
+                spinnerClassName="dark:text-black"
+              />
+            }
             className={cn(
               "flex flex-col items-center",
               "[&_.react-pdf__Page]:my-0",
@@ -142,6 +148,7 @@ export const FullscreenViewer = ({ url, onClose }: FullscreenViewerProps) => {
               loading={
                 <LoadingSpinner
                   minHeight={pageHeight ? `${pageHeight}px` : "600px"}
+                  minWidth={pageWidth ? `${pageWidth}px` : "800px"}
                   spinnerClassName="dark:text-black"
                 />
               }

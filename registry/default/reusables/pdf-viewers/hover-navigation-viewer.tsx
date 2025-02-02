@@ -77,6 +77,7 @@ export const HoverNavigationViewer = ({ url }: HoverNavigationViewerProps) => {
             loading={
               <LoadingSpinner
                 minHeight={pageHeight ? `${pageHeight}px` : "600px"}
+                minWidth={pageWidth ? `${pageWidth}px` : "800px"}
                 spinnerClassName="dark:text-black"
               />
             }
@@ -95,7 +96,7 @@ export const HoverNavigationViewer = ({ url }: HoverNavigationViewerProps) => {
             onClick={() => changePage(-1)}
             disabled={pageNumber <= 1}
             className={cn(
-              "absolute left-4 top-1/2 -translate-y-1/2 rounded-full",
+              "absolute left-4 top-1/2 -translate-y-1/2  z-50 rounded-full",
               "bg-white/90 dark:bg-white dark:text-black hover:bg-white dark:hover:bg-white transition-all duration-200  shadow-lg"
             )}
           >
@@ -108,14 +109,14 @@ export const HoverNavigationViewer = ({ url }: HoverNavigationViewerProps) => {
             onClick={() => changePage(1)}
             disabled={pageNumber >= (numPages || 1)}
             className={cn(
-              "absolute right-4 top-1/2 -translate-y-1/2 rounded-full",
+              "absolute right-4 top-1/2 -translate-y-1/2  z-50 rounded-full",
               "bg-white/90 dark:bg-white dark:text-black hover:bg-white dark:hover:bg-white transition-all duration-200  shadow-lg"
             )}
           >
             <ChevronRight className="h-4 w-4" />
           </Button>
 
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+          <div className="absolute bottom-4 left-1/2 dark:text-black -translate-x-1/2 bg-white/90 px-4 py-2 rounded-full text-sm font-medium shadow-lg">
             Page {pageNumber} of {numPages}
           </div>
         </>

@@ -11,7 +11,7 @@
   "files": [
     {
       "path": "example/pdf-viewer-tabs-demo.tsx",
-      "content": "\"use client\";\n\nimport PDFViewerTabs from \"../reusables/pdf-viewers/pdf-viewer-tabs\";\n\nexport default function PDFViewerDemo() {\n  const samplePdfUrl =\n    \"https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf\";\n\n  return <PDFViewerTabs url={samplePdfUrl} />;\n}\n",
+      "content": "\"use client\";\n\nimport PDFViewerTabs from \"@/components/pdf-viewer-tabs\";\n\nexport default function PDFViewerDemo() {\n  const samplePdfUrl =\n    \"https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf\";\n\n  return <PDFViewerTabs url={samplePdfUrl} />;\n}\n",
       "type": "registry:example",
       "target": ""
     }

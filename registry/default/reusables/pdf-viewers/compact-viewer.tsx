@@ -65,7 +65,13 @@ export const CompactViewer = ({ url }: CompactViewerProps) => {
           <Document
             file={url}
             onLoadSuccess={onDocumentLoadSuccess}
-            loading={<LoadingSpinner />}
+            loading={
+              <LoadingSpinner
+                minHeight={pageHeight ? `${pageHeight}px` : "600px"}
+                minWidth={pageWidth ? `${pageWidth}px` : "800px"}
+                spinnerClassName="dark:text-black"
+              />
+            }
             className={cn(
               "flex flex-col items-center",
               "[&_.react-pdf__Page]:my-0",
@@ -83,6 +89,7 @@ export const CompactViewer = ({ url }: CompactViewerProps) => {
               loading={
                 <LoadingSpinner
                   minHeight={pageHeight ? `${pageHeight}px` : "600px"}
+                  minWidth={pageWidth ? `${pageWidth}px` : "800px"}
                   spinnerClassName="dark:text-black"
                 />
               }

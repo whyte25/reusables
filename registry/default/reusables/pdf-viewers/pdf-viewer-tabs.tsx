@@ -8,7 +8,7 @@ import { MinimalViewer } from "./minimal-viewer";
 import { SidebarViewer } from "./sidebar-viewer";
 import { ThumbnailViewer } from "./thumbnail-viewer";
 
-const PDFViewerTabs = ({ url }: { url: string }) => {
+const PDFViewerTabs = () => {
   const samplePdfUrl =
     "https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf";
 

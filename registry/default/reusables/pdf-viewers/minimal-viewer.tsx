@@ -81,7 +81,13 @@ export const MinimalViewer = ({ url }: MinimalViewerProps) => {
           <Document
             file={url}
             onLoadSuccess={onDocumentLoadSuccess}
-            loading={<LoadingSpinner />}
+            loading={
+              <LoadingSpinner
+                minHeight={pageHeight ? `${pageHeight}px` : "600px"}
+                minWidth={pageWidth ? `${pageWidth}px` : "800px"}
+                spinnerClassName="dark:text-black"
+              />
+            }
             className={cn(
               "flex flex-col gap-2 md:gap-4 w-full items-center",
               "[&_.react-pdf__message]:p-5",
@@ -98,6 +104,7 @@ export const MinimalViewer = ({ url }: MinimalViewerProps) => {
               loading={
                 <LoadingSpinner
                   minHeight={pageHeight ? `${pageHeight}px` : "600px"}
+                  minWidth={pageWidth ? `${pageWidth}px` : "800px"}
                   spinnerClassName="dark:text-black"
                 />
               }

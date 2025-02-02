@@ -116,13 +116,34 @@ a[href="/docs/components/notify"] {
   @apply badge beta;
 }
 
-a[href="/docs/components/buttons/split-button"] {
-  @apply badge new;
-}
 a[href="/docs/components/file-upload/single-image-upload"] {
   @apply badge new;
 }
 a[href="/docs/components/file-upload/multiple-image-upload"] {
+  @apply badge new;
+}
+
+a[href="/docs/components/pdf-viewers/thumbnail-viewer"] {
+  @apply badge new;
+}
+
+a[href="/docs/components/pdf-viewers/minimal-viewer"] {
+  @apply badge new;
+}
+
+a[href="/docs/components/pdf-viewers/fullscreen-viewer"] {
+  @apply badge new;
+}
+
+a[href="/docs/components/pdf-viewers/compact-viewer"] {
+  @apply badge new;
+}
+
+a[href="/docs/components/pdf-viewers/sidebar-viewer"] {
+  @apply badge new;
+}
+
+a[href="/docs/components/pdf-viewers/hover-navigation-viewer"] {
   @apply badge new;
 }
 
