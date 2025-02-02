@@ -1,0 +1,106 @@
+---
+title: Fullscreen PDF Viewer
+description: A fullscreen PDF viewer component with zoom controls and navigation.
+---
+
+## Features
+
+- Fullscreen mode
+- Zoom controls
+- Page navigation
+- Download option
+- Dark mode support
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/pdf-viewers/fullscreen-viewer"
+```
+  </Tab>
+
+  <Tab value="Manual">
+  <Steps>
+    <Step>
+    Create and copy the following code into your `components` folder:
+
+    <CollapsibleCode>
+    ```json doc-gen:file
+    {
+      "file": "registry/default/reusables/pdf-viewers/fullscreen-viewer.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"fullscreen-viewer.tsx\""
+      }
+    }
+    ```
+    </CollapsibleCode>
+    </Step>
+
+    <Step>
+    Copy the loading spinner component:
+
+    <CollapsibleCode>
+    ```json doc-gen:file
+    {
+      "file": "registry/default/reusables/pdf-viewers/loading-spinner.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"loading-spinner.tsx\""
+      }
+    }
+    ```
+    </CollapsibleCode>
+    </Step>
+
+    <Step>
+    Make sure you have the utils function:
+
+    <CollapsibleCode>
+    ```json doc-gen:file
+    {
+      "file": "registry/default/lib/utils.ts",
+      "codeblock": {
+        "lang": "ts",
+        "meta": "title=\"utils.ts\""
+      }
+    }
+    ```
+    </CollapsibleCode>
+    </Step>
+
+  </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```tsx
+import { FullscreenViewer } from "@/components/ui/pdf-viewers/fullscreen-viewer";
+
+export default function PDFViewer() {
+  return (
+    <FullscreenViewer
+      url="path/to/your.pdf"
+      onClose={() => console.log("closed")}
+    />
+  );
+}
+```
+
+## Examples
+
+<ComponentSource name="example/fullscreen-viewer-demo" />
+
+## Reference
+
+<TypeTable
+  type={{
+    url: {
+      type: "string",
+      description: "URL of the PDF file to display",
+      required: true,
+    },
+  }}
+/>{" "}

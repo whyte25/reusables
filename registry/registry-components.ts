@@ -41,4 +41,101 @@ export const components: Registry = [
       },
     ],
   },
+
+  {
+    name: "compact-viewer",
+    type: "registry:component",
+    dependencies: ["react-pdf", "@wojtekmaj/react-hooks", "lucide-react"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "reusables/pdf-viewers/compact-viewer.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "reusables/pdf-viewers/loading-spinner.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "fullscreen-viewer",
+    type: "registry:component",
+    dependencies: ["react-pdf", "@wojtekmaj/react-hooks", "lucide-react"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "reusables/pdf-viewers/fullscreen-viewer.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "reusables/pdf-viewers/loading-spinner.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "hover-navigation-viewer",
+    type: "registry:component",
+    dependencies: ["react-pdf", "@wojtekmaj/react-hooks", "lucide-react"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "reusables/pdf-viewers/hover-navigation-viewer.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "reusables/pdf-viewers/loading-spinner.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "minimal-viewer",
+    type: "registry:component",
+    dependencies: ["react-pdf", "@wojtekmaj/react-hooks", "lucide-react"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "reusables/pdf-viewers/minimal-viewer.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "reusables/pdf-viewers/loading-spinner.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "sidebar-viewer",
+    type: "registry:component",
+    dependencies: ["react-pdf", "@wojtekmaj/react-hooks", "lucide-react"],
+    registryDependencies: ["button", "scroll-area"],
+    files: [
+      {
+        path: "reusables/pdf-viewers/sidebar-viewer.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "reusables/pdf-viewers/loading-spinner.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "thumbnail-viewer",
+    type: "registry:component",
+    dependencies: ["react-pdf", "@wojtekmaj/react-hooks", "lucide-react"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "reusables/pdf-viewers/thumbnail-viewer.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "reusables/pdf-viewers/loading-spinner.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];
