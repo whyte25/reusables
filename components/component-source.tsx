@@ -5,27 +5,28 @@ import { ComponentPreview } from "./component-preview";
 
 interface ComponentSourceProps {
   name: string; // Format: "folder/component-name" (e.g. "example/submit-button-demo")
-  preview?: boolean;
+  showPreviewOnly?: boolean;
+  showPreviewButton?: boolean;
   reTrigger?: boolean;
   className?: string;
 }
 
 export async function ComponentSource({
   name,
-  preview,
+  showPreviewOnly,
+  showPreviewButton,
   reTrigger,
   className,
 }: ComponentSourceProps) {
-  const componentName = name.split("/")[1];
   const style = "default";
 
   // console.log(folder);
 
   // Get component details from registry
-  const component = Index[style][componentName];
+  const component = Index[style][name];
 
   if (!component) {
-    console.error(`Component ${componentName} not found in registry`);
+    console.error(`Component ${name} not found in registry`);
     return null;
   }
 
@@ -53,9 +54,10 @@ export async function ComponentSource({
   return (
     <ComponentPreview
       className={className}
-      name={componentName}
+      name={name}
       sourceCode={sourceCode}
-      preview={preview}
+      showPreviewOnly={showPreviewOnly}
+      showPreviewButton={showPreviewButton}
       reTrigger={reTrigger}
     />
   );
