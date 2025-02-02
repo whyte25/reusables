@@ -47,7 +47,16 @@ export const examples: Registry = [
     name: "submit-button-demo",
     type: "registry:example",
     registryDependencies: ["submit-button"],
-    files: ["example/submit-button-demo.tsx"],
+    files: [
+      {
+        path: "example/submit-button-demo.tsx",
+        type: "registry:example",
+      },
+      {
+        path: "reusables/submit-button.tsx",
+        type: "registry:ui",
+      },
+    ],
   },
   {
     name: "screen-size-demo",
