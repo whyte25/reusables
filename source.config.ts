@@ -35,7 +35,10 @@ export default defineConfig({
   lastModifiedTime: "git",
   mdxOptions: {
     rehypeCodeOptions: {
-      theme: "github-dark",
+      themes: {
+        light: "github-light",
+        dark: "github-dark",
+      },
       inline: "tailing-curly-colon",
       defaultColor: false,
       transformers: [

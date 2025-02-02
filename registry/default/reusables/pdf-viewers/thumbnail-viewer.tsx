@@ -1,6 +1,5 @@
 "use client";
 
-import useScreenSize from "@/hooks/use-screen-size";
 import { cn } from "@/lib/utils";
 import { useResizeObserver } from "@wojtekmaj/react-hooks";
 import { useCallback, useState } from "react";
@@ -14,7 +13,6 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 
 const resizeObserverOptions = {};
 const maxWidth = 800;
-const thumbnailScale = 0.2;
 
 interface ThumbnailViewerProps {
   url: string;
@@ -26,7 +24,6 @@ export const ThumbnailViewer = ({ url }: ThumbnailViewerProps) => {
   const [containerRef, setContainerRef] = useState<HTMLElement | null>(null);
   const [containerWidth, setContainerWidth] = useState<number>();
   const [pageHeight, setPageHeight] = useState(0);
-  const { isMobile, screenSize } = useScreenSize();
 
   const onResize = useCallback<ResizeObserverCallback>((entries) => {
     const [entry] = entries;

@@ -37,9 +37,14 @@ export async function ComponentSource({
   try {
     sourceCode = await fs.promises.readFile(filePath, "utf8");
 
-    // Clean up imports
+    // Clean up imports - handle both registry and reusables paths
     sourceCode = sourceCode
-      .replaceAll(`@/registry/${style}/`, "@/components/")
+      // Handle absolute paths
+      .replaceAll("@/registry/default/", "@/components/")
+      // Handle relative paths to reusables
+      .replaceAll(/"\.\.\/reusables\/(.*?)"/g, '"@/components/$1"')
+      .replaceAll(/"\.\/reusables\/(.*?)"/g, '"@/components/$1"')
+      // Handle exports
       .replaceAll("export default", "export");
   } catch (error) {
     console.error(`Error reading component source: ${error}`);

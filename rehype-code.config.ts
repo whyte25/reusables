@@ -1,10 +1,10 @@
-import type { RehypeCodeOptions } from 'fumadocs-core/mdx-plugins'
+import type { RehypeCodeOptions } from "fumadocs-core/mdx-plugins";
 
 export const rehypeCodeOptions: RehypeCodeOptions = {
   themes: {
-    light: 'catppuccin-latte',
-    dark: 'catppuccin-mocha'
+    light: "github-light",
+    dark: "github-dark",
   },
-  inline: 'tailing-curly-colon',
-  defaultColor: false
-}
+  inline: "tailing-curly-colon",
+  defaultColor: false,
+};
