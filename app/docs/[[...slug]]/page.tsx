@@ -22,7 +22,7 @@ export default async function Page(props: {
     owner: "whyte25",
     repo: "reusables",
     path: `content/docs/${page.file.path}`,
-    token: process.env.GITHUB_TOKEN,
+    token: `Bearer ${process.env.GITHUB_TOKEN}`,
   });
 
   return (
