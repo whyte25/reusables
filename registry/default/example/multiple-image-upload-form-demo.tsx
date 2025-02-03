@@ -16,11 +16,11 @@ import {
 } from "../reusables/multiple-image-upload";
 
 import { Input } from "@/components/ui/input";
+import { useMultipleFileUpload } from "@/hooks/use-multiple-file-upload";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { useMultipleFileUpload } from "../hooks/use-multiple-file-upload";
 import { toast } from "../reusables/ui/notify-provider";
 
 const formSchema = z.object({

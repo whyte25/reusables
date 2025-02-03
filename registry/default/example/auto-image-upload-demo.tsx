@@ -1,6 +1,6 @@
 "use client";
 
-import useFileUpload from "../hooks/use-file-upload";
+import useFileUpload from "@/hooks/use-file-upload";
 import { SingleImageDropzone } from "../reusables/single-image-upload";
 import { toast } from "../reusables/ui/notify-provider";
 

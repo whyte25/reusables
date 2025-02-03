@@ -13,10 +13,10 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import useFileUpload from "@/hooks/use-file-upload";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import useFileUpload from "../hooks/use-file-upload";
 import { SingleImageDropzone } from "../reusables/single-image-upload";
 import { toast } from "../reusables/ui/notify-provider";
 
