@@ -51,10 +51,12 @@ export const components: Registry = [
       {
         path: "reusables/pdf-viewers/compact-viewer.tsx",
         type: "registry:component",
+        target: "components/pdf-viewers/compact-viewer",
       },
       {
         path: "reusables/pdf-viewers/loading-spinner.tsx",
         type: "registry:component",
+        target: "components/pdf-viewers/loading-spinner",
       },
     ],
   },
@@ -67,10 +69,12 @@ export const components: Registry = [
       {
         path: "reusables/pdf-viewers/fullscreen-viewer.tsx",
         type: "registry:component",
+        target: "components/pdf-viewers/fullscreen-viewer",
       },
       {
         path: "reusables/pdf-viewers/loading-spinner.tsx",
         type: "registry:component",
+        target: "components/pdf-viewers/loading-spinner",
       },
     ],
   },
@@ -83,10 +87,12 @@ export const components: Registry = [
       {
         path: "reusables/pdf-viewers/hover-navigation-viewer.tsx",
         type: "registry:component",
+        target: "components/pdf-viewers/hover-navigation-viewer",
       },
       {
         path: "reusables/pdf-viewers/loading-spinner.tsx",
         type: "registry:component",
+        target: "components/pdf-viewers/loading-spinner",
       },
     ],
   },
@@ -99,10 +105,12 @@ export const components: Registry = [
       {
         path: "reusables/pdf-viewers/minimal-viewer.tsx",
         type: "registry:component",
+        target: "components/pdf-viewers/minimal-viewer",
       },
       {
         path: "reusables/pdf-viewers/loading-spinner.tsx",
         type: "registry:component",
+        target: "components/pdf-viewers/loading-spinner",
       },
     ],
   },
@@ -115,10 +123,12 @@ export const components: Registry = [
       {
         path: "reusables/pdf-viewers/sidebar-viewer.tsx",
         type: "registry:component",
+        target: "components/pdf-viewers/sidebar-viewer",
       },
       {
         path: "reusables/pdf-viewers/loading-spinner.tsx",
         type: "registry:component",
+        target: "components/pdf-viewers/loading-spinner",
       },
     ],
   },
@@ -131,10 +141,12 @@ export const components: Registry = [
       {
         path: "reusables/pdf-viewers/thumbnail-viewer.tsx",
         type: "registry:component",
+        target: "components/pdf-viewers/thumbnail-viewer",
       },
       {
         path: "reusables/pdf-viewers/loading-spinner.tsx",
         type: "registry:component",
+        target: "components/pdf-viewers/loading-spinner",
       },
     ],
   },

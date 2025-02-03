@@ -19,7 +19,7 @@ export const formatFileSize = (bytes: number) => {
 };
 
 const dropzoneVariants = cva(
-  "relative flex justify-center items-center flex-col cursor-pointer transition-all duration-300 ease-in-out border-2 border-dashed rounded-lg",
+  "relative flex justify-center items-center max-w-3xl mx-auto flex-col cursor-pointer transition-all duration-300 ease-in-out border-2 border-dashed rounded-lg",
   {
     variants: {
       variant: {
@@ -191,12 +191,8 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
             <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
               Drop your images here
             </div>
-            <div className="text-xs text-gray-500 dark:text-gray-400">
-              {dropzoneOptions?.maxFiles &&
-                `Max ${dropzoneOptions.maxFiles} files, `}
-              {dropzoneOptions?.maxSize &&
-                `up to ${formatFileSize(dropzoneOptions.maxSize)}`}
-            </div>
+            <div className="text-xs text-gray-500  dark:text-gray-400">or</div>
+
             <button
               type="button"
               disabled={disabled}
@@ -204,6 +200,13 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
             >
               Browse
             </button>
+
+            <div className="text-xs text-gray-500 dark:text-gray-400">
+              {dropzoneOptions?.maxFiles &&
+                `Max ${dropzoneOptions.maxFiles} files, `}
+              {dropzoneOptions?.maxSize &&
+                `up to ${formatFileSize(dropzoneOptions.maxSize)}`}
+            </div>
           </div>
         </div>
 

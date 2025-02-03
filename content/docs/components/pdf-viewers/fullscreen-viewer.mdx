@@ -77,15 +77,10 @@ npx shadcn@latest add "https://reusables.vercel.app/r/pdf-viewers/fullscreen-vie
 ## Usage
 
 ```tsx
-import { FullscreenViewer } from "@/components/ui/pdf-viewers/fullscreen-viewer";
+import { FullscreenViewer } from "@/components/pdf-viewers/fullscreen-viewer";
 
 export default function PDFViewer() {
-  return (
-    <FullscreenViewer
-      url="path/to/your.pdf"
-      onClose={() => console.log("closed")}
-    />
-  );
+  return <FullscreenViewer url="path/to/your.pdf" />;
 }
 ```
 

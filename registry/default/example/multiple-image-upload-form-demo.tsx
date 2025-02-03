@@ -1,9 +1,5 @@
 "use client";
 
-import {
-  FileState,
-  MultiImageDropzone,
-} from "@/components/multiple-image-upload";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -14,13 +10,18 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  FileState,
+  MultiImageDropzone,
+} from "../reusables/multiple-image-upload";
+
 import { Input } from "@/components/ui/input";
-import { toast } from "@/components/ui/notify-provider";
-import { useMultipleFileUpload } from "@/hooks/use-multiple-file-upload";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useMultipleFileUpload } from "../hooks/use-multiple-file-upload";
+import { toast } from "../reusables/ui/notify-provider";
 
 const formSchema = z.object({
   title: z.string().min(2).max(50),

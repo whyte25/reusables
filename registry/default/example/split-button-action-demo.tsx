@@ -16,9 +16,9 @@ import {
   Twitter,
 } from "lucide-react";
 
-import { toast } from "@/components/ui/notify-provider";
-import SplitButtonAction from "@/components/ui/split-button-action";
 import { useState } from "react";
+import { toast } from "../reusables/ui/notify-provider";
+import SplitButtonAction from "../reusables/ui/split-button-action";
 
 export default function SplitButton2Demo() {
   const [loadingStates, setLoadingStates] = useState({

@@ -1,6 +1,5 @@
 "use client";
 
-import { SingleImageDropzone } from "@/components/single-image-upload";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -13,12 +12,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { toast } from "@/components/ui/notify-provider";
 import { Textarea } from "@/components/ui/textarea";
-import useFileUpload from "@/hooks/use-file-upload";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import useFileUpload from "../hooks/use-file-upload";
+import { SingleImageDropzone } from "../reusables/single-image-upload";
+import { toast } from "../reusables/ui/notify-provider";
 
 type FormValues = z.infer<typeof formSchema>;
 

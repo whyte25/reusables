@@ -20,7 +20,7 @@ export const LoadingSpinner = ({
       style={{ minHeight, minWidth }}
     >
       <Loader2
-        className={cn("w-8 h-8 animate-spin text-primary", spinnerClassName)}
+        className={cn("w-8 h-8 animate-spin text-white", spinnerClassName)}
       />
     </div>
   );

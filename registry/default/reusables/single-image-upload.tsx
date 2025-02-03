@@ -19,7 +19,7 @@ export const formatFileSize = (bytes: number) => {
 };
 
 const dropzoneVariants = cva(
-  "relative flex justify-center items-center flex-col cursor-pointer transition-all duration-300 ease-in-out border-2 border-dashed rounded-lg",
+  "relative flex justify-center items-center max-w-3xl mx-auto flex-col cursor-pointer transition-all duration-300 ease-in-out border-2 border-dashed rounded-lg",
   {
     variants: {
       variant: {

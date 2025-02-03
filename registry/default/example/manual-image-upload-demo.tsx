@@ -1,10 +1,10 @@
 "use client";
 
-import { SingleImageDropzone } from "@/components/single-image-upload";
 import { Button } from "@/components/ui/button";
-import { toast } from "@/components/ui/notify-provider";
-import useFileUpload from "@/hooks/use-file-upload";
 import { useState } from "react";
+import useFileUpload from "../hooks/use-file-upload";
+import { SingleImageDropzone } from "../reusables/single-image-upload";
+import { toast } from "../reusables/ui/notify-provider";
 
 export default function ManualImageUploadDemo() {
   const manualUpload = useFileUpload({

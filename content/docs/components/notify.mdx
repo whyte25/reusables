@@ -21,7 +21,7 @@ Copy and paste this code into your `notify-provider.tsx` file.
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/default/reusables/toast/notify-provider.tsx",
+  "file": "registry/default/reusables/ui/notify-provider.tsx",
   "codeblock": {
     "lang": "tsx",
     "meta": "title=\"notify-provider.tsx\""
@@ -36,7 +36,7 @@ Copy and paste this code into your `notify.tsx` file.
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/default/reusables/toast/notify.tsx",
+  "file": "registry/default/reusables/ui/notify.tsx",
   "codeblock": {
     "lang": "tsx",
     "meta": "title=\"notify.tsx\""
@@ -52,7 +52,7 @@ Copy and paste this code into your `notify-utils.ts` file.
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/default/reusables/toast/notify-utils.ts",
+  "file": "registry/default/reusables/ui/notify-utils.ts",
   "codeblock": {
     "lang": "tsx",
     "meta": "title=\"notify-utils.ts\""
@@ -62,8 +62,27 @@ Copy and paste this code into your `notify-utils.ts` file.
 </CodeBlockWrapper>
 
 </Step>
-</Steps>
 
+<Step>
+Create and copy the following code into your `lib` folder:
+
+<CodeBlockWrapper>
+
+```json doc-gen:file
+{
+  "file": "registry/default/lib/utils.ts",
+  "codeblock": {
+    "lang": "ts",
+    "meta": "title=\"utils.ts\""
+  }
+}
+```
+
+</CodeBlockWrapper>
+
+</Step>
+
+</Steps>
 </Tab> 
 </Tabs>
 
@@ -118,11 +137,7 @@ toast.info("Event has been created");
 
 ### Basic Usage
 
-<ComponentSource
-  reTrigger={false}
-  className="md:px-0"
-  name="toast-demo"
-/>
+<ComponentSource reTrigger={false} className="md:px-0" name="toast-demo" />
 
 ### Toast With Description
 

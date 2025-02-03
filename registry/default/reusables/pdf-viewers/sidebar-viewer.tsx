@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import useScreenSize from "@/hooks/use-screen-size";
 import { cn } from "@/lib/utils";
+import useScreenSize from "@/registry/default/hooks/use-screen-size";
 import { useResizeObserver } from "@wojtekmaj/react-hooks";
 import { ChevronLeft, ChevronRight, List, X } from "lucide-react";
 import { useCallback, useState } from "react";

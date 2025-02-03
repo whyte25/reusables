@@ -96,7 +96,7 @@ export const HoverNavigationViewer = ({ url }: HoverNavigationViewerProps) => {
             onClick={() => changePage(-1)}
             disabled={pageNumber <= 1}
             className={cn(
-              "absolute left-4 top-1/2 -translate-y-1/2  z-50 rounded-full",
+              "absolute left-2 top-1/2 -translate-y-1/2  z-50 rounded-full",
               "bg-white/90 dark:bg-white dark:text-black hover:bg-white dark:hover:bg-white transition-all duration-200  shadow-lg"
             )}
           >
@@ -109,7 +109,7 @@ export const HoverNavigationViewer = ({ url }: HoverNavigationViewerProps) => {
             onClick={() => changePage(1)}
             disabled={pageNumber >= (numPages || 1)}
             className={cn(
-              "absolute right-4 top-1/2 -translate-y-1/2  z-50 rounded-full",
+              "absolute right-2 top-1/2 -translate-y-1/2  z-50 rounded-full",
               "bg-white/90 dark:bg-white dark:text-black hover:bg-white dark:hover:bg-white transition-all duration-200  shadow-lg"
             )}
           >

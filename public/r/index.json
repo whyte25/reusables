@@ -12,15 +12,15 @@
     ],
     "files": [
       {
-        "path": "reusables/toast/notify.tsx",
+        "path": "reusables/ui/notify.tsx",
         "type": "registry:ui"
       },
       {
-        "path": "reusables/toast/notify-provider.tsx",
+        "path": "reusables/ui/notify-provider.tsx",
         "type": "registry:ui"
       },
       {
-        "path": "reusables/toast/notify-utils.ts",
+        "path": "reusables/ui/notify-utils.ts",
         "type": "registry:ui"
       }
     ]
@@ -33,7 +33,7 @@
     ],
     "files": [
       {
-        "path": "reusables/theme-image.tsx",
+        "path": "reusables/ui/theme-image.tsx",
         "type": "registry:ui"
       }
     ]
@@ -50,7 +50,7 @@
     ],
     "files": [
       {
-        "path": "reusables/spinner.tsx",
+        "path": "reusables/ui/spinner.tsx",
         "type": "registry:ui"
       }
     ]
@@ -64,11 +64,11 @@
     ],
     "files": [
       {
-        "path": "reusables/submit-button.tsx",
+        "path": "reusables/ui/submit-button.tsx",
         "type": "registry:ui"
       },
       {
-        "path": "reusables/spinner.tsx",
+        "path": "reusables/ui/spinner.tsx",
         "type": "registry:ui"
       }
     ]
@@ -85,7 +85,7 @@
     ],
     "files": [
       {
-        "path": "reusables/copy-button.tsx",
+        "path": "reusables/ui/copy-button.tsx",
         "type": "registry:ui"
       }
     ]
@@ -103,7 +103,7 @@
     ],
     "files": [
       {
-        "path": "reusables/split-button.tsx",
+        "path": "reusables/ui/split-button.tsx",
         "type": "registry:ui"
       }
     ]
@@ -121,7 +121,7 @@
     ],
     "files": [
       {
-        "path": "reusables/split-button-action.tsx",
+        "path": "reusables/ui/split-button-action.tsx",
         "type": "registry:ui"
       }
     ]

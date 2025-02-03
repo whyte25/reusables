@@ -1,6 +1,6 @@
 "use client";
-import { SubmitButton } from "@/components/ui/submit-button";
 import { useState } from "react";
+import { SubmitButton } from "../reusables/ui/submit-button";
 
 export default function SubmitButtonTextDemo() {
   const [isSubmitting, setIsSubmitting] = useState(false);

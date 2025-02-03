@@ -1,8 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import useOnlineStatus from "@/hooks/use-online-status";
 import { RefreshCcw, Signal, WifiIcon } from "lucide-react";
+import useOnlineStatus from "../hooks/use-online-status";
 
 export default function NetworkStatusMonitor() {
   const {

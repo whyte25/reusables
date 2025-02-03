@@ -13,17 +13,38 @@ npx shadcn@latest add "https://reusables.vercel.app/r/copy-button"
 </Tab>
 
 <Tab value="Manual">
-
+<Steps> 
+<Step>
+Copy and paste the following code into your `copy-button.tsx` file.
+<CollapsibleCode>
 ```json doc-gen:file
 {
-  "file": "registry/default/reusables/copy-button.tsx",
+  "file": "registry/default/reusables/ui/copy-button.tsx",
   "codeblock": {
     "lang": "tsx",
     "meta": "title=\"copy-button.tsx\""
   }
 }
 ```
+</CollapsibleCode>
+</Step>
 
+<Step>
+Create and copy the following code into your `lib` folder:
+<CollapsibleCode>
+```json doc-gen:file
+{
+  "file": "registry/default/lib/utils.ts",
+  "codeblock": {
+    "lang": "ts",
+    "meta": "title=\"utils.ts\""
+  }
+}
+```
+</CollapsibleCode>
+</Step>
+
+</Steps>
 </Tab>
 
 </Tabs>

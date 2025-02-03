@@ -3,9 +3,10 @@
 import {
   FileState,
   MultiImageDropzone,
-} from "@/components/multiple-image-upload";
-import { useMultipleFileUpload } from "@/hooks/use-multiple-file-upload";
+} from "../reusables/multiple-image-upload";
+
 import * as React from "react";
+import { useMultipleFileUpload } from "../hooks/use-multiple-file-upload";
 
 export default function AutoMultipleImageUploadDemo() {
   const [fileStates, setFileStates] = React.useState<FileState[]>([]);

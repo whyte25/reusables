@@ -1,5 +1,5 @@
-import { ToastProvider } from "@/components/ui/notify-provider";
 import { siteConfig } from "@/constant/site-config";
+import { ToastProvider } from "@/registry/default/reusables/ui/notify-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "fumadocs-twoslash/twoslash.css";

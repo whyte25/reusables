@@ -53,7 +53,7 @@ export const examples: Registry = [
         type: "registry:example",
       },
       {
-        path: "reusables/submit-button.tsx",
+        path: "reusables/ui/submit-button.tsx",
         type: "registry:ui",
       },
     ],

@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "example/theme-image-demo.tsx",
-      "content": "import ThemeImage from \"@/components/ui/theme-image\";\nimport { images } from \"@/constant/images\";\n\nconst ThemeImageDemo = () => {\n  return (\n    <div>\n      <ThemeImage\n        darkSrc={images.readDark}\n        lightSrc={images.readlight}\n        alt=\"image\"\n        height={500}\n        width={800}\n        className=\"w-full\"\n      />\n    </div>\n  );\n};\n\nexport default ThemeImageDemo;\n",
+      "content": "import { images } from \"@/constant/images\";\nimport ThemeImage from \"../reusables/ui/theme-image\";\n\nconst ThemeImageDemo = () => {\n  return (\n    <div>\n      <ThemeImage\n        darkSrc={images.readDark}\n        lightSrc={images.readlight}\n        alt=\"image\"\n        height={500}\n        width={800}\n        className=\"w-full\"\n      />\n    </div>\n  );\n};\n\nexport default ThemeImageDemo;\n",
       "type": "registry:example",
       "target": ""
     }

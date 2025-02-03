@@ -44,7 +44,9 @@ export async function ComponentSource({
       .replaceAll("@/registry/default/", "@/components/")
       // Handle relative paths to reusables
       .replaceAll(/"\.\.\/reusables\/(.*?)"/g, '"@/components/$1"')
-      .replaceAll(/"\.\/reusables\/(.*?)"/g, '"@/components/$1"')
+      .replaceAll(/"\.\.\/hooks\/(.*?)"/g, '"@/hooks/$1"')
+      .replaceAll(/"\.\.\/lib\/(.*?)"/g, '"@/lib/$1"')
+      .replaceAll(/"\.\.\/utils\/(.*?)"/g, '"@/utils/$1"')
       // Handle exports
       .replaceAll("export default", "export");
   } catch (error) {
