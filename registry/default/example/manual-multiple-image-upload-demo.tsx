@@ -1,8 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useMultipleFileUpload } from "@/hooks/use-multiple-file-upload";
 import * as React from "react";
-import { useMultipleFileUpload } from "../hooks/use-multiple-file-upload";
 import {
   FileState,
   MultiImageDropzone,
