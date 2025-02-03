@@ -10,7 +10,7 @@
   ],
   "files": [
     {
-      "path": "reusables/copy-button.tsx",
+      "path": "reusables/ui/copy-button.tsx",
       "content": "\"use client\";\n\nimport { Button, ButtonProps } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\nimport { CheckIcon, ClipboardIcon } from \"lucide-react\";\nimport * as React from \"react\";\n\ninterface CopyButtonProps extends ButtonProps {\n  value: string;\n}\n\nexport default function CopyButton({\n  value,\n  className,\n  variant = \"ghost\",\n  ...props\n}: CopyButtonProps) {\n  const [hasCopied, setHasCopied] = React.useState(false);\n\n  const copyToClipboard = (value: string) => {\n    navigator.clipboard.writeText(value);\n  };\n\n  React.useEffect(() => {\n    setTimeout(() => {\n      setHasCopied(false);\n    }, 2000);\n  }, [hasCopied]);\n\n  return (\n    <Button\n      size=\"icon\"\n      variant={variant}\n      className={cn(\"relative z-10 size-6 [&_svg]:size-3\", className)}\n      onClick={() => {\n        copyToClipboard(value);\n        setHasCopied(true);\n      }}\n      {...props}\n    >\n      {hasCopied ? <CheckIcon /> : <ClipboardIcon />}\n    </Button>\n  );\n}\n",
       "type": "registry:ui",
       "target": ""

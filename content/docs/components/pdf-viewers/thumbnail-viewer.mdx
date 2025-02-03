@@ -1,0 +1,104 @@
+---
+title: Thumbnail PDF Viewer
+description: A PDF viewer with thumbnail previews for easy page navigation.
+---
+
+## Features
+
+- Thumbnail previews
+- Page navigation
+- Responsive layout
+- Dark mode support
+- Smooth scrolling
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/pdf-viewers/thumbnail-viewer"
+```
+  </Tab>
+
+  <Tab value="Manual">
+  <Steps>
+    <Step>
+    Create and copy the following code into your `components` folder:
+
+    <CollapsibleCode>
+    ```json doc-gen:file
+    {
+      "file": "registry/default/reusables/pdf-viewers/thumbnail-viewer.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"thumbnail-viewer.tsx\""
+      }
+    }
+    ```
+    </CollapsibleCode>
+    </Step>
+
+    <Step>
+    Copy the loading spinner component:
+
+    <CollapsibleCode>
+    ```json doc-gen:file
+    {
+      "file": "registry/default/reusables/pdf-viewers/loading-spinner.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"loading-spinner.tsx\""
+      }
+    }
+    ```
+    </CollapsibleCode>
+    </Step>
+
+    <Step>
+    Make sure you have the utils function:
+
+    <CollapsibleCode>
+    ```json doc-gen:file
+    {
+      "file": "registry/default/lib/utils.ts",
+      "codeblock": {
+        "lang": "ts",
+        "meta": "title=\"utils.ts\""
+      }
+    }
+    ```
+    </CollapsibleCode>
+    </Step>
+
+  </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```tsx
+import { ThumbnailViewer } from "@/components/pdf-viewers/thumbnail-viewer";
+
+export default function PDFViewer() {
+  return <ThumbnailViewer url="path/to/your.pdf" />;
+}
+```
+
+## Examples
+
+<ComponentSource
+  className="md:px-0 overflow-hidden"
+  name="thumbnail-viewer-demo"
+/>
+
+## Reference
+
+<TypeTable
+  type={{
+    url: {
+      type: "string",
+      description: "URL of the PDF file to display",
+      required: true,
+    },
+  }}
+/>{" "}

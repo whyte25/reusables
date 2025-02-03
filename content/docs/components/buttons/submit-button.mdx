@@ -14,15 +14,50 @@ npx shadcn@latest add "https://reusables.vercel.app/r/submit-button"
 
 <Tab value="Manual">
 
+<Step>
+Copy and paste the following code into your `submit-button.tsx` file.
+<CollapsibleCode>
 ```json doc-gen:file
 {
-  "file": "registry/default/reusables/submit-button.tsx",
+  "file": "registry/default/reusables/ui/submit-button.tsx",
   "codeblock": {
     "lang": "tsx",
     "meta": "title=\"submit-button.tsx\""
   }
 }
 ```
+</CollapsibleCode>  
+</Step>
+
+<Step>
+Create and copy the following code into your `Spinner.tsx` file:
+<CollapsibleCode>
+```json doc-gen:file
+{
+  "file": "registry/default/reusables/ui/spinner.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"spinner.tsx\""
+  }
+}
+```
+</CollapsibleCode>
+</Step>
+
+<Step>
+Create and copy the following code into your `lib` folder:
+<CollapsibleCode>
+```json doc-gen:file
+{
+  "file": "registry/default/lib/utils.ts",
+  "codeblock": {
+    "lang": "ts",
+    "meta": "title=\"utils.ts\""
+  }
+} 
+```
+</CollapsibleCode>
+</Step>
 
 </Tab>
 
@@ -42,15 +77,15 @@ import SubmitButton from "@/components/ui/submit-button";
 
 ### Default
 
-<ComponentSource name="example/submit-button-demo" reTrigger={false} />
+<ComponentSource name="submit-button-demo" reTrigger={false} />
 
 ### Position Left
 
-<ComponentSource name="example/submit-button-position-left" reTrigger={false} />
+<ComponentSource name="submit-button-position-left" reTrigger={false} />
 
 ### Hide Text
 
-<ComponentSource name="example/submit-button-hidetext-demo" />
+<ComponentSource name="submit-button-hidetext-demo" />
 
 ## Reference
 

@@ -2,9 +2,9 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import useScreenSize from "@/hooks/use-screen-size";
 import { Monitor, Smartphone, Tablet } from "lucide-react";
 import { useState } from "react";
+import useScreenSize from "../hooks/use-screen-size";
 
 export default function ScreenSizeDemo() {
   const { screenSize, isMobile } = useScreenSize();

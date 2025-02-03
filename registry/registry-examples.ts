@@ -47,7 +47,16 @@ export const examples: Registry = [
     name: "submit-button-demo",
     type: "registry:example",
     registryDependencies: ["submit-button"],
-    files: ["example/submit-button-demo.tsx"],
+    files: [
+      {
+        path: "example/submit-button-demo.tsx",
+        type: "registry:example",
+      },
+      {
+        path: "reusables/ui/submit-button.tsx",
+        type: "registry:ui",
+      },
+    ],
   },
   {
     name: "screen-size-demo",
@@ -180,5 +189,47 @@ export const examples: Registry = [
     ],
     dependencies: ["react-hook-form", "@hookform/resolvers/zod", "zod"],
     files: ["/example/single-image-upload-form-demo.tsx"],
+  },
+  {
+    name: "compact-viewer-demo",
+    type: "registry:example",
+    registryDependencies: ["compact-viewer"],
+    dependencies: ["react-pdf", "@wojtekmaj/react-hooks"],
+    files: ["example/compact-viewer-demo.tsx"],
+  },
+  {
+    name: "fullscreen-viewer-demo",
+    type: "registry:example",
+    registryDependencies: ["fullscreen-viewer", "button"],
+    dependencies: ["react-pdf", "@wojtekmaj/react-hooks"],
+    files: ["example/fullscreen-viewer-demo.tsx"],
+  },
+  {
+    name: "hover-navigation-demo",
+    type: "registry:example",
+    registryDependencies: ["hover-navigation-viewer"],
+    dependencies: ["react-pdf", "@wojtekmaj/react-hooks"],
+    files: ["example/hover-navigation-demo.tsx"],
+  },
+  {
+    name: "minimal-viewer-demo",
+    type: "registry:example",
+    registryDependencies: ["minimal-viewer"],
+    dependencies: ["react-pdf", "@wojtekmaj/react-hooks"],
+    files: ["example/minimal-viewer-demo.tsx"],
+  },
+  {
+    name: "sidebar-viewer-demo",
+    type: "registry:example",
+    registryDependencies: ["sidebar-viewer"],
+    dependencies: ["react-pdf", "@wojtekmaj/react-hooks"],
+    files: ["example/sidebar-viewer-demo.tsx"],
+  },
+  {
+    name: "thumbnail-viewer-demo",
+    type: "registry:example",
+    registryDependencies: ["thumbnail-viewer"],
+    dependencies: ["react-pdf", "@wojtekmaj/react-hooks"],
+    files: ["example/thumbnail-viewer-demo.tsx"],
   },
 ];

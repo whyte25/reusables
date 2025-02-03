@@ -1,12 +1,12 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import * as React from "react";
+import { useMultipleFileUpload } from "../hooks/use-multiple-file-upload";
 import {
   FileState,
   MultiImageDropzone,
-} from "@/components/multiple-image-upload";
-import { Button } from "@/components/ui/button";
-import { useMultipleFileUpload } from "@/hooks/use-multiple-file-upload";
-import * as React from "react";
+} from "../reusables/multiple-image-upload";
 
 export default function ManualMultipleImageUploadDemo() {
   const [fileStates, setFileStates] = React.useState<FileState[]>([]);

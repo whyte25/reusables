@@ -1,0 +1,101 @@
+---
+title: Hover Navigation PDF Viewer
+description: A PDF viewer with hover-activated navigation controls.
+---
+
+## Features
+
+- Hover-activated navigation
+- Clean interface
+- Page counter
+- Responsive design
+- Dark mode support
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+  ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/pdf-viewers/hover-navigation-viewer"
+```
+  </Tab>
+
+  <Tab value="Manual">
+  <Steps>
+    <Step>
+    Create and copy the following code into your `components` folder:
+
+    <CollapsibleCode>
+    ```json doc-gen:file
+    {
+      "file": "registry/default/reusables/pdf-viewers/hover-navigation-viewer.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"hover-navigation-viewer.tsx\""
+      }
+    }
+    ```
+    </CollapsibleCode>
+    </Step>
+
+    <Step>
+    Copy the loading spinner component:
+
+    <CollapsibleCode>
+    ```json doc-gen:file
+    {
+      "file": "registry/default/reusables/pdf-viewers/loading-spinner.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"loading-spinner.tsx\""
+      }
+    }
+    ```
+    </CollapsibleCode>
+    </Step>
+
+    <Step>
+    Make sure you have the utils function:
+
+    <CollapsibleCode>
+    ```json doc-gen:file
+    {
+      "file": "registry/default/lib/utils.ts",
+      "codeblock": {
+        "lang": "ts",
+        "meta": "title=\"utils.ts\""
+      }
+    }
+    ```
+    </CollapsibleCode>
+    </Step>
+
+  </Steps>
+  </Tab>
+</Tabs>
+
+## Usage
+
+```tsx
+import { HoverNavigationViewer } from "@/components/pdf-viewers/hover-navigation-viewer";
+
+export default function PDFViewer() {
+  return <HoverNavigationViewer url="path/to/your.pdf" />;
+}
+```
+
+## Examples
+
+<ComponentSource name="hover-navigation-demo" />
+
+## Reference
+
+<TypeTable
+  type={{
+    url: {
+      type: "string",
+      description: "URL of the PDF file to display",
+      required: true,
+    },
+  }}
+/>{" "}

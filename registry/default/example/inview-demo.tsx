@@ -1,8 +1,8 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import useInViewState from "@/hooks/use-inview";
 import { motion } from "framer-motion";
+import useInViewState from "../hooks/use-inview";
 
 function AnimatedCard({ delay = 0 }) {
   const { ref, isInView } = useInViewState({ threshold: 0.2 });

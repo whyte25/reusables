@@ -1,7 +1,7 @@
 "use client";
 
 import { Index } from "__registry__";
-import { Loader2, RotateCcw } from "lucide-react";
+import { Fullscreen, Loader2, RotateCcw } from "lucide-react";
 import * as React from "react";
 
 import ComponentWrapper from "@/components/component-wrapper";
@@ -9,12 +9,14 @@ import { Button } from "@/components/ui/button";
 
 import { cn } from "@/lib/utils";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import Link from "next/link";
 import { CodeBlock } from "./code-block-client";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
   sourceCode: string;
-  preview?: boolean;
+  showPreviewOnly?: boolean;
+  showPreviewButton?: boolean;
   reTrigger?: boolean;
 }
 
@@ -22,7 +24,8 @@ export function ComponentPreview({
   name,
   sourceCode,
   className,
-  preview = false,
+  showPreviewOnly = false,
+  showPreviewButton = true,
   reTrigger = true,
   ...props
 }: ComponentPreviewProps) {
@@ -39,17 +42,7 @@ export function ComponentPreview({
     return <Component />;
   }, [name]);
 
-  // // Simplified code display
-  // const Code = React.useMemo(
-  //   () => (
-  //     <pre className="language-tsx">
-  //       <code className="language-tsx">{sourceCode}</code>
-  //     </pre>
-  //   ),
-  //   [sourceCode]
-  // );
-
-  return preview ? (
+  return showPreviewOnly ? (
     <ComponentWrapper className={className}>
       {reTrigger && (
         <Button
@@ -87,6 +80,20 @@ export function ComponentPreview({
         <Tab value="Preview" className="relative rounded-md" key={key}>
           <ComponentWrapper className={className}>
             <div className="absolute right-1.5 top-1.5 z-10 ml-4 flex items-center gap-2">
+              {showPreviewButton && (
+                <Button
+                  size="icon"
+                  variant="ghost"
+                  className="h-[22px] w-[22px] rounded-sm p-0"
+                  asChild
+                  title="Open in New Tab"
+                >
+                  <Link href={`/preview/${name}`} target="_blank">
+                    <span className="sr-only">Open in New Tab</span>
+                    <Fullscreen className="h-3.5 w-3.5" />
+                  </Link>
+                </Button>
+              )}
               {/* <OpenInV0Button name={name} /> */}
               {reTrigger && (
                 <Button

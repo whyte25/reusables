@@ -12,11 +12,15 @@ npx shadcn@latest add "https://reusables.vercel.app/r/split-button"
 ```
 
     </Tab>
+
     <Tab value="Manual">
+    <Step>
+      Copy and paste the following code into your `split-button.tsx` file.
+      <CollapsibleCode>
       ```json doc-gen:file
 
 {
-"file": "registry/default/reusables/split-button.tsx",
+"file": "registry/default/reusables/ui/split-button.tsx",
 "codeblock": {
 "lang": "tsx",
 "meta": "title=\"split-button.tsx\""
@@ -24,14 +28,34 @@ npx shadcn@latest add "https://reusables.vercel.app/r/split-button"
 }
 
 ````
-    </Tab>
+    </CollapsibleCode>
+  </Step>
+
+  <Step>
+    Create and copy the following code into your `lib` folder:
+      <CollapsibleCode>
+    ```json doc-gen:file
+
+{
+"file": "registry/default/lib/utils.ts",
+"codeblock": {
+  "lang": "ts",
+  "meta": "title=\"utils.ts\""
+}
+}
+````
+
+</CollapsibleCode>
+  </Step>
+
+  </Tab>
 </Tabs>
 
 ## Usage
 
 ```tsx
 import SplitButton from "@/components/ui/split-button";
-````
+```
 
 ```tsx
 const options = [
@@ -49,7 +73,7 @@ const options = [
 
 ### Simple
 
-<ComponentSource name="reusables/split-button-demo" reTrigger={false} />
+<ComponentSource name="split-button-demo" reTrigger={false} />
 
 ### Split Button Action
 
@@ -66,7 +90,7 @@ npx shadcn@latest add "https://reusables.vercel.app/r/split-button-action"
       ```json doc-gen:file
 
 {
-"file": "registry/default/reusables/split-button-action.tsx",
+"file": "registry/default/reusables/ui/split-button-action.tsx",
 "codeblock": {
 "lang": "tsx",
 "meta": "title=\"split-button-action.tsx\""
@@ -78,7 +102,7 @@ npx shadcn@latest add "https://reusables.vercel.app/r/split-button-action"
 </Tabs>
 
 
-<ComponentSource name="reusables/split-button-action-demo" reTrigger={false} />
+<ComponentSource name="split-button-action-demo" reTrigger={false} />
 
 ## Reference
 

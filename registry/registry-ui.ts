@@ -8,15 +8,15 @@ export const ui: Registry = [
     registryDependencies: ["utils"],
     files: [
       {
-        path: "reusables/toast/notify.tsx",
+        path: "reusables/ui/notify.tsx",
         type: "registry:ui",
       },
       {
-        path: "reusables/toast/notify-provider.tsx",
+        path: "reusables/ui/notify-provider.tsx",
         type: "registry:ui",
       },
       {
-        path: "reusables/toast/notify-utils.ts",
+        path: "reusables/ui/notify-utils.ts",
         type: "registry:ui",
       },
     ],
@@ -25,14 +25,14 @@ export const ui: Registry = [
     name: "theme-image",
     type: "registry:ui",
     registryDependencies: ["utils"],
-    files: ["reusables/theme-image.tsx"],
+    files: ["reusables/ui/theme-image.tsx"],
   },
   {
     name: "spinner",
     type: "registry:ui",
     dependencies: ["class-variance-authority", "lucide-react"],
     registryDependencies: ["utils"],
-    files: ["reusables/spinner.tsx"],
+    files: ["reusables/ui/spinner.tsx"],
   },
   {
     name: "submit-button",
@@ -40,11 +40,11 @@ export const ui: Registry = [
     registryDependencies: ["button", "utils"],
     files: [
       {
-        path: "reusables/submit-button.tsx",
+        path: "reusables/ui/submit-button.tsx",
         type: "registry:ui",
       },
       {
-        path: "reusables/spinner.tsx",
+        path: "reusables/ui/spinner.tsx",
         type: "registry:ui",
       },
     ],
@@ -54,21 +54,21 @@ export const ui: Registry = [
     type: "registry:ui",
     dependencies: ["lucide-react"],
     registryDependencies: ["button", "utils"],
-    files: ["reusables/copy-button.tsx"],
+    files: ["reusables/ui/copy-button.tsx"],
   },
   {
     name: "split-button",
     type: "registry:ui",
     registryDependencies: ["button", "dropdown-menu", "utils"],
     dependencies: ["lucide-react"],
-    files: ["reusables/split-button.tsx"],
+    files: ["reusables/ui/split-button.tsx"],
   },
   {
     name: "split-button-action",
     type: "registry:ui",
     registryDependencies: ["button", "dropdown-menu", "utils"],
     dependencies: ["lucide-react"],
-    files: ["reusables/split-button-action.tsx"],
+    files: ["reusables/ui/split-button-action.tsx"],
   },
 
   // {

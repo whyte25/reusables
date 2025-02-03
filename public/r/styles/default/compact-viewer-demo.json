@@ -1,0 +1,19 @@
+{
+  "name": "compact-viewer-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "react-pdf",
+    "@wojtekmaj/react-hooks"
+  ],
+  "registryDependencies": [
+    "compact-viewer"
+  ],
+  "files": [
+    {
+      "path": "example/compact-viewer-demo.tsx",
+      "content": "\"use client\";\n\nimport { CompactViewer } from \"../reusables/pdf-viewers/compact-viewer\";\n\nexport default function CompactViewerDemo() {\n  const samplePdfUrl =\n    \"https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf\";\n\n  return <CompactViewer url={samplePdfUrl} />;\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import useFileUpload from "@/hooks/use-file-upload";
 import { cn } from "@/lib/utils";
 import { Upload, X } from "lucide-react";
 import Image from "next/image";
+import useFileUpload from "../hooks/use-file-upload";
 
 export default function FileUploadDemo() {
   const {
