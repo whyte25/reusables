@@ -154,8 +154,8 @@ a[href="/docs/components/pdf-viewers/hover-navigation-viewer"] {
 .dot[aria-controls]::after {
   content: "";
   position: absolute;
-  right: 0.1rem;
-  top: 0;
+  right: -0.2rem;
+  top: 50%;
   transform: translateY(-50%);
   height: 0.5rem;
   width: 0.5rem;
@@ -165,8 +165,8 @@ a[href="/docs/components/pdf-viewers/hover-navigation-viewer"] {
 .dot[aria-controls]::before {
   content: "";
   position: absolute;
-  right: 0.1rem;
-  top: 0;
+  right: -0.2rem;
+  top: 50%;
   transform: translateY(-50%);
   height: 0.5rem;
   width: 0.5rem;
@@ -198,14 +198,26 @@ a[href="/docs/components/pdf-viewers/hover-navigation-viewer"] {
   background-color: hsl(var(--updated-badge) / 0.4);
 }
 
+button[aria-controls^="radix-"] {
+  position: relative;
+}
+
+button[aria-controls="radix-:r42:"] {
+  @apply dot new-dot;
+}
+
+button[aria-controls="radix-:r43:"] {
+  @apply dot new-dot;
+}
+
+.fd-codeblock code {
+  display: block !important;
+}
+
 @keyframes ping {
   75%,
   100% {
     transform: translateY(-50%) scale(3);
     opacity: 0;
   }
-}
-
-.fd-codeblock code {
-  display: block !important;
 }
