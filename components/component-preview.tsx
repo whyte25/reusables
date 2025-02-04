@@ -10,23 +10,21 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import ComponentWrapper from "@/components/component-wrapper"
 
-import { CodeBlock } from "./code-block-client"
-
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
-  sourceCode: string
   showPreviewOnly?: boolean
   showPreviewButton?: boolean
   reTrigger?: boolean
+  children: React.ReactNode
 }
 
 export function ComponentPreview({
   name,
-  sourceCode,
   className,
   showPreviewOnly = false,
   showPreviewButton = true,
   reTrigger = true,
+  children,
   ...props
 }: ComponentPreviewProps) {
   const [key, setKey] = React.useState(0)
@@ -78,12 +76,12 @@ export function ComponentPreview({
         >
           <Tab value="Preview" className="relative rounded-md" key={key}>
             <ComponentWrapper className={className}>
-              <div className="absolute right-1.5 top-1.5 z-10 ml-4 flex items-center gap-2">
+              <div className="absolute -top-1 right-1.5 z-10 ml-4 flex items-center gap-2 md:top-2">
                 {showPreviewButton && (
                   <Button
                     size="icon"
                     variant="ghost"
-                    className="h-[22px] w-[22px] rounded-sm p-0"
+                    className="rounded-sm bg-accent p-0 px-3 py-1 lg:bg-transparent"
                     asChild
                     title="Open in New Tab"
                   >
@@ -97,7 +95,7 @@ export function ComponentPreview({
                 {reTrigger && (
                   <Button
                     onClick={() => setKey((prev) => prev + 1)}
-                    className="rounded-lg px-3 py-1"
+                    className="rounded-lg bg-accent px-3 py-1 lg:bg-transparent"
                     variant="ghost"
                   >
                     <RotateCcw aria-label="restart-btn" size={16} />
@@ -116,9 +114,7 @@ export function ComponentPreview({
               </React.Suspense>
             </ComponentWrapper>
           </Tab>
-          <Tab value="Code">
-            <CodeBlock code={sourceCode} compact />
-          </Tab>
+          <Tab value="Code">{children}</Tab>
         </Tabs>
       </div>
 }

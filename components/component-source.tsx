@@ -2,6 +2,7 @@ import fs from "node:fs"
 import path from "path"
 import { Index } from "__registry__"
 
+import { CodeBlock } from "./code-block"
 import { ComponentPreview } from "./component-preview"
 
 interface ComponentSourceProps {
@@ -58,10 +59,11 @@ export async function ComponentSource({
     <ComponentPreview
       className={className}
       name={name}
-      sourceCode={sourceCode}
       showPreviewOnly={showPreviewOnly}
       showPreviewButton={showPreviewButton}
       reTrigger={reTrigger}
-    />
+    >
+      <CodeBlock code={sourceCode} compact />
+    </ComponentPreview>
   )
 }

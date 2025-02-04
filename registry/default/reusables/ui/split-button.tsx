@@ -1,8 +1,9 @@
 "use client"
 
-import { ChevronDown } from "lucide-react"
 import type * as React from "react"
+import { ChevronDown } from "lucide-react"
 
+import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -10,7 +11,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { cn } from "@/lib/utils"
 
 export interface SplitButtonOption {
   label: string

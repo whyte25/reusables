@@ -41,7 +41,7 @@ export default function ManualMultipleImageUploadDemo() {
   }, [uploadProgress])
 
   return (
-    <div className="w-full px-10">
+    <div className="mx-auto w-full max-w-3xl md:px-10">
       <MultiImageDropzone
         value={fileStates}
         dropzoneOptions={{

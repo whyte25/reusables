@@ -68,7 +68,7 @@ export default function AutoMultipleImageUploadDemo() {
   }
 
   return (
-    <div className="w-full px-10">
+    <div className="w-full md:px-10">
       <MultiImageDropzone
         value={fileStates}
         height="300px"
