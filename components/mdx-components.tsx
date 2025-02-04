@@ -1,21 +1,22 @@
-import { Popup, PopupContent, PopupTrigger } from "fumadocs-twoslash/ui";
-import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
-import { cn } from "fumadocs-ui/components/api";
-import { Callout } from "fumadocs-ui/components/callout";
-import { Card, Cards } from "fumadocs-ui/components/card";
-import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
-import { ImageZoom } from "fumadocs-ui/components/image-zoom";
-import { Step, Steps } from "fumadocs-ui/components/steps";
-import { Tab, Tabs } from "fumadocs-ui/components/tabs";
-import { TypeTable } from "fumadocs-ui/components/type-table";
-import defaultMdxComponents from "fumadocs-ui/mdx";
-import type { MDXComponents, MDXProps } from "mdx/types";
-import Link from "next/link";
-import { Suspense } from "react";
-import { CodeBlockWrapper } from "./code-block-wrapper";
-import { CollapsibleCode } from "./collapsible-code";
-import { ComponentPreview } from "./component-preview";
-import { ComponentSource } from "./component-source";
+import { Suspense } from "react"
+import Link from "next/link"
+import { Popup, PopupContent, PopupTrigger } from "fumadocs-twoslash/ui"
+import { Accordion, Accordions } from "fumadocs-ui/components/accordion"
+import { cn } from "fumadocs-ui/components/api"
+import { Callout } from "fumadocs-ui/components/callout"
+import { Card, Cards } from "fumadocs-ui/components/card"
+import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock"
+import { ImageZoom } from "fumadocs-ui/components/image-zoom"
+import { Step, Steps } from "fumadocs-ui/components/steps"
+import { Tab, Tabs } from "fumadocs-ui/components/tabs"
+import { TypeTable } from "fumadocs-ui/components/type-table"
+import defaultMdxComponents from "fumadocs-ui/mdx"
+import type { MDXComponents, MDXProps } from "mdx/types"
+
+import { CodeBlockWrapper } from "./code-block-wrapper"
+import { CollapsibleCode } from "./collapsible-code"
+import { ComponentPreview } from "./component-preview"
+import { ComponentSource } from "./component-source"
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -27,7 +28,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         <CodeBlock className="" {...props}>
           <Pre>{props.children}</Pre>
         </CodeBlock>
-      );
+      )
     },
     Popup,
     PopupContent,
@@ -60,17 +61,17 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     img: (props) => <ImageZoom {...(props as any)} />,
     TypeTable,
-  };
+  }
 }
 
 export function MDXRenderer({
   code,
 }: {
-  code: (props: MDXProps) => React.ReactElement;
+  code: (props: MDXProps) => React.ReactElement
 }) {
-  const components = useMDXComponents({});
+  const components = useMDXComponents({})
 
-  const MDXContent = code;
+  const MDXContent = code
 
-  return <MDXContent code={code} components={components} />;
+  return <MDXContent code={code} components={components} />
 }

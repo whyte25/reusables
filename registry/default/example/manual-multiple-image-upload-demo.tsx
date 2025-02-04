@@ -1,45 +1,47 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { useMultipleFileUpload } from "@/hooks/use-multiple-file-upload";
-import * as React from "react";
+import * as React from "react"
+
+import { useMultipleFileUpload } from "@/hooks/use-multiple-file-upload"
+import { Button } from "@/components/ui/button"
+
 import {
   FileState,
   MultiImageDropzone,
-} from "../reusables/multiple-image-upload";
+} from "../reusables/multiple-image-upload"
 
 export default function ManualMultipleImageUploadDemo() {
-  const [fileStates, setFileStates] = React.useState<FileState[]>([]);
+  const [fileStates, setFileStates] = React.useState<FileState[]>([])
   const { uploadMultipleFiles, uploadProgress, isUploading, error } =
     useMultipleFileUpload({
       onSuccess: (urls) => {
-        console.log("Successfully uploaded files:", urls);
+        console.log("Successfully uploaded files:", urls)
       },
       onError: (error) => {
-        console.error("Upload error:", error);
+        console.error("Upload error:", error)
       },
-    });
+    })
 
   // Update file progress based on upload progress
   React.useEffect(() => {
     if (uploadProgress.length) {
       setFileStates((fileStates) => {
-        const newFileStates = structuredClone(fileStates);
+        const newFileStates = structuredClone(fileStates)
         uploadProgress.forEach(({ key, progress }) => {
           const fileState = newFileStates.find(
             (fileState) => fileState.key === key
-          );
+          )
           if (fileState) {
-            fileState.progress = progress;
+            fileState.progress = progress
           }
-        });
-        return newFileStates;
-      });
+        })
+        return newFileStates
+      })
     }
-  }, [uploadProgress]);
+  }, [uploadProgress])
 
   return (
-    <div className="px-10 w-full">
+    <div className="mx-auto w-full max-w-3xl md:px-10">
       <MultiImageDropzone
         value={fileStates}
         dropzoneOptions={{
@@ -50,7 +52,7 @@ export default function ManualMultipleImageUploadDemo() {
         displayMode="list"
         onChange={setFileStates}
         onFilesAdded={async (addedFiles) => {
-          setFileStates([...fileStates, ...addedFiles]);
+          setFileStates([...fileStates, ...addedFiles])
         }}
       />
       <Button
@@ -65,9 +67,9 @@ export default function ManualMultipleImageUploadDemo() {
             .map((fileState) => ({
               key: fileState.key,
               file: fileState.file as File,
-            }));
+            }))
 
-          uploadMultipleFiles(pendingFiles);
+          uploadMultipleFiles(pendingFiles)
         }}
         disabled={
           isUploading ||
@@ -77,7 +79,7 @@ export default function ManualMultipleImageUploadDemo() {
       >
         Upload
       </Button>
-      {error && <div className="mt-2 text-red-500 text-sm">{error}</div>}
+      {error && <div className="mt-2 text-sm text-red-500">{error}</div>}
     </div>
-  );
+  )
 }

@@ -1,10 +1,10 @@
-import { rehypeCodeOptions } from "@/rehype-code.config";
+import { rehypeCodeOptions } from "@/rehype-code.config"
 import {
   transformerNotationHighlight,
   transformerNotationWordHighlight,
-} from "@shikijs/transformers";
-import type { BundledLanguage } from "shiki/bundle/web";
-import { codeToHtml } from "shiki/bundle/web";
+} from "@shikijs/transformers"
+import type { BundledLanguage } from "shiki/bundle/web"
+import { codeToHtml } from "shiki/bundle/web"
 
 export async function highlight(code: string, lang: BundledLanguage) {
   return await codeToHtml(code, {
@@ -14,12 +14,12 @@ export async function highlight(code: string, lang: BundledLanguage) {
       transformerNotationHighlight(),
       transformerNotationWordHighlight(),
     ],
-  });
+  })
 }
 
 export function renderCodeSkeleton(code: string) {
   return `<pre class='h-auto'><code>${code
     ?.split("\n")
     ?.map((line) => `<span class="line">${line}</span>`)
-    ?.join("")}</code></pre>`;
+    ?.join("")}</code></pre>`
 }

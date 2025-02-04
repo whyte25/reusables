@@ -1,4 +1,4 @@
-import type { RehypeCodeOptions } from "fumadocs-core/mdx-plugins";
+import type { RehypeCodeOptions } from "fumadocs-core/mdx-plugins"
 
 export const rehypeCodeOptions: RehypeCodeOptions = {
   themes: {
@@ -7,4 +7,4 @@ export const rehypeCodeOptions: RehypeCodeOptions = {
   },
   inline: "tailing-curly-colon",
   defaultColor: false,
-};
+}

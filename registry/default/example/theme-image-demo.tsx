@@ -1,5 +1,6 @@
-import { images } from "@/constant/images";
-import ThemeImage from "../reusables/ui/theme-image";
+import { images } from "@/constant/images"
+
+import ThemeImage from "../reusables/ui/theme-image"
 
 const ThemeImageDemo = () => {
   return (
@@ -13,7 +14,7 @@ const ThemeImageDemo = () => {
         className="w-full"
       />
     </div>
-  );
-};
+  )
+}
 
-export default ThemeImageDemo;
+export default ThemeImageDemo

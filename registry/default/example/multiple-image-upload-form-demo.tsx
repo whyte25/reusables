@@ -1,7 +1,13 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import React from "react"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+
+import { useMultipleFileUpload } from "@/hooks/use-multiple-file-upload"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   Form,
   FormControl,
@@ -9,39 +15,34 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+
 import {
   FileState,
   MultiImageDropzone,
-} from "../reusables/multiple-image-upload";
-
-import { Input } from "@/components/ui/input";
-import { useMultipleFileUpload } from "@/hooks/use-multiple-file-upload";
-import { zodResolver } from "@hookform/resolvers/zod";
-import React from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { toast } from "../reusables/ui/notify-provider";
+} from "../reusables/multiple-image-upload"
+import { toast } from "../reusables/ui/notify-provider"
 
 const formSchema = z.object({
   title: z.string().min(2).max(50),
   images: z.array(z.string()).min(1, "At least one image is required"),
-});
+})
 
-type FormValues = z.infer<typeof formSchema>;
+type FormValues = z.infer<typeof formSchema>
 
 export default function MultipleImageUploadFormDemo() {
   const { uploadMultipleFiles, isUploading, error, uploadProgress } =
     useMultipleFileUpload({
       onSuccess: (urls) => {
         // Update form with uploaded URLs
-        form.setValue("images", urls);
-        toast.success("Images uploaded successfully!");
+        form.setValue("images", urls)
+        toast.success("Images uploaded successfully!")
       },
       onError: (error) => {
-        toast.error(error);
+        toast.error(error)
       },
-    });
+    })
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -49,27 +50,27 @@ export default function MultipleImageUploadFormDemo() {
       title: "",
       images: [],
     },
-  });
+  })
 
-  const [fileStates, setFileStates] = React.useState<FileState[]>([]);
+  const [fileStates, setFileStates] = React.useState<FileState[]>([])
 
   // Add this useEffect to handle upload progress
   React.useEffect(() => {
     if (uploadProgress.length) {
       setFileStates((fileStates) => {
-        const newFileStates = structuredClone(fileStates);
+        const newFileStates = structuredClone(fileStates)
         uploadProgress.forEach(({ key, progress }) => {
           const fileState = newFileStates.find(
             (fileState) => fileState.key === key
-          );
+          )
           if (fileState) {
-            fileState.progress = progress;
+            fileState.progress = progress
           }
-        });
-        return newFileStates;
-      });
+        })
+        return newFileStates
+      })
     }
-  }, [uploadProgress]);
+  }, [uploadProgress])
 
   // Update the onUpload handler
   const handleUpload = async (files: File[]) => {
@@ -78,33 +79,33 @@ export default function MultipleImageUploadFormDemo() {
       file,
       key: Math.random().toString(36).slice(2),
       progress: "PENDING",
-    }));
+    }))
 
     // Update state to show previews immediately
-    setFileStates((prev) => [...prev, ...newFileStates]);
+    setFileStates((prev) => [...prev, ...newFileStates])
 
     // Start upload
     const filesToUpload = newFileStates.map(({ key, file }) => ({
       key,
       file: file as File,
-    }));
+    }))
 
-    await uploadMultipleFiles(filesToUpload);
-  };
+    await uploadMultipleFiles(filesToUpload)
+  }
 
   async function onSubmit(values: FormValues) {
     toast.promise(() => new Promise((resolve) => setTimeout(resolve, 2000)), {
       loading: "Creating gallery...",
       success: () => `Gallery created successfully!`,
       error: "Failed to create gallery",
-    });
-    console.log(values);
-    form.reset();
-    setFileStates([]);
+    })
+    console.log(values)
+    form.reset()
+    setFileStates([])
   }
 
   return (
-    <Card className="w-full max-w-2xl mx-auto">
+    <Card className="mx-auto w-full max-w-2xl">
       <CardHeader>
         <CardTitle>Create Image Gallery</CardTitle>
       </CardHeader>
@@ -157,5 +158,5 @@ export default function MultipleImageUploadFormDemo() {
         </Form>
       </CardContent>
     </Card>
-  );
+  )
 }

@@ -1,14 +1,16 @@
-import { Index } from "__registry__";
-import fs from "node:fs";
-import path from "path";
-import { ComponentPreview } from "./component-preview";
+import fs from "node:fs"
+import path from "path"
+import { Index } from "__registry__"
+
+import { CodeBlock } from "./code-block"
+import { ComponentPreview } from "./component-preview"
 
 interface ComponentSourceProps {
-  name: string; // Format: "folder/component-name" (e.g. "example/submit-button-demo")
-  showPreviewOnly?: boolean;
-  showPreviewButton?: boolean;
-  reTrigger?: boolean;
-  className?: string;
+  name: string // Format: "folder/component-name" (e.g. "example/submit-button-demo")
+  showPreviewOnly?: boolean
+  showPreviewButton?: boolean
+  reTrigger?: boolean
+  className?: string
 }
 
 export async function ComponentSource({
@@ -18,25 +20,25 @@ export async function ComponentSource({
   reTrigger,
   className,
 }: ComponentSourceProps) {
-  const style = "default";
+  const style = "default"
 
   // console.log(folder);
 
   // Get component details from registry
-  const component = Index[style][name];
+  const component = Index[style][name]
 
   if (!component) {
-    console.error(`Component ${name} not found in registry`);
-    return null;
+    console.error(`Component ${name} not found in registry`)
+    return null
   }
 
   // Read source code
-  const filePath = path.join(process.cwd(), component.files[0]);
+  const filePath = path.join(process.cwd(), component.files[0])
 
-  let sourceCode = "";
+  let sourceCode = ""
 
   try {
-    sourceCode = await fs.promises.readFile(filePath, "utf8");
+    sourceCode = await fs.promises.readFile(filePath, "utf8")
 
     // Clean up imports - handle both registry and reusables paths
     sourceCode = sourceCode
@@ -48,19 +50,20 @@ export async function ComponentSource({
       .replaceAll(/"\.\.\/lib\/(.*?)"/g, '"@/lib/$1"')
       .replaceAll(/"\.\.\/utils\/(.*?)"/g, '"@/utils/$1"')
       // Handle exports
-      .replaceAll("export default", "export");
+      .replaceAll("export default", "export")
   } catch (error) {
-    console.error(`Error reading component source: ${error}`);
+    console.error(`Error reading component source: ${error}`)
   }
 
   return (
     <ComponentPreview
       className={className}
       name={name}
-      sourceCode={sourceCode}
       showPreviewOnly={showPreviewOnly}
       showPreviewButton={showPreviewButton}
       reTrigger={reTrigger}
-    />
-  );
+    >
+      <CodeBlock code={sourceCode} compact />
+    </ComponentPreview>
+  )
 }

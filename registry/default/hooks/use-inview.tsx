@@ -1,29 +1,30 @@
-"use client";
-import { useEffect, useState } from "react";
-import { useInView as InviewObserver } from "react-intersection-observer";
+"use client"
+
+import { useEffect, useState } from "react"
+import { useInView as InviewObserver } from "react-intersection-observer"
 
 interface UseInViewStateOptions {
-  triggerOnce?: boolean;
-  threshold?: number;
+  triggerOnce?: boolean
+  threshold?: number
 }
 
 const useInView = ({
   triggerOnce = true,
   threshold = 0.1,
 }: UseInViewStateOptions = {}) => {
-  const [isInView, setIsInView] = useState(false);
+  const [isInView, setIsInView] = useState(false)
   const { ref, inView } = InviewObserver({
     triggerOnce,
     threshold,
-  });
+  })
 
   useEffect(() => {
     if (inView) {
-      setIsInView(true);
+      setIsInView(true)
     }
-  }, [inView]);
+  }, [inView])
 
-  return { ref, isInView };
-};
+  return { ref, isInView }
+}
 
-export default useInView;
+export default useInView

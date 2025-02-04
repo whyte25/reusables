@@ -1,14 +1,8 @@
 {
   "name": "notify-provider",
   "type": "registry:ui",
-  "dependencies": [
-    "framer-motion",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "notify",
-    "notify-utils"
-  ],
+  "dependencies": ["framer-motion", "class-variance-authority"],
+  "registryDependencies": ["notify", "notify-utils"],
   "files": [
     {
       "path": "reusables/toast/notify-provider.tsx",

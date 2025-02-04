@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import React from "react";
+import React from "react"
 
 export const Provider = ({ children }: { children: React.ReactNode }) => {
   // const { isOnline } = useOnlineStatus();
@@ -16,5 +16,5 @@ export const Provider = ({ children }: { children: React.ReactNode }) => {
   //   }
   // }, [isOnline]);
 
-  return <>{children}</>;
-};
+  return <>{children}</>
+}

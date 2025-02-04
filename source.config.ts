@@ -1,35 +1,31 @@
-import {
-  rehypeCode,
-  rehypeCodeDefaultOptions,
-} from "fumadocs-core/mdx-plugins";
+import { rehypeCode, rehypeCodeDefaultOptions } from "fumadocs-core/mdx-plugins"
 import {
   fileGenerator,
   remarkDocGen,
   remarkInstall,
   remarkTypeScriptToJavaScript,
   typescriptGenerator,
-} from "fumadocs-docgen";
-import { defineConfig } from "fumadocs-mdx/config";
-import remarkSmartypants from "remark-smartypants";
-
+} from "fumadocs-docgen"
 import {
   defineCollections,
+  defineConfig,
   frontmatterSchema,
   metaSchema,
-} from "fumadocs-mdx/config";
-import { transformerTwoslash } from "fumadocs-twoslash";
+} from "fumadocs-mdx/config"
+import { transformerTwoslash } from "fumadocs-twoslash"
+import remarkSmartypants from "remark-smartypants"
 
 export const docs = defineCollections({
   type: "doc",
   dir: "content/docs",
   schema: frontmatterSchema,
-});
+})
 
 export const meta = defineCollections({
   type: "meta",
   dir: "content/docs",
   schema: metaSchema,
-});
+})
 
 export default defineConfig({
   lastModifiedTime: "git",
@@ -59,4 +55,4 @@ export default defineConfig({
       [remarkInstall, { persist: { id: "package-manager" } }],
     ],
   },
-});
+})

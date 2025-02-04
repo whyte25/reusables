@@ -1,14 +1,8 @@
 {
   "name": "toast-provider",
   "type": "registry:ui",
-  "dependencies": [
-    "framer-motion",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "toast",
-    "toast-utils"
-  ],
+  "dependencies": ["framer-motion", "class-variance-authority"],
+  "registryDependencies": ["toast", "toast-utils"],
   "files": [
     {
       "path": "reusables/toast/toast-provider.tsx",

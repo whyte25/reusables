@@ -1,4 +1,4 @@
-import { Registry } from "@/registry/schema";
+import { Registry } from "@/registry/schema"
 
 export const examples: Registry = [
   {
@@ -232,4 +232,4 @@ export const examples: Registry = [
     dependencies: ["react-pdf", "@wojtekmaj/react-hooks"],
     files: ["example/thumbnail-viewer-demo.tsx"],
   },
-];
+]

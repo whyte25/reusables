@@ -1,21 +1,22 @@
-"use client";
+"use client"
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CompactViewer } from "./compact-viewer";
-import { FullscreenViewer } from "./fullscreen-viewer";
-import { HoverNavigationViewer } from "./hover-navigation-viewer";
-import { MinimalViewer } from "./minimal-viewer";
-import { SidebarViewer } from "./sidebar-viewer";
-import { ThumbnailViewer } from "./thumbnail-viewer";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
+import { CompactViewer } from "./compact-viewer"
+import { FullscreenViewer } from "./fullscreen-viewer"
+import { HoverNavigationViewer } from "./hover-navigation-viewer"
+import { MinimalViewer } from "./minimal-viewer"
+import { SidebarViewer } from "./sidebar-viewer"
+import { ThumbnailViewer } from "./thumbnail-viewer"
 
 const PDFViewerTabs = () => {
   const samplePdfUrl =
-    "https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf";
+    "https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf"
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-4 overflow-hidden">
+    <div className="mx-auto w-full max-w-7xl overflow-hidden p-4">
       <Tabs defaultValue="hover" className="w-full">
-        <TabsList className="grid grid-cols-3 lg:grid-cols-6 w-full mb-4">
+        <TabsList className="mb-4 grid w-full grid-cols-3 lg:grid-cols-6">
           <TabsTrigger value="hover">Hover Nav</TabsTrigger>
           <TabsTrigger value="minimal">Minimal</TabsTrigger>
           <TabsTrigger value="fullscreen">Fullscreen</TabsTrigger>
@@ -24,7 +25,7 @@ const PDFViewerTabs = () => {
           <TabsTrigger value="compact">Compact</TabsTrigger>
         </TabsList>
 
-        <div className="relative w-full mt-10 overflow-hidden rounded-lg">
+        <div className="relative mt-10 w-full overflow-hidden rounded-lg">
           <TabsContent value="hover">
             <HoverNavigationViewer url={samplePdfUrl} />
           </TabsContent>
@@ -39,8 +40,8 @@ const PDFViewerTabs = () => {
               onClose={() => {
                 const hoverTab = document.querySelector(
                   '[value="hover"]'
-                ) as HTMLButtonElement;
-                if (hoverTab) hoverTab.click();
+                ) as HTMLButtonElement
+                if (hoverTab) hoverTab.click()
               }}
             />
           </TabsContent>
@@ -59,7 +60,7 @@ const PDFViewerTabs = () => {
         </div>
       </Tabs>
     </div>
-  );
-};
+  )
+}
 
-export default PDFViewerTabs;
+export default PDFViewerTabs

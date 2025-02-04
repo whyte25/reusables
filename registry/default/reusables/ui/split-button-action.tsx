@@ -1,34 +1,35 @@
-"use client";
+"use client"
 
-import { Button, ButtonProps } from "@/components/ui/button";
+import * as React from "react"
+import { ChevronDown, Loader2 } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+import { Button, ButtonProps } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils";
-import { ChevronDown, Loader2 } from "lucide-react";
-import * as React from "react";
+} from "@/components/ui/dropdown-menu"
 
 export interface SplitButtonOption {
-  label: string;
-  onClick: () => void;
-  icon?: React.ReactNode;
-  variant?: "default" | "destructive";
+  label: string
+  onClick: () => void
+  icon?: React.ReactNode
+  variant?: "default" | "destructive"
 }
 
 interface SplitButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  options: SplitButtonOption[];
-  mainAction: () => void;
-  variant?: ButtonProps["variant"];
-  size?: ButtonProps["size"];
-  dropdownAlign?: "start" | "center" | "end";
-  icon?: React.ReactNode;
-  isLoading?: boolean;
-  glassMorphism?: boolean;
+  options: SplitButtonOption[]
+  mainAction: () => void
+  variant?: ButtonProps["variant"]
+  size?: ButtonProps["size"]
+  dropdownAlign?: "start" | "center" | "end"
+  icon?: React.ReactNode
+  isLoading?: boolean
+  glassMorphism?: boolean
 }
 
 export default function SplitButtonAction({
@@ -44,21 +45,21 @@ export default function SplitButtonAction({
   glassMorphism,
   ...props
 }: SplitButtonProps) {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false)
 
   const baseClassName = cn(
     "relative transition-all duration-200",
-    glassMorphism && "backdrop-blur-sm bg-opacity-80 shadow-lg",
+    glassMorphism && "bg-opacity-80 shadow-lg backdrop-blur-sm",
     className
-  );
+  )
 
   const buttonClassName = cn(
     "rounded-r-none",
     "hover:translate-y-[-1px]",
     "active:translate-y-[1px]",
     "transition-all duration-200",
-    glassMorphism && "backdrop-blur-sm bg-opacity-80"
-  );
+    glassMorphism && "bg-opacity-80 backdrop-blur-sm"
+  )
 
   const dropdownTriggerClassName = cn(
     "rounded-l-none",
@@ -71,34 +72,33 @@ export default function SplitButtonAction({
     variant === "destructive" && "border-destructive-foreground/20",
     variant === "outline" && "border-input",
     variant === "secondary" && "border-secondary-foreground/20",
-    glassMorphism && "backdrop-blur-sm bg-opacity-80"
-  );
+    glassMorphism && "bg-opacity-80 backdrop-blur-sm"
+  )
 
   return (
     <div className={baseClassName}>
-      <div className="relative flex items-center group">
+      <div className="group relative flex items-center">
         <Button
           variant={variant}
           size={size}
           className={buttonClassName}
           onClick={(e) => {
-            e?.preventDefault();
-            mainAction();
+            e?.preventDefault()
+            mainAction()
           }}
           disabled={isLoading}
           {...props}
         >
-          {isLoading ? (
+          {isLoading ?
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               Loading...
             </>
-          ) : (
-            <>
+          : <>
               {icon && <span className="mr-2">{icon}</span>}
               {children}
             </>
-          )}
+          }
         </Button>
         <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
           <DropdownMenuTrigger asChild>
@@ -116,18 +116,18 @@ export default function SplitButtonAction({
             align={dropdownAlign}
             className={cn(
               "animate-in fade-in-0 zoom-in-95",
-              glassMorphism && "backdrop-blur-sm bg-opacity-90"
+              glassMorphism && "bg-opacity-90 backdrop-blur-sm"
             )}
           >
             {options.map((option, index) => (
               <React.Fragment key={index}>
                 <DropdownMenuItem
                   onClick={(e) => {
-                    e?.preventDefault();
-                    option.onClick();
-                    setIsOpen(false);
+                    e?.preventDefault()
+                    option.onClick()
+                    setIsOpen(false)
                   }}
-                  className="flex items-center cursor-pointer gap-2 transition-colors duration-200"
+                  className="flex cursor-pointer items-center gap-2 transition-colors duration-200"
                 >
                   {option.icon && (
                     <span className="h-4 w-4">{option.icon}</span>
@@ -141,5 +141,5 @@ export default function SplitButtonAction({
         </DropdownMenu>
       </div>
     </div>
-  );
+  )
 }

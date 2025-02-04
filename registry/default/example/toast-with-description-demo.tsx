@@ -1,7 +1,8 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { toast } from "../reusables/ui/notify-provider";
+import { Button } from "@/components/ui/button"
+
+import { toast } from "../reusables/ui/notify-provider"
 
 export default function ToastWithDescriptionDemo() {
   return (
@@ -17,5 +18,5 @@ export default function ToastWithDescriptionDemo() {
     >
       Show Toast with Description
     </Button>
-  );
+  )
 }

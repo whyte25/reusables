@@ -1,36 +1,36 @@
-import type { ToastParams, ToastPromiseOptions } from "./notify-provider";
+import type { ToastParams, ToastPromiseOptions } from "./notify-provider"
 
 export type ToastFunction = (
   title: string,
   options?: Partial<ToastParams>
-) => string;
+) => string
 
 type PromiseHandler = <T>(
   promise: () => Promise<T>,
   options: ToastPromiseOptions<T>
-) => string;
+) => string
 
 export interface ToastMethods {
-  success: ToastFunction;
-  error: ToastFunction;
-  warning: ToastFunction;
-  info: ToastFunction;
-  loading: ToastFunction;
-  default: ToastFunction;
-  push: (params: ToastParams) => string;
-  promise: PromiseHandler;
+  success: ToastFunction
+  error: ToastFunction
+  warning: ToastFunction
+  info: ToastFunction
+  loading: ToastFunction
+  default: ToastFunction
+  push: (params: ToastParams) => string
+  promise: PromiseHandler
 }
 
 class Toast implements ToastMethods {
-  private emit: ((params: ToastParams) => string) | null = null;
-  private emitPromise: PromiseHandler | null = null;
+  private emit: ((params: ToastParams) => string) | null = null
+  private emitPromise: PromiseHandler | null = null
 
   setHandlers(
     emit: (params: ToastParams) => string,
     promiseHandler: PromiseHandler
   ) {
-    this.emit = emit;
-    this.emitPromise = promiseHandler;
+    this.emit = emit
+    this.emitPromise = promiseHandler
   }
 
   private createToastFn(status: ToastParams["status"]): ToastFunction {
@@ -38,13 +38,13 @@ class Toast implements ToastMethods {
       if (!this.emit)
         throw new Error(
           "Toast not initialized: wrap your app with ToastProvider"
-        );
+        )
       return this.emit({
         title,
         status,
         ...options,
-      });
-    };
+      })
+    }
   }
 
   /**
@@ -55,7 +55,7 @@ class Toast implements ToastMethods {
    * toast.success('Profile updated successfully')
    * toast.success('Files uploaded', { duration: 5000, description: '3 files uploaded' })
    */
-  success = this.createToastFn("success");
+  success = this.createToastFn("success")
 
   /**
    * Display an error toast notification
@@ -65,7 +65,7 @@ class Toast implements ToastMethods {
    * toast.error('Failed to save changes')
    * toast.error('Upload failed', { description: 'Network error occurred' })
    */
-  error = this.createToastFn("error");
+  error = this.createToastFn("error")
 
   /**
    * Display a warning toast notification
@@ -75,7 +75,7 @@ class Toast implements ToastMethods {
    * toast.warning('Low storage space')
    * toast.warning('Session expiring', { description: 'Please save your work' })
    */
-  warning = this.createToastFn("warning");
+  warning = this.createToastFn("warning")
 
   /**
    * Display an info toast notification
@@ -85,7 +85,7 @@ class Toast implements ToastMethods {
    * toast.info('New updates available')
    * toast.info('Tips', { description: 'Swipe left to delete' })
    */
-  info = this.createToastFn("info");
+  info = this.createToastFn("info")
 
   /**
    * Display a loading toast notification
@@ -95,7 +95,7 @@ class Toast implements ToastMethods {
    * toast.loading('Uploading files...')
    * toast.loading('Processing', { duration: Infinity })
    */
-  loading = this.createToastFn("loading");
+  loading = this.createToastFn("loading")
 
   /**
    * Display a default toast notification
@@ -104,7 +104,7 @@ class Toast implements ToastMethods {
    * @example
    * toast.default('Something happened')
    */
-  default = this.createToastFn("default");
+  default = this.createToastFn("default")
 
   /**
    * Create a custom toast notification with full control over its properties
@@ -120,11 +120,9 @@ class Toast implements ToastMethods {
    */
   push = (params: ToastParams) => {
     if (!this.emit)
-      throw new Error(
-        "Toast not initialized: wrap your app with ToastProvider"
-      );
-    return this.emit(params);
-  };
+      throw new Error("Toast not initialized: wrap your app with ToastProvider")
+    return this.emit(params)
+  }
 
   /**
    * Handle async operations with loading, success, and error states
@@ -142,11 +140,9 @@ class Toast implements ToastMethods {
    */
   promise = <T>(promise: () => Promise<T>, options: ToastPromiseOptions<T>) => {
     if (!this.emitPromise)
-      throw new Error(
-        "Toast not initialized: wrap your app with ToastProvider"
-      );
-    return this.emitPromise(promise, options);
-  };
+      throw new Error("Toast not initialized: wrap your app with ToastProvider")
+    return this.emitPromise(promise, options)
+  }
 }
 
-export const toast = new Toast();
+export const toast = new Toast()

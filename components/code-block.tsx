@@ -1,23 +1,21 @@
+import { CodeBlockProps } from "@/code-block"
+import { highlight } from "fumadocs-core/server"
 import {
   CodeBlock as FumaDocsCodeBlock,
   Pre,
-} from "fumadocs-ui/components/codeblock";
+} from "fumadocs-ui/components/codeblock"
 
-import { CodeBlockProps } from "@/code-block";
-
-export async function CodeBlock({
-  code,
-  compact = false,
-  ...props
-}: CodeBlockProps) {
-  // const demoCode = await highlight(code, lang);
+export async function CodeBlock({ code, ...props }: CodeBlockProps) {
+  const renderedCode = await highlight(code, {
+    lang: "tsx",
+    themes: {
+      light: "github-light",
+      dark: "github-dark",
+    },
+  })
   return (
-    <FumaDocsCodeBlock
-      // @ts-expect-error bypass custom error
-      custom={compact ? "compact" : undefined}
-      {...props}
-    >
-      <Pre>{code}</Pre>
+    <FumaDocsCodeBlock {...props}>
+      <Pre>{renderedCode}</Pre>
     </FumaDocsCodeBlock>
-  );
+  )
 }

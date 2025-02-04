@@ -1,13 +1,8 @@
 {
   "name": "pdf-viewer-tabs-demo",
   "type": "registry:example",
-  "dependencies": [
-    "react-pdf",
-    "@wojtekmaj/react-hooks"
-  ],
-  "registryDependencies": [
-    "pdf-viewers"
-  ],
+  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks"],
+  "registryDependencies": ["pdf-viewers"],
   "files": [
     {
       "path": "example/pdf-viewer-tabs-demo.tsx",

@@ -1,13 +1,11 @@
 {
   "name": "manual-image-upload-demo",
   "type": "registry:example",
-  "registryDependencies": [
-    "single-image-upload"
-  ],
+  "registryDependencies": ["single-image-upload"],
   "files": [
     {
       "path": "example/manual-image-upload-demo.tsx",
-      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport useFileUpload from \"@/hooks/use-file-upload\";\nimport { useState } from \"react\";\nimport { SingleImageDropzone } from \"../reusables/single-image-upload\";\nimport { toast } from \"../reusables/ui/notify-provider\";\n\nexport default function ManualImageUploadDemo() {\n  const manualUpload = useFileUpload({\n    onSuccess: () => toast.success(\" Upload SuccessFul\"),\n    onError: (error) => toast.error(error),\n  });\n  const [manualFile, setManualFile] = useState<File | undefined>();\n\n  return (\n    <div className=\"space-y-4 w-full px-5 md:px-7 py-12 md:py-0\">\n      <SingleImageDropzone\n        width={\"100%\"}\n        height={\"300px\"}\n        directUpload={false}\n        progress={manualUpload.progress}\n        disabled={manualUpload.isUploading}\n        value={manualFile}\n        onChange={setManualFile}\n        progressType=\"circular\"\n      />\n\n      <Button\n        onClick={() => {\n          manualFile && manualUpload.handleFileUpload(manualFile);\n          manualUpload.isUploading && toast.loading(\"Uploading...\");\n        }}\n        disabled={!manualFile || manualUpload.isUploading}\n      >\n        {manualUpload.isUploading ? \"Uploading...\" : \"Start Upload\"}\n      </Button>\n    </div>\n  );\n}\n",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport useFileUpload from \"@/hooks/use-file-upload\"\nimport { Button } from \"@/components/ui/button\"\n\nimport { SingleImageDropzone } from \"../reusables/single-image-upload\"\nimport { toast } from \"../reusables/ui/notify-provider\"\n\nexport default function ManualImageUploadDemo() {\n  const manualUpload = useFileUpload({\n    onSuccess: () => toast.success(\" Upload SuccessFul\"),\n    onError: (error) => toast.error(error),\n  })\n  const [manualFile, setManualFile] = useState<File | undefined>()\n\n  return (\n    <div className=\"w-full space-y-4 px-5 py-12 md:px-7 md:py-0\">\n      <SingleImageDropzone\n        width={\"100%\"}\n        height={\"300px\"}\n        directUpload={false}\n        progress={manualUpload.progress}\n        disabled={manualUpload.isUploading}\n        value={manualFile}\n        onChange={setManualFile}\n        progressType=\"circular\"\n      />\n\n      <Button\n        onClick={() => {\n          manualFile && manualUpload.handleFileUpload(manualFile)\n          manualUpload.isUploading && toast.loading(\"Uploading...\")\n        }}\n        disabled={!manualFile || manualUpload.isUploading}\n      >\n        {manualUpload.isUploading ? \"Uploading...\" : \"Start Upload\"}\n      </Button>\n    </div>\n  )\n}\n",
       "type": "registry:example",
       "target": ""
     }
