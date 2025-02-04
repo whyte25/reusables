@@ -1,5 +1,5 @@
-import { createEnv } from "@t3-oss/env-nextjs";
-import { z } from "zod";
+import { createEnv } from "@t3-oss/env-nextjs"
+import { z } from "zod"
 
 export const env = createEnv({
   client: {
@@ -14,4 +14,4 @@ export const env = createEnv({
       process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET,
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
   },
-});
+})

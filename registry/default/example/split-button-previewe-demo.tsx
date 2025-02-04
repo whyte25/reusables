@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import { toast } from "../reusables/ui/notify-provider";
-import SplitButton from "../reusables/ui/split-button";
+import { toast } from "../reusables/ui/notify-provider"
+import SplitButton from "../reusables/ui/split-button"
 
 export default function SplitButtonPreviewDemo() {
   const options = [
@@ -10,7 +10,7 @@ export default function SplitButtonPreviewDemo() {
       onClick: () => {
         toast.success("Copied SVG", {
           description: "SVG code copied to clipboard",
-        });
+        })
       },
     },
     {
@@ -18,7 +18,7 @@ export default function SplitButtonPreviewDemo() {
       onClick: () => {
         toast.success("Copied Data URL", {
           description: "Data URL copied to clipboard",
-        });
+        })
       },
     },
     {
@@ -26,14 +26,14 @@ export default function SplitButtonPreviewDemo() {
       onClick: () => {
         toast.success("Downloading SVG", {
           description: "Your file is being downloaded...",
-        });
+        })
       },
     },
-  ];
+  ]
 
   return (
     <SplitButton options={options} mainAction={() => {}} size="sm">
       Download PNG
     </SplitButton>
-  );
+  )
 }

@@ -1,38 +1,38 @@
-import { Clock } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
+import { Clock } from "lucide-react"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
+import { formatTimeAgo } from "@/lib/time-ago"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Label } from "@/components/ui/label"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Separator } from "@/components/ui/separator";
-import { Switch } from "@/components/ui/switch";
-import { formatTimeAgo } from "@/lib/time-ago";
+} from "@/components/ui/select"
+import { Separator } from "@/components/ui/separator"
+import { Switch } from "@/components/ui/switch"
 
 const EnhancedTimeAgo = ({ date }: { date: Date }) => {
-  const [, setTick] = useState(0);
+  const [, setTick] = useState(0)
   const [options, setOptions] = useState({
     short: false,
     maxUnits: 2,
     future: true,
-  });
+  })
 
   useEffect(() => {
-    const timer = setInterval(() => setTick((t) => t + 1), 1000);
-    return () => clearInterval(timer);
-  }, []);
+    const timer = setInterval(() => setTick((t) => t + 1), 1000)
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Clock className="w-5 h-5" />
+            <Clock className="h-5 w-5" />
             Enhanced Time Ago
           </div>
         </CardTitle>
@@ -75,13 +75,13 @@ const EnhancedTimeAgo = ({ date }: { date: Date }) => {
           <div className="text-2xl font-semibold">
             {formatTimeAgo(date, options)}
           </div>
-          <div className="text-sm text-muted-foreground mt-2">
+          <div className="mt-2 text-sm text-muted-foreground">
             {date.toLocaleString()}
           </div>
         </div>
       </CardContent>
     </Card>
-  );
-};
+  )
+}
 
-export default EnhancedTimeAgo;
+export default EnhancedTimeAgo

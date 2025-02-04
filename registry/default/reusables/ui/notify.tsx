@@ -1,9 +1,12 @@
-"use client";
-import { cn } from "@/lib/utils";
-import { cva } from "class-variance-authority";
-import { Loader, LoaderCircle, X } from "lucide-react";
-import * as React from "react";
-import { ToastClassNames, ToastParams } from "./notify-provider";
+"use client"
+
+import * as React from "react"
+import { cva } from "class-variance-authority"
+import { Loader, LoaderCircle, X } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+import { ToastClassNames, ToastParams } from "./notify-provider"
 
 export const statusStyles = {
   error:
@@ -16,10 +19,10 @@ export const statusStyles = {
   default:
     "dark:bg-[#13141b] bg-white text-gray-900 dark:text-[#e4e5e9] dark:border-[#3a3c4a] border-gray-200",
   loading: "bg-white text-gray-900 border-gray-200  ",
-} as const;
+} as const
 
 const toastVariants = cva(
-  "relative flex w-full flex-col gap-1 rounded-lg border p-[0.75rem] overflow-hidden shadow-lg ",
+  "relative flex w-full flex-col gap-1 overflow-hidden rounded-lg border p-[0.75rem] shadow-lg",
   {
     variants: {
       status: statusStyles,
@@ -28,22 +31,22 @@ const toastVariants = cva(
       status: "default",
     },
   }
-);
+)
 
-const progressBarVariants = cva("absolute bottom-0 left-0 h-[2px] ", {
+const progressBarVariants = cva("absolute bottom-0 left-0 h-[2px]", {
   variants: {
     status: {
-      error: "dark:bg-[#f77a6f] bg-red-600",
-      warning: "dark:bg-[#fabe20] bg-yellow-500",
-      success: "dark:bg-[#12f0a5] bg-green-600",
-      info: "dark:bg-[#7898ff] bg-blue-600",
+      error: "bg-red-600 dark:bg-[#f77a6f]",
+      warning: "bg-yellow-500 dark:bg-[#fabe20]",
+      success: "bg-green-600 dark:bg-[#12f0a5]",
+      info: "bg-blue-600 dark:bg-[#7898ff]",
       default: "bg-gray-600 dark:bg-[#e4e5e9]",
     },
   },
   defaultVariants: {
     status: "default",
   },
-});
+})
 
 const ToastTitle = React.forwardRef<
   HTMLParagraphElement,
@@ -52,23 +55,23 @@ const ToastTitle = React.forwardRef<
   <p
     ref={ref}
     className={cn(
-      "leading-none text-[0.8125rem] mr-auto font-medium tracking-tight",
+      "mr-auto text-[0.8125rem] font-medium leading-none tracking-tight",
       className
     )}
     {...props}
   >
     {title}
   </p>
-));
+))
 
 const ToastDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement> & {
-    description?: ToastParams["description"];
-    status: ToastParams["status"];
+    description?: ToastParams["description"]
+    status: ToastParams["status"]
   }
 >(({ description, status, className, ...props }, ref) => {
-  if (!description || status === "loading") return null;
+  if (!description || status === "loading") return null
   return (
     <p
       ref={ref}
@@ -77,17 +80,17 @@ const ToastDescription = React.forwardRef<
     >
       {description}
     </p>
-  );
-});
+  )
+})
 
 const ToastCloseButton = React.forwardRef<
   HTMLButtonElement,
   React.ButtonHTMLAttributes<HTMLButtonElement> & {
-    onClose: () => void;
-    status: string;
+    onClose: () => void
+    status: string
   }
 >(({ onClose, status, className, ...props }, ref) => {
-  if (status === "loading") return null;
+  if (status === "loading") return null
   return (
     <button
       ref={ref}
@@ -101,39 +104,37 @@ const ToastCloseButton = React.forwardRef<
       <X className="h-4 w-4" />
       <span className="sr-only">Close</span>
     </button>
-  );
-});
+  )
+})
 
 type ToastLoaderProps = {
-  status: string;
-  variant?: ToastParams["loaderVariant"];
-  className?: string;
-};
+  status: string
+  variant?: ToastParams["loaderVariant"]
+  className?: string
+}
 
 const ToastLoader = ({
   status,
   variant = "loader-1",
   className,
 }: ToastLoaderProps) => {
-  if (status !== "loading") return null;
-  const baseClass = "animate-spin size-4 text-black";
+  if (status !== "loading") return null
+  const baseClass = "animate-spin size-4 text-black"
 
-  return variant === "loader-2" ? (
-    <LoaderCircle className={cn(baseClass, className)} />
-  ) : (
-    <Loader className={cn(baseClass, className)} />
-  );
-};
+  return variant === "loader-2" ?
+      <LoaderCircle className={cn(baseClass, className)} />
+    : <Loader className={cn(baseClass, className)} />
+}
 
 const ToastProgressBar = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & {
-    duration?: number;
-    status: ToastParams["status"];
-    hideProgressBar?: boolean;
+    duration?: number
+    status: ToastParams["status"]
+    hideProgressBar?: boolean
   }
 >(({ duration, status, hideProgressBar, className, ...props }, ref) => {
-  if (!duration || status === "loading" || hideProgressBar) return null;
+  if (!duration || status === "loading" || hideProgressBar) return null
   return (
     <div
       ref={ref}
@@ -152,8 +153,8 @@ const ToastProgressBar = React.forwardRef<
         `}
       </style>
     </div>
-  );
-});
+  )
+})
 
 export function Toast({
   closable,
@@ -174,7 +175,7 @@ export function Toast({
       )}
       role={status === "error" ? "alert" : "status"}
     >
-      <div className="flex items-center w-full">
+      <div className="flex w-full items-center">
         <ToastLoader
           status={status}
           className={cn("mr-2", classNames.loader)}
@@ -202,11 +203,11 @@ export function Toast({
         className={classNames.progressBar}
       />
     </div>
-  );
+  )
 }
-Toast.displayName = "Toast";
-ToastTitle.displayName = "ToastTitle";
-ToastDescription.displayName = "ToastDescription";
-ToastCloseButton.displayName = "ToastCloseButton";
-ToastLoader.displayName = "ToastLoader";
-ToastProgressBar.displayName = "ToastProgressBar";
+Toast.displayName = "Toast"
+ToastTitle.displayName = "ToastTitle"
+ToastDescription.displayName = "ToastDescription"
+ToastCloseButton.displayName = "ToastCloseButton"
+ToastLoader.displayName = "ToastLoader"
+ToastProgressBar.displayName = "ToastProgressBar"

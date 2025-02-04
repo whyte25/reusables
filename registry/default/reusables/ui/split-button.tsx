@@ -1,34 +1,35 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react"
+import type * as React from "react"
+
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils";
-import { ChevronDown } from "lucide-react";
-import type * as React from "react";
+} from "@/components/ui/dropdown-menu"
+import { cn } from "@/lib/utils"
 
 export interface SplitButtonOption {
-  label: string;
-  onClick: () => void;
+  label: string
+  onClick: () => void
 }
 
 interface SplitButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  options: SplitButtonOption[];
-  mainAction: () => void;
+  options: SplitButtonOption[]
+  mainAction: () => void
   variant?:
     | "default"
     | "destructive"
     | "outline"
     | "secondary"
     | "ghost"
-    | "link";
-  size?: "default" | "sm" | "lg" | "icon";
-  dropdownAlign?: "start" | "center" | "end";
+    | "link"
+  size?: "default" | "sm" | "lg" | "icon"
+  dropdownAlign?: "start" | "center" | "end"
 }
 
 export default function SplitButton({
@@ -58,10 +59,10 @@ export default function SplitButton({
             variant={variant}
             size={size}
             className={cn(
-              "rounded-l-none   border-primary-foreground/20 px-2",
-              variant === "outline"
-                ? "bg-accent hover:bg-accent/80"
-                : "border-l"
+              "rounded-l-none border-primary-foreground/20 px-2",
+              variant === "outline" ?
+                "bg-accent hover:bg-accent/80"
+              : "border-l"
             )}
             aria-label="More options"
           >
@@ -81,5 +82,5 @@ export default function SplitButton({
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
-  );
+  )
 }

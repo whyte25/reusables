@@ -1,19 +1,19 @@
 type PlatformInfo = {
   browser: {
-    chrome: boolean;
-    firefox: boolean;
-    safari: boolean;
-    edge: boolean;
-    name: "chrome" | "firefox" | "safari" | "edge" | "unknown";
-  };
+    chrome: boolean
+    firefox: boolean
+    safari: boolean
+    edge: boolean
+    name: "chrome" | "firefox" | "safari" | "edge" | "unknown"
+  }
   os: {
-    ios: boolean;
-    android: boolean;
-    windows: boolean;
-    macos: boolean;
-    name: "android" | "windows" | "ios" | "macos" | "unknown";
-  };
-};
+    ios: boolean
+    android: boolean
+    windows: boolean
+    macos: boolean
+    name: "android" | "windows" | "ios" | "macos" | "unknown"
+  }
+}
 
 const getPlatform = (): PlatformInfo => {
   if (typeof window === "undefined") {
@@ -32,10 +32,10 @@ const getPlatform = (): PlatformInfo => {
         macos: false,
         name: "unknown",
       },
-    };
+    }
   }
 
-  const ua = window.navigator.userAgent.toLowerCase();
+  const ua = window.navigator.userAgent.toLowerCase()
 
   const browser = {
     chrome: ua.includes("chrome") && !ua.includes("edg"),
@@ -43,13 +43,13 @@ const getPlatform = (): PlatformInfo => {
     safari: ua.includes("safari") && !ua.includes("chrome"),
     edge: ua.includes("edg"),
     get name() {
-      if (this.chrome) return "chrome";
-      if (this.firefox) return "firefox";
-      if (this.safari) return "safari";
-      if (this.edge) return "edge";
-      return "unknown";
+      if (this.chrome) return "chrome"
+      if (this.firefox) return "firefox"
+      if (this.safari) return "safari"
+      if (this.edge) return "edge"
+      return "unknown"
     },
-  };
+  }
 
   const os = {
     ios: ua.includes("iphone") || ua.includes("ipad") || ua.includes("ipod"),
@@ -57,15 +57,15 @@ const getPlatform = (): PlatformInfo => {
     windows: ua.includes("windows"),
     macos: ua.includes("mac"),
     get name() {
-      if (this.ios) return "ios";
-      if (this.android) return "android";
-      if (this.windows) return "windows";
-      if (this.macos) return "macos";
-      return "unknown";
+      if (this.ios) return "ios"
+      if (this.android) return "android"
+      if (this.windows) return "windows"
+      if (this.macos) return "macos"
+      return "unknown"
     },
-  };
+  }
 
-  return { browser, os };
-};
+  return { browser, os }
+}
 
-export const platform = getPlatform();
+export const platform = getPlatform()

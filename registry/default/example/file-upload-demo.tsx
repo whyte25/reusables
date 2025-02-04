@@ -1,10 +1,12 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import useFileUpload from "@/hooks/use-file-upload";
-import { cn } from "@/lib/utils";
-import { Upload, X } from "lucide-react";
-import Image from "next/image";
+"use client"
+
+import Image from "next/image"
+import { Upload, X } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+import useFileUpload from "@/hooks/use-file-upload"
+import { Button } from "@/components/ui/button"
+import { Progress } from "@/components/ui/progress"
 
 export default function FileUploadDemo() {
   const {
@@ -15,27 +17,26 @@ export default function FileUploadDemo() {
     progress,
     error,
     data,
-  } = useFileUpload();
+  } = useFileUpload()
 
   return (
-    <div className="w-full max-w-md  mx-auto space-y-4">
-      <div className="flex items-center   justify-center w-full">
-        {data ? (
+    <div className="mx-auto w-full max-w-md space-y-4">
+      <div className="flex w-full items-center justify-center">
+        {data ?
           <Image
             height={1000}
             width={1000}
             src={data}
             alt="image"
-            className="max-h-[400px] h-full object-cover"
+            className="h-full max-h-[400px] object-cover"
           />
-        ) : (
-          <label
+        : <label
             className={cn(
-              `flex flex-col items-center  justify-center w-full  rounded-lg cursor-pointer`
+              `flex w-full cursor-pointer flex-col items-center justify-center rounded-lg`
             )}
           >
-            <div className="flex flex-col items-center justify-center pt-5 pb-6">
-              <Upload className="w-10 h-10 mb-3 text-gray-400" />
+            <div className="flex flex-col items-center justify-center pb-6 pt-5">
+              <Upload className="mb-3 h-10 w-10 text-gray-400" />
               <p className="mb-2 text-sm text-gray-500">
                 <span className="font-semibold">Click to upload image</span>
               </p>
@@ -48,15 +49,15 @@ export default function FileUploadDemo() {
               disabled={isUploading}
             />
           </label>
-        )}
+        }
       </div>
 
       {(isUploading || selectedFile) && !data && (
-        <div className="p-4 bg-background rounded-lg shadow-sm border space-y-3">
+        <div className="space-y-3 rounded-lg border bg-background p-4 shadow-sm">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-gray-900 truncate">
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-sm font-medium text-gray-900">
                   {selectedFile?.name}
                 </p>
                 <p className="text-xs text-gray-500">
@@ -81,10 +82,10 @@ export default function FileUploadDemo() {
       )}
 
       {error && (
-        <div className="p-3 text-sm text-red-500 bg-red-50 rounded-lg">
+        <div className="rounded-lg bg-red-50 p-3 text-sm text-red-500">
           {error}
         </div>
       )}
     </div>
-  );
+  )
 }

@@ -22,6 +22,6 @@ export const siteConfig = {
     instagram: "https://instagram.com/whyte25",
     github: "https://github.com/whyte25/reusables",
   },
-};
+}
 
-export type SiteConfigTypes = typeof siteConfig;
+export type SiteConfigTypes = typeof siteConfig

@@ -1,9 +1,7 @@
 {
   "name": "notify-utils",
   "type": "registry:ui",
-  "registryDependencies": [
-    "notify-provider"
-  ],
+  "registryDependencies": ["notify-provider"],
   "files": [
     {
       "path": "reusables/toast/notify-utils.ts",

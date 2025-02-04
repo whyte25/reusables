@@ -1,7 +1,8 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { toast } from "../reusables/ui/notify-provider";
+import { Button } from "@/components/ui/button"
+
+import { toast } from "../reusables/ui/notify-provider"
 
 export default function ToastCustomConfigDemo() {
   return (
@@ -11,11 +12,11 @@ export default function ToastCustomConfigDemo() {
           toast.info(`Toast `, {
             maxToast: 3,
             description: "Max 3 toasts will show",
-          });
+          })
         }}
       >
         Max 3 Toasts
       </Button>
     </div>
-  );
+  )
 }

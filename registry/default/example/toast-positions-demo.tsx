@@ -1,7 +1,8 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { toast } from "../reusables/ui/notify-provider";
+import { Button } from "@/components/ui/button"
+
+import { toast } from "../reusables/ui/notify-provider"
 
 export default function ToastPositionsDemo() {
   const positions = [
@@ -11,10 +12,10 @@ export default function ToastPositionsDemo() {
     "bottom-left",
     "bottom-center",
     "bottom-right",
-  ] as const;
+  ] as const
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+    <div className="grid grid-cols-2 gap-2 md:grid-cols-3">
       {positions.map((position) => (
         <Button
           key={position}
@@ -30,5 +31,5 @@ export default function ToastPositionsDemo() {
         </Button>
       ))}
     </div>
-  );
+  )
 }

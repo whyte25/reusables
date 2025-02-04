@@ -7,9 +7,7 @@
       "framer-motion",
       "class-variance-authority"
     ],
-    "registryDependencies": [
-      "utils"
-    ],
+    "registryDependencies": ["utils"],
     "files": [
       {
         "path": "reusables/ui/notify.tsx",
@@ -28,9 +26,7 @@
   {
     "name": "theme-image",
     "type": "registry:ui",
-    "registryDependencies": [
-      "utils"
-    ],
+    "registryDependencies": ["utils"],
     "files": [
       {
         "path": "reusables/ui/theme-image.tsx",
@@ -41,13 +37,8 @@
   {
     "name": "spinner",
     "type": "registry:ui",
-    "dependencies": [
-      "class-variance-authority",
-      "lucide-react"
-    ],
-    "registryDependencies": [
-      "utils"
-    ],
+    "dependencies": ["class-variance-authority", "lucide-react"],
+    "registryDependencies": ["utils"],
     "files": [
       {
         "path": "reusables/ui/spinner.tsx",
@@ -58,10 +49,7 @@
   {
     "name": "submit-button",
     "type": "registry:ui",
-    "registryDependencies": [
-      "button",
-      "utils"
-    ],
+    "registryDependencies": ["button", "utils"],
     "files": [
       {
         "path": "reusables/ui/submit-button.tsx",
@@ -76,13 +64,8 @@
   {
     "name": "copy-button",
     "type": "registry:ui",
-    "dependencies": [
-      "lucide-react"
-    ],
-    "registryDependencies": [
-      "button",
-      "utils"
-    ],
+    "dependencies": ["lucide-react"],
+    "registryDependencies": ["button", "utils"],
     "files": [
       {
         "path": "reusables/ui/copy-button.tsx",
@@ -93,14 +76,8 @@
   {
     "name": "split-button",
     "type": "registry:ui",
-    "dependencies": [
-      "lucide-react"
-    ],
-    "registryDependencies": [
-      "button",
-      "dropdown-menu",
-      "utils"
-    ],
+    "dependencies": ["lucide-react"],
+    "registryDependencies": ["button", "dropdown-menu", "utils"],
     "files": [
       {
         "path": "reusables/ui/split-button.tsx",
@@ -111,14 +88,8 @@
   {
     "name": "split-button-action",
     "type": "registry:ui",
-    "dependencies": [
-      "lucide-react"
-    ],
-    "registryDependencies": [
-      "button",
-      "dropdown-menu",
-      "utils"
-    ],
+    "dependencies": ["lucide-react"],
+    "registryDependencies": ["button", "dropdown-menu", "utils"],
     "files": [
       {
         "path": "reusables/ui/split-button-action.tsx",

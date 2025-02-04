@@ -1,49 +1,49 @@
-import fs from "fs";
-import path from "path";
-import { u } from "unist-builder";
-import { visit } from "unist-util-visit";
+import fs from "fs"
+import path from "path"
+import { UnistNode, UnistTree } from "@/types"
+import { u } from "unist-builder"
+import { visit } from "unist-util-visit"
 
-import { UnistNode, UnistTree } from "@/types";
-
-import { Index } from "../__registry__";
-import { styles } from "../registry/registry-styles";
+import { Index } from "../__registry__"
+import { styles } from "../registry/registry-styles"
 
 export function rehypeComponent() {
   return async (tree: UnistTree) => {
     visit(tree, (node: UnistNode) => {
-      const { value: srcPath } = getNodeAttributeByName(node, "src") || {};
+      const { value: srcPath } = getNodeAttributeByName(node, "src") || {}
 
       if (node.name === "ComponentSource") {
-        const name = getNodeAttributeByName(node, "name")?.value as string;
+        const name = getNodeAttributeByName(node, "name")?.value as string
         const fileName = getNodeAttributeByName(node, "fileName")?.value as
           | string
-          | undefined;
+          | undefined
 
         if (!name && !srcPath) {
-          return null;
+          return null
         }
 
         try {
           for (const style of styles) {
-            let src: string;
+            let src: string
 
             if (srcPath) {
-              src = srcPath as string;
+              src = srcPath as string
             } else {
-              const component = Index[style.name][name];
-              src = fileName
-                ? component.files.find((file: string) => {
+              const component = Index[style.name][name]
+              src =
+                fileName ?
+                  component.files.find((file: string) => {
                     return (
                       file.endsWith(`${fileName}.tsx`) ||
                       file.endsWith(`${fileName}.ts`)
-                    );
+                    )
                   }) || component.files[0]
-                : component.files[0];
+                : component.files[0]
             }
 
             // Read the source file.
-            const filePath = path.join(process.cwd(), src);
-            let source = fs.readFileSync(filePath, "utf8");
+            const filePath = path.join(process.cwd(), src)
+            let source = fs.readFileSync(filePath, "utf8")
 
             // Replace imports.
             // TODO: Use @swc/core and a visitor to replace this.
@@ -51,8 +51,8 @@ export function rehypeComponent() {
             source = source.replaceAll(
               `@/registry/${style.name}/`,
               "@/components/"
-            );
-            source = source.replaceAll("export default", "export");
+            )
+            source = source.replaceAll("export default", "export")
 
             // Add code as children so that rehype can take over at build time.
             node.children?.push(
@@ -86,29 +86,29 @@ export function rehypeComponent() {
                   }),
                 ],
               })
-            );
+            )
           }
         } catch (error) {
-          console.error(error);
+          console.error(error)
         }
       }
 
       if (node.name === "ComponentPreview" || node.name === "BlockPreview") {
-        const name = getNodeAttributeByName(node, "name")?.value as string;
+        const name = getNodeAttributeByName(node, "name")?.value as string
 
         if (!name) {
-          return null;
+          return null
         }
 
         try {
           for (const style of styles) {
-            const component = Index[style.name][name];
-            const src = component.files[0];
+            const component = Index[style.name][name]
+            const src = component.files[0]
 
             // Read the source file.
-            const filePath = path.join(process.cwd(), src);
+            const filePath = path.join(process.cwd(), src)
 
-            let source = fs.readFileSync(filePath, "utf8");
+            let source = fs.readFileSync(filePath, "utf8")
 
             // Replace imports.
             // TODO: Use @swc/core and a visitor to replace this.
@@ -116,8 +116,8 @@ export function rehypeComponent() {
             source = source.replaceAll(
               `@/registry/${style.name}/`,
               "@/components/"
-            );
-            source = source.replaceAll("export default", "export");
+            )
+            source = source.replaceAll("export default", "export")
 
             // Add code as children so that rehype can take over at build time.
             node.children?.push(
@@ -144,16 +144,16 @@ export function rehypeComponent() {
                   }),
                 ],
               })
-            );
+            )
           }
         } catch (error) {
-          console.error(error);
+          console.error(error)
         }
       }
-    });
-  };
+    })
+  }
 }
 
 function getNodeAttributeByName(node: UnistNode, name: string) {
-  return node.attributes?.find((attribute) => attribute.name === name);
+  return node.attributes?.find((attribute) => attribute.name === name)
 }

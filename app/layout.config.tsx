@@ -1,6 +1,7 @@
-import { Logo } from "@/components/logo";
-import { siteConfig } from "@/constant/site-config";
-import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared"
+
+import { siteConfig } from "@/constant/site-config"
+import { Logo } from "@/components/logo"
 
 /**
  * Shared layout configurations
@@ -25,4 +26,4 @@ export const baseOptions: BaseLayoutProps = {
       url: "/docs/components/buttons",
     },
   ],
-};
+}

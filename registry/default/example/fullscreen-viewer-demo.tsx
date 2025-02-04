@@ -1,13 +1,15 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
-import { FullscreenViewer } from "../reusables/pdf-viewers/fullscreen-viewer";
+import { useState } from "react"
+
+import { Button } from "@/components/ui/button"
+
+import { FullscreenViewer } from "../reusables/pdf-viewers/fullscreen-viewer"
 
 export default function FullscreenViewerDemo() {
-  const [showPDF, setShowPDF] = useState(false);
+  const [showPDF, setShowPDF] = useState(false)
   const samplePdfUrl =
-    "https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf";
+    "https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf"
 
   return (
     <div>
@@ -19,5 +21,5 @@ export default function FullscreenViewerDemo() {
         />
       )}
     </div>
-  );
+  )
 }

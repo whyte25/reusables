@@ -1,56 +1,56 @@
-"use client";
+"use client"
 
-import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react"
+import axios from "axios"
 
-export type UploadStatus = "PENDING" | "COMPLETE" | "ERROR";
+export type UploadStatus = "PENDING" | "COMPLETE" | "ERROR"
 
 interface UploadProgress {
-  key: string;
-  progress: number | UploadStatus;
+  key: string
+  progress: number | UploadStatus
 }
 
 interface UploadResult {
-  url: string;
-  filename: string;
+  url: string
+  filename: string
 }
 
 interface FileToUpload {
-  key: string;
-  file: File;
+  key: string
+  file: File
 }
 
 interface UseMultipleFileUploadParams {
-  onSuccess?: (urls: string[]) => void;
-  onError?: (error: string) => void;
+  onSuccess?: (urls: string[]) => void
+  onError?: (error: string) => void
 }
 
 export function useMultipleFileUpload({
   onSuccess,
   onError,
 }: UseMultipleFileUploadParams = {}) {
-  const [uploadProgress, setUploadProgress] = useState<UploadProgress[]>([]);
-  const [uploadResults, setUploadResults] = useState<UploadResult[]>([]);
-  const [isUploading, setIsUploading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const abortControllersRef = useRef<Map<string, AbortController>>(new Map());
-  const imageUrlsRef = useRef<string[]>([]);
+  const [uploadProgress, setUploadProgress] = useState<UploadProgress[]>([])
+  const [uploadResults, setUploadResults] = useState<UploadResult[]>([])
+  const [isUploading, setIsUploading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const abortControllersRef = useRef<Map<string, AbortController>>(new Map())
+  const imageUrlsRef = useRef<string[]>([])
 
   useEffect(() => {
     return () => {
       // Cleanup URLs when component unmounts
       imageUrlsRef.current.forEach((url) => {
         if (url.startsWith("blob:")) {
-          URL.revokeObjectURL(url);
+          URL.revokeObjectURL(url)
         }
-      });
-    };
-  }, []);
+      })
+    }
+  }, [])
 
   const uploadMultipleFiles = async (files: FileToUpload[]) => {
-    setIsUploading(true);
-    setError(null);
-    const successfulUrls: string[] = []; // Track URLs in local variable
+    setIsUploading(true)
+    setError(null)
+    const successfulUrls: string[] = [] // Track URLs in local variable
 
     // Initialize progress for all files
     setUploadProgress(
@@ -58,25 +58,25 @@ export function useMultipleFileUpload({
         key: file.key,
         progress: "PENDING",
       }))
-    );
+    )
 
     try {
       await Promise.all(
         files.map(async ({ key, file }) => {
-          const abortController = new AbortController();
-          abortControllersRef.current.set(key, abortController);
+          const abortController = new AbortController()
+          abortControllersRef.current.set(key, abortController)
 
           try {
             // Create and track blob URL
-            const blobUrl = URL.createObjectURL(file);
-            imageUrlsRef.current.push(blobUrl);
+            const blobUrl = URL.createObjectURL(file)
+            imageUrlsRef.current.push(blobUrl)
 
-            const formData = new FormData();
-            formData.append("file", file);
+            const formData = new FormData()
+            formData.append("file", file)
             formData.append(
               "upload_preset",
               process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET!
-            );
+            )
 
             const response = await axios.post(
               `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
@@ -86,29 +86,29 @@ export function useMultipleFileUpload({
                 onUploadProgress: (progressEvent) => {
                   const percentCompleted = Math.round(
                     (progressEvent.loaded * 100) / progressEvent.total!
-                  );
+                  )
                   setUploadProgress((prev) =>
                     prev.map((item) =>
-                      item.key === key
-                        ? { ...item, progress: percentCompleted }
-                        : item
+                      item.key === key ?
+                        { ...item, progress: percentCompleted }
+                      : item
                     )
-                  );
+                  )
                 },
               }
-            );
+            )
 
-            const uploadedUrl = response?.data?.secure_url;
-            successfulUrls.push(uploadedUrl); // Add URL to local array
+            const uploadedUrl = response?.data?.secure_url
+            successfulUrls.push(uploadedUrl) // Add URL to local array
 
             // Add small delay to show complete state
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+            await new Promise((resolve) => setTimeout(resolve, 1000))
 
             setUploadProgress((prev) =>
               prev.map((item) =>
                 item.key === key ? { ...item, progress: "COMPLETE" } : item
               )
-            );
+            )
 
             setUploadResults((prev) => [
               ...prev,
@@ -116,59 +116,59 @@ export function useMultipleFileUpload({
                 url: uploadedUrl,
                 filename: file.name,
               },
-            ]);
+            ])
 
             // Call onSuccess immediately for each successful upload
-            onSuccess?.(successfulUrls);
+            onSuccess?.(successfulUrls)
 
             // Cleanup blob URL after successful upload
-            URL.revokeObjectURL(blobUrl);
+            URL.revokeObjectURL(blobUrl)
             imageUrlsRef.current = imageUrlsRef.current.filter(
               (url) => url !== blobUrl
-            );
+            )
 
-            abortControllersRef.current.delete(key);
+            abortControllersRef.current.delete(key)
           } catch (error: any) {
             if (axios.isCancel(error)) {
-              console.log("Upload cancelled for file:", file.name);
+              console.log("Upload cancelled for file:", file.name)
             } else {
               const errorMessage =
-                error.response?.data?.message || "Upload failed";
+                error.response?.data?.message || "Upload failed"
               setUploadProgress((prev) =>
                 prev.map((item) =>
                   item.key === key ? { ...item, progress: "ERROR" } : item
                 )
-              );
-              onError?.(errorMessage);
-              setError(errorMessage);
+              )
+              onError?.(errorMessage)
+              setError(errorMessage)
             }
           }
         })
-      );
+      )
     } catch (error) {
-      console.error("Error in multiple file upload:", error);
+      console.error("Error in multiple file upload:", error)
     } finally {
-      setIsUploading(false);
+      setIsUploading(false)
     }
-  };
+  }
 
   const cancelAllUploads = () => {
     abortControllersRef.current.forEach((controller) => {
-      controller.abort();
-    });
-    abortControllersRef.current.clear();
-    setUploadProgress([]);
-    setUploadResults([]);
-    setIsUploading(false);
-    setError(null);
-  };
+      controller.abort()
+    })
+    abortControllersRef.current.clear()
+    setUploadProgress([])
+    setUploadResults([])
+    setIsUploading(false)
+    setError(null)
+  }
 
   const resetUploads = () => {
-    setUploadProgress([]);
-    setUploadResults([]);
-    setIsUploading(false);
-    setError(null);
-  };
+    setUploadProgress([])
+    setUploadResults([])
+    setIsUploading(false)
+    setError(null)
+  }
 
   return {
     uploadMultipleFiles,
@@ -178,5 +178,5 @@ export function useMultipleFileUpload({
     error,
     cancelAllUploads,
     resetUploads,
-  };
+  }
 }

@@ -1,11 +1,13 @@
-"use client";
+"use client"
 
-import { Card } from "@/components/ui/card";
-import { motion } from "framer-motion";
-import useInViewState from "../hooks/use-inview";
+import { motion } from "framer-motion"
+
+import { Card } from "@/components/ui/card"
+
+import useInViewState from "../hooks/use-inview"
 
 function AnimatedCard({ delay = 0 }) {
-  const { ref, isInView } = useInViewState({ threshold: 0.2 });
+  const { ref, isInView } = useInViewState({ threshold: 0.2 })
 
   return (
     <motion.div
@@ -14,21 +16,21 @@ function AnimatedCard({ delay = 0 }) {
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay }}
     >
-      <Card className="p-6 h-40   flex items-center justify-center bg-gradient-to-br from-muted/50 to-muted">
+      <Card className="flex h-40 items-center justify-center bg-gradient-to-br from-muted/50 to-muted p-6">
         <p className="text-lg font-medium">
           {isInView ? "👋 I'm visible!" : "Scroll to see me"}
         </p>
       </Card>
     </motion.div>
-  );
+  )
 }
 
 export default function InViewDemo() {
   return (
-    <div className="space-y-3 ">
+    <div className="space-y-3">
       <AnimatedCard delay={0} />
       <AnimatedCard delay={0.2} />
       <AnimatedCard delay={0.4} />
     </div>
-  );
+  )
 }

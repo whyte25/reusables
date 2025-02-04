@@ -1,32 +1,34 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Monitor, Smartphone, Tablet } from "lucide-react";
-import { useState } from "react";
-import useScreenSize from "../hooks/use-screen-size";
+import { useState } from "react"
+import { Monitor, Smartphone, Tablet } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+
+import useScreenSize from "../hooks/use-screen-size"
 
 export default function ScreenSizeDemo() {
-  const { screenSize, isMobile } = useScreenSize();
-  const [forcedWidth, setForcedWidth] = useState<string | null>(null);
+  const { screenSize, isMobile } = useScreenSize()
+  const [forcedWidth, setForcedWidth] = useState<string | null>(null)
 
   const breakpoints = [
     {
       name: "Mobile",
       width: "400px",
-      icon: <Smartphone className="w-6 h-6" />,
+      icon: <Smartphone className="h-6 w-6" />,
       expected: ["xs", "sm"],
     },
     {
       name: "Tablet",
       width: "758px",
-      icon: <Tablet className="w-6 h-6" />,
+      icon: <Tablet className="h-6 w-6" />,
       expected: ["md"],
     },
     {
       name: "Desktop",
       width: "1200px",
-      icon: <Monitor className="w-6 h-6" />,
+      icon: <Monitor className="h-6 w-6" />,
       expected: ["lg"],
     },
     // {
@@ -35,11 +37,11 @@ export default function ScreenSizeDemo() {
     //   icon: <Television className="w-6 h-6" />,
     //   expected: ["4k"],
     // },
-  ];
+  ]
 
   return (
     <div className="space-y-8">
-      <div className="flex gap-4 flex-wrap">
+      <div className="flex flex-wrap gap-4">
         {breakpoints.map((point) => (
           <Button
             key={point.name}
@@ -64,10 +66,10 @@ export default function ScreenSizeDemo() {
             {breakpoints.map((point) => (
               <div
                 key={point.name}
-                className={`p-2 rounded ${
-                  point.expected.includes(screenSize || "")
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-muted"
+                className={`rounded p-2 ${
+                  point.expected.includes(screenSize || "") ?
+                    "bg-primary text-primary-foreground"
+                  : "bg-muted"
                 }`}
               >
                 {point.icon}
@@ -88,5 +90,5 @@ export default function ScreenSizeDemo() {
         </div>
       </Card>
     </div>
-  );
+  )
 }

@@ -1,11 +1,12 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { toast } from "../reusables/ui/notify-provider";
+import { Button } from "@/components/ui/button"
+
+import { toast } from "../reusables/ui/notify-provider"
 
 export default function ToastCloseButtonDemo() {
   return (
-    <div className="flex flex-wrap  gap-2 md:gap-4">
+    <div className="flex flex-wrap gap-2 md:gap-4">
       <Button
         className="w-full md:w-auto"
         onClick={() =>
@@ -28,5 +29,5 @@ export default function ToastCloseButtonDemo() {
         Without Close Button
       </Button>
     </div>
-  );
+  )
 }
