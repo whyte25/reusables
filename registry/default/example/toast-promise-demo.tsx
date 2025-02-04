@@ -1,25 +1,24 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { toast } from "../reusables/ui/notify-provider";
+import { Button } from "@/components/ui/button"
+
+import { toast } from "../reusables/ui/notify-provider"
 
 interface Todo {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
+  userId: number
+  id: number
+  title: string
+  completed: boolean
 }
 
 export default function ToastPromiseDemo() {
   const fetchTodo = async () => {
-    const response = await fetch(
-      "https://jsonplaceholder.typicode.com/todos/1"
-    );
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos/1")
     if (!response.ok) {
-      throw new Error("Failed to fetch todo");
+      throw new Error("Failed to fetch todo")
     }
-    return response.json() as Promise<Todo>;
-  };
+    return response.json() as Promise<Todo>
+  }
 
   const createTodo = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/todos", {
@@ -32,15 +31,15 @@ export default function ToastPromiseDemo() {
       headers: {
         "Content-type": "application/json",
       },
-    });
+    })
     if (response.ok) {
-      throw new Error("Failed to create todo");
+      throw new Error("Failed to create todo")
     }
-    return response.json() as Promise<Todo>;
-  };
+    return response.json() as Promise<Todo>
+  }
 
   return (
-    <div className="flex flex-wrap  gap-2 md:gap-4">
+    <div className="flex flex-wrap gap-2 md:gap-4">
       <Button
         className="w-full md:w-auto"
         onClick={() =>
@@ -68,5 +67,5 @@ export default function ToastPromiseDemo() {
         Rejected promise
       </Button>
     </div>
-  );
+  )
 }

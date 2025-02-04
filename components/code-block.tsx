@@ -1,9 +1,8 @@
+import { CodeBlockProps } from "@/code-block"
 import {
   CodeBlock as FumaDocsCodeBlock,
   Pre,
-} from "fumadocs-ui/components/codeblock";
-
-import { CodeBlockProps } from "@/code-block";
+} from "fumadocs-ui/components/codeblock"
 
 export async function CodeBlock({
   code,
@@ -19,5 +18,5 @@ export async function CodeBlock({
     >
       <Pre>{code}</Pre>
     </FumaDocsCodeBlock>
-  );
+  )
 }

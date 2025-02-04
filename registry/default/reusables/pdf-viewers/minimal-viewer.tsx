@@ -1,82 +1,84 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { useResizeObserver } from "@wojtekmaj/react-hooks";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import React, { useCallback, useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-import "react-pdf/dist/esm/Page/TextLayer.css";
-import "react-pdf/dist/Page/TextLayer.css";
-import { LoadingSpinner } from "./loading-spinner";
+import React, { useCallback, useState } from "react"
+import { useResizeObserver } from "@wojtekmaj/react-hooks"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Document, Page, pdfjs } from "react-pdf"
+
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+
+import "react-pdf/dist/esm/Page/AnnotationLayer.css"
+import "react-pdf/dist/esm/Page/TextLayer.css"
+import "react-pdf/dist/Page/TextLayer.css"
+
+import { LoadingSpinner } from "./loading-spinner"
 
 // Important: Set worker source
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
   import.meta.url
-).toString();
+).toString()
 
-const resizeObserverOptions = {};
-const maxWidth = 800;
+const resizeObserverOptions = {}
+const maxWidth = 800
 
 interface MinimalViewerProps {
-  url: string;
+  url: string
 }
 
 export const MinimalViewer = ({ url }: MinimalViewerProps) => {
-  const [numPages, setNumPages] = useState<number | null>(null);
-  const [pageNumber, setPageNumber] = useState(1);
-  const [containerRef, setContainerRef] = useState<HTMLElement | null>(null);
-  const [containerWidth, setContainerWidth] = useState<number>();
-  const [pageHeight, setPageHeight] = useState<number>(0);
+  const [numPages, setNumPages] = useState<number | null>(null)
+  const [pageNumber, setPageNumber] = useState(1)
+  const [containerRef, setContainerRef] = useState<HTMLElement | null>(null)
+  const [containerWidth, setContainerWidth] = useState<number>()
+  const [pageHeight, setPageHeight] = useState<number>(0)
 
   const onResize = useCallback<ResizeObserverCallback>((entries) => {
-    const [entry] = entries;
+    const [entry] = entries
     if (entry) {
-      setContainerWidth(entry.contentRect.width);
+      setContainerWidth(entry.contentRect.width)
     }
-  }, []);
+  }, [])
 
-  useResizeObserver(containerRef, resizeObserverOptions, onResize);
+  useResizeObserver(containerRef, resizeObserverOptions, onResize)
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
-    setNumPages(numPages);
-  };
+    setNumPages(numPages)
+  }
 
   const changePage = (offset: number) => {
     setPageNumber((prevPageNumber) => {
-      const newPageNumber = prevPageNumber + offset;
-      return numPages
-        ? Math.min(Math.max(1, newPageNumber), numPages)
-        : prevPageNumber;
-    });
-  };
+      const newPageNumber = prevPageNumber + offset
+      return numPages ?
+          Math.min(Math.max(1, newPageNumber), numPages)
+        : prevPageNumber
+    })
+  }
 
-  const previousPage = () => changePage(-1);
-  const nextPage = () => changePage(1);
+  const previousPage = () => changePage(-1)
+  const nextPage = () => changePage(1)
 
   // Keyboard navigation
   React.useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
       if (event.key === "ArrowLeft") {
-        previousPage();
+        previousPage()
       } else if (event.key === "ArrowRight") {
-        nextPage();
+        nextPage()
       }
-    };
+    }
 
-    window.addEventListener("keydown", handleKeyPress);
-    return () => window.removeEventListener("keydown", handleKeyPress);
-  }, []);
+    window.addEventListener("keydown", handleKeyPress)
+    return () => window.removeEventListener("keydown", handleKeyPress)
+  }, [])
 
-  const pageWidth = containerWidth
-    ? Math.min(containerWidth - 48, maxWidth)
-    : maxWidth;
+  const pageWidth =
+    containerWidth ? Math.min(containerWidth - 48, maxWidth) : maxWidth
 
   return (
-    <div className="w-full max-w-4xl mx-auto" ref={setContainerRef}>
-      <div className="flex flex-col gap-4 w-full">
+    <div className="mx-auto w-full max-w-4xl" ref={setContainerRef}>
+      <div className="flex w-full flex-col gap-4">
         <div className="flex justify-center" style={{ minHeight: pageHeight }}>
           <Document
             file={url}
@@ -89,7 +91,7 @@ export const MinimalViewer = ({ url }: MinimalViewerProps) => {
               />
             }
             className={cn(
-              "flex flex-col gap-2 md:gap-4 w-full items-center",
+              "flex w-full flex-col items-center gap-2 md:gap-4",
               "[&_.react-pdf__message]:p-5",
               "[&_.react-pdf__message]:text-white",
               "[&_.react-pdf__Page]:my-0"
@@ -99,7 +101,7 @@ export const MinimalViewer = ({ url }: MinimalViewerProps) => {
               pageNumber={pageNumber}
               renderTextLayer={true}
               renderAnnotationLayer={true}
-              className="shadow-lg rounded-lg"
+              className="rounded-lg shadow-lg"
               width={pageWidth}
               loading={
                 <LoadingSpinner
@@ -109,7 +111,7 @@ export const MinimalViewer = ({ url }: MinimalViewerProps) => {
                 />
               }
               onLoadSuccess={(page) => {
-                setPageHeight(page.height * (pageWidth / page.width));
+                setPageHeight(page.height * (pageWidth / page.width))
               }}
             />
           </Document>
@@ -117,8 +119,8 @@ export const MinimalViewer = ({ url }: MinimalViewerProps) => {
 
         <div
           className={cn(
-            "flex items-center justify-center mx-auto w-11/12 gap-4 mt-4 p-2",
-            "bg-white/80 dark:bg-black/80 backdrop-blur rounded-full shadow-sm"
+            "mx-auto mt-4 flex w-11/12 items-center justify-center gap-4 p-2",
+            "rounded-full bg-white/80 shadow-sm backdrop-blur dark:bg-black/80"
           )}
         >
           <Button
@@ -147,7 +149,7 @@ export const MinimalViewer = ({ url }: MinimalViewerProps) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MinimalViewer;
+export default MinimalViewer

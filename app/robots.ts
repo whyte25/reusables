@@ -1,4 +1,4 @@
-import { MetadataRoute } from "next";
+import { MetadataRoute } from "next"
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -10,5 +10,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: `${process.env.NEXT_PUBLIC_SITE_URL}/sitemap.xml`,
-  };
+  }
 }

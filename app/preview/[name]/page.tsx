@@ -1,20 +1,21 @@
-import { validateRegistryComponent } from "@/lib/registry-helpers";
-import { Suspense } from "react";
+import { Suspense } from "react"
+
+import { validateRegistryComponent } from "@/lib/registry-helpers"
 
 interface PreviewPageProps {
   params: Promise<{
-    name: string;
-  }>;
+    name: string
+  }>
 }
 
 export default async function PreviewPage({ params }: PreviewPageProps) {
-  const { name } = await params;
-  const Component = validateRegistryComponent(name);
+  const { name } = await params
+  const Component = validateRegistryComponent(name)
 
   return (
     <div className=" ">
       <div className="flex flex-col gap-4">
-        <div className="rounded-lg border bg-background min-h-screen px-4  md:p-4  flex items-center justify-center ">
+        <div className="flex min-h-screen items-center justify-center rounded-lg border bg-background px-4 md:p-4">
           <Suspense
             fallback={
               <div className="flex h-[400px] w-full items-center justify-center">
@@ -27,5 +28,5 @@ export default async function PreviewPage({ params }: PreviewPageProps) {
         </div>
       </div>
     </div>
-  );
+  )
 }

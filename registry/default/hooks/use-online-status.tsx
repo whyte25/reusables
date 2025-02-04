@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import { debounce } from "lodash";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react"
+import { debounce } from "lodash"
 
 interface ConnectionState {
-  isOnline: boolean;
-  lastChanged: string;
-  connectionQuality: "excellent" | "good" | "poor" | "unknown";
-  latency: number;
-  isRetrying: boolean;
+  isOnline: boolean
+  lastChanged: string
+  connectionQuality: "excellent" | "good" | "poor" | "unknown"
+  latency: number
+  isRetrying: boolean
 }
 
 const useOnlineStatus = (
@@ -25,39 +25,39 @@ const useOnlineStatus = (
     connectionQuality: "unknown",
     latency: 0,
     isRetrying: false,
-  });
+  })
 
   // Measure connection quality using Resource Timing API
   const checkConnectionQuality = useCallback(async () => {
     try {
-      const startTime = performance.now();
+      const startTime = performance.now()
       const response = await fetch(options.pingURL, {
         mode: "no-cors",
         cache: "no-cache",
-      });
-      console.log(response);
-      const endTime = performance.now();
-      const latency = endTime - startTime;
+      })
+      console.log(response)
+      const endTime = performance.now()
+      const latency = endTime - startTime
 
-      let quality: "excellent" | "good" | "poor" | "unknown" = "unknown";
-      if (latency < 100) quality = "excellent";
-      else if (latency < 300) quality = "good";
-      else quality = "poor";
+      let quality: "excellent" | "good" | "poor" | "unknown" = "unknown"
+      if (latency < 100) quality = "excellent"
+      else if (latency < 300) quality = "good"
+      else quality = "poor"
 
       setState((prev) => ({
         ...prev,
         connectionQuality: quality,
         latency,
-      }));
+      }))
     } catch (error) {
       setState((prev) => ({
         ...prev,
         isOnline: false,
         connectionQuality: "unknown",
         latency: -1,
-      }));
+      }))
     }
-  }, [options.pingURL]);
+  }, [options.pingURL])
 
   // Debounced status update to prevent rapid changes
   const updateOnlineStatus = useCallback(
@@ -67,63 +67,60 @@ const useOnlineStatus = (
         isOnline,
         lastChanged: new Date().toISOString(),
         isRetrying: false,
-      }));
+      }))
       if (isOnline) {
-        checkConnectionQuality();
+        checkConnectionQuality()
       }
     }, options.debounceTime),
     [checkConnectionQuality, options.debounceTime]
-  );
+  )
 
   // Manual retry connection
   const retryConnection = useCallback(async () => {
-    if (state.isOnline || state.isRetrying) return;
+    if (state.isOnline || state.isRetrying) return
 
     setState((prev) => ({
       ...prev,
       isRetrying: true,
-    }));
+    }))
 
     try {
-      await fetch(options.pingURL, { mode: "no-cors" });
-      updateOnlineStatus(true);
+      await fetch(options.pingURL, { mode: "no-cors" })
+      updateOnlineStatus(true)
     } catch (error) {
       setState((prev) => ({
         ...prev,
         isRetrying: false,
-      }));
+      }))
     }
-  }, [state.isOnline, state.isRetrying, options.pingURL, updateOnlineStatus]);
+  }, [state.isOnline, state.isRetrying, options.pingURL, updateOnlineStatus])
 
   useEffect(() => {
-    const handleOnline = () => updateOnlineStatus(true);
-    const handleOffline = () => updateOnlineStatus(false);
+    const handleOnline = () => updateOnlineStatus(true)
+    const handleOffline = () => updateOnlineStatus(false)
 
-    window.addEventListener("online", handleOnline);
-    window.addEventListener("offline", handleOffline);
+    window.addEventListener("online", handleOnline)
+    window.addEventListener("offline", handleOffline)
 
     // Set up periodic connection quality checks
-    const intervalId = setInterval(
-      checkConnectionQuality,
-      options.pingInterval
-    );
+    const intervalId = setInterval(checkConnectionQuality, options.pingInterval)
 
     // Initial connection quality check
-    checkConnectionQuality();
+    checkConnectionQuality()
 
     return () => {
-      window.removeEventListener("online", handleOnline);
-      window.removeEventListener("offline", handleOffline);
-      clearInterval(intervalId);
-      updateOnlineStatus.cancel();
-    };
-  }, [updateOnlineStatus, checkConnectionQuality, options.pingInterval]);
+      window.removeEventListener("online", handleOnline)
+      window.removeEventListener("offline", handleOffline)
+      clearInterval(intervalId)
+      updateOnlineStatus.cancel()
+    }
+  }, [updateOnlineStatus, checkConnectionQuality, options.pingInterval])
 
   return {
     ...state,
     checkConnectionNow: checkConnectionQuality,
     retryConnection,
-  };
-};
+  }
+}
 
-export default useOnlineStatus;
+export default useOnlineStatus

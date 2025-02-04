@@ -1,9 +1,9 @@
 if (process.env.NODE_ENV !== "development") {
-  process.exit(0);
+  process.exit(0)
 }
 
-const runningWithBun = process.versions.bun !== undefined;
-const isUsingBunScript = process.env._ && process.env._.includes("bun");
+const runningWithBun = process.versions.bun !== undefined
+const isUsingBunScript = process.env._ && process.env._.includes("bun")
 
 if (!runningWithBun || !isUsingBunScript) {
   const message = `
@@ -20,8 +20,8 @@ if (!runningWithBun || !isUsingBunScript) {
   │                                                          │
   │  For more details, go to \x1b[34mhttps://bun.sh/docs\x1b[0m             │
   │                                                          │
-  ╰──────────────────────────────────────────────────────────╯`;
+  ╰──────────────────────────────────────────────────────────╯`
 
-  console.error(message);
-  process.exit(1);
+  console.error(message)
+  process.exit(1)
 }

@@ -1,7 +1,12 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+
+import useFileUpload from "@/hooks/use-file-upload"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   Form,
   FormControl,
@@ -10,24 +15,21 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import useFileUpload from "@/hooks/use-file-upload";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { SingleImageDropzone } from "../reusables/single-image-upload";
-import { toast } from "../reusables/ui/notify-provider";
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 
-type FormValues = z.infer<typeof formSchema>;
+import { SingleImageDropzone } from "../reusables/single-image-upload"
+import { toast } from "../reusables/ui/notify-provider"
+
+type FormValues = z.infer<typeof formSchema>
 
 const formSchema = z.object({
   image: z.string().min(1, "Image is required"),
   name: z.string().min(2).max(50),
   price: z.string().regex(/^\d+(\.\d{1,2})?$/, "Must be a valid price"),
   description: z.string(),
-});
+})
 
 export default function SingleImageUploadFormDemo() {
   const form = useForm<FormValues>({
@@ -38,32 +40,32 @@ export default function SingleImageUploadFormDemo() {
       description: "",
       image: "",
     },
-  });
+  })
 
   const fileUpload = useFileUpload({
     onSuccess: (url: string) => {
-      form.setValue("image", url, { shouldValidate: true });
-      toast.success("Image uploaded successfully");
+      form.setValue("image", url, { shouldValidate: true })
+      toast.success("Image uploaded successfully")
     },
     onError: (error) => toast.error(error),
-  });
+  })
 
   async function onSubmit(values: FormValues) {
     toast.promise(() => new Promise((resolve) => setTimeout(resolve, 2000)), {
       loading: "Creating product...",
       success: () => "Product created successfully!",
       error: "Failed to create product",
-    });
+    })
     form.reset({
       name: "",
       price: "",
       description: "",
       image: "",
-    });
+    })
   }
 
   return (
-    <Card className="w-full max-w-2xl mx-auto">
+    <Card className="mx-auto w-full max-w-2xl">
       <CardHeader>
         <CardTitle>Add New Product</CardTitle>
       </CardHeader>
@@ -131,9 +133,9 @@ export default function SingleImageUploadFormDemo() {
                       progressType="circular"
                       onChange={async (file: File | undefined) => {
                         if (file) {
-                          await fileUpload.handleFileUpload(file);
+                          await fileUpload.handleFileUpload(file)
                         } else {
-                          form.setValue("image", "", { shouldValidate: true });
+                          form.setValue("image", "", { shouldValidate: true })
                         }
                       }}
                     />
@@ -152,5 +154,5 @@ export default function SingleImageUploadFormDemo() {
         </Form>
       </CardContent>
     </Card>
-  );
+  )
 }

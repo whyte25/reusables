@@ -1,11 +1,13 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { statusStyles, toast } from "../reusables/ui/notify-provider";
+"use client"
+
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+
+import { statusStyles, toast } from "../reusables/ui/notify-provider"
 
 export default function ToastDemo() {
   return (
-    <div className="p-4 flex  flex-wrap justify-center gap-3 w-full ">
+    <div className="flex w-full flex-wrap justify-center gap-3 p-4">
       <Button
         variant="outline"
         className={cn("w-32", statusStyles["info"])}
@@ -64,5 +66,5 @@ export default function ToastDemo() {
         Loading Toast 2
       </Button>
     </div>
-  );
+  )
 }

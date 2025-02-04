@@ -72,7 +72,7 @@ Define your role-based permissions:
 const user = {
   id: "user_123",
   authorisation: "admin", // Must match a role from ROLES
-};
+}
 ```
 
 ### Check Permissions
@@ -80,16 +80,14 @@ const user = {
 ```tsx
 function Example() {
   // Simple permission check
-  const canUpdate = hasPermission(user, "update:blog");
+  const canUpdate = hasPermission(user, "update:blog")
 
   return (
     <div>
-      {canUpdate ? (
+      {canUpdate ?
         <button>Update Blog</button>
-      ) : (
-        <p>No permission to delete</p>
-      )}
+      : <p>No permission to delete</p>}
     </div>
-  );
+  )
 }
 ```

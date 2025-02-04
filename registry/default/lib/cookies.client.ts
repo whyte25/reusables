@@ -1,19 +1,19 @@
-import Cookies from "js-cookie";
+import Cookies from "js-cookie"
 
-type SameSiteOption = "lax" | "strict" | "none";
+type SameSiteOption = "lax" | "strict" | "none"
 
 interface CookieOptions {
-  path?: string;
-  secure?: boolean;
-  sameSite?: SameSiteOption;
-  domain?: string;
+  path?: string
+  secure?: boolean
+  sameSite?: SameSiteOption
+  domain?: string
 }
 
 const COOKIES_DEFAULT_OPTIONS: Required<Omit<CookieOptions, "domain">> = {
   path: "/",
   secure: true,
   sameSite: "lax",
-};
+}
 
 /**
  * This module provides a way to interact with cookies on the client.
@@ -25,14 +25,14 @@ const COOKIES_DEFAULT_OPTIONS: Required<Omit<CookieOptions, "domain">> = {
 
 export const ClientCookies = {
   set(name: string, value: string, options: Partial<CookieOptions> = {}) {
-    Cookies.set(name, value, COOKIES_DEFAULT_OPTIONS);
+    Cookies.set(name, value, COOKIES_DEFAULT_OPTIONS)
   },
 
   get(name: string) {
-    return Cookies.get(name) || null;
+    return Cookies.get(name) || null
   },
 
   delete(name: string) {
-    Cookies.remove(name, COOKIES_DEFAULT_OPTIONS);
+    Cookies.remove(name, COOKIES_DEFAULT_OPTIONS)
   },
-};
+}

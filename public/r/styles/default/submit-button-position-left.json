@@ -1,13 +1,11 @@
 {
   "name": "submit-button-position-left",
   "type": "registry:example",
-  "registryDependencies": [
-    "submit-button"
-  ],
+  "registryDependencies": ["submit-button"],
   "files": [
     {
       "path": "example/submit-button-position-left.tsx",
-      "content": "import { SubmitButton } from \"../reusables/ui/submit-button\";\n\nexport default function SubmitButtonPositionLeft() {\n  return (\n    <SubmitButton position=\"left\" isSubmitting={true}>\n      Loading\n    </SubmitButton>\n  );\n}\n",
+      "content": "import { SubmitButton } from \"../reusables/ui/submit-button\"\n\nexport default function SubmitButtonPositionLeft() {\n  return (\n    <SubmitButton position=\"left\" isSubmitting={true}>\n      Loading\n    </SubmitButton>\n  )\n}\n",
       "type": "registry:example",
       "target": ""
     }

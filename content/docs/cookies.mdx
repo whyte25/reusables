@@ -31,36 +31,36 @@ npm install js-cookies
  Copy and paste the following code into your project.
 
 ```tsx ts2js title="cookies-client.ts"
-import Cookies from "js-cookie";
+import Cookies from "js-cookie"
 
-type SameSiteOption = "lax" | "strict" | "none";
+type SameSiteOption = "lax" | "strict" | "none"
 
 interface CookieOptions {
-  path?: string;
-  secure?: boolean;
-  sameSite?: SameSiteOption;
-  domain?: string;
+  path?: string
+  secure?: boolean
+  sameSite?: SameSiteOption
+  domain?: string
 }
 
 const COOKIES_DEFAULT_OPTIONS: Required<Omit<CookieOptions, "domain">> = {
   path: "/",
   secure: true,
   sameSite: "lax",
-};
+}
 
 export const ClientCookies = {
   set(name: string, value: string, options: Partial<CookieOptions> = {}) {
-    Cookies.set(name, value, COOKIES_DEFAULT_OPTIONS);
+    Cookies.set(name, value, COOKIES_DEFAULT_OPTIONS)
   },
 
   get(name: string) {
-    return Cookies.get(name) || null;
+    return Cookies.get(name) || null
   },
 
   delete(name: string) {
-    Cookies.remove(name, COOKIES_DEFAULT_OPTIONS);
+    Cookies.remove(name, COOKIES_DEFAULT_OPTIONS)
   },
-};
+}
 ```
 
 </Step>
@@ -74,19 +74,19 @@ export const ClientCookies = {
 ```tsx
 const handleSetCookie = () => {
   // Set a cookie
-  ClientCookies.set("user-preference", "dark-mode");
-};
+  ClientCookies.set("user-preference", "dark-mode")
+}
 
 const handleGetCookie = () => {
   // Get the value of cookie named 'user-preference'
-  const preference = ClientCookies.get("user-preference");
-  console.log("Cookie value:", preference);
-};
+  const preference = ClientCookies.get("user-preference")
+  console.log("Cookie value:", preference)
+}
 
 const handleDeleteCookie = () => {
   // Delete the cookie named 'user-preference'
-  ClientCookies.delete("user-preference");
-};
+  ClientCookies.delete("user-preference")
+}
 ```
 
 ## Server
@@ -113,23 +113,23 @@ npx shadcn@latest add "https://reusables.vercel.app/r/cookies-server"
  Copy and paste the following code into your project.
 
 ```tsx ts2js title="cookies-server.ts"
-import { ResponseCookie } from "next/dist/compiled/@edge-runtime/cookies";
-import { cookies } from "next/headers";
+import { ResponseCookie } from "next/dist/compiled/@edge-runtime/cookies"
+import { cookies } from "next/headers"
 
-type SameSiteOption = "lax" | "strict" | "none";
+type SameSiteOption = "lax" | "strict" | "none"
 
 interface CookieOptions {
-  path?: string;
-  secure?: boolean;
-  sameSite?: SameSiteOption;
-  domain?: string;
+  path?: string
+  secure?: boolean
+  sameSite?: SameSiteOption
+  domain?: string
 }
 
 const COOKIES_DEFAULT_OPTIONS: Required<Omit<CookieOptions, "domain">> = {
   path: "/",
   secure: true,
   sameSite: "lax",
-};
+}
 
 /**
  * This module provides a way to interact with cookies on the server.
@@ -149,23 +149,23 @@ export const ServerCookies = {
       path: options.path || COOKIES_DEFAULT_OPTIONS.path,
       secure: options.secure ?? COOKIES_DEFAULT_OPTIONS.secure,
       sameSite: options.sameSite || COOKIES_DEFAULT_OPTIONS.sameSite,
-    };
-
-    if (options.domain) {
-      cookieOptions.domain = options.domain;
     }
 
-    cookies().set(cookieOptions);
+    if (options.domain) {
+      cookieOptions.domain = options.domain
+    }
+
+    cookies().set(cookieOptions)
   },
 
   get(name: string) {
-    return cookies().get(name)?.value ?? null;
+    return cookies().get(name)?.value ?? null
   },
 
   delete(name: string) {
-    cookies().delete(name);
+    cookies().delete(name)
   },
-};
+}
 
 export const ServerCookiesNext15 = {
   async set(name: string, value: string, options: Partial<CookieOptions> = {}) {
@@ -175,23 +175,23 @@ export const ServerCookiesNext15 = {
       path: options.path || COOKIES_DEFAULT_OPTIONS.path,
       secure: options.secure ?? COOKIES_DEFAULT_OPTIONS.secure,
       sameSite: options.sameSite || COOKIES_DEFAULT_OPTIONS.sameSite,
-    };
-
-    if (options.domain) {
-      cookieOptions.domain = options.domain;
     }
 
-    (await cookies()).set(cookieOptions);
+    if (options.domain) {
+      cookieOptions.domain = options.domain
+    }
+
+    ;(await cookies()).set(cookieOptions)
   },
 
   async get(name: string) {
-    return (await cookies()).get(name)?.value ?? null;
+    return (await cookies()).get(name)?.value ?? null
   },
 
   async delete(name: string) {
-    (await cookies()).delete(name);
+    ;(await cookies()).delete(name)
   },
-};
+}
 ```
 
 </Step>
@@ -207,14 +207,14 @@ Next.js 15
 ```tsx
 export default async function CookiesServerNext15Example() {
   //Set a cookie
-  await ServerCookiesNext15.set("language", "en");
+  await ServerCookiesNext15.set("language", "en")
 
   // Get a cookie
-  const language = await ServerCookiesNext15.get("language");
-  console.log("Current language:", language);
+  const language = await ServerCookiesNext15.get("language")
+  console.log("Current language:", language)
 
   // Delete a cookie
-  await ServerCookiesNext15.delete("language");
+  await ServerCookiesNext15.delete("language")
 
   return (
     <div className="space-y-4">
@@ -222,7 +222,7 @@ export default async function CookiesServerNext15Example() {
         <h3>Next.js 15+ Cookie Values:</h3>
       </div>
     </div>
-  );
+  )
 }
 ```
 
@@ -231,13 +231,13 @@ Next.js 12-14.
 ```tsx
 export default async function CookiesServerExample() {
   // Set a cookie
-  ServerCookies.set("theme", "dark");
+  ServerCookies.set("theme", "dark")
 
   // Get a cookie
-  const theme = ServerCookies.get("theme");
+  const theme = ServerCookies.get("theme")
 
   // Delete a cookie
-  ServerCookies.delete("theme");
+  ServerCookies.delete("theme")
 
   return (
     <div className="space-y-4">
@@ -245,7 +245,7 @@ export default async function CookiesServerExample() {
         <h3>Legacy Server Cookie Values:</h3>
       </div>
     </div>
-  );
+  )
 }
 ```
 

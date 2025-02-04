@@ -1,13 +1,15 @@
-"use client";
-import { useState } from "react";
-import { SubmitButton } from "../reusables/ui/submit-button";
+"use client"
+
+import { useState } from "react"
+
+import { SubmitButton } from "../reusables/ui/submit-button"
 
 export default function SubmitButtonTextDemo() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleClick = () => {
-    setIsSubmitting(true);
-  };
+    setIsSubmitting(true)
+  }
 
   return (
     <SubmitButton
@@ -17,5 +19,5 @@ export default function SubmitButtonTextDemo() {
     >
       Click Me
     </SubmitButton>
-  );
+  )
 }

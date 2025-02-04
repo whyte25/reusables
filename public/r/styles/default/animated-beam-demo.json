@@ -1,12 +1,8 @@
 {
   "name": "animated-beam-demo",
   "type": "registry:example",
-  "dependencies": [
-    "@radix-ui/react-icons"
-  ],
-  "registryDependencies": [
-    "animated-beam"
-  ],
+  "dependencies": ["@radix-ui/react-icons"],
+  "registryDependencies": ["animated-beam"],
   "files": [
     {
       "path": "example/animated-beam-demo.tsx",

@@ -1,13 +1,14 @@
-"use client";
+"use client"
 
-import { cn } from "@/lib/utils";
-import type { ImageProps } from "next/image";
-import Image from "next/image";
+import type { ImageProps } from "next/image"
+import Image from "next/image"
+
+import { cn } from "@/lib/utils"
 
 interface ThemeImageProps extends Omit<ImageProps, "src" | "className"> {
-  lightSrc: ImageProps["src"];
-  darkSrc: ImageProps["src"];
-  className?: string;
+  lightSrc: ImageProps["src"]
+  darkSrc: ImageProps["src"]
+  className?: string
 }
 
 export const ThemeImage = ({
@@ -32,7 +33,7 @@ export const ThemeImage = ({
         {...props}
       />
     </>
-  );
-};
+  )
+}
 
-export default ThemeImage;
+export default ThemeImage

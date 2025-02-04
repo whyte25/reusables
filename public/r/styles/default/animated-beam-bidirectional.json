@@ -1,9 +1,7 @@
 {
   "name": "animated-beam-bidirectional",
   "type": "registry:example",
-  "registryDependencies": [
-    "animated-beam"
-  ],
+  "registryDependencies": ["animated-beam"],
   "files": [
     {
       "path": "example/animated-beam-bidirectional.tsx",

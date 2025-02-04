@@ -1,9 +1,7 @@
 {
   "name": "animated-beam-multiple-inputs",
   "type": "registry:example",
-  "registryDependencies": [
-    "animated-beam"
-  ],
+  "registryDependencies": ["animated-beam"],
   "files": [
     {
       "path": "example/animated-beam-multiple-inputs.tsx",

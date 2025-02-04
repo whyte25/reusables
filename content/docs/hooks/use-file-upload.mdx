@@ -40,7 +40,7 @@ In this hook, It's `response?.data?.secure_url`.
 ## Usage
 
 ```tsx
-import useFileUpload from "@/hooks/useFileUpload";
+import useFileUpload from "@/hooks/useFileUpload"
 ```
 
 ```tsx
@@ -48,7 +48,7 @@ const { handleFileUpload, cancelUpload, isUploading, progress, error, data } =
   useFileUpload({
     onSuccess: (url) => console.log("Uploaded:", url),
     onError: (error) => console.log("Error:", error),
-  });
+  })
 ```
 
 ### Example

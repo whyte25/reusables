@@ -1,11 +1,12 @@
-import { cn } from "@/lib/utils";
-import { Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react"
+
+import { cn } from "@/lib/utils"
 
 interface LoadingSpinnerProps {
-  minHeight?: string;
-  minWidth?: string;
-  className?: string;
-  spinnerClassName?: string;
+  minHeight?: string
+  minWidth?: string
+  className?: string
+  spinnerClassName?: string
 }
 
 export const LoadingSpinner = ({
@@ -20,8 +21,8 @@ export const LoadingSpinner = ({
       style={{ minHeight, minWidth }}
     >
       <Loader2
-        className={cn("w-8 h-8 animate-spin text-white", spinnerClassName)}
+        className={cn("h-8 w-8 animate-spin text-white", spinnerClassName)}
       />
     </div>
-  );
-};
+  )
+}

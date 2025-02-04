@@ -1,12 +1,8 @@
 {
   "name": "inview-state-scroll-demo",
   "type": "registry:example",
-  "dependencies": [
-    "framer-motion"
-  ],
-  "registryDependencies": [
-    "use-inview-state"
-  ],
+  "dependencies": ["framer-motion"],
+  "registryDependencies": ["use-inview-state"],
   "files": [
     {
       "path": "example/inview-state-scroll-demo.tsx",

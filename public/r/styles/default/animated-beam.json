@@ -1,9 +1,7 @@
 {
   "name": "animated-beam",
   "type": "registry:ui",
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": ["motion"],
   "files": [
     {
       "path": "reusables/animated-beam.tsx",
