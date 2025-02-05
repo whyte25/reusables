@@ -8,6 +8,7 @@ export const components: Registry = [
       "lucide-react",
       "react-dropzone",
       "class-variance-authority",
+      "axios",
     ],
     registryDependencies: ["utils"],
     files: [
@@ -28,6 +29,7 @@ export const components: Registry = [
       "lucide-react",
       "react-dropzone",
       "class-variance-authority",
+      "axios",
     ],
     registryDependencies: ["utils"],
     files: [
@@ -48,6 +50,7 @@ export const components: Registry = [
       "lucide-react",
       "react-dropzone",
       "class-variance-authority",
+      "axios",
     ],
     registryDependencies: ["utils"],
     files: [
@@ -68,6 +71,7 @@ export const components: Registry = [
       "lucide-react",
       "react-dropzone",
       "class-variance-authority",
+      "axios",
     ],
     registryDependencies: ["utils"],
     files: [
