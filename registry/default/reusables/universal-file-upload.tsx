@@ -311,7 +311,6 @@ const UniversalFileUpload = React.forwardRef<HTMLInputElement, InputProps>(
             </div>
           </div>
         </div>
-
         {displayMode === "grid" ?
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-[repeat(3,1fr)] xl:grid-cols-[repeat(4,1fr)]">
             {value?.map(({ file, progress }, index) => {
@@ -422,10 +421,9 @@ const UniversalFileUpload = React.forwardRef<HTMLInputElement, InputProps>(
             })}
           </div>
         }
-
-        <div className="mt-1 text-xs text-red-500">
-          {customError ?? errorMessage}
-        </div>
+        {customError && (
+          <div className="mt-1 text-xs text-red-500">{errorMessage}</div>
+        )}
       </div>
     )
   }

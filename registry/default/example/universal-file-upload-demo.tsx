@@ -51,7 +51,7 @@ export default function UniversalFileUploadDemo() {
       <UniversalFileUpload
         value={fileStates}
         onChange={setFileStates}
-        displayMode="grid"
+        displayMode="list"
         disabled={isUploading}
         dropzoneOptions={{
           maxFiles: 10,
