@@ -1,13 +1,8 @@
 {
   "name": "hover-navigation-demo",
   "type": "registry:example",
-  "dependencies": [
-    "react-pdf",
-    "@wojtekmaj/react-hooks"
-  ],
-  "registryDependencies": [
-    "hover-navigation-viewer"
-  ],
+  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks"],
+  "registryDependencies": ["hover-navigation-viewer"],
   "files": [
     {
       "path": "example/hover-navigation-demo.tsx",

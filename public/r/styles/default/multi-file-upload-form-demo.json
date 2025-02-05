@@ -1,11 +1,7 @@
 {
   "name": "multi-file-upload-form-demo",
   "type": "registry:example",
-  "dependencies": [
-    "react-hook-form",
-    "@hookform/resolvers/zod",
-    "zod"
-  ],
+  "dependencies": ["react-hook-form", "@hookform/resolvers/zod", "zod"],
   "registryDependencies": [
     "multi-file-upload",
     "button",

@@ -1,9 +1,7 @@
 {
   "name": "direct-image-upload-demo",
   "type": "registry:example",
-  "registryDependencies": [
-    "single-image-upload"
-  ],
+  "registryDependencies": ["single-image-upload"],
   "files": [
     {
       "path": "example/direct-image-upload-demo.tsx",

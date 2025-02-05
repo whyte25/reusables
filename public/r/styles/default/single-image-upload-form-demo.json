@@ -1,11 +1,7 @@
 {
   "name": "single-image-upload-form-demo",
   "type": "registry:example",
-  "dependencies": [
-    "react-hook-form",
-    "@hookform/resolvers/zod",
-    "zod"
-  ],
+  "dependencies": ["react-hook-form", "@hookform/resolvers/zod", "zod"],
   "registryDependencies": [
     "single-image-upload",
     "button",

@@ -1,9 +1,7 @@
 {
   "name": "theme-image-demo",
   "type": "registry:example",
-  "registryDependencies": [
-    "theme-image"
-  ],
+  "registryDependencies": ["theme-image"],
   "files": [
     {
       "path": "example/theme-image-demo.tsx",

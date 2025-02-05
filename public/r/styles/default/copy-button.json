@@ -1,13 +1,8 @@
 {
   "name": "copy-button",
   "type": "registry:ui",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "button",
-    "utils"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "utils"],
   "files": [
     {
       "path": "reusables/ui/copy-button.tsx",

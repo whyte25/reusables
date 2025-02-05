@@ -1,9 +1,7 @@
 {
   "name": "online-status-demo",
   "type": "registry:example",
-  "registryDependencies": [
-    "submit-button"
-  ],
+  "registryDependencies": ["submit-button"],
   "files": [
     {
       "path": "example/online-status-demo.tsx",

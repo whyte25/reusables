@@ -1,9 +1,7 @@
 {
   "name": "toast-with-description-demo",
   "type": "registry:example",
-  "registryDependencies": [
-    "toast"
-  ],
+  "registryDependencies": ["toast"],
   "files": [
     {
       "path": "example/toast-with-description-demo.tsx",

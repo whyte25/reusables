@@ -1,9 +1,7 @@
 {
   "name": "direct-multi-file-upload-demo",
   "type": "registry:example",
-  "registryDependencies": [
-    "multi-file-upload"
-  ],
+  "registryDependencies": ["multi-file-upload"],
   "files": [
     {
       "path": "example/direct-multi-file-upload-demo.tsx",

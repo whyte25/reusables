@@ -2,10 +2,7 @@
   "name": "universal-file-upload-demo",
   "type": "registry:example",
   "dependencies": [],
-  "registryDependencies": [
-    "universal-file-upload",
-    "button"
-  ],
+  "registryDependencies": ["universal-file-upload", "button"],
   "files": [
     {
       "path": "example/universal-file-upload-demo.tsx",

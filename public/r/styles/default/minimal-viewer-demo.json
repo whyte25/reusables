@@ -1,13 +1,8 @@
 {
   "name": "minimal-viewer-demo",
   "type": "registry:example",
-  "dependencies": [
-    "react-pdf",
-    "@wojtekmaj/react-hooks"
-  ],
-  "registryDependencies": [
-    "minimal-viewer"
-  ],
+  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks"],
+  "registryDependencies": ["minimal-viewer"],
   "files": [
     {
       "path": "example/minimal-viewer-demo.tsx",

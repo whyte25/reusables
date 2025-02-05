@@ -1,9 +1,7 @@
 {
   "name": "use-inview",
   "type": "registry:hook",
-  "dependencies": [
-    "react-intersection-observer"
-  ],
+  "dependencies": ["react-intersection-observer"],
   "files": [
     {
       "path": "hooks/use-inview.tsx",

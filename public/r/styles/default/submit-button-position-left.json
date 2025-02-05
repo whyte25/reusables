@@ -1,9 +1,7 @@
 {
   "name": "submit-button-position-left",
   "type": "registry:example",
-  "registryDependencies": [
-    "submit-button"
-  ],
+  "registryDependencies": ["submit-button"],
   "files": [
     {
       "path": "example/submit-button-position-left.tsx",

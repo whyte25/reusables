@@ -1,9 +1,7 @@
 {
   "name": "time-ago-demo",
   "type": "registry:example",
-  "registryDependencies": [
-    "time-ago"
-  ],
+  "registryDependencies": ["time-ago"],
   "files": [
     {
       "path": "example/time-ago-demo.tsx",

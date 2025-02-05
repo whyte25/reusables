@@ -1,10 +1,7 @@
 {
   "name": "submit-button",
   "type": "registry:ui",
-  "registryDependencies": [
-    "button",
-    "utils"
-  ],
+  "registryDependencies": ["button", "utils"],
   "files": [
     {
       "path": "reusables/ui/submit-button.tsx",

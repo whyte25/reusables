@@ -1,10 +1,7 @@
 {
   "name": "manual-multi-file-upload-demo",
   "type": "registry:example",
-  "registryDependencies": [
-    "multi-file-upload",
-    "button"
-  ],
+  "registryDependencies": ["multi-file-upload", "button"],
   "files": [
     {
       "path": "example/manual-multi-file-upload-demo.tsx",

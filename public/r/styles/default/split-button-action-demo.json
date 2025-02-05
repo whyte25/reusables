@@ -1,9 +1,7 @@
 {
   "name": "split-button-action-demo",
   "type": "registry:example",
-  "registryDependencies": [
-    "split-button-action"
-  ],
+  "registryDependencies": ["split-button-action"],
   "files": [
     {
       "path": "example/split-button-action-demo.tsx",

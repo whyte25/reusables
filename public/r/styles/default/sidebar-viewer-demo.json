@@ -1,13 +1,8 @@
 {
   "name": "sidebar-viewer-demo",
   "type": "registry:example",
-  "dependencies": [
-    "react-pdf",
-    "@wojtekmaj/react-hooks"
-  ],
-  "registryDependencies": [
-    "sidebar-viewer"
-  ],
+  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks"],
+  "registryDependencies": ["sidebar-viewer"],
   "files": [
     {
       "path": "example/sidebar-viewer-demo.tsx",

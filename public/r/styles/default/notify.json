@@ -1,14 +1,8 @@
 {
   "name": "notify",
   "type": "registry:ui",
-  "dependencies": [
-    "lucide-react",
-    "framer-motion",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "utils"
-  ],
+  "dependencies": ["lucide-react", "framer-motion", "class-variance-authority"],
+  "registryDependencies": ["utils"],
   "files": [
     {
       "path": "reusables/ui/notify.tsx",

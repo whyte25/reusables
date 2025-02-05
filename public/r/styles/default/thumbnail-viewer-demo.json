@@ -1,13 +1,8 @@
 {
   "name": "thumbnail-viewer-demo",
   "type": "registry:example",
-  "dependencies": [
-    "react-pdf",
-    "@wojtekmaj/react-hooks"
-  ],
-  "registryDependencies": [
-    "thumbnail-viewer"
-  ],
+  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks"],
+  "registryDependencies": ["thumbnail-viewer"],
   "files": [
     {
       "path": "example/thumbnail-viewer-demo.tsx",

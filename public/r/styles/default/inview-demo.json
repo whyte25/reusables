@@ -1,12 +1,8 @@
 {
   "name": "inview-demo",
   "type": "registry:example",
-  "dependencies": [
-    "framer-motion"
-  ],
-  "registryDependencies": [
-    "use-inview"
-  ],
+  "dependencies": ["framer-motion"],
+  "registryDependencies": ["use-inview"],
   "files": [
     {
       "path": "example/inview-demo.tsx",

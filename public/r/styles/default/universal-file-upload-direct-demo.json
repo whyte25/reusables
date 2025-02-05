@@ -2,9 +2,7 @@
   "name": "universal-file-upload-direct-demo",
   "type": "registry:example",
   "dependencies": [],
-  "registryDependencies": [
-    "universal-file-upload"
-  ],
+  "registryDependencies": ["universal-file-upload"],
   "files": [
     {
       "path": "example/universal-file-upload-direct-demo.tsx",

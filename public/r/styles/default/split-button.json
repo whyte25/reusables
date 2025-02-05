@@ -1,14 +1,8 @@
 {
   "name": "split-button",
   "type": "registry:ui",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "button",
-    "dropdown-menu",
-    "utils"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "dropdown-menu", "utils"],
   "files": [
     {
       "path": "reusables/ui/split-button.tsx",
