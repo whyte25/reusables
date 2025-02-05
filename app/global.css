@@ -123,6 +123,14 @@ a[href="/docs/components/file-upload/multiple-image-upload"] {
   @apply badge new;
 }
 
+a[href="/docs/components/file-upload/universal-file-upload"] {
+  @apply badge new;
+}
+
+a[href="/docs/components/file-upload/multi-file-upload"] {
+  @apply badge new;
+}
+
 a[href="/docs/components/pdf-viewers/thumbnail-viewer"] {
   @apply badge new;
 }

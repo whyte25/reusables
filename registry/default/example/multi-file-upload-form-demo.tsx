@@ -18,20 +18,17 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
-import {
-  FileState,
-  MultiImageDropzone,
-} from "../reusables/multiple-image-upload"
+import { FileState, MultiFileUpload } from "../reusables/multi-file-upload"
 import { toast } from "../reusables/ui/notify-provider"
 
 const formSchema = z.object({
   title: z.string().min(2).max(50),
-  images: z.array(z.string()).min(1, "At least one image is required"),
+  files: z.array(z.string()).min(1, "At least one file is required"),
 })
 
 type FormValues = z.infer<typeof formSchema>
 
-export default function MultipleImageUploadFormDemo() {
+export default function MultiFileUploadFormDemo() {
   const {
     uploadMultipleFiles,
     isUploading,
@@ -41,8 +38,8 @@ export default function MultipleImageUploadFormDemo() {
   } = useMultipleFileUpload({
     onSuccess: (urls) => {
       // Update form with uploaded URLs
-      form.setValue("images", urls)
-      toast.success("Images uploaded successfully!")
+      form.setValue("files", urls)
+      toast.success("Files uploaded successfully!")
     },
     onError: (error) => {
       toast.error(error)
@@ -53,7 +50,7 @@ export default function MultipleImageUploadFormDemo() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       title: "",
-      images: [],
+      files: [],
     },
   })
 
@@ -76,14 +73,15 @@ export default function MultipleImageUploadFormDemo() {
         })
 
         // Update completed files
-        uploadResults.forEach(({ url, filename }, index) => {
+        uploadResults.forEach(({ url, filename }) => {
           const fileState = newFileStates.find(
             (fileState) =>
               typeof fileState.file !== "string" &&
               fileState.file.name === filename
           )
           if (fileState) {
-            ;(fileState.file = url), (fileState.progress = "COMPLETE")
+            fileState.file = url
+            fileState.progress = "COMPLETE"
           }
         })
 
@@ -115,9 +113,9 @@ export default function MultipleImageUploadFormDemo() {
 
   async function onSubmit(values: FormValues) {
     toast.promise(() => new Promise((resolve) => setTimeout(resolve, 2000)), {
-      loading: "Creating gallery...",
-      success: () => `Gallery created successfully!`,
-      error: "Failed to create gallery",
+      loading: "Creating document...",
+      success: () => `Document created successfully!`,
+      error: "Failed to create document",
     })
     console.log(values)
     form.reset()
@@ -127,7 +125,7 @@ export default function MultipleImageUploadFormDemo() {
   return (
     <Card className="mx-auto w-full max-w-2xl">
       <CardHeader>
-        <CardTitle>Create Image Gallery</CardTitle>
+        <CardTitle>Create Document</CardTitle>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -137,9 +135,9 @@ export default function MultipleImageUploadFormDemo() {
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Gallery Title</FormLabel>
+                  <FormLabel>Document Title</FormLabel>
                   <FormControl>
-                    <Input placeholder="My Gallery" {...field} />
+                    <Input placeholder="My Document" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -147,12 +145,12 @@ export default function MultipleImageUploadFormDemo() {
             />
             <FormField
               control={form.control}
-              name="images"
+              name="files"
               render={() => (
                 <FormItem>
-                  <FormLabel>Gallery Images</FormLabel>
+                  <FormLabel>Document Files</FormLabel>
                   <FormControl>
-                    <MultiImageDropzone
+                    <MultiFileUpload
                       value={fileStates}
                       onChange={setFileStates}
                       onUpload={handleUpload}
@@ -172,7 +170,7 @@ export default function MultipleImageUploadFormDemo() {
               )}
             />
             <Button type="submit" className="w-full" disabled={isUploading}>
-              Create Gallery
+              Create Document
             </Button>
           </form>
         </Form>

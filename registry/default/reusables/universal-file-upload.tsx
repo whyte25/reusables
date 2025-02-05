@@ -2,7 +2,23 @@
 
 import * as React from "react"
 import { cva } from "class-variance-authority"
-import { CheckCircle, File, UploadCloudIcon, X } from "lucide-react"
+import {
+  CheckCircle,
+  File,
+  FileArchive,
+  FileAudio,
+  FileCode,
+  FileCog,
+  FileImage,
+  FileJson,
+  FileKey,
+  FileSpreadsheet,
+  FileText,
+  FileType,
+  FileVideo,
+  UploadCloudIcon,
+  X,
+} from "lucide-react"
 import { useDropzone, type DropzoneOptions } from "react-dropzone"
 
 import { cn } from "@/lib/utils"
@@ -32,8 +48,7 @@ const dropzoneVariants = cva(
           "border-green-500 bg-green-50 dark:border-green-400 dark:bg-green-900/20",
         reject:
           "border-red-500 bg-red-50 dark:border-red-400 dark:bg-red-900/20",
-        image:
-          "relative aspect-square h-full w-full rounded-md border-0 bg-slate-200 p-0 shadow-md dark:bg-slate-900",
+        file: "relative aspect-square h-full w-full rounded-md border-0 bg-slate-200 p-0 shadow-md dark:bg-slate-900",
       },
     },
     defaultVariants: {
@@ -77,7 +92,99 @@ const ERROR_MESSAGES = {
   },
 }
 
-const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
+const getFileIcon = (file: File | string) => {
+  const type =
+    typeof file === "string" ?
+      file.split(".").pop()?.toLowerCase()
+    : file.type.split("/")[0].toLowerCase()
+
+  const extension =
+    typeof file === "string" ?
+      file.split(".").pop()?.toLowerCase()
+    : file.name.split(".").pop()?.toLowerCase()
+
+  switch (type) {
+    case "image":
+      return FileImage
+    case "video":
+      return FileVideo
+    case "audio":
+      return FileAudio
+    case "application":
+      switch (extension) {
+        case "pdf":
+          return FileText
+        case "json":
+          return FileJson
+        case "zip":
+        case "rar":
+        case "7z":
+        case "tar":
+        case "gz":
+          return FileArchive
+        case "xls":
+        case "xlsx":
+        case "csv":
+          return FileSpreadsheet
+        case "js":
+        case "ts":
+        case "jsx":
+        case "tsx":
+        case "html":
+        case "css":
+          return FileCode
+        case "key":
+        case "pem":
+        case "pub":
+          return FileKey
+        case "exe":
+        case "dll":
+        case "sys":
+          return FileCog
+        default:
+          return FileType
+      }
+    default:
+      return File
+  }
+}
+
+const getFileType = (file: File | string) => {
+  if (typeof file === "string") {
+    const extension = file.split(".").pop()?.toLowerCase()
+    switch (extension) {
+      case "jpg":
+      case "jpeg":
+      case "png":
+      case "gif":
+      case "webp":
+        return "image"
+      case "mp4":
+      case "webm":
+      case "ogg":
+        return "video"
+      case "mp3":
+      case "wav":
+        return "audio"
+      case "pdf":
+        return "pdf"
+      default:
+        return "file"
+    }
+  }
+
+  const type = file.type.split("/")[0].toLowerCase()
+  switch (type) {
+    case "image":
+    case "video":
+    case "audio":
+      return type
+    default:
+      return file.type === "application/pdf" ? "pdf" : "file"
+  }
+}
+
+const UniversalFileUpload = React.forwardRef<HTMLInputElement, InputProps>(
   (props, ref) => {
     const {
       dropzoneOptions,
@@ -95,14 +202,12 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
 
     const [customError, setCustomError] = React.useState<string>()
 
-    const imageUrls = React.useMemo(() => {
+    const fileUrls = React.useMemo(() => {
       if (value) {
         return value.map((fileState) => {
           if (typeof fileState.file === "string") {
-            // in case an url is passed in, use it to display the image
             return fileState.file
           } else {
-            // in case a file is passed in, create a base64 url to display the image
             return URL.createObjectURL(fileState.file)
           }
         })
@@ -138,7 +243,6 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
       }
     }
 
-    // dropzone configuration
     const {
       getRootProps,
       getInputProps,
@@ -147,13 +251,11 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
       isDragAccept,
       isDragReject,
     } = useDropzone({
-      accept: { "image/*": [] },
       disabled,
       onDrop: handleDrop,
       ...dropzoneOptions,
     })
 
-    // Update the variant logic
     const variant = React.useMemo(() => {
       if (disabled) return "disabled"
       if (isDragReject) return "reject"
@@ -162,7 +264,6 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
       return "base"
     }, [isFocused, isDragAccept, isDragReject, disabled])
 
-    // error validation messages
     const errorMessage = React.useMemo(() => {
       if (fileRejections[0]) {
         const { errors } = fileRejections[0]
@@ -190,7 +291,7 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
           <div className="flex flex-col items-center justify-center space-y-2 text-center">
             <UploadCloudIcon className="h-8 w-8 text-gray-600 dark:text-gray-400" />
             <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              Drop your images here
+              Drop your files here
             </div>
             <div className="text-xs text-gray-500 dark:text-gray-400">or</div>
 
@@ -210,117 +311,126 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
             </div>
           </div>
         </div>
-
         {displayMode === "grid" ?
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-[repeat(3,1fr)] xl:grid-cols-[repeat(4,1fr)]">
-            {/* Images */}
-            {value?.map(({ file, progress }, index) => (
-              <div
-                key={index}
-                className={dropzoneVariants({ variant: "image" })}
-              >
-                <div className="h-full w-full flex-shrink-0 overflow-hidden rounded-md bg-gray-100 dark:bg-gray-700">
-                  {typeof file !== "string" ?
-                    <img
-                      src={imageUrls[index]}
-                      alt={file.name}
-                      className="m-0 h-full w-full object-cover"
-                    />
-                  : <File className="h-full w-full p-2 text-gray-400 dark:text-gray-500" />
-                  }
-                </div>
-                {/* Progress Bar */}
-                {typeof progress === "number" && (
-                  <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-md bg-black bg-opacity-70">
-                    <CircleProgress progress={progress} />
-                  </div>
-                )}
-                {/* Remove Image Icon */}
-                {imageUrls[index] && !disabled && progress === "PENDING" && (
-                  <div
-                    className="group absolute right-0 top-0 -translate-y-1/4 translate-x-1/4 transform"
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      void onChange?.(value.filter((_, i) => i !== index) ?? [])
-                    }}
-                  >
-                    <div className="flex h-5 w-5 cursor-pointer items-center justify-center rounded-md border border-solid border-gray-500 bg-white transition-all duration-300 hover:h-6 hover:w-6 dark:border-gray-400 dark:bg-black">
-                      <X
-                        className="text-gray-500 dark:text-gray-400"
-                        width={16}
-                        height={16}
+            {value?.map(({ file, progress }, index) => {
+              const FileIcon = getFileIcon(file)
+              const fileType = getFileType(file)
+              return (
+                <div
+                  key={index}
+                  className={dropzoneVariants({ variant: "file" })}
+                >
+                  <div className="h-full w-full flex-shrink-0 overflow-hidden rounded-md bg-gray-100 dark:bg-gray-700">
+                    {fileType === "image" ?
+                      <img
+                        src={fileUrls[index]}
+                        alt={typeof file !== "string" ? file.name : file}
+                        className="m-0 h-full w-full object-cover"
                       />
-                    </div>
+                    : <FileIcon className="h-full w-full p-8 text-gray-400 dark:text-gray-500" />
+                    }
                   </div>
-                )}
-              </div>
-            ))}
+                  {/* Progress Bar */}
+                  {typeof progress === "number" && (
+                    <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-md bg-black bg-opacity-70">
+                      <CircleProgress progress={progress} />
+                    </div>
+                  )}
+                  {/* Remove File Icon */}
+                  {fileUrls[index] && !disabled && progress === "PENDING" && (
+                    <div
+                      className="group absolute right-0 top-0 -translate-y-1/4 translate-x-1/4 transform"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        void onChange?.(
+                          value.filter((_, i) => i !== index) ?? []
+                        )
+                      }}
+                    >
+                      <div className="flex h-5 w-5 cursor-pointer items-center justify-center rounded-md border border-solid border-gray-500 bg-white transition-all duration-300 hover:h-6 hover:w-6 dark:border-gray-400 dark:bg-black">
+                        <X
+                          className="text-gray-500 dark:text-gray-400"
+                          width={16}
+                          height={16}
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
           </div>
         : <div className="space-y-2">
-            {value?.map(({ file, progress, key }, index) => (
-              <div
-                key={key}
-                className="group relative flex items-center justify-between rounded-lg bg-zinc-900/5 p-3 transition-colors hover:bg-zinc-900/10 dark:bg-white/5 dark:hover:bg-white/10"
-              >
-                <div className="flex min-w-0 flex-1 items-center gap-3">
-                  {/* Success Check Icon */}
-                  {progress === "COMPLETE" && (
-                    <CheckCircle className="h-5 w-5 flex-shrink-0 text-green-500" />
-                  )}
-                  <div className="min-w-0 flex-1 space-y-1">
-                    <div className="flex items-center gap-2">
-                      <span className="truncate text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                        {typeof file === "string" ? file : file.name}
-                      </span>
-                      <span className="text-xs text-zinc-500 dark:text-zinc-400">
-                        {typeof file !== "string" && formatFileSize(file.size)}
-                      </span>
-                    </div>
-                    <div className="flex flex-wrap items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
-                      <span>
-                        {typeof file !== "string" ?
-                          `image/${
-                            file.name.split(".").pop()?.toLowerCase() ||
-                            "unknown"
-                          }`
-                        : "image/unknown"}
-                      </span>
-                      <span>•</span>
-                      <span>modified {new Date().toLocaleDateString()}</span>
-                    </div>
-                    {typeof progress === "number" && (
-                      <div className="mt-2">
-                        <LinearProgress progress={progress} />
+            {value?.map(({ file, progress, key }, index) => {
+              const FileIcon = getFileIcon(file)
+              const fileType = getFileType(file)
+              return (
+                <div
+                  key={key}
+                  className="group relative flex items-center justify-between rounded-lg bg-zinc-900/5 p-3 transition-colors hover:bg-zinc-900/10 dark:bg-white/5 dark:hover:bg-white/10"
+                >
+                  <div className="flex min-w-0 flex-1 items-center gap-3">
+                    {/* File Icon or Success Check */}
+                    {progress === "COMPLETE" ?
+                      <CheckCircle className="h-5 w-5 flex-shrink-0 text-green-500" />
+                    : <FileIcon className="h-5 w-5 flex-shrink-0 text-gray-400" />
+                    }
+                    <div className="min-w-0 flex-1 space-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="truncate text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                          {typeof file === "string" ? file : file.name}
+                        </span>
+                        <span className="text-xs text-zinc-500 dark:text-zinc-400">
+                          {typeof file !== "string" &&
+                            formatFileSize(file.size)}
+                        </span>
                       </div>
-                    )}
+                      <div className="flex flex-wrap items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
+                        <span>
+                          {typeof file !== "string" ?
+                            file.type || "application/octet-stream"
+                          : `${fileType}/${
+                              file.split(".").pop()?.toLowerCase() || "unknown"
+                            }`
+                          }
+                        </span>
+                        <span>•</span>
+                        <span>modified {new Date().toLocaleDateString()}</span>
+                      </div>
+                      {typeof progress === "number" && (
+                        <div className="mt-2">
+                          <LinearProgress progress={progress} />
+                        </div>
+                      )}
+                    </div>
                   </div>
+                  {!disabled && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        onChange?.(value.filter((_, i) => i !== index))
+                      }}
+                      className="ml-4 rounded-lg p-1 opacity-0 transition-opacity hover:bg-zinc-900/10 group-hover:opacity-100 dark:hover:bg-white/10"
+                    >
+                      <X className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
+                    </button>
+                  )}
                 </div>
-                {!disabled && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      onChange?.(value.filter((_, i) => i !== index))
-                    }}
-                    className="ml-4 rounded-lg p-1 opacity-0 transition-opacity hover:bg-zinc-900/10 group-hover:opacity-100 dark:hover:bg-white/10"
-                  >
-                    <X className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
-                  </button>
-                )}
-              </div>
-            ))}
+              )
+            })}
           </div>
         }
-
-        <div className="mt-1 text-xs text-red-500">
-          {customError ?? errorMessage}
-        </div>
+        {customError && (
+          <div className="mt-1 text-xs text-red-500">{errorMessage}</div>
+        )}
       </div>
     )
   }
 )
-MultiImageDropzone.displayName = "MultiImageDropzone"
+UniversalFileUpload.displayName = "UniversalFileUpload"
 
-export { MultiImageDropzone }
+export { UniversalFileUpload }
 
 function CircleProgress({ progress }: { progress: number }) {
   const strokeWidth = 10

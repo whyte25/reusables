@@ -16,7 +16,7 @@ export default function ManualImageUploadDemo() {
   const [manualFile, setManualFile] = useState<File | undefined>()
 
   return (
-    <div className="w-full space-y-4 px-5 py-12 md:px-7 md:py-0">
+    <div className="mx-auto w-full max-w-3xl space-y-4 px-5 py-12 md:px-7 md:py-0">
       <SingleImageDropzone
         width={"100%"}
         height={"300px"}

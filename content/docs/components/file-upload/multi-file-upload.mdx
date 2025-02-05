@@ -1,26 +1,27 @@
 ---
-title: Multiple Image Upload
-description: A versatile image upload component with drag-and-drop, preview modes, progress tracking, and form integration. Supports both grid and list layouts with customizable styling.
+title: Multi File Upload
+description: A versatile file upload component that supports both images and PDFs with preview functionality, drag-and-drop, progress tracking, and form integration.
 ---
 
 ## Features
 
-- Drag and drop support
-- Image previews in grid or list mode
+- Drag and drop support for images and PDFs
+- Preview functionality with modal viewer
+- PDF viewer integration
+- Grid or list display modes
 - Upload progress indication
 - Direct or manual upload modes
 - Error handling
 - Customizable styles
 - Dark mode support
 - Maximum file count and size limits
-- Flexible display modes (Grid/List)
 
 ## Installation
 
 <Tabs items={['CLI', 'Manual']}>
   <Tab value="CLI">
   ```package-install
-npx shadcn@latest add "https://reusables.vercel.app/r/multiple-image-upload"
+npx shadcn@latest add "https://reusables.vercel.app/r/multi-file-upload"
 ```
   </Tab>
 
@@ -35,10 +36,10 @@ Create and copy the following code into your `components` folder:
 
 ```json doc-gen:file
 {
-  "file": "registry/default/reusables/multiple-image-upload.tsx",
+  "file": "registry/default/reusables/multi-file-upload.tsx",
   "codeblock": {
     "lang": "tsx",
-    "meta": "title=\"multiple-image-upload.tsx\""
+    "meta": "title=\"multi-file-upload.tsx\""
   }
 }
 ```
@@ -86,12 +87,12 @@ Create and copy the following code into your `lib` folder:
 ## Usage
 
 ```tsx
-import { MultipleImageUpload } from "@/components/ui/multiple-image-upload"
+import { MultiFileUpload } from "@/components/multi-file-upload"
 ```
 
 ## Examples
 
-The examples below uses the [`useMultipleFileUpload`](/docs/hooks/use-multiple-file-upload) hook to handle the upload process.
+The examples below use the [`useMultipleFileUpload`](/docs/hooks/use-multiple-file-upload) hook to handle the upload process.
 
 ### Direct Upload
 
@@ -99,7 +100,7 @@ This example demonstrates direct file upload upon selection with a grid layout a
 
 <ComponentSource
   className="md:px-0"
-  name="direct-multiple-image-upload-demo"
+  name="direct-multi-file-upload-demo"
   reTrigger={true}
 />
 
@@ -109,17 +110,17 @@ This example shows manual upload control with a list layout and linear progress 
 
 <ComponentSource
   className="md:px-0"
-  name="manual-multiple-image-upload-demo"
+  name="manual-multi-file-upload-demo"
   reTrigger={true}
 />
 
-### React Hook Form
+### Form Integration
 
-This example demonstrates integration with React Hook Form for creating an image gallery.
+This example demonstrates integration with React Hook Form, including validation and form submission.
 
 <ComponentSource
   className="md:px-0"
-  name="multiple-image-upload-form-demo"
+  name="multi-file-upload-form-demo"
   reTrigger={true}
 />
 
@@ -176,4 +177,4 @@ This example demonstrates integration with React Hook Form for creating an image
       default: "grid",
     },
   }}
-/>
+/>{" "}

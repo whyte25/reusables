@@ -9,8 +9,8 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build:registry": "bun run ./scripts/build-registry.mts",
-    "build": "next build && bun run build:registry && bun run format:write",
+    "build:registry": "bun run ./scripts/build-registry.mts && bun run format:write",
+    "build": "next build && bun run build:registry",
     "format": "prettier --check .",
     "format:write": "prettier --write ."
   },
