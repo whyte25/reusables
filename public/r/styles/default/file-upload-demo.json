@@ -1,8 +1,14 @@
 {
   "name": "file-upload-demo",
   "type": "registry:example",
-  "dependencies": ["lucide-react"],
-  "registryDependencies": ["use-file-upload", "progress", "button"],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "use-file-upload",
+    "progress",
+    "button"
+  ],
   "files": [
     {
       "path": "example/file-upload-demo.tsx",

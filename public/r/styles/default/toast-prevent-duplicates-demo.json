@@ -1,7 +1,9 @@
 {
   "name": "toast-prevent-duplicates-demo",
   "type": "registry:example",
-  "registryDependencies": ["toast"],
+  "registryDependencies": [
+    "toast"
+  ],
   "files": [
     {
       "path": "example/toast-prevent-duplicates-demo.tsx",

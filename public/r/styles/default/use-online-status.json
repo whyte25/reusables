@@ -1,7 +1,9 @@
 {
   "name": "use-online-status",
   "type": "registry:hook",
-  "dependencies": ["lodash"],
+  "dependencies": [
+    "lodash"
+  ],
   "files": [
     {
       "path": "hooks/use-online-status.tsx",

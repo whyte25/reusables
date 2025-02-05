@@ -1,8 +1,12 @@
 {
   "name": "cookies-client",
   "type": "registry:lib",
-  "dependencies": ["js-cookie"],
-  "devDependencies": ["@types/js-cookie"],
+  "dependencies": [
+    "js-cookie"
+  ],
+  "devDependencies": [
+    "@types/js-cookie"
+  ],
   "files": [
     {
       "path": "lib/cookies.client.ts",

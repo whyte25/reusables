@@ -1,7 +1,9 @@
 {
   "name": "toast-positions-demo",
   "type": "registry:example",
-  "registryDependencies": ["toast"],
+  "registryDependencies": [
+    "toast"
+  ],
   "files": [
     {
       "path": "example/toast-positions-demo.tsx",

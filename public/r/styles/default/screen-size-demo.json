@@ -1,8 +1,12 @@
 {
   "name": "screen-size-demo",
   "type": "registry:example",
-  "dependencies": ["lucide-react"],
-  "registryDependencies": ["use-screen-size"],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "use-screen-size"
+  ],
   "files": [
     {
       "path": "example/screen-size-demo.tsx",

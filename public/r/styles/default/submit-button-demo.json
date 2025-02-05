@@ -1,7 +1,9 @@
 {
   "name": "submit-button-demo",
   "type": "registry:example",
-  "registryDependencies": ["submit-button"],
+  "registryDependencies": [
+    "submit-button"
+  ],
   "files": [
     {
       "path": "example/submit-button-demo.tsx",

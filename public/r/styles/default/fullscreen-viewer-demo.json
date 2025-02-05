@@ -1,8 +1,14 @@
 {
   "name": "fullscreen-viewer-demo",
   "type": "registry:example",
-  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks"],
-  "registryDependencies": ["fullscreen-viewer", "button"],
+  "dependencies": [
+    "react-pdf",
+    "@wojtekmaj/react-hooks"
+  ],
+  "registryDependencies": [
+    "fullscreen-viewer",
+    "button"
+  ],
   "files": [
     {
       "path": "example/fullscreen-viewer-demo.tsx",

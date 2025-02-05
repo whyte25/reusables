@@ -1,7 +1,9 @@
 {
   "name": "use-file-upload",
   "type": "registry:hook",
-  "dependencies": ["axios"],
+  "dependencies": [
+    "axios"
+  ],
   "files": [
     {
       "path": "hooks/use-file-upload.tsx",

@@ -1,8 +1,13 @@
 {
   "name": "compact-viewer-demo",
   "type": "registry:example",
-  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks"],
-  "registryDependencies": ["compact-viewer"],
+  "dependencies": [
+    "react-pdf",
+    "@wojtekmaj/react-hooks"
+  ],
+  "registryDependencies": [
+    "compact-viewer"
+  ],
   "files": [
     {
       "path": "example/compact-viewer-demo.tsx",

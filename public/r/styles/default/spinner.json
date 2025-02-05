@@ -1,8 +1,13 @@
 {
   "name": "spinner",
   "type": "registry:ui",
-  "dependencies": ["class-variance-authority", "lucide-react"],
-  "registryDependencies": ["utils"],
+  "dependencies": [
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "reusables/ui/spinner.tsx",

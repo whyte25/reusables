@@ -1,7 +1,9 @@
 {
   "name": "copy-button-demo",
   "type": "registry:example",
-  "registryDependencies": ["copy-button"],
+  "registryDependencies": [
+    "copy-button"
+  ],
   "files": [
     {
       "path": "example/copy-button-demo.tsx",

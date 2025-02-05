@@ -1,7 +1,9 @@
 {
   "name": "toast-custom-config-demo",
   "type": "registry:example",
-  "registryDependencies": ["toast"],
+  "registryDependencies": [
+    "toast"
+  ],
   "files": [
     {
       "path": "example/toast-custom-config-demo.tsx",

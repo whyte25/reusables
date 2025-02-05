@@ -6,7 +6,9 @@
     "react-dropzone",
     "class-variance-authority"
   ],
-  "registryDependencies": ["utils"],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "reusables/single-image-upload.tsx",

@@ -1,7 +1,9 @@
 {
   "name": "theme-image",
   "type": "registry:ui",
-  "registryDependencies": ["utils"],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "reusables/ui/theme-image.tsx",

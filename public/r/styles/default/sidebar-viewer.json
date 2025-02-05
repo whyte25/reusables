@@ -1,8 +1,15 @@
 {
   "name": "sidebar-viewer",
   "type": "registry:component",
-  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks", "lucide-react"],
-  "registryDependencies": ["button", "scroll-area"],
+  "dependencies": [
+    "react-pdf",
+    "@wojtekmaj/react-hooks",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "scroll-area"
+  ],
   "files": [
     {
       "path": "reusables/pdf-viewers/sidebar-viewer.tsx",

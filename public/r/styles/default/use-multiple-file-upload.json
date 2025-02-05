@@ -1,7 +1,9 @@
 {
   "name": "use-multiple-file-upload",
   "type": "registry:hook",
-  "dependencies": ["axios"],
+  "dependencies": [
+    "axios"
+  ],
   "files": [
     {
       "path": "hooks/use-multiple-file-upload.tsx",

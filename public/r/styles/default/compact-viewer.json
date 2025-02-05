@@ -1,8 +1,14 @@
 {
   "name": "compact-viewer",
   "type": "registry:component",
-  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks", "lucide-react"],
-  "registryDependencies": ["button"],
+  "dependencies": [
+    "react-pdf",
+    "@wojtekmaj/react-hooks",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "path": "reusables/pdf-viewers/compact-viewer.tsx",

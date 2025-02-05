@@ -1,7 +1,9 @@
 {
   "name": "toast-close-button-demo",
   "type": "registry:example",
-  "registryDependencies": ["toast"],
+  "registryDependencies": [
+    "toast"
+  ],
   "files": [
     {
       "path": "example/toast-close-button-demo.tsx",

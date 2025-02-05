@@ -1,7 +1,9 @@
 {
   "name": "split-button-preview-demo",
   "type": "registry:example",
-  "registryDependencies": ["split-button"],
+  "registryDependencies": [
+    "split-button"
+  ],
   "files": [
     {
       "path": "example/split-button-previewe-demo.tsx",
