@@ -25,6 +25,18 @@ interface UseMultipleFileUploadParams {
   onError?: (error: string) => void
 }
 
+const getResourceType = (file: File) => {
+  if (file.type.startsWith("image/")) {
+    return "image"
+  }
+
+  if (file.type.startsWith("video/")) {
+    return "video"
+  }
+
+  return "raw"
+}
+
 export function useMultipleFileUpload({
   onSuccess,
   onError,
@@ -50,9 +62,8 @@ export function useMultipleFileUpload({
   const uploadMultipleFiles = async (files: FileToUpload[]) => {
     setIsUploading(true)
     setError(null)
-    const successfulUrls: string[] = [] // Track URLs in local variable
+    const successfulUrls: string[] = []
 
-    // Initialize progress for all files
     setUploadProgress(
       files.map((file) => ({
         key: file.key,
@@ -67,7 +78,6 @@ export function useMultipleFileUpload({
           abortControllersRef.current.set(key, abortController)
 
           try {
-            // Create and track blob URL
             const blobUrl = URL.createObjectURL(file)
             imageUrlsRef.current.push(blobUrl)
 
@@ -78,8 +88,11 @@ export function useMultipleFileUpload({
               process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET!
             )
 
+            // Determine resource type based on file type
+            const resourceType = getResourceType(file)
+
             const response = await axios.post(
-              `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
+              `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/${resourceType}/upload`,
               formData,
               {
                 signal: abortController.signal,
@@ -99,9 +112,8 @@ export function useMultipleFileUpload({
             )
 
             const uploadedUrl = response?.data?.secure_url
-            successfulUrls.push(uploadedUrl) // Add URL to local array
+            successfulUrls.push(uploadedUrl)
 
-            // Add small delay to show complete state
             await new Promise((resolve) => setTimeout(resolve, 1000))
 
             setUploadProgress((prev) =>
@@ -118,10 +130,8 @@ export function useMultipleFileUpload({
               },
             ])
 
-            // Call onSuccess immediately for each successful upload
             onSuccess?.(successfulUrls)
 
-            // Cleanup blob URL after successful upload
             URL.revokeObjectURL(blobUrl)
             imageUrlsRef.current = imageUrlsRef.current.filter(
               (url) => url !== blobUrl

@@ -41,7 +41,46 @@ export const components: Registry = [
       },
     ],
   },
-
+  {
+    name: "multi-file-upload",
+    type: "registry:component",
+    dependencies: [
+      "lucide-react",
+      "react-dropzone",
+      "class-variance-authority",
+    ],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "reusables/multi-file-upload.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "hooks/use-multiple-file-upload.tsx",
+        type: "registry:hook",
+      },
+    ],
+  },
+  {
+    name: "universal-file-upload",
+    type: "registry:component",
+    dependencies: [
+      "lucide-react",
+      "react-dropzone",
+      "class-variance-authority",
+    ],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "reusables/universal-file-upload.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "hooks/use-multiple-file-upload.tsx",
+        type: "registry:hook",
+      },
+    ],
+  },
   {
     name: "compact-viewer",
     type: "registry:component",

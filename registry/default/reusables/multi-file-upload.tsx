@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { cva } from "class-variance-authority"
-import { CheckCircle, File, UploadCloudIcon, X } from "lucide-react"
+import { CheckCircle, File, FileText, UploadCloudIcon, X } from "lucide-react"
 import { useDropzone, type DropzoneOptions } from "react-dropzone"
 
 import { cn } from "@/lib/utils"
@@ -32,8 +32,7 @@ const dropzoneVariants = cva(
           "border-green-500 bg-green-50 dark:border-green-400 dark:bg-green-900/20",
         reject:
           "border-red-500 bg-red-50 dark:border-red-400 dark:bg-red-900/20",
-        image:
-          "relative aspect-square h-full w-full rounded-md border-0 bg-slate-200 p-0 shadow-md dark:bg-slate-900",
+        file: "relative aspect-square h-full w-full rounded-md border-0 bg-slate-200 p-0 shadow-md dark:bg-slate-900",
       },
     },
     defaultVariants: {
@@ -77,7 +76,7 @@ const ERROR_MESSAGES = {
   },
 }
 
-const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
+const MultiFileUpload = React.forwardRef<HTMLInputElement, InputProps>(
   (props, ref) => {
     const {
       dropzoneOptions,
@@ -95,14 +94,12 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
 
     const [customError, setCustomError] = React.useState<string>()
 
-    const imageUrls = React.useMemo(() => {
+    const fileUrls = React.useMemo(() => {
       if (value) {
         return value.map((fileState) => {
           if (typeof fileState.file === "string") {
-            // in case an url is passed in, use it to display the image
             return fileState.file
           } else {
-            // in case a file is passed in, create a base64 url to display the image
             return URL.createObjectURL(fileState.file)
           }
         })
@@ -138,7 +135,6 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
       }
     }
 
-    // dropzone configuration
     const {
       getRootProps,
       getInputProps,
@@ -147,13 +143,15 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
       isDragAccept,
       isDragReject,
     } = useDropzone({
-      accept: { "image/*": [] },
+      accept: {
+        "image/*": [],
+        "application/pdf": [],
+      },
       disabled,
       onDrop: handleDrop,
       ...dropzoneOptions,
     })
 
-    // Update the variant logic
     const variant = React.useMemo(() => {
       if (disabled) return "disabled"
       if (isDragReject) return "reject"
@@ -162,7 +160,6 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
       return "base"
     }, [isFocused, isDragAccept, isDragReject, disabled])
 
-    // error validation messages
     const errorMessage = React.useMemo(() => {
       if (fileRejections[0]) {
         const { errors } = fileRejections[0]
@@ -179,6 +176,13 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
       return undefined
     }, [fileRejections, dropzoneOptions])
 
+    const isPDF = (file: File | string) => {
+      if (typeof file === "string") {
+        return file.toLowerCase().endsWith(".pdf")
+      }
+      return file.type === "application/pdf"
+    }
+
     return (
       <div className="w-full space-y-4">
         <div
@@ -190,7 +194,7 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
           <div className="flex flex-col items-center justify-center space-y-2 text-center">
             <UploadCloudIcon className="h-8 w-8 text-gray-600 dark:text-gray-400" />
             <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              Drop your images here
+              Drop your files here
             </div>
             <div className="text-xs text-gray-500 dark:text-gray-400">or</div>
 
@@ -213,19 +217,23 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
 
         {displayMode === "grid" ?
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-[repeat(3,1fr)] xl:grid-cols-[repeat(4,1fr)]">
-            {/* Images */}
             {value?.map(({ file, progress }, index) => (
               <div
                 key={index}
-                className={dropzoneVariants({ variant: "image" })}
+                className={dropzoneVariants({ variant: "file" })}
               >
                 <div className="h-full w-full flex-shrink-0 overflow-hidden rounded-md bg-gray-100 dark:bg-gray-700">
                   {typeof file !== "string" ?
-                    <img
-                      src={imageUrls[index]}
-                      alt={file.name}
-                      className="m-0 h-full w-full object-cover"
-                    />
+                    isPDF(file) ?
+                      <FileText className="h-full w-full p-8 text-gray-400 dark:text-gray-500" />
+                    : <img
+                        src={fileUrls[index]}
+                        alt={file.name}
+                        className="m-0 h-full w-full object-cover"
+                      />
+
+                  : isPDF(file) ?
+                    <FileText className="h-full w-full p-8 text-gray-400 dark:text-gray-500" />
                   : <File className="h-full w-full p-2 text-gray-400 dark:text-gray-500" />
                   }
                 </div>
@@ -235,8 +243,9 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
                     <CircleProgress progress={progress} />
                   </div>
                 )}
-                {/* Remove Image Icon */}
-                {imageUrls[index] && !disabled && progress === "PENDING" && (
+
+                {/* Remove File Icon */}
+                {fileUrls[index] && !disabled && progress === "PENDING" && (
                   <div
                     className="group absolute right-0 top-0 -translate-y-1/4 translate-x-1/4 transform"
                     onClick={(e) => {
@@ -279,10 +288,15 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
                     <div className="flex flex-wrap items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
                       <span>
                         {typeof file !== "string" ?
-                          `image/${
-                            file.name.split(".").pop()?.toLowerCase() ||
-                            "unknown"
-                          }`
+                          isPDF(file) ?
+                            "application/pdf"
+                          : `image/${
+                              file.name.split(".").pop()?.toLowerCase() ||
+                              "unknown"
+                            }`
+
+                        : isPDF(file) ?
+                          "application/pdf"
                         : "image/unknown"}
                       </span>
                       <span>•</span>
@@ -318,9 +332,9 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
     )
   }
 )
-MultiImageDropzone.displayName = "MultiImageDropzone"
+MultiFileUpload.displayName = "MultiFileUpload"
 
-export { MultiImageDropzone }
+export { MultiFileUpload }
 
 function CircleProgress({ progress }: { progress: number }) {
   const strokeWidth = 10
