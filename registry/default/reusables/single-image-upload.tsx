@@ -72,7 +72,7 @@ export const SingleImageDropzone = React.forwardRef<
     {
       dropzoneOptions,
       width = "100%",
-      height = "240px",
+      height = "300px",
       value,
       className,
       disabled,

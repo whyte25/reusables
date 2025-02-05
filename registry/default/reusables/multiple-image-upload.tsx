@@ -89,7 +89,7 @@ const MultiImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
       isDirectUpload,
       onUpload,
       width = "100%",
-      height = "240px",
+      height = "300px",
       displayMode = "grid",
     } = props
 
