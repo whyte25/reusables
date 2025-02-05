@@ -5,22 +5,26 @@ import * as React from "react"
 import { useMultipleFileUpload } from "@/hooks/use-multiple-file-upload"
 import { Button } from "@/components/ui/button"
 
-import {
-  FileState,
-  MultiImageDropzone,
-} from "../reusables/multiple-image-upload"
+import { MultiFileUpload, type FileState } from "../reusables/multi-file-upload"
 
-export default function ManualMultipleImageUploadDemo() {
+export default function ManualMultiFileUploadDemo() {
   const [fileStates, setFileStates] = React.useState<FileState[]>([])
-  const { uploadMultipleFiles, uploadProgress, isUploading, error } =
-    useMultipleFileUpload({
-      onSuccess: (urls) => {
-        console.log("Successfully uploaded files:", urls)
-      },
-      onError: (error) => {
-        console.error("Upload error:", error)
-      },
-    })
+  const {
+    uploadMultipleFiles,
+    uploadProgress,
+    isUploading,
+    error,
+    uploadResults,
+  } = useMultipleFileUpload({
+    onSuccess: (urls) => {
+      console.log("Successfully uploaded files:", urls)
+    },
+    onError: (error) => {
+      console.error("Upload error:", error)
+    },
+  })
+
+  console.log("uploadResults", uploadResults)
 
   // Update file progress based on upload progress
   React.useEffect(() => {
@@ -41,23 +45,22 @@ export default function ManualMultipleImageUploadDemo() {
   }, [uploadProgress])
 
   return (
-    <div className="mx-auto w-full max-w-3xl md:px-10">
-      <MultiImageDropzone
+    <div className="mx-auto w-full max-w-3xl space-y-4 md:px-10">
+      <MultiFileUpload
         value={fileStates}
-        dropzoneOptions={{
-          maxFiles: 6,
-          maxSize: 1024 * 1024 * 1, // 1 MB
-        }}
-        disabled={isUploading}
-        height="300px"
-        displayMode="list"
         onChange={setFileStates}
+        displayMode="list"
+        disabled={isUploading}
+        dropzoneOptions={{
+          maxFiles: 4,
+          maxSize: 1024 * 1024 * 2, // 2MB
+        }}
         onFilesAdded={async (addedFiles) => {
           setFileStates([...fileStates, ...addedFiles])
         }}
       />
+
       <Button
-        className="mt-2"
         onClick={() => {
           const pendingFiles = fileStates
             .filter(
@@ -78,7 +81,7 @@ export default function ManualMultipleImageUploadDemo() {
             .length
         }
       >
-        Upload
+        {isUploading ? "Uploading..." : "Upload Files"}
       </Button>
       {error && <div className="mt-2 text-sm text-red-500">{error}</div>}
     </div>

@@ -5,7 +5,7 @@ import useFileUpload from "@/hooks/use-file-upload"
 import { SingleImageDropzone } from "../reusables/single-image-upload"
 import { toast } from "../reusables/ui/notify-provider"
 
-export default function AutoImageUploadDemo() {
+export default function DirectImageUploadDemo() {
   const autoUpload = useFileUpload({
     onSuccess: () => toast.success(" Upload SuccessFul"),
     onError: (error) => toast.error(error),

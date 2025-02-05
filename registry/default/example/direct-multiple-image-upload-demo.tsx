@@ -9,7 +9,7 @@ import {
   MultiImageDropzone,
 } from "../reusables/multiple-image-upload"
 
-export default function AutoMultipleImageUploadDemo() {
+export default function DirectMultipleImageUploadDemo() {
   const [fileStates, setFileStates] = React.useState<FileState[]>([])
 
   const { uploadMultipleFiles, uploadProgress, error } = useMultipleFileUpload({

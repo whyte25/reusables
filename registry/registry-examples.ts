@@ -140,10 +140,10 @@ export const examples: Registry = [
     files: ["example/split-button-previewe-demo.tsx"],
   },
   {
-    name: "auto-image-upload-demo",
+    name: "direct-image-upload-demo",
     type: "registry:example",
     registryDependencies: ["single-image-upload"],
-    files: ["example/auto-image-upload-demo.tsx"],
+    files: ["example/direct-image-upload-demo.tsx"],
   },
   {
     name: "manual-image-upload-demo",
@@ -152,10 +152,10 @@ export const examples: Registry = [
     files: ["example/manual-image-upload-demo.tsx"],
   },
   {
-    name: "auto-multiple-image-upload-demo",
+    name: "direct-multiple-image-upload-demo",
     type: "registry:example",
     registryDependencies: ["multiple-image-upload"],
-    files: ["example/auto-multiple-image-upload-demo.tsx"],
+    files: ["example/direct-multiple-image-upload-demo.tsx"],
   },
   {
     name: "manual-multiple-image-upload-demo",
@@ -231,5 +231,62 @@ export const examples: Registry = [
     registryDependencies: ["thumbnail-viewer"],
     dependencies: ["react-pdf", "@wojtekmaj/react-hooks"],
     files: ["example/thumbnail-viewer-demo.tsx"],
+  },
+  {
+    name: "direct-multi-file-upload-demo",
+    type: "registry:example",
+    registryDependencies: ["multi-file-upload"],
+    files: ["example/direct-multi-file-upload-demo.tsx"],
+  },
+  {
+    name: "manual-multi-file-upload-demo",
+    type: "registry:example",
+    registryDependencies: ["multi-file-upload", "button"],
+    files: ["example/manual-multi-file-upload-demo.tsx"],
+  },
+  {
+    name: "multi-file-upload-form-demo",
+    type: "registry:example",
+    registryDependencies: [
+      "multi-file-upload",
+      "button",
+      "input",
+      "form",
+      "card",
+    ],
+    dependencies: ["react-hook-form", "@hookform/resolvers/zod", "zod"],
+    files: ["example/multi-file-upload-form-demo.tsx"],
+  },
+  {
+    name: "universal-file-upload-demo",
+    type: "registry:example",
+    registryDependencies: ["universal-file-upload", "button"],
+    dependencies: [],
+    files: [
+      {
+        path: "example/universal-file-upload-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "universal-file-upload-direct-demo",
+    type: "registry:example",
+    registryDependencies: ["universal-file-upload"],
+    dependencies: [],
+    files: ["example/universal-file-upload-direct-demo.tsx"],
+  },
+  {
+    name: "universal-file-upload-form-demo",
+    type: "registry:example",
+    registryDependencies: [
+      "universal-file-upload",
+      "button",
+      "input",
+      "form",
+      "card",
+    ],
+    dependencies: ["react-hook-form", "@hookform/resolvers/zod", "zod"],
+    files: ["example/universal-file-upload-form-demo.tsx"],
   },
 ]

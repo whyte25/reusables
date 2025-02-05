@@ -384,13 +384,13 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: [],
     },
-    "auto-image-upload-demo": {
-      name: "auto-image-upload-demo",
+    "direct-image-upload-demo": {
+      name: "direct-image-upload-demo",
       type: "registry:example",
       registryDependencies: ["single-image-upload"],
-      files: ["registry/default/example/auto-image-upload-demo.tsx"],
+      files: ["registry/default/example/direct-image-upload-demo.tsx"],
       component: React.lazy(
-        () => import("@/registry/default/example/auto-image-upload-demo.tsx")
+        () => import("@/registry/default/example/direct-image-upload-demo.tsx")
       ),
       source: "",
       category: "undefined",
@@ -410,15 +410,15 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: [],
     },
-    "auto-multiple-image-upload-demo": {
-      name: "auto-multiple-image-upload-demo",
+    "direct-multiple-image-upload-demo": {
+      name: "direct-multiple-image-upload-demo",
       type: "registry:example",
       registryDependencies: ["multiple-image-upload"],
-      files: ["registry/default/example/auto-multiple-image-upload-demo.tsx"],
+      files: ["registry/default/example/direct-multiple-image-upload-demo.tsx"],
       component: React.lazy(
         () =>
           import(
-            "@/registry/default/example/auto-multiple-image-upload-demo.tsx"
+            "@/registry/default/example/direct-multiple-image-upload-demo.tsx"
           )
       ),
       source: "",
@@ -559,6 +559,106 @@ export const Index: Record<string, any> = {
       files: ["registry/default/example/thumbnail-viewer-demo.tsx"],
       component: React.lazy(
         () => import("@/registry/default/example/thumbnail-viewer-demo.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "direct-multi-file-upload-demo": {
+      name: "direct-multi-file-upload-demo",
+      type: "registry:example",
+      registryDependencies: ["multi-file-upload"],
+      files: ["registry/default/example/direct-multi-file-upload-demo.tsx"],
+      component: React.lazy(
+        () =>
+          import("@/registry/default/example/direct-multi-file-upload-demo.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "manual-multi-file-upload-demo": {
+      name: "manual-multi-file-upload-demo",
+      type: "registry:example",
+      registryDependencies: ["multi-file-upload", "button"],
+      files: ["registry/default/example/manual-multi-file-upload-demo.tsx"],
+      component: React.lazy(
+        () =>
+          import("@/registry/default/example/manual-multi-file-upload-demo.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "multi-file-upload-form-demo": {
+      name: "multi-file-upload-form-demo",
+      type: "registry:example",
+      registryDependencies: [
+        "multi-file-upload",
+        "button",
+        "input",
+        "form",
+        "card",
+      ],
+      files: ["registry/default/example/multi-file-upload-form-demo.tsx"],
+      component: React.lazy(
+        () =>
+          import("@/registry/default/example/multi-file-upload-form-demo.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "universal-file-upload-demo": {
+      name: "universal-file-upload-demo",
+      type: "registry:example",
+      registryDependencies: ["universal-file-upload", "button"],
+      files: ["registry/default/example/universal-file-upload-demo.tsx"],
+      component: React.lazy(
+        () =>
+          import("@/registry/default/example/universal-file-upload-demo.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "universal-file-upload-direct-demo": {
+      name: "universal-file-upload-direct-demo",
+      type: "registry:example",
+      registryDependencies: ["universal-file-upload"],
+      files: ["registry/default/example/universal-file-upload-direct-demo.tsx"],
+      component: React.lazy(
+        () =>
+          import(
+            "@/registry/default/example/universal-file-upload-direct-demo.tsx"
+          )
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "universal-file-upload-form-demo": {
+      name: "universal-file-upload-form-demo",
+      type: "registry:example",
+      registryDependencies: [
+        "universal-file-upload",
+        "button",
+        "input",
+        "form",
+        "card",
+      ],
+      files: ["registry/default/example/universal-file-upload-form-demo.tsx"],
+      component: React.lazy(
+        () =>
+          import(
+            "@/registry/default/example/universal-file-upload-form-demo.tsx"
+          )
       ),
       source: "",
       category: "undefined",
@@ -730,6 +830,38 @@ export const Index: Record<string, any> = {
       ],
       component: React.lazy(
         () => import("@/registry/default/reusables/multiple-image-upload.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "multi-file-upload": {
+      name: "multi-file-upload",
+      type: "registry:component",
+      registryDependencies: ["utils"],
+      files: [
+        "registry/default/reusables/multi-file-upload.tsx",
+        "registry/default/hooks/use-multiple-file-upload.tsx",
+      ],
+      component: React.lazy(
+        () => import("@/registry/default/reusables/multi-file-upload.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "universal-file-upload": {
+      name: "universal-file-upload",
+      type: "registry:component",
+      registryDependencies: ["utils"],
+      files: [
+        "registry/default/reusables/universal-file-upload.tsx",
+        "registry/default/hooks/use-multiple-file-upload.tsx",
+      ],
+      component: React.lazy(
+        () => import("@/registry/default/reusables/universal-file-upload.tsx")
       ),
       source: "",
       category: "undefined",

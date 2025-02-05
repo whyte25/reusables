@@ -1,9 +1,7 @@
 {
   "name": "auto-multiple-image-upload-demo",
   "type": "registry:example",
-  "registryDependencies": [
-    "multiple-image-upload"
-  ],
+  "registryDependencies": ["multiple-image-upload"],
   "files": [
     {
       "path": "example/auto-multiple-image-upload-demo.tsx",
