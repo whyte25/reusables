@@ -20,7 +20,7 @@ export const formatFileSize = (bytes: number) => {
 }
 
 const dropzoneVariants = cva(
-  "relative mx-auto flex max-w-3xl cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed transition-all duration-300 ease-in-out",
+  "relative mx-auto flex max-w-3xl cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed transition-all duration-300 ease-in-out disabled:cursor-not-allowed",
   {
     variants: {
       variant: {
@@ -225,6 +225,10 @@ export const SingleImageDropzone = React.forwardRef<
               >
                 Browse files
               </button>
+              <div className="text-xs text-gray-500 dark:text-gray-400">
+                {dropzoneOptions?.maxSize &&
+                  `Up to ${formatFileSize(dropzoneOptions.maxSize)}`}
+              </div>
             </div>
           }
 

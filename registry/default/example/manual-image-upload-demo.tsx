@@ -24,6 +24,9 @@ export default function ManualImageUploadDemo() {
         progress={manualUpload.progress}
         disabled={manualUpload.isUploading}
         value={manualFile}
+        dropzoneOptions={{
+          maxSize: 5 * 1024 * 1024,
+        }}
         onChange={setManualFile}
         progressType="circular"
       />
