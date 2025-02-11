@@ -19,6 +19,9 @@ export default function DirectImageUploadDemo() {
         directUpload={true}
         progress={autoUpload.progress}
         disabled={autoUpload.isUploading}
+        dropzoneOptions={{
+          maxSize: 2 * 1024 * 1024,
+        }}
         onChange={async (file) => {
           if (file) {
             try {
