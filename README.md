@@ -10,12 +10,12 @@ Reusables is **NOT** just another component library. It's a carefully curated co
 
 ## Features
 
-- 🎨 **Components**: Production-ready UI components
-- 🪝 **Hooks**: Reusable React hooks for common functionalities
-- 🛠 **Utilities**: Helper functions and utilities
-- 📋 **Copy & Paste**: Use what you need, how you need it
-- ⚡ **CLI Installation**: Optional CLI for direct installation
-- 🎯 **Zero Dependencies**: No unnecessary package bloat
+- **Components**: Production-ready UI components
+- **Hooks**: Reusable React hooks for common functionalities
+- **Utilities**: Helper functions and utilities
+- **Copy & Paste**: Use what you need, how you need it
+- **CLI Installation**: Optional CLI for direct installation
+- **Zero Dependencies**: No unnecessary package bloat
 
 ## Usage
 
