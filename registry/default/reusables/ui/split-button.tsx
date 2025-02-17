@@ -32,7 +32,7 @@ interface SplitButtonProps
   dropdownAlign?: "start" | "center" | "end"
 }
 
-export default function SplitButton({
+export function SplitButton({
   children,
   options,
   mainAction,

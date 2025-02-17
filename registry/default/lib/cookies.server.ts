@@ -1,4 +1,3 @@
-//@ts-nocheck
 "use server"
 
 import { ResponseCookie } from "next/dist/compiled/@edge-runtime/cookies"
@@ -29,6 +28,9 @@ const COOKIES_DEFAULT_OPTIONS: Required<Omit<CookieOptions, "domain">> = {
  * - `delete` deletes a cookie with the given name.
  */
 
+/**
+ * This is for Next.js 13 - 14.
+
 export const ServerCookies = {
   set(name: string, value: string, options: Partial<CookieOptions> = {}) {
     const cookieOptions: ResponseCookie = {
@@ -54,6 +56,7 @@ export const ServerCookies = {
     cookies().delete(name)
   },
 }
+ */
 
 export const ServerCookiesNext15 = {
   async set(name: string, value: string, options: Partial<CookieOptions> = {}) {
