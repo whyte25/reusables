@@ -1,4 +1,4 @@
-import CopyButton from "../reusables/ui/copy-button"
+import { CopyButton } from "../reusables/ui/copy-button"
 
 export default function CopyButtonDemo() {
   const text = "Built by Fas"

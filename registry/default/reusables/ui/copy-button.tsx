@@ -10,7 +10,7 @@ interface CopyButtonProps extends ButtonProps {
   value: string
 }
 
-export default function CopyButton({
+export function CopyButton({
   value,
   className,
   variant = "ghost",

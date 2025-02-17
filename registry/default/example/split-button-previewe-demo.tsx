@@ -1,7 +1,7 @@
 "use client"
 
 import { toast } from "../reusables/ui/notify-provider"
-import SplitButton from "../reusables/ui/split-button"
+import { SplitButton } from "../reusables/ui/split-button"
 
 export default function SplitButtonPreviewDemo() {
   const options = [
