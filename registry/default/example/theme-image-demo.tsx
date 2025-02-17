@@ -1,6 +1,6 @@
 import { images } from "@/constant/images"
 
-import ThemeImage from "../reusables/ui/theme-image"
+import { ThemeImage } from "../reusables/ui/theme-image"
 
 const ThemeImageDemo = () => {
   return (

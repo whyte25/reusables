@@ -113,21 +113,21 @@ a[href="/docs/hooks/use-multiple-file-upload"] {
 }
 
 a[href="/docs/components/notify"] {
-  @apply badge beta;
-}
-
-a[href="/docs/components/file-upload/single-image-upload"] {
-  @apply badge new;
-}
-a[href="/docs/components/file-upload/multiple-image-upload"] {
   @apply badge new;
 }
 
-a[href="/docs/components/file-upload/universal-file-upload"] {
+a[href="/docs/components/file-uploaders/single-image-upload"] {
+  @apply badge new;
+}
+a[href="/docs/components/file-uploaders/multiple-image-upload"] {
   @apply badge new;
 }
 
-a[href="/docs/components/file-upload/multi-file-upload"] {
+a[href="/docs/components/file-uploaders/universal-file-upload"] {
+  @apply badge new;
+}
+
+a[href="/docs/components/file-uploaders/multi-file-upload"] {
   @apply badge new;
 }
 
@@ -206,7 +206,7 @@ a[href="/docs/components/pdf-viewers/hover-navigation-viewer"] {
   background-color: hsl(var(--updated-badge) / 0.4);
 }
 
-button[aria-controls^="radix-"] {
+/* button[aria-controls^="radix-"] {
   position: relative;
 }
 
@@ -216,7 +216,7 @@ button[aria-controls="radix-:r42:"] {
 
 button[aria-controls="radix-:r43:"] {
   @apply dot new-dot;
-}
+} */
 
 .fd-codeblock code {
   display: block !important;

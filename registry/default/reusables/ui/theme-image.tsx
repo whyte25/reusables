@@ -35,5 +35,3 @@ export const ThemeImage = ({
     </>
   )
 }
-
-export default ThemeImage
