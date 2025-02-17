@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-import useFileUpload from "@/hooks/use-file-upload"
+import { useFileUpload } from "@/hooks/use-file-upload"
 import { Button } from "@/components/ui/button"
 
 import { SingleImageDropzone } from "../reusables/single-image-upload"

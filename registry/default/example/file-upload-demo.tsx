@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Upload, X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import useFileUpload from "@/hooks/use-file-upload"
+import { useFileUpload } from "@/hooks/use-file-upload"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 

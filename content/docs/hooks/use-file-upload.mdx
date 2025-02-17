@@ -40,8 +40,10 @@ In this hook, It's `response?.data?.secure_url`.
 ## Usage
 
 ```tsx
-import useFileUpload from "@/hooks/useFileUpload"
+import { useFileUpload } from "@/hooks/useFileUpload"
 ```
+
+For a complete implementation example, check out the [Single Image Upload](/docs/components/file-uploaders/single-image-upload) component.
 
 ```tsx
 const { handleFileUpload, cancelUpload, isUploading, progress, error, data } =
@@ -50,10 +52,6 @@ const { handleFileUpload, cancelUpload, isUploading, progress, error, data } =
     onError: (error) => console.log("Error:", error),
   })
 ```
-
-### Example
-
-<ComponentSource name="file-upload-demo" />
 
 ### Reference
 

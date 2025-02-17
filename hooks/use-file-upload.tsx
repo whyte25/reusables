@@ -8,7 +8,10 @@ interface UseFileUploadParams {
   onError?: (error: string) => void
 }
 
-const useFileUpload = ({ onSuccess, onError }: UseFileUploadParams = {}) => {
+export const useFileUpload = ({
+  onSuccess,
+  onError,
+}: UseFileUploadParams = {}) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [isUploading, setIsUploading] = useState(false)
   const [progress, setProgress] = useState(0)
@@ -94,5 +97,3 @@ const useFileUpload = ({ onSuccess, onError }: UseFileUploadParams = {}) => {
     data,
   }
 }
-
-export default useFileUpload
