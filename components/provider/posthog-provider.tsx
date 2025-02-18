@@ -11,12 +11,6 @@ import SuspendedPostHogPageView from "./posthog-pageview"
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
   const isDevelopment = process.env.NODE_ENV === "development"
 
-  // In development, return children directly
-  if (isDevelopment) {
-    return <>{children}</>
-  }
-
-  // Only initialize PostHog in production
   useEffect(() => {
     posthog.init(env.NEXT_PUBLIC_POSTHOG_KEY, {
       api_host: env.NEXT_PUBLIC_POSTHOG_HOST,
@@ -25,6 +19,11 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
     })
   }, [])
 
+  // In development, return children directly
+  if (isDevelopment) {
+    return <>{children}</>
+  }
+  // Only initialize PostHog in production
   return (
     <PHProvider client={posthog}>
       <SuspendedPostHogPageView />
