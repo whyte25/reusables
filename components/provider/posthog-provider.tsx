@@ -15,6 +15,7 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
     posthog.init(env.NEXT_PUBLIC_POSTHOG_KEY, {
       api_host: env.NEXT_PUBLIC_POSTHOG_HOST,
       capture_pageview: false,
+      capture_pageleave: true,
       person_profiles: "always",
     })
   }, [])
