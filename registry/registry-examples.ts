@@ -4,8 +4,14 @@ export const examples: Registry = [
   {
     name: "floating-elements-demo",
     type: "registry:example",
-    registryDependencies: ["floating-elements"],
-    files: ["example/floating-elements-demo.tsx"],
+    registryDependencies: ["https://reusables.vercel.app/r/floating-elements"],
+    files: [
+      {
+        path: "example/floating-elements-demo.tsx",
+        type: "registry:example",
+        target: "components/floating-elements-demo.tsx",
+      },
+    ],
   },
   {
     name: "toast-demo",
