@@ -106,7 +106,9 @@ export const Index: Record<string, any> = {
     "floating-elements-demo": {
       name: "floating-elements-demo",
       type: "registry:example",
-      registryDependencies: ["floating-elements"],
+      registryDependencies: [
+        "https://reusables.vercel.app/r/floating-elements",
+      ],
       files: ["registry/default/example/floating-elements-demo.tsx"],
       component: React.lazy(
         () => import("@/registry/default/example/floating-elements-demo.tsx")
