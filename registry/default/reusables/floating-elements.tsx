@@ -120,7 +120,7 @@ const FloatingElements = ({
   return (
     <div
       className={cn(
-        "z-50 flex w-full max-w-4xl flex-col items-center justify-center space-y-16 overflow-hidden",
+        "flex w-full max-w-4xl flex-col items-center justify-center space-y-16 overflow-hidden",
         className
       )}
     >
@@ -138,7 +138,7 @@ const FloatingElements = ({
             <div
               key={index}
               className={cn(
-                "floating-element z-50 transition-transform",
+                "floating-element transition-transform",
                 elementClassName
               )}
               style={{ transitionTimingFunction: config.easing }}
@@ -148,7 +148,7 @@ const FloatingElements = ({
           ))
         : <div
             className={cn(
-              "floating-element z-50 transition-transform",
+              "floating-element transition-transform",
               elementClassName
             )}
             style={{ transitionTimingFunction: config.easing }}
