@@ -24,8 +24,8 @@ interface FloatingElementsProps {
 
 const defaultAnimationConfig: AnimationConfig = {
   minDistance: 0,
-  maxDistance: 30,
-  duration: 5000,
+  maxDistance: 50,
+  duration: 3000,
   easing: "cubic-bezier(0.4, 0, 0.2, 1)",
   shouldRandomizeInitialPosition: true,
 }
