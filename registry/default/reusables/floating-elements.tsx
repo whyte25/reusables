@@ -95,7 +95,7 @@ const defaultAnimationConfig: AnimationConfig = {
   shouldRandomizeInitialPosition: true,
 }
 
-const FloatingElements = ({
+export const FloatingElements = ({
   children,
   className,
   elementClassName,

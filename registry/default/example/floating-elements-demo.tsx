@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import FloatElements from "@/registry/default/reusables/floating-elements"
+import { FloatingElements } from "@/registry/default/reusables/floating-elements"
 
 const logos = [
   {
@@ -43,7 +43,7 @@ const logos = [
 
 export default function FloatingElementsDemo() {
   return (
-    <FloatElements title="Trusted by" className="py-20">
+    <FloatingElements title="Trusted by" className="py-20">
       {logos.map((logo, i) => (
         <a
           key={i}
@@ -60,6 +60,6 @@ export default function FloatingElementsDemo() {
           />
         </a>
       ))}
-    </FloatElements>
+    </FloatingElements>
   )
 }
