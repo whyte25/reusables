@@ -11,15 +11,8 @@ export async function highlight(code: string, lang: BundledLanguage) {
     ...rehypeCodeOptions,
     lang,
     transformers: [
-      transformerNotationHighlight(),
-      transformerNotationWordHighlight(),
+      transformerNotationHighlight() as any,
+      transformerNotationWordHighlight() as any,
     ],
   })
-}
-
-export function renderCodeSkeleton(code: string) {
-  return `<pre class='h-auto'><code>${code
-    ?.split("\n")
-    ?.map((line) => `<span class="line">${line}</span>`)
-    ?.join("")}</code></pre>`
 }

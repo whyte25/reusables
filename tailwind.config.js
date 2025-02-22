@@ -22,6 +22,9 @@ export default {
   plugins: [require("tailwindcss-animate")],
   theme: {
     extend: {
+      animationDuration: {
+        3000: "3000ms",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

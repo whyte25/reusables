@@ -1,0 +1,147 @@
+---
+title: Floating Elements
+description: A component that creates a floating animation effect for child elements, perfect for showcasing partner logos or trusted-by sections.
+---
+
+Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+    ```package-install
+    npx shadcn@latest add "https://reusables.vercel.app/r/floating-elements"
+    ```
+  </Tab>
+  <Tab value="Manual">
+    <Steps>
+      <Step>
+        Copy and paste this code into your `floating-elements.tsx` file:
+
+        <CodeBlockWrapper>
+        ```json doc-gen:file
+        {
+          "file": "registry/default/reusables/floating-elements.tsx",
+          "codeblock": {
+            "lang": "tsx",
+            "meta": "title=\"floating-elements.tsx\""
+          }
+        }
+        ```
+        </CodeBlockWrapper>
+      </Step>
+
+      <Step>
+        Create and copy the following code into your `lib` folder:
+
+        <CodeBlockWrapper>
+        ```json doc-gen:file
+        {
+          "file": "registry/default/lib/utils.ts",
+          "codeblock": {
+            "lang": "ts",
+            "meta": "title=\"utils.ts\""
+          }
+        }
+        ```
+        </CodeBlockWrapper>
+      </Step>
+    </Steps>
+
+  </Tab>
+</Tabs>
+
+Usage
+
+```tsx
+import FloatElements from "@/components/ui/floating-elements"
+
+export default function FloatingElementsDemo() {
+  return (
+    <FloatElements title="Trusted by" className="mt-20">
+      {/* Your floating elements here */}
+    </FloatElements>
+  )
+}
+```
+
+Example
+
+<ComponentSource showV0button={true} name="floating-elements-demo" />
+
+Custom Styling
+
+```tsx
+<FloatElements
+  title="Featured In"
+  className="rounded-xl bg-secondary/10 p-8"
+  titleClassName="text-2xl font-bold text-secondary-foreground"
+  gridClassName="grid-cols-2 md:grid-cols-4"
+>
+  {/* Your elements */}
+</FloatElements>
+```
+
+API Reference
+
+<TypeTable
+  type={{
+    children: {
+      type: "React.ReactNode",
+      required: true,
+      description: "The elements to be animated",
+    },
+    className: {
+      type: "string",
+      description: "Additional classes for the container element",
+    },
+    elementClassName: {
+      type: "string",
+      description: "Classes applied to each floating element wrapper",
+    },
+    gridClassName: {
+      type: "string",
+      description: "Classes for customizing the grid layout",
+    },
+    title: {
+      type: "string",
+      description: "Optional title displayed above the floating elements",
+    },
+    animationConfig: {
+      type: "AnimationConfig",
+      description: "Configuration for the floating animation behavior",
+    },
+  }}
+/>
+
+AnimationConfig
+
+<TypeTable
+  type={{
+    minDistance: {
+      type: "number",
+      default: "0",
+      description:
+        "Minimum distance elements can float from their original position",
+    },
+    maxDistance: {
+      type: "number",
+      default: "50",
+      description:
+        "Maximum distance elements can float from their original position",
+    },
+    duration: {
+      type: "number",
+      default: "3000",
+      description: "Duration of each float animation cycle in milliseconds",
+    },
+    easing: {
+      type: "string",
+      default: "cubic-bezier(0.4, 0, 0.2, 1)",
+      description: "CSS easing function for the animation",
+    },
+    shouldRandomizeInitialPosition: {
+      type: "boolean",
+      default: "false",
+      description: "Whether elements should start from random positions",
+    },
+  }}
+/>

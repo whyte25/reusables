@@ -103,6 +103,19 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: [],
     },
+    "floating-elements-demo": {
+      name: "floating-elements-demo",
+      type: "registry:example",
+      registryDependencies: ["floating-elements"],
+      files: ["registry/default/example/floating-elements-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/floating-elements-demo.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
     "toast-demo": {
       name: "toast-demo",
       type: "registry:example",
@@ -798,6 +811,19 @@ export const Index: Record<string, any> = {
       files: ["registry/default/hooks/use-multiple-file-upload.tsx"],
       component: React.lazy(
         () => import("@/registry/default/hooks/use-multiple-file-upload.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "floating-elements": {
+      name: "floating-elements",
+      type: "registry:component",
+      registryDependencies: ["utils"],
+      files: ["registry/default/reusables/floating-elements.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/reusables/floating-elements.tsx")
       ),
       source: "",
       category: "undefined",

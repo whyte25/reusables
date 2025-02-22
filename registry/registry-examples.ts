@@ -2,6 +2,12 @@ import { Registry } from "@/registry/schema"
 
 export const examples: Registry = [
   {
+    name: "floating-elements-demo",
+    type: "registry:example",
+    registryDependencies: ["floating-elements"],
+    files: ["example/floating-elements-demo.tsx"],
+  },
+  {
     name: "toast-demo",
     type: "registry:example",
     registryDependencies: ["toast"],

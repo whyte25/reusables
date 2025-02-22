@@ -5,8 +5,9 @@ import { Index } from "__registry__"
 import { CodeBlock } from "./code-block"
 import { ComponentPreview } from "./component-preview"
 
-interface ComponentSourceProps {
-  name: string // Format: "folder/component-name" (e.g. "example/submit-button-demo")
+export interface ComponentSourceProps {
+  name: string
+  showV0button?: boolean
   showPreviewOnly?: boolean
   showPreviewButton?: boolean
   reTrigger?: boolean
@@ -17,6 +18,7 @@ export async function ComponentSource({
   name,
   showPreviewOnly,
   showPreviewButton,
+  showV0button,
   reTrigger,
   className,
 }: ComponentSourceProps) {
@@ -59,6 +61,7 @@ export async function ComponentSource({
     <ComponentPreview
       className={className}
       name={name}
+      showV0button={showV0button}
       showPreviewOnly={showPreviewOnly}
       showPreviewButton={showPreviewButton}
       reTrigger={reTrigger}
