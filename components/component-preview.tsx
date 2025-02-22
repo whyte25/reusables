@@ -10,11 +10,10 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import ComponentWrapper from "@/components/component-wrapper"
 
-interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
-  name: string
-  showPreviewOnly?: boolean
-  showPreviewButton?: boolean
-  reTrigger?: boolean
+import { ComponentSourceProps } from "./component-source"
+import { OpenInV0Button } from "./open-in-v0-button"
+
+interface ComponentPreviewProps extends ComponentSourceProps {
   children: React.ReactNode
 }
 
@@ -22,6 +21,7 @@ export function ComponentPreview({
   name,
   className,
   showPreviewOnly = false,
+  showV0button = false,
   showPreviewButton = true,
   reTrigger = true,
   children,
@@ -91,7 +91,7 @@ export function ComponentPreview({
                     </Link>
                   </Button>
                 )}
-                {/* <OpenInV0Button name={name} /> */}
+                {showV0button && <OpenInV0Button name={name} />}
                 {reTrigger && (
                   <Button
                     onClick={() => setKey((prev) => prev + 1)}

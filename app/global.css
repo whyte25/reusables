@@ -108,6 +108,10 @@
   color: hsl(var(--updated-badge));
 }
 
+a[href="/docs/animations/floating-elements"] {
+  @apply badge new;
+}
+
 a[href="/docs/hooks/use-multiple-file-upload"] {
   @apply badge new;
 }

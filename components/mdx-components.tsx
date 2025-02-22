@@ -67,7 +67,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 export function MDXRenderer({
   code,
 }: {
-  code: (props: MDXProps) => React.ReactElement
+  code: React.FC<MDXProps> | ((props: MDXProps) => React.ReactElement)
 }) {
   const components = useMDXComponents({})
 

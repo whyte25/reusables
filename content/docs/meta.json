@@ -5,6 +5,8 @@
     "---Getting started---",
     "index",
     "installation",
+    "---Animations---",
+    "animations/floating-elements",
     "---Components---",
     "components/buttons",
     "components/theme-image",

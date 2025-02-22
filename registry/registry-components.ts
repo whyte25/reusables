@@ -2,6 +2,17 @@ import { Registry } from "@/registry/schema"
 
 export const components: Registry = [
   {
+    name: "floating-elements",
+    type: "registry:component",
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "reusables/floating-elements.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
     name: "single-image-upload",
     type: "registry:component",
     dependencies: [
