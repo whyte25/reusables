@@ -39,7 +39,7 @@ export default defineConfig({
       defaultColor: false,
       transformers: [
         ...(rehypeCodeDefaultOptions.transformers ?? []),
-        transformerTwoslash(),
+        transformerTwoslash() as any,
       ],
     },
     rehypePlugins: [rehypeCode],
