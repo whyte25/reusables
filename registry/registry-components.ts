@@ -9,6 +9,7 @@ export const components: Registry = [
       {
         path: "reusables/floating-elements.tsx",
         type: "registry:component",
+        target: "components/floating-elements.tsx",
       },
     ],
   },
@@ -26,6 +27,7 @@ export const components: Registry = [
       {
         path: "reusables/single-image-upload.tsx",
         type: "registry:component",
+        target: "components/single-image-upload.tsx",
       },
       {
         path: "hooks/use-file-upload.tsx",
@@ -47,6 +49,7 @@ export const components: Registry = [
       {
         path: "reusables/multiple-image-upload.tsx",
         type: "registry:component",
+        target: "components/multiple-image-upload.tsx",
       },
       {
         path: "hooks/use-multiple-file-upload.tsx",
@@ -68,6 +71,7 @@ export const components: Registry = [
       {
         path: "reusables/multi-file-upload.tsx",
         type: "registry:component",
+        target: "components/multi-file-upload.tsx",
       },
       {
         path: "hooks/use-multiple-file-upload.tsx",
@@ -89,6 +93,7 @@ export const components: Registry = [
       {
         path: "reusables/universal-file-upload.tsx",
         type: "registry:component",
+        target: "components/universal-file-upload.tsx",
       },
       {
         path: "hooks/use-multiple-file-upload.tsx",
