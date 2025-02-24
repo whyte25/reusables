@@ -1,4 +1,3 @@
-// @ts-nocheck
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getGithubLastEdit } from "fumadocs-core/server"
