@@ -330,17 +330,17 @@ export const Index: Record<string, any> = {
       {
         path: "registry/reusables/ui/notify.tsx",
         type: "registry:ui",
-        target: "",
+        target: "components/ui/notify.tsx",
       },
       {
         path: "registry/reusables/ui/notify-provider.tsx",
         type: "registry:ui",
-        target: "",
+        target: "components/ui/notify-provider.tsx",
       },
       {
         path: "registry/reusables/ui/notify-utils.ts",
         type: "registry:ui",
-        target: "",
+        target: "components/ui/notify-utils.ts",
       },
     ],
     component: React.lazy(async () => {
@@ -363,7 +363,7 @@ export const Index: Record<string, any> = {
       {
         path: "registry/reusables/ui/theme-image.tsx",
         type: "registry:ui",
-        target: "",
+        target: "components/ui/theme-image.tsx",
       },
     ],
     component: React.lazy(async () => {
@@ -386,7 +386,7 @@ export const Index: Record<string, any> = {
       {
         path: "registry/reusables/ui/spinner.tsx",
         type: "registry:ui",
-        target: "",
+        target: "components/ui/spinner.tsx",
       },
     ],
     component: React.lazy(async () => {
@@ -409,12 +409,12 @@ export const Index: Record<string, any> = {
       {
         path: "registry/reusables/ui/submit-button.tsx",
         type: "registry:ui",
-        target: "",
+        target: "components/ui/submit-button.tsx",
       },
       {
         path: "registry/reusables/ui/spinner.tsx",
         type: "registry:ui",
-        target: "",
+        target: "components/ui/spinner.tsx",
       },
     ],
     component: React.lazy(async () => {
@@ -437,7 +437,7 @@ export const Index: Record<string, any> = {
       {
         path: "registry/reusables/ui/copy-button.tsx",
         type: "registry:ui",
-        target: "",
+        target: "components/ui/copy-button.tsx",
       },
     ],
     component: React.lazy(async () => {
@@ -460,7 +460,7 @@ export const Index: Record<string, any> = {
       {
         path: "registry/reusables/ui/split-button.tsx",
         type: "registry:ui",
-        target: "",
+        target: "components/ui/split-button.tsx",
       },
     ],
     component: React.lazy(async () => {
@@ -483,7 +483,7 @@ export const Index: Record<string, any> = {
       {
         path: "registry/reusables/ui/split-button-action.tsx",
         type: "registry:ui",
-        target: "",
+        target: "components/ui/split-button-action.tsx",
       },
     ],
     component: React.lazy(async () => {
@@ -1180,7 +1180,7 @@ export const Index: Record<string, any> = {
       {
         path: "registry/example/single-image-upload-form-demo.tsx",
         type: "registry:example",
-        target: "",
+        target: "components/single-image-upload-form-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
@@ -1435,7 +1435,7 @@ export const Index: Record<string, any> = {
       {
         path: "registry/example/universal-file-upload-demo.tsx",
         type: "registry:example",
-        target: "",
+        target: "components/universal-file-upload-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
@@ -1518,7 +1518,7 @@ export const Index: Record<string, any> = {
       {
         path: "registry/lib/time-ago.ts",
         type: "registry:lib",
-        target: "",
+        target: "lib/time-ago.ts",
       },
     ],
     component: React.lazy(async () => {
@@ -1541,7 +1541,7 @@ export const Index: Record<string, any> = {
       {
         path: "registry/lib/utils.ts",
         type: "registry:lib",
-        target: "",
+        target: "lib/utils.ts",
       },
     ],
     component: React.lazy(async () => {
@@ -1564,7 +1564,7 @@ export const Index: Record<string, any> = {
       {
         path: "registry/lib/cookies.client.ts",
         type: "registry:lib",
-        target: "",
+        target: "lib/cookies.client.ts",
       },
     ],
     component: React.lazy(async () => {
@@ -1587,7 +1587,7 @@ export const Index: Record<string, any> = {
       {
         path: "registry/lib/cookies.server.ts",
         type: "registry:lib",
-        target: "",
+        target: "lib/cookies.server.ts",
       },
     ],
     component: React.lazy(async () => {
@@ -1610,7 +1610,7 @@ export const Index: Record<string, any> = {
       {
         path: "registry/lib/permission.ts",
         type: "registry:lib",
-        target: "",
+        target: "lib/permission.ts",
       },
     ],
     component: React.lazy(async () => {
@@ -1633,7 +1633,7 @@ export const Index: Record<string, any> = {
       {
         path: "registry/lib/platform-detector.ts",
         type: "registry:lib",
-        target: "",
+        target: "lib/platform-detector.ts",
       },
     ],
     component: React.lazy(async () => {

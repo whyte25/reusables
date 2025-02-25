@@ -69,6 +69,7 @@ export default function DirectMultiFileUploadDemo() {
         onChange={setFiles}
         onUpload={handleUpload}
         isDirectUpload
+        displayMode="list"
         disabled={isUploading}
         dropzoneOptions={{
           maxFiles: 4,

@@ -223,15 +223,18 @@
       "files": [
         {
           "path": "registry/reusables/ui/notify.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "components/ui/notify.tsx"
         },
         {
           "path": "registry/reusables/ui/notify-provider.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "components/ui/notify-provider.tsx"
         },
         {
           "path": "registry/reusables/ui/notify-utils.ts",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "components/ui/notify-utils.ts"
         }
       ]
     },
@@ -242,7 +245,8 @@
       "files": [
         {
           "path": "registry/reusables/ui/theme-image.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "components/ui/theme-image.tsx"
         }
       ]
     },
@@ -254,7 +258,8 @@
       "files": [
         {
           "path": "registry/reusables/ui/spinner.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "components/ui/spinner.tsx"
         }
       ]
     },
@@ -265,11 +270,13 @@
       "files": [
         {
           "path": "registry/reusables/ui/submit-button.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "components/ui/submit-button.tsx"
         },
         {
           "path": "registry/reusables/ui/spinner.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "components/ui/spinner.tsx"
         }
       ]
     },
@@ -281,7 +288,8 @@
       "files": [
         {
           "path": "registry/reusables/ui/copy-button.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "components/ui/copy-button.tsx"
         }
       ]
     },
@@ -293,7 +301,8 @@
       "files": [
         {
           "path": "registry/reusables/ui/split-button.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "components/ui/split-button.tsx"
         }
       ]
     },
@@ -305,7 +314,8 @@
       "files": [
         {
           "path": "registry/reusables/ui/split-button-action.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "components/ui/split-button-action.tsx"
         }
       ]
     },
@@ -677,7 +687,8 @@
       "files": [
         {
           "path": "registry/example/single-image-upload-form-demo.tsx",
-          "type": "registry:example"
+          "type": "registry:example",
+          "target": "components/single-image-upload-form-demo.tsx"
         }
       ]
     },
@@ -824,7 +835,8 @@
       "files": [
         {
           "path": "registry/example/universal-file-upload-demo.tsx",
-          "type": "registry:example"
+          "type": "registry:example",
+          "target": "components/universal-file-upload-demo.tsx"
         }
       ]
     },
@@ -867,7 +879,8 @@
       "files": [
         {
           "path": "registry/lib/time-ago.ts",
-          "type": "registry:lib"
+          "type": "registry:lib",
+          "target": "lib/time-ago.ts"
         }
       ]
     },
@@ -878,7 +891,8 @@
       "files": [
         {
           "path": "registry/lib/utils.ts",
-          "type": "registry:lib"
+          "type": "registry:lib",
+          "target": "lib/utils.ts"
         }
       ]
     },
@@ -890,7 +904,8 @@
       "files": [
         {
           "path": "registry/lib/cookies.client.ts",
-          "type": "registry:lib"
+          "type": "registry:lib",
+          "target": "lib/cookies.client.ts"
         }
       ]
     },
@@ -900,7 +915,8 @@
       "files": [
         {
           "path": "registry/lib/cookies.server.ts",
-          "type": "registry:lib"
+          "type": "registry:lib",
+          "target": "lib/cookies.server.ts"
         }
       ]
     },
@@ -910,7 +926,8 @@
       "files": [
         {
           "path": "registry/lib/permission.ts",
-          "type": "registry:lib"
+          "type": "registry:lib",
+          "target": "lib/permission.ts"
         }
       ]
     },
@@ -920,7 +937,8 @@
       "files": [
         {
           "path": "registry/lib/platform-detector.ts",
-          "type": "registry:lib"
+          "type": "registry:lib",
+          "target": "lib/platform-detector.ts"
         }
       ]
     }
