@@ -4,6 +4,7 @@
   "type": "registry:example",
   "registryDependencies": [
     "https://reusables.vercel.app/r/universal-file-upload",
+    "https://reusables.vercel.app/r/notify",
     "button"
   ],
   "files": [

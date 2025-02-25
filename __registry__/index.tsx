@@ -737,7 +737,11 @@ export const Index: Record<string, any> = {
     name: "inview-demo",
     description: "",
     type: "registry:example",
-    registryDependencies: ["https://reusables.vercel.app/r/use-inview"],
+    registryDependencies: [
+      "https://reusables.vercel.app/r/use-inview",
+      "card",
+      "framer-motion",
+    ],
     files: [
       {
         path: "registry/example/inview-demo.tsx",
@@ -954,7 +958,10 @@ export const Index: Record<string, any> = {
     name: "split-button-demo",
     description: "",
     type: "registry:example",
-    registryDependencies: ["https://reusables.vercel.app/r/split-button"],
+    registryDependencies: [
+      "https://reusables.vercel.app/r/split-button",
+      "https://reusables.vercel.app/r/notify",
+    ],
     files: [
       {
         path: "registry/example/split-button-demo.tsx",
@@ -979,6 +986,7 @@ export const Index: Record<string, any> = {
     type: "registry:example",
     registryDependencies: [
       "https://reusables.vercel.app/r/split-button-action",
+      "https://reusables.vercel.app/r/notify",
     ],
     files: [
       {
@@ -1004,7 +1012,10 @@ export const Index: Record<string, any> = {
     name: "split-button-preview-demo",
     description: "",
     type: "registry:example",
-    registryDependencies: ["https://reusables.vercel.app/r/split-button"],
+    registryDependencies: [
+      "https://reusables.vercel.app/r/split-button",
+      "https://reusables.vercel.app/r/notify",
+    ],
     files: [
       {
         path: "registry/example/split-button-preview-demo.tsx",
@@ -1031,6 +1042,7 @@ export const Index: Record<string, any> = {
     type: "registry:example",
     registryDependencies: [
       "https://reusables.vercel.app/r/single-image-upload",
+      "https://reusables.vercel.app/r/notify",
     ],
     files: [
       {
@@ -1058,6 +1070,7 @@ export const Index: Record<string, any> = {
     type: "registry:example",
     registryDependencies: [
       "shttps://reusables.vercel.app/r/single-image-upload",
+      "https://reusables.vercel.app/r/notify",
     ],
     files: [
       {
@@ -1170,6 +1183,7 @@ export const Index: Record<string, any> = {
     type: "registry:example",
     registryDependencies: [
       "https://reusables.vercel.app/r/single-image-upload",
+      "https://reusables.vercel.app/r/notify",
       "button",
       "input",
       "textarea",
@@ -1398,6 +1412,7 @@ export const Index: Record<string, any> = {
     type: "registry:example",
     registryDependencies: [
       "https://reusables.vercel.app/r/multi-file-upload",
+      "https://reusables.vercel.app/r/notify",
       "button",
       "input",
       "form",
@@ -1429,6 +1444,7 @@ export const Index: Record<string, any> = {
     type: "registry:example",
     registryDependencies: [
       "https://reusables.vercel.app/r/universal-file-upload",
+      "https://reusables.vercel.app/r/notify",
       "button",
     ],
     files: [

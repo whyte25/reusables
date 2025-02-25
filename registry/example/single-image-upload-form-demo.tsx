@@ -50,12 +50,13 @@ export default function SingleImageUploadFormDemo() {
     onError: (error) => toast.error(error),
   })
 
-  async function onSubmit(values: FormValues) {
+  async function onSubmit() {
     toast.promise(() => new Promise((resolve) => setTimeout(resolve, 2000)), {
       loading: "Creating product...",
       success: () => "Product created successfully!",
       error: "Failed to create product",
     })
+
     form.reset({
       name: "",
       price: "",

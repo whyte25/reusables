@@ -3,7 +3,8 @@
   "name": "split-button-action-demo",
   "type": "registry:example",
   "registryDependencies": [
-    "https://reusables.vercel.app/r/split-button-action"
+    "https://reusables.vercel.app/r/split-button-action",
+    "https://reusables.vercel.app/r/notify"
   ],
   "files": [
     {

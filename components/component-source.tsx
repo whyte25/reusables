@@ -7,7 +7,7 @@ import { ComponentPreview } from "./component-preview"
 
 export interface ComponentSourceProps {
   name: string
-  showV0button?: boolean
+  showV0Button?: boolean
   showPreviewOnly?: boolean
   showPreviewButton?: boolean
   reTrigger?: boolean
@@ -18,7 +18,7 @@ export async function ComponentSource({
   name,
   showPreviewOnly,
   showPreviewButton,
-  showV0button,
+  showV0Button,
   reTrigger,
   className,
 }: ComponentSourceProps) {
@@ -57,7 +57,7 @@ export async function ComponentSource({
     <ComponentPreview
       className={className}
       name={name}
-      showV0button={showV0button}
+      showV0Button={showV0Button}
       showPreviewOnly={showPreviewOnly}
       showPreviewButton={showPreviewButton}
       reTrigger={reTrigger}

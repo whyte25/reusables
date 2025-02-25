@@ -10,7 +10,7 @@ import { toast } from "../reusables/ui/notify-provider"
 
 export default function ManualImageUploadDemo() {
   const manualUpload = useFileUpload({
-    onSuccess: () => toast.success(" Upload SuccessFul"),
+    onSuccess: () => toast.success(" Upload Successful!"),
     onError: (error) => toast.error(error),
   })
   const [manualFile, setManualFile] = useState<File | undefined>()
