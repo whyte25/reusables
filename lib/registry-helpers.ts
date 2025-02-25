@@ -19,18 +19,12 @@ const memoizedIndex: typeof Index = Object.fromEntries(
   Object.entries(Index).map(([style, items]) => [style, { ...items }])
 )
 
-export function getRegistryComponent(
-  name: string,
-  style: string = DEFAULT_REGISTRY_STYLE
-) {
-  return memoizedIndex[style][name]?.component
+export function getRegistryComponent(name: string) {
+  return memoizedIndex[name]?.component
 }
 
-export function getRegistryItem(
-  name: string,
-  style: string = DEFAULT_REGISTRY_STYLE
-) {
-  return memoizedIndex[style][name]
+export function getRegistryItem(name: string) {
+  return memoizedIndex[name]
 }
 
 export function validateRegistryComponent(name: string) {
