@@ -4,7 +4,7 @@
   "type": "registry:lib",
   "files": [
     {
-      "path": "registry/default/lib/permission.ts",
+      "path": "registry/lib/permission.ts",
       "content": "export type User = { authorisation: Role; id: string }\n\ntype Role = keyof typeof ROLES\ntype Permission = (typeof ROLES)[Role][number]\n\nconst ROLES = {\n  superadmin: [\n    \"create:printer\",\n    \"update:select_printer\",\n    \"update:set_order_status\",\n  ],\n  admin: [],\n} as const\n\nexport function hasPermission(user: User, permission: Permission) {\n  return [user.authorisation].some((role) =>\n    (ROLES[role] as readonly Permission[])?.includes(permission)\n  )\n}\n",
       "type": "registry:lib"
     }

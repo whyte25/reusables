@@ -13,15 +13,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["utils"],
     files: [
       {
-        path: "registry/default/reusables/floating-elements.tsx",
+        path: "registry/reusables/floating-elements.tsx",
         type: "registry:component",
         target: "components/floating-elements.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/reusables/floating-elements.tsx"
-      )
+      const mod = await import("@/registry/reusables/floating-elements.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -38,7 +36,7 @@ export const Index: Record<string, any> = {
     registryDependencies: ["utils"],
     files: [
       {
-        path: "registry/default/reusables/single-image-upload.tsx",
+        path: "registry/reusables/single-image-upload.tsx",
         type: "registry:component",
         target: "components/single-image-upload.tsx",
       },
@@ -49,9 +47,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/reusables/single-image-upload.tsx"
-      )
+      const mod = await import("@/registry/reusables/single-image-upload.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -68,7 +64,7 @@ export const Index: Record<string, any> = {
     registryDependencies: ["utils"],
     files: [
       {
-        path: "registry/default/reusables/multiple-image-upload.tsx",
+        path: "registry/reusables/multiple-image-upload.tsx",
         type: "registry:component",
         target: "components/multiple-image-upload.tsx",
       },
@@ -79,9 +75,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/reusables/multiple-image-upload.tsx"
-      )
+      const mod = await import("@/registry/reusables/multiple-image-upload.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -98,7 +92,7 @@ export const Index: Record<string, any> = {
     registryDependencies: ["utils"],
     files: [
       {
-        path: "registry/default/reusables/multi-file-upload.tsx",
+        path: "registry/reusables/multi-file-upload.tsx",
         type: "registry:component",
         target: "components/multi-file-upload.tsx",
       },
@@ -109,9 +103,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/reusables/multi-file-upload.tsx"
-      )
+      const mod = await import("@/registry/reusables/multi-file-upload.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -128,7 +120,7 @@ export const Index: Record<string, any> = {
     registryDependencies: ["utils"],
     files: [
       {
-        path: "registry/default/reusables/universal-file-upload.tsx",
+        path: "registry/reusables/universal-file-upload.tsx",
         type: "registry:component",
         target: "components/universal-file-upload.tsx",
       },
@@ -139,9 +131,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/reusables/universal-file-upload.tsx"
-      )
+      const mod = await import("@/registry/reusables/universal-file-upload.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -158,19 +148,19 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button"],
     files: [
       {
-        path: "registry/default/reusables/pdf-viewers/compact-viewer.tsx",
+        path: "registry/reusables/pdf-viewers/compact-viewer.tsx",
         type: "registry:component",
         target: "components/pdf-viewers/compact-viewer.tsx",
       },
       {
-        path: "registry/default/reusables/pdf-viewers/loading-spinner.tsx",
+        path: "registry/reusables/pdf-viewers/loading-spinner.tsx",
         type: "registry:component",
         target: "components/pdf-viewers/loading-spinner.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/reusables/pdf-viewers/compact-viewer.tsx"
+        "@/registry/reusables/pdf-viewers/compact-viewer.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -188,19 +178,19 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button"],
     files: [
       {
-        path: "registry/default/reusables/pdf-viewers/fullscreen-viewer.tsx",
+        path: "registry/reusables/pdf-viewers/fullscreen-viewer.tsx",
         type: "registry:component",
         target: "components/pdf-viewers/fullscreen-viewer.tsx",
       },
       {
-        path: "registry/default/reusables/pdf-viewers/loading-spinner.tsx",
+        path: "registry/reusables/pdf-viewers/loading-spinner.tsx",
         type: "registry:component",
         target: "components/pdf-viewers/loading-spinner.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/reusables/pdf-viewers/fullscreen-viewer.tsx"
+        "@/registry/reusables/pdf-viewers/fullscreen-viewer.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -218,19 +208,19 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button"],
     files: [
       {
-        path: "registry/default/reusables/pdf-viewers/hover-navigation-viewer.tsx",
+        path: "registry/reusables/pdf-viewers/hover-navigation-viewer.tsx",
         type: "registry:component",
         target: "components/pdf-viewers/hover-navigation-viewer.tsx",
       },
       {
-        path: "registry/default/reusables/pdf-viewers/loading-spinner.tsx",
+        path: "registry/reusables/pdf-viewers/loading-spinner.tsx",
         type: "registry:component",
         target: "components/pdf-viewers/loading-spinner.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/reusables/pdf-viewers/hover-navigation-viewer.tsx"
+        "@/registry/reusables/pdf-viewers/hover-navigation-viewer.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -248,19 +238,19 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button"],
     files: [
       {
-        path: "registry/default/reusables/pdf-viewers/minimal-viewer.tsx",
+        path: "registry/reusables/pdf-viewers/minimal-viewer.tsx",
         type: "registry:component",
         target: "components/pdf-viewers/minimal-viewer.tsx",
       },
       {
-        path: "registry/default/reusables/pdf-viewers/loading-spinner.tsx",
+        path: "registry/reusables/pdf-viewers/loading-spinner.tsx",
         type: "registry:component",
         target: "components/pdf-viewers/loading-spinner.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/reusables/pdf-viewers/minimal-viewer.tsx"
+        "@/registry/reusables/pdf-viewers/minimal-viewer.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -278,19 +268,19 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button", "scroll-area"],
     files: [
       {
-        path: "registry/default/reusables/pdf-viewers/sidebar-viewer.tsx",
+        path: "registry/reusables/pdf-viewers/sidebar-viewer.tsx",
         type: "registry:component",
         target: "components/pdf-viewers/sidebar-viewer.tsx",
       },
       {
-        path: "registry/default/reusables/pdf-viewers/loading-spinner.tsx",
+        path: "registry/reusables/pdf-viewers/loading-spinner.tsx",
         type: "registry:component",
         target: "components/pdf-viewers/loading-spinner.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/reusables/pdf-viewers/sidebar-viewer.tsx"
+        "@/registry/reusables/pdf-viewers/sidebar-viewer.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -308,19 +298,19 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button"],
     files: [
       {
-        path: "registry/default/reusables/pdf-viewers/thumbnail-viewer.tsx",
+        path: "registry/reusables/pdf-viewers/thumbnail-viewer.tsx",
         type: "registry:component",
         target: "components/pdf-viewers/thumbnail-viewer.tsx",
       },
       {
-        path: "registry/default/reusables/pdf-viewers/loading-spinner.tsx",
+        path: "registry/reusables/pdf-viewers/loading-spinner.tsx",
         type: "registry:component",
         target: "components/pdf-viewers/loading-spinner.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/reusables/pdf-viewers/thumbnail-viewer.tsx"
+        "@/registry/reusables/pdf-viewers/thumbnail-viewer.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -338,23 +328,23 @@ export const Index: Record<string, any> = {
     registryDependencies: ["utils"],
     files: [
       {
-        path: "registry/default/reusables/ui/notify.tsx",
+        path: "registry/reusables/ui/notify.tsx",
         type: "registry:ui",
         target: "",
       },
       {
-        path: "registry/default/reusables/ui/notify-provider.tsx",
+        path: "registry/reusables/ui/notify-provider.tsx",
         type: "registry:ui",
         target: "",
       },
       {
-        path: "registry/default/reusables/ui/notify-utils.ts",
+        path: "registry/reusables/ui/notify-utils.ts",
         type: "registry:ui",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/reusables/ui/notify.tsx")
+      const mod = await import("@/registry/reusables/ui/notify.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -371,15 +361,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["utils"],
     files: [
       {
-        path: "registry/default/reusables/ui/theme-image.tsx",
+        path: "registry/reusables/ui/theme-image.tsx",
         type: "registry:ui",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/reusables/ui/theme-image.tsx"
-      )
+      const mod = await import("@/registry/reusables/ui/theme-image.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -396,13 +384,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["utils"],
     files: [
       {
-        path: "registry/default/reusables/ui/spinner.tsx",
+        path: "registry/reusables/ui/spinner.tsx",
         type: "registry:ui",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/reusables/ui/spinner.tsx")
+      const mod = await import("@/registry/reusables/ui/spinner.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -419,20 +407,18 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button", "utils"],
     files: [
       {
-        path: "registry/default/reusables/ui/submit-button.tsx",
+        path: "registry/reusables/ui/submit-button.tsx",
         type: "registry:ui",
         target: "",
       },
       {
-        path: "registry/default/reusables/ui/spinner.tsx",
+        path: "registry/reusables/ui/spinner.tsx",
         type: "registry:ui",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/reusables/ui/submit-button.tsx"
-      )
+      const mod = await import("@/registry/reusables/ui/submit-button.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -449,15 +435,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button", "utils"],
     files: [
       {
-        path: "registry/default/reusables/ui/copy-button.tsx",
+        path: "registry/reusables/ui/copy-button.tsx",
         type: "registry:ui",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/reusables/ui/copy-button.tsx"
-      )
+      const mod = await import("@/registry/reusables/ui/copy-button.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -474,15 +458,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button", "dropdown-menu", "utils"],
     files: [
       {
-        path: "registry/default/reusables/ui/split-button.tsx",
+        path: "registry/reusables/ui/split-button.tsx",
         type: "registry:ui",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/reusables/ui/split-button.tsx"
-      )
+      const mod = await import("@/registry/reusables/ui/split-button.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -499,14 +481,14 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button", "dropdown-menu", "utils"],
     files: [
       {
-        path: "registry/default/reusables/ui/split-button-action.tsx",
+        path: "registry/reusables/ui/split-button-action.tsx",
         type: "registry:ui",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/reusables/ui/split-button-action.tsx"
+        "@/registry/reusables/ui/split-button-action.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -524,15 +506,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/floating-elements"],
     files: [
       {
-        path: "registry/default/example/floating-elements-demo.tsx",
+        path: "registry/example/floating-elements-demo.tsx",
         type: "registry:example",
         target: "components/floating-elements-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/floating-elements-demo.tsx"
-      )
+      const mod = await import("@/registry/example/floating-elements-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -549,13 +529,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/notify"],
     files: [
       {
-        path: "registry/default/example/toast-demo.tsx",
+        path: "registry/example/toast-demo.tsx",
         type: "registry:example",
         target: "components/toast-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/example/toast-demo.tsx")
+      const mod = await import("@/registry/example/toast-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -572,13 +552,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/time-ago"],
     files: [
       {
-        path: "registry/default/example/time-ago-demo.tsx",
+        path: "registry/example/time-ago-demo.tsx",
         type: "registry:example",
         target: "components/time-ago-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/example/time-ago-demo.tsx")
+      const mod = await import("@/registry/example/time-ago-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -595,15 +575,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/submit-button"],
     files: [
       {
-        path: "registry/default/example/online-status-demo.tsx",
+        path: "registry/example/online-status-demo.tsx",
         type: "registry:example",
         target: "components/online-status-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/online-status-demo.tsx"
-      )
+      const mod = await import("@/registry/example/online-status-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -620,15 +598,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/theme-image"],
     files: [
       {
-        path: "registry/default/example/theme-image-demo.tsx",
+        path: "registry/example/theme-image-demo.tsx",
         type: "registry:example",
         target: "components/theme-image-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/theme-image-demo.tsx"
-      )
+      const mod = await import("@/registry/example/theme-image-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -645,15 +621,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/copy-button"],
     files: [
       {
-        path: "registry/default/example/copy-button-demo.tsx",
+        path: "registry/example/copy-button-demo.tsx",
         type: "registry:example",
         target: "components/copy-button-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/copy-button-demo.tsx"
-      )
+      const mod = await import("@/registry/example/copy-button-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -670,14 +644,14 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/submit-button"],
     files: [
       {
-        path: "registry/default/example/submit-button-position-left.tsx",
+        path: "registry/example/submit-button-position-left.tsx",
         type: "registry:example",
         target: "components/submit-button-position-left.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/submit-button-position-left.tsx"
+        "@/registry/example/submit-button-position-left.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -695,14 +669,14 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/submit-button"],
     files: [
       {
-        path: "registry/default/example/submit-button-hidetext-demo.tsx",
+        path: "registry/example/submit-button-hidetext-demo.tsx",
         type: "registry:example",
         target: "components/submit-button-hidetext-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/submit-button-hidetext-demo.tsx"
+        "@/registry/example/submit-button-hidetext-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -720,15 +694,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/submit-button"],
     files: [
       {
-        path: "registry/default/example/submit-button-demo.tsx",
+        path: "registry/example/submit-button-demo.tsx",
         type: "registry:example",
         target: "components/submit-button-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/submit-button-demo.tsx"
-      )
+      const mod = await import("@/registry/example/submit-button-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -745,15 +717,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/use-screen-size"],
     files: [
       {
-        path: "registry/default/example/screen-size-demo.tsx",
+        path: "registry/example/screen-size-demo.tsx",
         type: "registry:example",
         target: "components/screen-size-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/screen-size-demo.tsx"
-      )
+      const mod = await import("@/registry/example/screen-size-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -770,13 +740,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/use-inview"],
     files: [
       {
-        path: "registry/default/example/inview-demo.tsx",
+        path: "registry/example/inview-demo.tsx",
         type: "registry:example",
         target: "components/inview-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/example/inview-demo.tsx")
+      const mod = await import("@/registry/example/inview-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -797,15 +767,13 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/file-upload-demo.tsx",
+        path: "registry/example/file-upload-demo.tsx",
         type: "registry:example",
         target: "components/file-upload-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/file-upload-demo.tsx"
-      )
+      const mod = await import("@/registry/example/file-upload-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -822,14 +790,14 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/notify"],
     files: [
       {
-        path: "registry/default/example/toast-with-description-demo.tsx",
+        path: "registry/example/toast-with-description-demo.tsx",
         type: "registry:example",
         target: "components/toast-with-description-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/toast-with-description-demo.tsx"
+        "@/registry/example/toast-with-description-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -847,15 +815,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/notify"],
     files: [
       {
-        path: "registry/default/example/toast-positions-demo.tsx",
+        path: "registry/example/toast-positions-demo.tsx",
         type: "registry:example",
         target: "components/toast-positions-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/toast-positions-demo.tsx"
-      )
+      const mod = await import("@/registry/example/toast-positions-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -872,15 +838,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/notify"],
     files: [
       {
-        path: "registry/default/example/toast-promise-demo.tsx",
+        path: "registry/example/toast-promise-demo.tsx",
         type: "registry:example",
         target: "components/toast-promise-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/toast-promise-demo.tsx"
-      )
+      const mod = await import("@/registry/example/toast-promise-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -897,14 +861,14 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/notify"],
     files: [
       {
-        path: "registry/default/example/toast-prevent-duplicates-demo.tsx",
+        path: "registry/example/toast-prevent-duplicates-demo.tsx",
         type: "registry:example",
         target: "components/toast-prevent-duplicates-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/toast-prevent-duplicates-demo.tsx"
+        "@/registry/example/toast-prevent-duplicates-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -922,14 +886,14 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/notify"],
     files: [
       {
-        path: "registry/default/example/toast-custom-config-demo.tsx",
+        path: "registry/example/toast-custom-config-demo.tsx",
         type: "registry:example",
         target: "components/toast-custom-config-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/toast-custom-config-demo.tsx"
+        "@/registry/example/toast-custom-config-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -947,15 +911,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/notify"],
     files: [
       {
-        path: "registry/default/example/toast-progress-demo.tsx",
+        path: "registry/example/toast-progress-demo.tsx",
         type: "registry:example",
         target: "components/toast-progress-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/toast-progress-demo.tsx"
-      )
+      const mod = await import("@/registry/example/toast-progress-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -972,15 +934,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/notify"],
     files: [
       {
-        path: "registry/default/example/toast-close-button-demo.tsx",
+        path: "registry/example/toast-close-button-demo.tsx",
         type: "registry:example",
         target: "components/toast-close-button-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/toast-close-button-demo.tsx"
-      )
+      const mod = await import("@/registry/example/toast-close-button-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -997,15 +957,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/split-button"],
     files: [
       {
-        path: "registry/default/example/split-button-demo.tsx",
+        path: "registry/example/split-button-demo.tsx",
         type: "registry:example",
         target: "components/split-button-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/split-button-demo.tsx"
-      )
+      const mod = await import("@/registry/example/split-button-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1024,14 +982,14 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/split-button-action-demo.tsx",
+        path: "registry/example/split-button-action-demo.tsx",
         type: "registry:example",
         target: "components/split-button-action-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/split-button-action-demo.tsx"
+        "@/registry/example/split-button-action-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1049,14 +1007,14 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/split-button"],
     files: [
       {
-        path: "registry/default/example/split-button-preview-demo.tsx",
+        path: "registry/example/split-button-preview-demo.tsx",
         type: "registry:example",
         target: "components/split-button-preview-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/split-button-preview-demo.tsx"
+        "@/registry/example/split-button-preview-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1076,14 +1034,14 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/direct-image-upload-demo.tsx",
+        path: "registry/example/direct-image-upload-demo.tsx",
         type: "registry:example",
         target: "components/direct-image-upload-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/direct-image-upload-demo.tsx"
+        "@/registry/example/direct-image-upload-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1103,14 +1061,14 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/manual-image-upload-demo.tsx",
+        path: "registry/example/manual-image-upload-demo.tsx",
         type: "registry:example",
         target: "components/manual-image-upload-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/manual-image-upload-demo.tsx"
+        "@/registry/example/manual-image-upload-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1130,14 +1088,14 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/direct-multiple-image-upload-demo.tsx",
+        path: "registry/example/direct-multiple-image-upload-demo.tsx",
         type: "registry:example",
         target: "components/direct-multiple-image-upload-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/direct-multiple-image-upload-demo.tsx"
+        "@/registry/example/direct-multiple-image-upload-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1157,14 +1115,14 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/manual-multiple-image-upload-demo.tsx",
+        path: "registry/example/manual-multiple-image-upload-demo.tsx",
         type: "registry:example",
         target: "components/manual-multiple-image-upload-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/manual-multiple-image-upload-demo.tsx"
+        "@/registry/example/manual-multiple-image-upload-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1188,14 +1146,14 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/multiple-image-upload-form-demo.tsx",
+        path: "registry/example/multiple-image-upload-form-demo.tsx",
         type: "registry:example",
         target: "components/multiple-image-upload-form-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/multiple-image-upload-form-demo.tsx"
+        "@/registry/example/multiple-image-upload-form-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1220,14 +1178,14 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/single-image-upload-form-demo.tsx",
+        path: "registry/example/single-image-upload-form-demo.tsx",
         type: "registry:example",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/single-image-upload-form-demo.tsx"
+        "@/registry/example/single-image-upload-form-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1245,15 +1203,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/compact-viewer"],
     files: [
       {
-        path: "registry/default/example/compact-viewer-demo.tsx",
+        path: "registry/example/compact-viewer-demo.tsx",
         type: "registry:example",
         target: "components/compact-viewer-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/compact-viewer-demo.tsx"
-      )
+      const mod = await import("@/registry/example/compact-viewer-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1273,15 +1229,13 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/fullscreen-viewer-demo.tsx",
+        path: "registry/example/fullscreen-viewer-demo.tsx",
         type: "registry:example",
         target: "components/fullscreen-viewer-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/fullscreen-viewer-demo.tsx"
-      )
+      const mod = await import("@/registry/example/fullscreen-viewer-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1300,15 +1254,13 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/hover-navigation-demo.tsx",
+        path: "registry/example/hover-navigation-demo.tsx",
         type: "registry:example",
         target: "components/hover-navigation-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/hover-navigation-demo.tsx"
-      )
+      const mod = await import("@/registry/example/hover-navigation-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1325,15 +1277,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/minimal-viewer"],
     files: [
       {
-        path: "registry/default/example/minimal-viewer-demo.tsx",
+        path: "registry/example/minimal-viewer-demo.tsx",
         type: "registry:example",
         target: "components/minimal-viewer-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/minimal-viewer-demo.tsx"
-      )
+      const mod = await import("@/registry/example/minimal-viewer-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1350,15 +1300,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/sidebar-viewer"],
     files: [
       {
-        path: "registry/default/example/sidebar-viewer-demo.tsx",
+        path: "registry/example/sidebar-viewer-demo.tsx",
         type: "registry:example",
         target: "components/sidebar-viewer-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/sidebar-viewer-demo.tsx"
-      )
+      const mod = await import("@/registry/example/sidebar-viewer-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1375,15 +1323,13 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/thumbnail-viewer"],
     files: [
       {
-        path: "registry/default/example/thumbnail-viewer-demo.tsx",
+        path: "registry/example/thumbnail-viewer-demo.tsx",
         type: "registry:example",
         target: "components/thumbnail-viewer-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/example/thumbnail-viewer-demo.tsx"
-      )
+      const mod = await import("@/registry/example/thumbnail-viewer-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1400,14 +1346,14 @@ export const Index: Record<string, any> = {
     registryDependencies: ["https://reusables.vercel.app/r/multi-file-upload"],
     files: [
       {
-        path: "registry/default/example/direct-multi-file-upload-demo.tsx",
+        path: "registry/example/direct-multi-file-upload-demo.tsx",
         type: "registry:example",
         target: "components/direct-multi-file-upload-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/direct-multi-file-upload-demo.tsx"
+        "@/registry/example/direct-multi-file-upload-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1428,14 +1374,14 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/manual-multi-file-upload-demo.tsx",
+        path: "registry/example/manual-multi-file-upload-demo.tsx",
         type: "registry:example",
         target: "components/manual-multi-file-upload-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/manual-multi-file-upload-demo.tsx"
+        "@/registry/example/manual-multi-file-upload-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1459,14 +1405,14 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/multi-file-upload-form-demo.tsx",
+        path: "registry/example/multi-file-upload-form-demo.tsx",
         type: "registry:example",
         target: "components/multi-file-upload-form-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/multi-file-upload-form-demo.tsx"
+        "@/registry/example/multi-file-upload-form-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1487,14 +1433,14 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/universal-file-upload-demo.tsx",
+        path: "registry/example/universal-file-upload-demo.tsx",
         type: "registry:example",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/universal-file-upload-demo.tsx"
+        "@/registry/example/universal-file-upload-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1514,14 +1460,14 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/universal-file-upload-direct-demo.tsx",
+        path: "registry/example/universal-file-upload-direct-demo.tsx",
         type: "registry:example",
         target: "components/universal-file-upload-direct-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/universal-file-upload-direct-demo.tsx"
+        "@/registry/example/universal-file-upload-direct-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1545,14 +1491,14 @@ export const Index: Record<string, any> = {
     ],
     files: [
       {
-        path: "registry/default/example/universal-file-upload-form-demo.tsx",
+        path: "registry/example/universal-file-upload-form-demo.tsx",
         type: "registry:example",
         target: "components/universal-file-upload-form-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/example/universal-file-upload-form-demo.tsx"
+        "@/registry/example/universal-file-upload-form-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1570,13 +1516,13 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/lib/time-ago.ts",
+        path: "registry/lib/time-ago.ts",
         type: "registry:lib",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/lib/time-ago.ts")
+      const mod = await import("@/registry/lib/time-ago.ts")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1593,13 +1539,13 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/lib/utils.ts",
+        path: "registry/lib/utils.ts",
         type: "registry:lib",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/lib/utils.ts")
+      const mod = await import("@/registry/lib/utils.ts")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1616,13 +1562,13 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/lib/cookies.client.ts",
+        path: "registry/lib/cookies.client.ts",
         type: "registry:lib",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/lib/cookies.client.ts")
+      const mod = await import("@/registry/lib/cookies.client.ts")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1639,13 +1585,13 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/lib/cookies.server.ts",
+        path: "registry/lib/cookies.server.ts",
         type: "registry:lib",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/lib/cookies.server.ts")
+      const mod = await import("@/registry/lib/cookies.server.ts")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1662,13 +1608,13 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/lib/permission.ts",
+        path: "registry/lib/permission.ts",
         type: "registry:lib",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/lib/permission.ts")
+      const mod = await import("@/registry/lib/permission.ts")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1685,13 +1631,13 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/lib/platform-detector.ts",
+        path: "registry/lib/platform-detector.ts",
         type: "registry:lib",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/lib/platform-detector.ts")
+      const mod = await import("@/registry/lib/platform-detector.ts")
       const exportName =
         Object.keys(mod).find(
           (key) =>

@@ -5,7 +5,7 @@
   "registryDependencies": ["utils"],
   "files": [
     {
-      "path": "registry/default/reusables/ui/theme-image.tsx",
+      "path": "registry/reusables/ui/theme-image.tsx",
       "content": "\"use client\"\n\nimport type { ImageProps } from \"next/image\"\nimport Image from \"next/image\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface ThemeImageProps extends Omit<ImageProps, \"src\" | \"className\"> {\n  lightSrc: ImageProps[\"src\"]\n  darkSrc: ImageProps[\"src\"]\n  className?: string\n}\n\nexport const ThemeImage = ({\n  lightSrc,\n  darkSrc,\n  alt,\n  className,\n  ...props\n}: ThemeImageProps) => {\n  return (\n    <>\n      <Image\n        src={lightSrc}\n        alt={alt}\n        className={cn(\"dark:hidden\", className)}\n        {...props}\n      />\n      <Image\n        src={darkSrc}\n        alt={alt}\n        className={cn(\"hidden dark:block\", className)}\n        {...props}\n      />\n    </>\n  )\n}\n",
       "type": "registry:ui"
     }

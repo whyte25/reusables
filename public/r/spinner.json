@@ -6,7 +6,7 @@
   "registryDependencies": ["utils"],
   "files": [
     {
-      "path": "registry/default/reusables/ui/spinner.tsx",
+      "path": "registry/reusables/ui/spinner.tsx",
       "content": "import { cva, type VariantProps } from \"class-variance-authority\"\nimport { Loader } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst spinnerVariants = cva(\"animate-spin text-white dark:text-black\", {\n  variants: {\n    size: {\n      default: \"h-4 w-4\",\n      sm: \"h-2 w-2\",\n      lg: \"h-6 w-6\",\n      icon: \"h-10 w-10\",\n    },\n  },\n  defaultVariants: {\n    size: \"default\",\n  },\n})\n\ninterface SpinnerProps extends VariantProps<typeof spinnerVariants> {\n  className?: string\n}\n\nexport const Spinner = ({ size, className }: SpinnerProps) => {\n  return <Loader className={cn(spinnerVariants({ size, className }))} />\n}\n",
       "type": "registry:ui"
     }

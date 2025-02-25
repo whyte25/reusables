@@ -3,7 +3,7 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { RootProvider } from "fumadocs-ui/provider"
 
-import { ToastProvider } from "@/registry/default/reusables/ui/notify-provider"
+import { ToastProvider } from "@/registry/reusables/ui/notify-provider"
 
 import { PostHogProvider } from "./posthog-provider"
 

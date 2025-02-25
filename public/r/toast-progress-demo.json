@@ -5,7 +5,7 @@
   "registryDependencies": ["https://reusables.vercel.app/r/notify"],
   "files": [
     {
-      "path": "registry/default/example/toast-progress-demo.tsx",
+      "path": "registry/example/toast-progress-demo.tsx",
       "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\n\nimport { toast } from \"../reusables/ui/notify-provider\"\n\nexport default function ToastProgressDemo() {\n  return (\n    <div className=\"flex flex-wrap gap-2 md:gap-4\">\n      <Button\n        className=\"w-full md:w-auto\"\n        onClick={() =>\n          toast.info(\"Toast with progress\", {\n            hideProgressBar: false,\n          })\n        }\n      >\n        Show Progress\n      </Button>\n\n      <Button\n        className=\"w-full md:w-auto\"\n        onClick={() =>\n          toast.info(\"Toast without progress\", {\n            hideProgressBar: true,\n          })\n        }\n      >\n        Hide Progress\n      </Button>\n    </div>\n  )\n}\n",
       "type": "registry:example",
       "target": "components/toast-progress-demo.tsx"

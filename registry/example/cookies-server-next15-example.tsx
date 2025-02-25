@@ -1,4 +1,4 @@
-import { ServerCookiesNext15 } from "@/registry/default/lib/cookies.server"
+import { ServerCookiesNext15 } from "../lib/cookies.server"
 
 export default async function CookiesServerNext15Example() {
   //Set a cookie

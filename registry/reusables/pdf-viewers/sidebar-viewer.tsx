@@ -8,7 +8,6 @@ import { Document, Page, pdfjs } from "react-pdf"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import useScreenSize from "@/registry/default/hooks/use-screen-size"
 
 import { LoadingSpinner } from "./loading-spinner"
 
@@ -31,7 +30,6 @@ export const SidebarViewer = ({ url }: SidebarViewerProps) => {
   const [containerRef, setContainerRef] = useState<HTMLElement | null>(null)
   const [containerWidth, setContainerWidth] = useState<number>()
   const [pageHeight, setPageHeight] = useState<number>(0)
-  const { isMobile } = useScreenSize()
 
   const onResize = useCallback<ResizeObserverCallback>((entries) => {
     const [entry] = entries

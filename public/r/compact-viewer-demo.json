@@ -6,7 +6,7 @@
   "registryDependencies": ["https://reusables.vercel.app/r/compact-viewer"],
   "files": [
     {
-      "path": "registry/default/example/compact-viewer-demo.tsx",
+      "path": "registry/example/compact-viewer-demo.tsx",
       "content": "\"use client\"\n\nimport { CompactViewer } from \"../reusables/pdf-viewers/compact-viewer\"\n\nexport default function CompactViewerDemo() {\n  const samplePdfUrl =\n    \"https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf\"\n\n  return <CompactViewer url={samplePdfUrl} />\n}\n",
       "type": "registry:example",
       "target": "components/compact-viewer-demo.tsx"

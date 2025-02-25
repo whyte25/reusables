@@ -1,7 +1,8 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { FloatingElements } from "@/registry/default/reusables/floating-elements"
+
+import { FloatingElements } from "../reusables/floating-elements"
 
 const logos = [
   {

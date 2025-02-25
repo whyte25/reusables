@@ -6,7 +6,7 @@
   "registryDependencies": ["https://reusables.vercel.app/r/minimal-viewer"],
   "files": [
     {
-      "path": "registry/default/example/minimal-viewer-demo.tsx",
+      "path": "registry/example/minimal-viewer-demo.tsx",
       "content": "\"use client\"\n\nimport { MinimalViewer } from \"../reusables/pdf-viewers/minimal-viewer\"\n\nexport default function MinimalViewerDemo() {\n  const samplePdfUrl =\n    \"https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf\"\n\n  return <MinimalViewer url={samplePdfUrl} />\n}\n",
       "type": "registry:example",
       "target": "components/minimal-viewer-demo.tsx"

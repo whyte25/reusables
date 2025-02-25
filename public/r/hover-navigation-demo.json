@@ -8,7 +8,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/example/hover-navigation-demo.tsx",
+      "path": "registry/example/hover-navigation-demo.tsx",
       "content": "\"use client\"\n\nimport { HoverNavigationViewer } from \"../reusables/pdf-viewers/hover-navigation-viewer\"\n\nexport default function HoverNavigationDemo() {\n  const samplePdfUrl =\n    \"https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf\"\n\n  return <HoverNavigationViewer url={samplePdfUrl} />\n}\n",
       "type": "registry:example",
       "target": "components/hover-navigation-demo.tsx"

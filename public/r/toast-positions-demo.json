@@ -5,7 +5,7 @@
   "registryDependencies": ["https://reusables.vercel.app/r/notify"],
   "files": [
     {
-      "path": "registry/default/example/toast-positions-demo.tsx",
+      "path": "registry/example/toast-positions-demo.tsx",
       "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\n\nimport { toast } from \"../reusables/ui/notify-provider\"\n\nexport default function ToastPositionsDemo() {\n  const positions = [\n    \"top-left\",\n    \"top-center\",\n    \"top-right\",\n    \"bottom-left\",\n    \"bottom-center\",\n    \"bottom-right\",\n  ] as const\n\n  return (\n    <div className=\"grid grid-cols-2 gap-2 md:grid-cols-3\">\n      {positions.map((position) => (\n        <Button\n          key={position}\n          onClick={() =>\n            toast.push({\n              title: `Toast - ${position}`,\n              position,\n              status: \"success\",\n            })\n          }\n        >\n          {position}\n        </Button>\n      ))}\n    </div>\n  )\n}\n",
       "type": "registry:example",
       "target": "components/toast-positions-demo.tsx"

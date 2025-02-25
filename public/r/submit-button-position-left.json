@@ -5,7 +5,7 @@
   "registryDependencies": ["https://reusables.vercel.app/r/submit-button"],
   "files": [
     {
-      "path": "registry/default/example/submit-button-position-left.tsx",
+      "path": "registry/example/submit-button-position-left.tsx",
       "content": "import { SubmitButton } from \"../reusables/ui/submit-button\"\n\nexport default function SubmitButtonPositionLeft() {\n  return (\n    <SubmitButton position=\"left\" isSubmitting={true}>\n      Loading\n    </SubmitButton>\n  )\n}\n",
       "type": "registry:example",
       "target": "components/submit-button-position-left.tsx"

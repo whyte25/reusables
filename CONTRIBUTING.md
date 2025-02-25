@@ -35,9 +35,9 @@ Review existing components like the `split-button` (a UI component with variants
 2. **Implementation**
 
    - Create your component in the appropriate directory:
-     - UI components: `registry/default/reusables/ui/`
-     - React hooks: `registry/default/hooks/`
-     - Utility functions: `registry/default/lib/`
+     - UI components: `registry/reusables/ui/`
+     - React hooks: `registry/hooks/`
+     - Utility functions: `registry/lib/`
    - Register your component in the corresponding registry file:
      - Components: `registry/registry-components.ts`
      - UI components: `registry/registry-ui.ts`
@@ -49,7 +49,7 @@ Review existing components like the `split-button` (a UI component with variants
 
 3. **Create Examples**
 
-   - Add example implementation in `registry/default/example/`
+   - Add example implementation in `registry/example/`
    - Demonstrate different use cases and variations
    - Register your example in `registry/registry-examples.ts`
 
@@ -93,7 +93,7 @@ description: Brief description ofthe component
 <Tab value="Manual">
 `json doc-gen:file
 {
-    "file": "registry/default/reusables/component-name.tsx",
+    "file": "registry/reusables/component-name.tsx",
     "codeblock": {
     "lang": "tsx",
     "meta": "title=\"component-name.tsx\""
