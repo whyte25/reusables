@@ -14,6 +14,15 @@ const config = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/r/:path([^.]*)",
+        destination: "/r/:path.json",
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default withMDX(config)
