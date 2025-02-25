@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "split-button",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "dropdown-menu", "utils"],
+  "files": [
+    {
+      "path": "registry/default/reusables/ui/split-button.tsx",
+      "content": "\"use client\"\n\nimport type * as React from \"react\"\nimport { ChevronDown } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/components/ui/button\"\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\"\n\nexport interface SplitButtonOption {\n  label: string\n  onClick: () => void\n}\n\ninterface SplitButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  options: SplitButtonOption[]\n  mainAction: () => void\n  variant?:\n    | \"default\"\n    | \"destructive\"\n    | \"outline\"\n    | \"secondary\"\n    | \"ghost\"\n    | \"link\"\n  size?: \"default\" | \"sm\" | \"lg\" | \"icon\"\n  dropdownAlign?: \"start\" | \"center\" | \"end\"\n}\n\nexport function SplitButton({\n  children,\n  options,\n  mainAction,\n  variant = \"default\",\n  size = \"default\",\n  dropdownAlign = \"end\",\n  className,\n  ...props\n}: SplitButtonProps) {\n  return (\n    <div className=\"relative flex items-center\">\n      <Button\n        variant={variant}\n        size={size}\n        className={cn(\"rounded-r-none\", className)}\n        onClick={mainAction}\n        {...props}\n      >\n        {children}\n      </Button>\n      <DropdownMenu>\n        <DropdownMenuTrigger asChild>\n          <Button\n            variant={variant}\n            size={size}\n            className={cn(\n              \"rounded-l-none border-primary-foreground/20 px-2\",\n              variant === \"outline\" ?\n                \"bg-accent hover:bg-accent/80\"\n              : \"border-l\"\n            )}\n            aria-label=\"More options\"\n          >\n            <ChevronDown className=\"h-4 w-4\" />\n          </Button>\n        </DropdownMenuTrigger>\n        <DropdownMenuContent align={dropdownAlign}>\n          {options.map((option, index) => (\n            <DropdownMenuItem\n              className=\"cursor-pointer\"\n              key={index}\n              onClick={option.onClick}\n            >\n              {option.label}\n            </DropdownMenuItem>\n          ))}\n        </DropdownMenuContent>\n      </DropdownMenu>\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

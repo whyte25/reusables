@@ -1,6 +1,6 @@
-import { Registry } from "@/registry/schema"
+import { type Registry } from "shadcn/registry"
 
-export const components: Registry = [
+export const components: Registry["items"] = [
   {
     name: "floating-elements",
     type: "registry:component",

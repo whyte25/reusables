@@ -1,100 +1,18 @@
-[
-  {
-    "name": "notify",
-    "type": "registry:ui",
-    "dependencies": [
-      "lucide-react",
-      "framer-motion",
-      "class-variance-authority"
-    ],
-    "registryDependencies": ["utils"],
-    "files": [
-      {
-        "path": "reusables/ui/notify.tsx",
-        "type": "registry:ui"
-      },
-      {
-        "path": "reusables/ui/notify-provider.tsx",
-        "type": "registry:ui"
-      },
-      {
-        "path": "reusables/ui/notify-utils.ts",
-        "type": "registry:ui"
-      }
-    ]
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "index",
+  "type": "registry:style",
+  "dependencies": [
+    "tailwindcss-animate",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": ["utils"],
+  "files": [],
+  "tailwind": {
+    "config": {
+      "plugins": ["require(\"tailwindcss-animate\")"]
+    }
   },
-  {
-    "name": "theme-image",
-    "type": "registry:ui",
-    "registryDependencies": ["utils"],
-    "files": [
-      {
-        "path": "reusables/ui/theme-image.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
-    "name": "spinner",
-    "type": "registry:ui",
-    "dependencies": ["class-variance-authority", "lucide-react"],
-    "registryDependencies": ["utils"],
-    "files": [
-      {
-        "path": "reusables/ui/spinner.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
-    "name": "submit-button",
-    "type": "registry:ui",
-    "registryDependencies": ["button", "utils"],
-    "files": [
-      {
-        "path": "reusables/ui/submit-button.tsx",
-        "type": "registry:ui"
-      },
-      {
-        "path": "reusables/ui/spinner.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
-    "name": "copy-button",
-    "type": "registry:ui",
-    "dependencies": ["lucide-react"],
-    "registryDependencies": ["button", "utils"],
-    "files": [
-      {
-        "path": "reusables/ui/copy-button.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
-    "name": "split-button",
-    "type": "registry:ui",
-    "dependencies": ["lucide-react"],
-    "registryDependencies": ["button", "dropdown-menu", "utils"],
-    "files": [
-      {
-        "path": "reusables/ui/split-button.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
-    "name": "split-button-action",
-    "type": "registry:ui",
-    "dependencies": ["lucide-react"],
-    "registryDependencies": ["button", "dropdown-menu", "utils"],
-    "files": [
-      {
-        "path": "reusables/ui/split-button-action.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  }
-]
+  "cssVars": {}
+}

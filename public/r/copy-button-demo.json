@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "copy-button-demo",
+  "type": "registry:example",
+  "registryDependencies": ["https://reusables.vercel.app/r/copy-button"],
+  "files": [
+    {
+      "path": "registry/default/example/copy-button-demo.tsx",
+      "content": "import { CopyButton } from \"../reusables/ui/copy-button\"\n\nexport default function CopyButtonDemo() {\n  const text = \"Built by Fas\"\n\n  return (\n    <div className=\"flex items-center gap-2\">\n      <p>{text}</p>\n      <CopyButton value={text} />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": "components/copy-button-demo.tsx"
+    }
+  ]
+}

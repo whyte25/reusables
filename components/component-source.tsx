@@ -22,12 +22,8 @@ export async function ComponentSource({
   reTrigger,
   className,
 }: ComponentSourceProps) {
-  const style = "default"
-
-  // console.log(folder);
-
   // Get component details from registry
-  const component = Index[style][name]
+  const component = Index[name]
 
   if (!component) {
     console.error(`Component ${name} not found in registry`)
@@ -35,7 +31,7 @@ export async function ComponentSource({
   }
 
   // Read source code
-  const filePath = path.join(process.cwd(), component.files[0])
+  const filePath = path.join(process.cwd(), component.files[0].path)
 
   let sourceCode = ""
 

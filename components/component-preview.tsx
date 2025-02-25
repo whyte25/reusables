@@ -28,10 +28,9 @@ export function ComponentPreview({
   ...props
 }: ComponentPreviewProps) {
   const [key, setKey] = React.useState(0)
-  const d_style = "default"
 
   const Preview = React.useMemo(() => {
-    const Component = Index[d_style][name]?.component
+    const Component = Index[name]?.component
     if (!Component) {
       return (
         <p className="text-sm text-muted-foreground">Component not found</p>

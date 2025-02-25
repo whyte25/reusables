@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "file-upload-demo",
+  "type": "registry:example",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/use-file-upload",
+    "progress",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/example/file-upload-demo.tsx",
+      "content": "\"use client\"\n\nimport Image from \"next/image\"\nimport { Upload, X } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { useFileUpload } from \"@/hooks/use-file-upload\"\nimport { Button } from \"@/components/ui/button\"\nimport { Progress } from \"@/components/ui/progress\"\n\nexport default function FileUploadDemo() {\n  const {\n    handleFileUpload,\n    cancelUpload,\n    selectedFile,\n    isUploading,\n    progress,\n    error,\n    data,\n  } = useFileUpload()\n\n  return (\n    <div className=\"mx-auto w-full max-w-md space-y-4\">\n      <div className=\"flex w-full items-center justify-center\">\n        {data ?\n          <Image\n            height={1000}\n            width={1000}\n            src={data}\n            alt=\"image\"\n            className=\"h-full max-h-[400px] object-cover\"\n          />\n        : <label\n            className={cn(\n              `flex w-full cursor-pointer flex-col items-center justify-center rounded-lg`\n            )}\n          >\n            <div className=\"flex flex-col items-center justify-center pb-6 pt-5\">\n              <Upload className=\"mb-3 h-10 w-10 text-gray-400\" />\n              <p className=\"mb-2 text-sm text-gray-500\">\n                <span className=\"font-semibold\">Click to upload image</span>\n              </p>\n              <p className=\"text-xs text-gray-500\">Any file up to 5MB</p>\n            </div>\n            <input\n              type=\"file\"\n              className=\"hidden\"\n              onChange={(e) => handleFileUpload(e.target.files?.[0]!)}\n              disabled={isUploading}\n            />\n          </label>\n        }\n      </div>\n\n      {(isUploading || selectedFile) && !data && (\n        <div className=\"space-y-3 rounded-lg border bg-background p-4 shadow-sm\">\n          <div className=\"flex items-center justify-between\">\n            <div className=\"flex items-center space-x-2\">\n              <div className=\"min-w-0 flex-1\">\n                <p className=\"truncate text-sm font-medium text-gray-900\">\n                  {selectedFile?.name}\n                </p>\n                <p className=\"text-xs text-gray-500\">\n                  {(selectedFile?.size! / 1024 / 1024).toFixed(2)} MB\n                </p>\n              </div>\n            </div>\n            {isUploading && (\n              <Button\n                variant=\"ghost\"\n                size=\"sm\"\n                onClick={cancelUpload}\n                className=\"text-gray-500 hover:text-gray-700\"\n              >\n                <X className=\"h-4 w-4\" />\n              </Button>\n            )}\n          </div>\n\n          {isUploading && <Progress value={progress} className=\"h-2\" />}\n        </div>\n      )}\n\n      {error && (\n        <div className=\"rounded-lg bg-red-50 p-3 text-sm text-red-500\">\n          {error}\n        </div>\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": "components/file-upload-demo.tsx"
+    }
+  ]
+}
