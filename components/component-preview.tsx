@@ -21,7 +21,7 @@ export function ComponentPreview({
   name,
   className,
   showPreviewOnly = false,
-  showV0button = false,
+  showV0Button = true,
   showPreviewButton = true,
   reTrigger = true,
   children,
@@ -90,7 +90,7 @@ export function ComponentPreview({
                     </Link>
                   </Button>
                 )}
-                {showV0button && <OpenInV0Button name={name} />}
+                {showV0Button && <OpenInV0Button name={name} />}
                 {reTrigger && (
                   <Button
                     onClick={() => setKey((prev) => prev + 1)}

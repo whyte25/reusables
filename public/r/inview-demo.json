@@ -3,7 +3,11 @@
   "name": "inview-demo",
   "type": "registry:example",
   "dependencies": ["framer-motion"],
-  "registryDependencies": ["https://reusables.vercel.app/r/use-inview"],
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/use-inview",
+    "card",
+    "framer-motion"
+  ],
   "files": [
     {
       "path": "registry/example/inview-demo.tsx",

@@ -5,6 +5,7 @@
   "dependencies": ["react-hook-form", "@hookform/resolvers/zod", "zod"],
   "registryDependencies": [
     "https://reusables.vercel.app/r/multi-file-upload",
+    "https://reusables.vercel.app/r/notify",
     "button",
     "input",
     "form",
