@@ -62,9 +62,47 @@ export const Index: Record<string, any> = {`
   await fs.writeFile(path.join(process.cwd(), "__registry__/index.tsx"), index)
 }
 
+async function replaceImport() {
+  const files = await fs.readdir(path.join(process.cwd(), "public/r"))
+
+  await Promise.all(
+    files
+      .filter((file) => file.endsWith(".json"))
+      .map(async (file) => {
+        const content = await fs.readFile(
+          path.join(process.cwd(), "public/r", file),
+          "utf-8"
+        )
+
+        const registryItem = JSON.parse(content)
+
+        // Replace `@/registry/reusables/` in files to `@/components/`
+        registryItem.files = registryItem.files?.map((file) => {
+          file.content = file.content
+            ?.replaceAll("@/registry/reusables/", "@/components/")
+            // Handle relative paths to components, hooks, lib, and utils
+            .replaceAll(/"\.\.\/reusables\/(.*?)"/g, '"@/components/$1"')
+            .replaceAll(/"\.\.\/hooks\/(.*?)"/g, '"@/hooks/$1"')
+            .replaceAll(/"\.\.\/lib\/(.*?)"/g, '"@/lib/$1"')
+            .replaceAll(/"\.\.\/utils\/(.*?)"/g, '"@/utils/$1"')
+
+          return file
+        })
+
+        // Write the file back
+        await fs.writeFile(
+          path.join(process.cwd(), "public/r", file),
+          JSON.stringify(registryItem, null, 2)
+        )
+      })
+  )
+}
+
 try {
   console.log("🗂️ Building registry/__index__.tsx...")
   await buildRegistryIndex()
+  console.log("🔄 Replacing imports...")
+  await replaceImport()
   console.log("✅ Done!")
 } catch (error) {
   console.error(error)

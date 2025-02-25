@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/example/sidebar-viewer-demo.tsx",
-      "content": "\"use client\"\n\nimport { SidebarViewer } from \"../reusables/pdf-viewers/sidebar-viewer\"\n\nexport default function SidebarViewerDemo() {\n  const samplePdfUrl =\n    \"https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf\"\n\n  return <SidebarViewer url={samplePdfUrl} />\n}\n",
+      "content": "\"use client\"\n\nimport { SidebarViewer } from \"@/components/pdf-viewers/sidebar-viewer\"\n\nexport default function SidebarViewerDemo() {\n  const samplePdfUrl =\n    \"https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf\"\n\n  return <SidebarViewer url={samplePdfUrl} />\n}\n",
       "type": "registry:example",
       "target": "components/sidebar-viewer-demo.tsx"
     }

@@ -6,7 +6,7 @@
   "files": [
     {
       "path": "registry/example/submit-button-demo.tsx",
-      "content": "import { SubmitButton } from \"../reusables/ui/submit-button\"\n\nexport default function SubmitButtonDemo() {\n  return <SubmitButton isSubmitting={true}>Loading</SubmitButton>\n}\n",
+      "content": "import { SubmitButton } from \"@/components/ui/submit-button\"\n\nexport default function SubmitButtonDemo() {\n  return <SubmitButton isSubmitting={true}>Loading</SubmitButton>\n}\n",
       "type": "registry:example",
       "target": "components/submit-button-demo.tsx"
     }

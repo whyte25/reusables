@@ -41,7 +41,7 @@ export async function ComponentSource({
     // Clean up imports - handle both registry and reusables paths
     sourceCode = sourceCode
       // Handle absolute paths
-      .replaceAll("@/registry/default/", "@/components/")
+      .replaceAll("@/registry/reusables/", "@/components/")
       // Handle relative paths to reusables
       .replaceAll(/"\.\.\/reusables\/(.*?)"/g, '"@/components/$1"')
       .replaceAll(/"\.\.\/hooks\/(.*?)"/g, '"@/hooks/$1"')

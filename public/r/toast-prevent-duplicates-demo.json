@@ -6,7 +6,7 @@
   "files": [
     {
       "path": "registry/example/toast-prevent-duplicates-demo.tsx",
-      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\n\nimport { toast } from \"../reusables/ui/notify-provider\"\n\nexport default function ToastPreventDuplicatesDemo() {\n  return (\n    <div className=\"flex gap-4\">\n      <Button\n        onClick={() =>\n          toast.info(\"This will not duplicate\", {\n            preventDuplicates: true,\n            description: \"Try clicking multiple times\",\n          })\n        }\n      >\n        Prevent Duplicates\n      </Button>\n    </div>\n  )\n}\n",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\n\nimport { toast } from \"@/components/ui/notify-provider\"\n\nexport default function ToastPreventDuplicatesDemo() {\n  return (\n    <div className=\"flex gap-4\">\n      <Button\n        onClick={() =>\n          toast.info(\"This will not duplicate\", {\n            preventDuplicates: true,\n            description: \"Try clicking multiple times\",\n          })\n        }\n      >\n        Prevent Duplicates\n      </Button>\n    </div>\n  )\n}\n",
       "type": "registry:example",
       "target": "components/toast-prevent-duplicates-demo.tsx"
     }
