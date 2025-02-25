@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-navigation-demo",
+  "type": "registry:example",
+  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks"],
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/hover-navigation-viewer"
+  ],
+  "files": [
+    {
+      "path": "registry/default/example/hover-navigation-demo.tsx",
+      "content": "\"use client\"\n\nimport { HoverNavigationViewer } from \"../reusables/pdf-viewers/hover-navigation-viewer\"\n\nexport default function HoverNavigationDemo() {\n  const samplePdfUrl =\n    \"https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf\"\n\n  return <HoverNavigationViewer url={samplePdfUrl} />\n}\n",
+      "type": "registry:example",
+      "target": "components/hover-navigation-demo.tsx"
+    }
+  ]
+}

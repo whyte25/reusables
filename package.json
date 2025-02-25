@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "preinstall": "node ./check-bun.ts",
     "postinstall": "fumadocs-mdx",
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build:registry": "bun run ./scripts/build-registry.mts && bun run format:write",
+    "build:registry": "shadcn build && bun run ./scripts/build-registry.mts && bun run format:write",
     "build": "next build && bun run build:registry",
     "format": "prettier --check .",
     "format:write": "prettier --write ."
@@ -60,6 +59,7 @@
     "react-pdf": "^9.2.1",
     "react-syntax-highlighter": "^15.6.1",
     "remark-smartypants": "^3.0.2",
+    "shadcn": "^2.4.0-canary.9",
     "sonner": "^1.7.2",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",

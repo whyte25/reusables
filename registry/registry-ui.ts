@@ -1,6 +1,6 @@
-import { Registry } from "@/registry/schema"
+import { type Registry } from "shadcn/registry"
 
-export const ui: Registry = [
+export const ui: Registry["items"] = [
   {
     name: "notify",
     type: "registry:ui",
@@ -25,14 +25,24 @@ export const ui: Registry = [
     name: "theme-image",
     type: "registry:ui",
     registryDependencies: ["utils"],
-    files: ["reusables/ui/theme-image.tsx"],
+    files: [
+      {
+        path: "reusables/ui/theme-image.tsx",
+        type: "registry:ui",
+      },
+    ],
   },
   {
     name: "spinner",
     type: "registry:ui",
     dependencies: ["class-variance-authority", "lucide-react"],
     registryDependencies: ["utils"],
-    files: ["reusables/ui/spinner.tsx"],
+    files: [
+      {
+        path: "reusables/ui/spinner.tsx",
+        type: "registry:ui",
+      },
+    ],
   },
   {
     name: "submit-button",
@@ -54,21 +64,36 @@ export const ui: Registry = [
     type: "registry:ui",
     dependencies: ["lucide-react"],
     registryDependencies: ["button", "utils"],
-    files: ["reusables/ui/copy-button.tsx"],
+    files: [
+      {
+        path: "reusables/ui/copy-button.tsx",
+        type: "registry:ui",
+      },
+    ],
   },
   {
     name: "split-button",
     type: "registry:ui",
     registryDependencies: ["button", "dropdown-menu", "utils"],
     dependencies: ["lucide-react"],
-    files: ["reusables/ui/split-button.tsx"],
+    files: [
+      {
+        path: "reusables/ui/split-button.tsx",
+        type: "registry:ui",
+      },
+    ],
   },
   {
     name: "split-button-action",
     type: "registry:ui",
     registryDependencies: ["button", "dropdown-menu", "utils"],
     dependencies: ["lucide-react"],
-    files: ["reusables/ui/split-button-action.tsx"],
+    files: [
+      {
+        path: "reusables/ui/split-button-action.tsx",
+        type: "registry:ui",
+      },
+    ],
   },
 
   // {

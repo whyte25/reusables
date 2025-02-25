@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "thumbnail-viewer-demo",
+  "type": "registry:example",
+  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks"],
+  "registryDependencies": ["https://reusables.vercel.app/r/thumbnail-viewer"],
+  "files": [
+    {
+      "path": "registry/default/example/thumbnail-viewer-demo.tsx",
+      "content": "\"use client\"\n\nimport { ThumbnailViewer } from \"../reusables/pdf-viewers/thumbnail-viewer\"\n\nexport default function ThumbnailViewerDemo() {\n  const samplePdfUrl =\n    \"https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf\"\n\n  return <ThumbnailViewer url={samplePdfUrl} />\n}\n",
+      "type": "registry:example",
+      "target": "components/thumbnail-viewer-demo.tsx"
+    }
+  ]
+}
