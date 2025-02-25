@@ -2,6 +2,19 @@
 
 Thank you for your interest in contributing to Reusables! This guide will help you understand our development process and how you can contribute effectively.
 
+## Table of Contents
+
+1. [Project Structure](#project-structure)
+2. [Development Workflow](#development-workflow)
+   - [Understanding Reusables](#1-understanding-reusables)
+   - [Creating a New Reusable](#2-creating-a-new-reusable)
+   - [Documentation](#3-documentation)
+3. [Submitting Your Contribution](#submitting-your-contribution)
+4. [Best Practices](#best-practices)
+5. [Need Help?](#need-help)
+6. [Review Process](#review-process)
+7. [License](#license)
+
 ## Project Structure
 
 The project is organized into several key directories:
@@ -17,65 +30,62 @@ The project is organized into several key directories:
 
 ### 1. Understanding Reusables
 
-Before contributing, familiarize yourself with existing reusables and their documentation. Each reusable typically consists of:
+Before contributing:
 
-- Core component(s) in the registry
-- Example implementation
-- Documentation
-
-Review existing components like the `split-button` (a UI component with variants and comprehensive documentation) to understand the project's patterns and standards.
+- Familiarize yourself with existing reusables and their documentation.
+- Review components like the `split-button` to understand project patterns and standards.
+- Each reusable typically consists of:
+  - Core component(s) in the registry
+  - Example implementation
+  - Documentation
 
 ### 2. Creating a New Reusable
 
-1. **Plan Your Component**
+#### a. Plan Your Component
 
-   - Ensure it's reusable across different projects
-   - Consider common use cases and customization options
+- Ensure it's reusable across different projects
+- Consider common use cases and customization options
 
-2. **Implementation**
+#### b. Implementation
 
-   - Create your component in the appropriate directory:
-     - UI components: `registry/reusables/ui/`
-     - React hooks: `registry/hooks/`
-     - Utility functions: `registry/lib/`
-   - Register your component in the corresponding registry file:
-     - Components: `registry/registry-components.ts`
-     - UI components: `registry/registry-ui.ts`
-     - Hooks: `registry/registry-hooks.ts`
-     - Utilities: `registry/registry-lib.ts`
-   - Add necessary types and interfaces
-   - Implement the core functionality
-   - Add proper comments and TypeScript documentation
+1. Create your component in the appropriate directory:
+   - UI components: `registry/reusables/ui/`
+   - React hooks: `registry/hooks/`
+   - Utility functions: `registry/lib/`
+2. Add necessary types and interfaces
+3. Implement the core functionality
+4. Register your component in the registry.json file
+5. Add proper comments and TypeScript documentation
 
-3. **Create Examples**
+#### c. Create Examples
 
-   - Add example implementation in `registry/example/`
-   - Demonstrate different use cases and variations
-   - Register your example in `registry/registry-examples.ts`
+- Add example implementation in `registry/example/`
+- Demonstrate different use cases and variations
 
-4. **Testing and Building**
-   - Run `bun run build` or `bun run build:registry` to build your reusable components and examples
-     - This step is crucial before documentation as it registers components in index.tsx
-     - Skipping this step may cause "component not found" errors in documentation
-   - Test your component across different scenarios
-   - Ensure proper error handling
-   - Verify accessibility standards
+#### d. Testing and Building
+
+- Run `bun run build` or `bun run build:registry`
+  - This step is crucial before documentation
+  - Skipping may cause "component not found" errors
+- Test your component across different scenarios
+- Ensure proper error handling
+- Verify accessibility standards
 
 ### 3. Documentation
 
-We use [FumaDocs](https://fumadocs.vercel.app/) for documentation. Familiarize yourself with [FumaDocs UI components](https://fumadocs.vercel.app/docs/ui/components) before starting. Follow these steps:
+We use [FumaDocs](https://fumadocs.vercel.app/) for documentation. Familiarize yourself with [FumaDocs UI components](https://fumadocs.vercel.app/docs/ui/components) before starting.
 
-1. **Create Documentation File**
+#### a. Create Documentation File
 
-   - Add a new MDX file in `content/docs/`
-   - Follow the existing documentation structure
+- Add a new MDX file in `content/docs/`
+- Follow the existing documentation structure
 
-2. **Documentation Structure**
+#### b. Documentation Structure
 
-```js
+```markdown
 ---
 title: Component Name
-description: Brief description ofthe component
+description: Brief description of the component
 ---
 
 ## Overview
@@ -87,8 +97,8 @@ description: Brief description ofthe component
 <Tabs items={["CLI", "Manual"]}>
 <Tab value="CLI">
 `package-install
-       npx shadcn@latest add "https://reusables.vercel.app/r/component-name"
-       `
+npx shadcn@latest add "https://reusables.vercel.app/r/component-name"
+`
 </Tab>
 <Tab value="Manual">
 `json doc-gen:file
@@ -99,7 +109,7 @@ description: Brief description ofthe component
     "meta": "title=\"component-name.tsx\""
      }
     }
-       `
+`
 </Tab>
 </Tabs>
 
@@ -116,54 +126,53 @@ description: Brief description ofthe component
 [Component props and methods]
 ```
 
-3. **Include Examples**
+#### c. Include Examples
 
 - Use the `<ComponentSource>` component to reference and display component examples
-- Show dfferenaiations ase cases
-- Prov, cpy-pa-table c nippets
+- Show different use cases
+- Provide copy-pastable code snippets
 
-tting Your Cotribution
+## Submitting Your Contribution
 
 1. **Fork & Branch**
 
-- Fork the repository
-- Create a feature branch: feature/componame`
+   - Fork the repository
+   - Create a feature branch: `feature/component-name`
 
-2. \*\*Comit Guidelines-clecommiess|ages
+2. **Commit Guidelines**
 
-- Keep o focusedatomi|
+   - Write clear, concise commit messages
+   - Keep commits focused and atomic
 
-3. **Pull Reuest**
-
-- Submit a PR with a clear description
-- Reference any related isues
-- Ensure all checks pass
+3. **Pull Request**
+   - Submit a PR with a clear description
+   - Reference any related issues
+   - Ensure all checks pass
 
 ## Best Practices
 
 1. **Component Design**
 
-- Keep components focused and single-purpose
-- Use TypeScript for type safety
-- Follow React best practices
-- Ensure accessibility (ARIA attributes, keyboard navigation)
+   - Keep components focused and single-purpose
+   - Use TypeScript for type safety
+   - Follow React best practices
+   - Ensure accessibility (ARIA attributes, keyboard navigation)
 
 2. **Code Style**
 
-- Follow the project's ESLint and Prettier configurations
-- Use meaningful variable and function names
-- Add JSDoc comments for complex functions
+   - Follow the project's ESLint and Prettier configurations
+   - Use meaningful variable and function names
+   - Add JSDoc comments for complex functions
 
 3. **Documentation**
-
-- Write clear, concise documentation
-- Include practical examples
-- Document all props and configuration options
-- Explain any complex concepts or edge cases
+   - Write clear, concise documentation
+   - Include practical examples
+   - Document all props and configuration options
+   - Explain any complex concepts or edge cases
 
 ## Need Help?
 
-If you need help or have questions:
+If you need assistance or have questions:
 
 1. Check existing documentation and examples
 2. Look through similar components
