@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
-import { statusStyles, Toast } from "./notify"
+import { Toast } from "./notify"
 import { toast } from "./notify-utils"
 
 export const DEFAULT_CONFIG = {
@@ -327,5 +327,3 @@ export function ToastProvider({
     </>
   )
 }
-
-export { statusStyles, toast }

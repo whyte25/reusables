@@ -19,7 +19,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
-import { toast } from "../reusables/ui/notify-provider"
+import { toast } from "../reusables/ui/notify"
 import {
   UniversalFileUpload,
   type FileState,

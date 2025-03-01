@@ -328,23 +328,28 @@ export const Index: Record<string, any> = {
     registryDependencies: ["utils"],
     files: [
       {
-        path: "registry/reusables/ui/notify.tsx",
+        path: "registry/reusables/ui/notify/notify.tsx",
         type: "registry:ui",
-        target: "components/ui/notify.tsx",
+        target: "components/ui/notify/notify.tsx",
       },
       {
-        path: "registry/reusables/ui/notify-provider.tsx",
+        path: "registry/reusables/ui/notify/notify-provider.tsx",
         type: "registry:ui",
-        target: "components/ui/notify-provider.tsx",
+        target: "components/ui/notify/notify-provider.tsx",
       },
       {
-        path: "registry/reusables/ui/notify-utils.ts",
+        path: "registry/reusables/ui/notify/notify-utils.ts",
         type: "registry:ui",
-        target: "components/ui/notify-utils.ts",
+        target: "components/ui/notify/notify-utils.ts",
+      },
+      {
+        path: "registry/reusables/ui/notify/index.ts",
+        type: "registry:ui",
+        target: "components/ui/notify/index.ts",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/reusables/ui/notify.tsx")
+      const mod = await import("@/registry/reusables/ui/notify/notify.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>

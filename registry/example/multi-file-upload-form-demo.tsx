@@ -19,7 +19,7 @@ import {
 import { Input } from "@/components/ui/input"
 
 import { FileState, MultiFileUpload } from "../reusables/multi-file-upload"
-import { toast } from "../reusables/ui/notify-provider"
+import { toast } from "../reusables/ui/notify"
 
 const formSchema = z.object({
   title: z.string().min(2).max(50),
