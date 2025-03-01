@@ -6,7 +6,7 @@ import { useFileUpload } from "@/hooks/use-file-upload"
 import { Button } from "@/components/ui/button"
 
 import { SingleImageDropzone } from "../reusables/single-image-upload"
-import { toast } from "../reusables/ui/notify-provider"
+import { toast } from "../reusables/ui/notify"
 
 export default function ManualImageUploadDemo() {
   const manualUpload = useFileUpload({

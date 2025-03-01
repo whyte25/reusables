@@ -17,7 +17,7 @@ import {
   Twitter,
 } from "lucide-react"
 
-import { toast } from "../reusables/ui/notify-provider"
+import { toast } from "../reusables/ui/notify"
 import SplitButtonAction from "../reusables/ui/split-button-action"
 
 export default function SplitButton2Demo() {

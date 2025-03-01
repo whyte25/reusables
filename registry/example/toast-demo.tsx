@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
-import { statusStyles, toast } from "../reusables/ui/notify-provider"
+import { statusStyles, toast } from "../reusables/ui/notify"
 
 export default function ToastDemo() {
   return (

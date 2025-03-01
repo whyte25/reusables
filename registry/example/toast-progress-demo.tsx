@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 
-import { toast } from "../reusables/ui/notify-provider"
+import { toast } from "../reusables/ui/notify"
 
 export default function ToastProgressDemo() {
   return (

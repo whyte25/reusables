@@ -20,7 +20,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
 import { SingleImageDropzone } from "../reusables/single-image-upload"
-import { toast } from "../reusables/ui/notify-provider"
+import { toast } from "../reusables/ui/notify"
 
 type FormValues = z.infer<typeof formSchema>
 
