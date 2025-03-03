@@ -116,6 +116,34 @@ Choose from multiple pre-built themes.
   name="animated-review-cards-theme-demo"
 />
 
+## V0 Known Issue
+
+<Callout>
+    V0 does not support cssVars or Tailwind properties. Please see [shadcn/ui](https://ui.shadcn.com/docs/registry/open-in-v0#known-issues) for more details.  
+   
+  To enable border-beam to function as expected, you need to add the following animation config to your `tailwind.config.js` file:
+
+```js
+module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+      },
+      keyframes: {
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
+          },
+        },
+      },
+    },
+  },
+}
+```
+
+</Callout>
+
 ## API Reference
 
 ### AnimatedReviewCards Props
