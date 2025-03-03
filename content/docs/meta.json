@@ -7,6 +7,7 @@
     "installation",
     "---Animations---",
     "animations/floating-elements",
+    "animations/animated-review-cards",
     "---Components---",
     "components/buttons",
     "components/theme-image",

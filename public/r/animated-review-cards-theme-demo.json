@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-review-cards-theme-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/animated-review-cards",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/example/animated-review-cards-theme-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\n\nimport { AnimatedReviewCards } from \"@/components/animated-review-cards\"\n\nexport const initialReviews = [\n  {\n    id: 1,\n    name: \"James Bryan\",\n    avatar:\n      \"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces\",\n    text: \"Dorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.\",\n    rating: 5,\n  },\n  {\n    id: 2,\n    name: \"Keith Johnson\",\n    avatar:\n      \"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces\",\n    text: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\",\n    rating: 3,\n  },\n  {\n    id: 3,\n    name: \"Mark Sloan\",\n    avatar:\n      \"https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150&h=150&fit=crop&crop=faces\",\n    text: \"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\",\n    rating: 4,\n  },\n]\n\ntype ThemeColor = \"default\" | \"primary\" | \"elegant\" | \"minimal\" | \"vibrant\"\n\nexport default function AnimatedReviewCardsThemeDemo() {\n  const [theme, setTheme] = useState<ThemeColor>(\"default\")\n\n  const themes: ThemeColor[] = [\n    \"default\",\n    \"primary\",\n    \"elegant\",\n    \"minimal\",\n    \"vibrant\",\n  ]\n\n  return (\n    <div className=\"not-prose flex w-full flex-col justify-center space-y-8\">\n      <div className=\"mx-10 mb-8 flex flex-wrap gap-4\">\n        {themes.map((t) => (\n          <Button\n            key={t}\n            variant={theme === t ? \"default\" : \"outline\"}\n            onClick={() => setTheme(t)}\n            className=\"capitalize\"\n          >\n            {t}\n          </Button>\n        ))}\n      </div>\n\n      <AnimatedReviewCards\n        reviews={initialReviews}\n        theme={theme}\n        autoRotate={false}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": "components/animated-review-cards-theme-demo.tsx"
+    }
+  ]
+}

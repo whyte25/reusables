@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-review-cards-drag-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/animated-review-cards"
+  ],
+  "files": [
+    {
+      "path": "registry/example/animated-review-cards-drag-demo.tsx",
+      "content": "\"use client\"\n\nimport { AnimatedReviewCards } from \"@/components/animated-review-cards\"\n\nexport const initialReviews = [\n  {\n    id: 1,\n    name: \"James Bryan\",\n    avatar:\n      \"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces\",\n    text: \"Dorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.\",\n    rating: 5,\n  },\n  {\n    id: 2,\n    name: \"Keith Johnson\",\n    avatar:\n      \"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces\",\n    text: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\",\n    rating: 3,\n  },\n  {\n    id: 3,\n    name: \"Mark Sloan\",\n    avatar:\n      \"https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150&h=150&fit=crop&crop=faces\",\n    text: \"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\",\n    rating: 4,\n  },\n]\n\nexport default function AnimatedReviewCardsDragDemo() {\n  return (\n    <div className=\"w-full space-y-8\">\n      <AnimatedReviewCards\n        reviews={initialReviews}\n        interactionType=\"drag\"\n        theme=\"default\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": "components/animated-review-cards-drag-demo.tsx"
+    }
+  ]
+}
