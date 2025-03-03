@@ -42,7 +42,11 @@
         "class-variance-authority",
         "lucide-react"
       ],
-      "registryDependencies": ["utils", "avatar", "border-beam"],
+      "registryDependencies": [
+        "utils",
+        "avatar",
+        "https://reusables.vercel.app/r/border-beam"
+      ],
       "files": [
         {
           "path": "registry/reusables/animated-review-cards.tsx",
