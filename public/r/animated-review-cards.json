@@ -3,7 +3,12 @@
   "name": "animated-review-cards",
   "type": "registry:component",
   "dependencies": ["framer-motion", "class-variance-authority", "lucide-react"],
-  "registryDependencies": ["utils", "avatar", "border-beam"],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "https://reusables.vercel.app/r/border-beam",
+    "https://reusables.vercel.app/r/use-screen-size"
+  ],
   "files": [
     {
       "path": "registry/reusables/animated-review-cards.tsx",

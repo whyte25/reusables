@@ -34,7 +34,12 @@ export const Index: Record<string, any> = {
     name: "animated-review-cards",
     description: "",
     type: "registry:component",
-    registryDependencies: ["utils", "avatar", "border-beam"],
+    registryDependencies: [
+      "utils",
+      "avatar",
+      "https://reusables.vercel.app/r/border-beam",
+      "https://reusables.vercel.app/r/use-screen-size",
+    ],
     files: [
       {
         path: "registry/reusables/animated-review-cards.tsx",

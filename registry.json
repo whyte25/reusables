@@ -45,7 +45,8 @@
       "registryDependencies": [
         "utils",
         "avatar",
-        "https://reusables.vercel.app/r/border-beam"
+        "https://reusables.vercel.app/r/border-beam",
+        "https://reusables.vercel.app/r/use-screen-size"
       ],
       "files": [
         {
