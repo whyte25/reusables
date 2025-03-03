@@ -5,13 +5,13 @@
   "items": [
     {
       "name": "border-beam",
-      "type": "registry:ui",
+      "type": "registry:component",
       "title": "Border Beam",
       "description": "An animated beam of light which travels along the border of its container.",
       "files": [
         {
           "path": "registry/reusables/border-beam.tsx",
-          "type": "registry:ui",
+          "type": "registry:component",
           "target": "components/border-beam.tsx"
         }
       ],
@@ -51,65 +51,7 @@
         }
       ]
     },
-    {
-      "name": "animated-review-cards-theme-demo",
-      "type": "registry:example",
-      "registryDependencies": [
-        "https://reusables.vercel.app/r/animated-review-cards",
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/example/animated-review-cards-theme-demo.tsx",
-          "type": "registry:example",
-          "target": "components/animated-review-cards-theme-demo.tsx"
-        }
-      ]
-    },
-    {
-      "name": "animated-review-cards-click-demo",
-      "type": "registry:example",
-      "registryDependencies": [
-        "https://reusables.vercel.app/r/animated-review-cards"
-      ],
-      "files": [
-        {
-          "path": "registry/example/animated-review-cards-click-demo.tsx",
-          "type": "registry:example",
-          "target": "components/animated-review-cards-click-demo.tsx"
-        }
-      ]
-    },
-    {
-      "name": "animated-review-cards-drag-demo",
-      "type": "registry:example",
-      "registryDependencies": [
-        "https://reusables.vercel.app/r/animated-review-cards"
-      ],
-      "files": [
-        {
-          "path": "registry/example/animated-review-cards-drag-demo.tsx",
-          "type": "registry:example",
-          "target": "components/animated-review-cards-drag-demo.tsx"
-        }
-      ]
-    },
-    {
-      "name": "animated-review-cards-auto-rotate-demo",
-      "type": "registry:example",
-      "registryDependencies": [
-        "https://reusables.vercel.app/r/animated-review-cards",
-        "button",
-        "select"
-      ],
-      "files": [
-        {
-          "path": "registry/example/animated-review-cards-auto-rotate-demo.tsx",
-          "type": "registry:example",
-          "target": "components/animated-review-cards-auto-rotate-demo.tsx"
-        }
-      ]
-    },
+
     {
       "name": "floating-elements",
       "type": "registry:component",
@@ -428,6 +370,65 @@
           "path": "registry/reusables/ui/split-button-action.tsx",
           "type": "registry:ui",
           "target": "components/ui/split-button-action.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-review-cards-theme-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/animated-review-cards",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-review-cards-theme-demo.tsx",
+          "type": "registry:example",
+          "target": "components/animated-review-cards-theme-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-review-cards-click-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/animated-review-cards"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-review-cards-click-demo.tsx",
+          "type": "registry:example",
+          "target": "components/animated-review-cards-click-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-review-cards-drag-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/animated-review-cards"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-review-cards-drag-demo.tsx",
+          "type": "registry:example",
+          "target": "components/animated-review-cards-drag-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-review-cards-auto-rotate-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/animated-review-cards",
+        "button",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-review-cards-auto-rotate-demo.tsx",
+          "type": "registry:example",
+          "target": "components/animated-review-cards-auto-rotate-demo.tsx"
         }
       ]
     },
