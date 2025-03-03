@@ -24,8 +24,8 @@ export const FullscreenViewer = ({ url }: FullscreenViewerProps) => {
   const [numPages, setNumPages] = useState<number | null>(null)
   const [pageNumber, setPageNumber] = useState(1)
   const [scale, setScale] = useState(1)
-  const [containerRef, setContainerRef] = useState<HTMLElement | null>(null)
-  const [containerWidth, setContainerWidth] = useState<number>()
+  const [, setContainerRef] = useState<HTMLElement | null>(null)
+  const [containerWidth] = useState<number>()
   const [pageHeight, setPageHeight] = useState<number>(0)
 
   useEffect(() => {
@@ -130,7 +130,7 @@ export const FullscreenViewer = ({ url }: FullscreenViewerProps) => {
               <LoadingSpinner
                 minHeight={pageHeight ? `${pageHeight}px` : "600px"}
                 minWidth={pageWidth ? `${pageWidth}px` : "800px"}
-                spinnerClassName="dark:text-black"
+                spinnerClassName="text-white dark:text-white"
               />
             }
             className={cn(
