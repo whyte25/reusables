@@ -154,7 +154,7 @@ export const SidebarViewer = ({ url }: SidebarViewerProps) => {
               <LoadingSpinner
                 minHeight={pageHeight ? `${pageHeight}px` : "600px"}
                 minWidth={pageWidth ? `${pageWidth}px` : "800px"}
-                spinnerClassName="dark:text-black"
+                spinnerClassName="text-white dark:text-white"
               />
             }
             className={cn(
