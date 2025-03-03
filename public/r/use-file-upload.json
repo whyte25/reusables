@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-file-upload",
+  "type": "registry:hook",
+  "dependencies": ["axios"],
+  "files": [
+    {
+      "path": "registry/hooks/use-file-upload.tsx",
+      "content": "\"use client\"\n\nimport { useRef, useState } from \"react\"\nimport axios from \"axios\"\n\ninterface UseFileUploadParams {\n  onSuccess?: (url: string) => void\n  onError?: (error: string) => void\n}\n\nconst useFileUpload = ({ onSuccess, onError }: UseFileUploadParams = {}) => {\n  const [selectedFile, setSelectedFile] = useState<File | null>(null)\n  const [isUploading, setIsUploading] = useState(false)\n  const [progress, setProgress] = useState(0)\n  const [error, setError] = useState<string | null>(null)\n  const abortControllerRef = useRef<AbortController | null>(null)\n  const [data, setData] = useState(null)\n\n  const handleFileUpload = async (file: File | null) => {\n    if (!file) {\n      throw new Error(\"No file selected\")\n    }\n\n    setSelectedFile(file)\n    setIsUploading(true)\n    setError(null)\n\n    abortControllerRef.current = new AbortController()\n\n    try {\n      const formData = new FormData()\n      formData.append(\"file\", file)\n\n      // TODO: Replace with your own API endpoint\n      const response = await axios.post(\n        `https://your-api-endpoint.com`,\n        formData,\n        {\n          signal: abortControllerRef.current.signal,\n          onUploadProgress: (progressEvent) => {\n            const percentCompleted = Math.round(\n              (progressEvent.loaded * 100) / progressEvent.total!\n            )\n            setProgress(percentCompleted)\n          },\n        }\n      )\n      // TODO: Replace with your own API response\n      const uploadedUrl = response?.data?.secure_url\n\n      setData(uploadedUrl)\n      onSuccess?.(uploadedUrl)\n      setIsUploading(false)\n      setProgress(0)\n      abortControllerRef.current = null\n    } catch (error: any) {\n      if (axios.isCancel(error)) {\n        const cancelMessage = \"Upload cancelled\"\n        console.log(cancelMessage)\n      } else {\n        const errorMessage = error.response?.data?.message || \"Upload failed\"\n        setError(errorMessage)\n        onError?.(errorMessage)\n      }\n      setIsUploading(false)\n      setSelectedFile(null)\n      setProgress(0)\n      setData(null)\n      abortControllerRef.current = null\n    }\n  }\n\n  const cancelUpload = () => {\n    if (abortControllerRef.current) {\n      abortControllerRef.current.abort()\n    }\n    setSelectedFile(null)\n    setIsUploading(false)\n    setProgress(0)\n    setError(null)\n    setData(null)\n  }\n\n  return {\n    selectedFile,\n    isUploading,\n    progress,\n    error,\n    handleFileUpload,\n    cancelUpload,\n    data,\n  }\n}\n\nexport default useFileUpload\n",
+      "type": "registry:hook",
+      "target": "hooks/use-file-upload.tsx"
+    }
+  ]
+}

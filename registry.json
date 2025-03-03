@@ -86,8 +86,9 @@
           "target": "components/single-image-upload.tsx"
         },
         {
-          "path": "hooks/use-file-upload.tsx",
-          "type": "registry:hook"
+          "path": "registry/hooks/use-file-upload.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-file-upload.tsx"
         }
       ]
     },
@@ -108,8 +109,9 @@
           "target": "components/multiple-image-upload.tsx"
         },
         {
-          "path": "hooks/use-multiple-file-upload.tsx",
-          "type": "registry:hook"
+          "path": "registry/hooks/use-multiple-file-upload.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-multiple-file-upload.tsx"
         }
       ]
     },
@@ -130,8 +132,9 @@
           "target": "components/multi-file-upload.tsx"
         },
         {
-          "path": "hooks/use-multiple-file-upload.tsx",
-          "type": "registry:hook"
+          "path": "registry/hooks/use-multiple-file-upload.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-multiple-file-upload.tsx"
         }
       ]
     },
@@ -152,8 +155,9 @@
           "target": "components/universal-file-upload.tsx"
         },
         {
-          "path": "hooks/use-multiple-file-upload.tsx",
-          "type": "registry:hook"
+          "path": "registry/hooks/use-multiple-file-upload.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-multiple-file-upload.tsx"
         }
       ]
     },
@@ -375,6 +379,65 @@
           "path": "registry/reusables/ui/split-button-action.tsx",
           "type": "registry:ui",
           "target": "components/ui/split-button-action.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-online-status",
+      "type": "registry:hook",
+      "dependencies": ["lodash"],
+      "files": [
+        {
+          "path": "registry/hooks/use-online-status.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-online-status.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-screen-size",
+      "type": "registry:hook",
+      "files": [
+        {
+          "path": "registry/hooks/use-screen-size.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-screen-size.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-inview",
+      "type": "registry:hook",
+      "dependencies": ["react-intersection-observer"],
+      "files": [
+        {
+          "path": "registry/hooks/use-inview.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-inview.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-file-upload",
+      "type": "registry:hook",
+      "dependencies": ["axios"],
+      "files": [
+        {
+          "path": "registry/hooks/use-file-upload.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-file-upload.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-multiple-file-upload",
+      "type": "registry:hook",
+      "dependencies": ["axios"],
+      "files": [
+        {
+          "path": "registry/hooks/use-multiple-file-upload.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-multiple-file-upload.tsx"
         }
       ]
     },

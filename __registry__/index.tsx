@@ -93,9 +93,9 @@ export const Index: Record<string, any> = {
         target: "components/single-image-upload.tsx",
       },
       {
-        path: "hooks/use-file-upload.tsx",
+        path: "registry/hooks/use-file-upload.tsx",
         type: "registry:hook",
-        target: "",
+        target: "hooks/use-file-upload.tsx",
       },
     ],
     component: React.lazy(async () => {
@@ -121,9 +121,9 @@ export const Index: Record<string, any> = {
         target: "components/multiple-image-upload.tsx",
       },
       {
-        path: "hooks/use-multiple-file-upload.tsx",
+        path: "registry/hooks/use-multiple-file-upload.tsx",
         type: "registry:hook",
-        target: "",
+        target: "hooks/use-multiple-file-upload.tsx",
       },
     ],
     component: React.lazy(async () => {
@@ -149,9 +149,9 @@ export const Index: Record<string, any> = {
         target: "components/multi-file-upload.tsx",
       },
       {
-        path: "hooks/use-multiple-file-upload.tsx",
+        path: "registry/hooks/use-multiple-file-upload.tsx",
         type: "registry:hook",
-        target: "",
+        target: "hooks/use-multiple-file-upload.tsx",
       },
     ],
     component: React.lazy(async () => {
@@ -177,9 +177,9 @@ export const Index: Record<string, any> = {
         target: "components/universal-file-upload.tsx",
       },
       {
-        path: "hooks/use-multiple-file-upload.tsx",
+        path: "registry/hooks/use-multiple-file-upload.tsx",
         type: "registry:hook",
-        target: "",
+        target: "hooks/use-multiple-file-upload.tsx",
       },
     ],
     component: React.lazy(async () => {
@@ -547,6 +547,121 @@ export const Index: Record<string, any> = {
       const mod = await import(
         "@/registry/reusables/ui/split-button-action.tsx"
       )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "use-online-status": {
+    name: "use-online-status",
+    description: "",
+    type: "registry:hook",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/hooks/use-online-status.tsx",
+        type: "registry:hook",
+        target: "hooks/use-online-status.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/hooks/use-online-status.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "use-screen-size": {
+    name: "use-screen-size",
+    description: "",
+    type: "registry:hook",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/hooks/use-screen-size.tsx",
+        type: "registry:hook",
+        target: "hooks/use-screen-size.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/hooks/use-screen-size.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "use-inview": {
+    name: "use-inview",
+    description: "",
+    type: "registry:hook",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/hooks/use-inview.tsx",
+        type: "registry:hook",
+        target: "hooks/use-inview.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/hooks/use-inview.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "use-file-upload": {
+    name: "use-file-upload",
+    description: "",
+    type: "registry:hook",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/hooks/use-file-upload.tsx",
+        type: "registry:hook",
+        target: "hooks/use-file-upload.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/hooks/use-file-upload.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "use-multiple-file-upload": {
+    name: "use-multiple-file-upload",
+    description: "",
+    type: "registry:hook",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/hooks/use-multiple-file-upload.tsx",
+        type: "registry:hook",
+        target: "hooks/use-multiple-file-upload.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/hooks/use-multiple-file-upload.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>

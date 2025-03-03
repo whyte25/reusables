@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-inview",
+  "type": "registry:hook",
+  "dependencies": ["react-intersection-observer"],
+  "files": [
+    {
+      "path": "registry/hooks/use-inview.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useState } from \"react\"\nimport { useInView as InviewObserver } from \"react-intersection-observer\"\n\ninterface UseInViewStateOptions {\n  triggerOnce?: boolean\n  threshold?: number\n}\n\nconst useInView = ({\n  triggerOnce = true,\n  threshold = 0.1,\n}: UseInViewStateOptions = {}) => {\n  const [isInView, setIsInView] = useState(false)\n  const { ref, inView } = InviewObserver({\n    triggerOnce,\n    threshold,\n  })\n\n  useEffect(() => {\n    if (inView) {\n      setIsInView(true)\n    }\n  }, [inView])\n\n  return { ref, isInView }\n}\n\nexport default useInView\n",
+      "type": "registry:hook",
+      "target": "hooks/use-inview.tsx"
+    }
+  ]
+}
