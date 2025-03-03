@@ -1,0 +1,259 @@
+---
+title: Animated Review Cards
+description: A customizable, interactive review card  with drag/click interactions, auto-rotation, and multiple themes.
+---
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+
+  <Tab value="CLI">
+    ```package-install
+npx shadcn@latest add "https://reusables.vercel.app/r/animated-review-cards"
+````
+</Tab> 
+<Tab value="Manual">
+Create the component in your project:
+<Steps>
+
+<Step>
+Copy and paste this code into your `animated-review-cards.tsx` file:
+
+<CodeBlockWrapper>
+```json doc-gen:file
+{
+  "file": "registry/reusables/animated-review-cards.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"animated-review-cards.tsx\""
+  }
+}
+```
+</CodeBlockWrapper>
+
+</Step>
+
+<Step>
+Create and copy the following code  into `utils` file in your `lib` folder:
+
+<CodeBlockWrapper>
+
+```json doc-gen:file
+{
+  "file": "registry/lib/utils.ts",
+  "codeblock": {
+    "lang": "ts",
+    "meta": "title=\"utils.ts\""
+  }
+}
+```
+
+</CodeBlockWrapper>
+
+</Step>
+
+</Steps>
+</Tab> 
+</Tabs>
+
+## Usage
+
+```tsx
+import { AnimatedReviewCards } from "@/components/ui/animated-review-cards"
+
+const reviews = [
+  {
+    id: 1,
+    name: "John Doe",
+    avatar: "https://example.com/avatar.jpg",
+    text: "Great product! Highly recommended.",
+    rating: 5,
+  },
+]
+
+export default function ReviewSection() {
+  return <AnimatedReviewCards reviews={reviews} />
+}
+```
+
+## Examples
+
+### Basic Usage
+
+<ComponentSource
+  reTrigger={false}
+  className="md:px-0"
+  name="animated-review-cards-drag-demo"
+/>
+
+### Click Interaction
+
+Use click instead of drag to navigate through reviews.
+
+<ComponentSource
+  reTrigger={false}
+  className="md:px-0"
+  name="animated-review-cards-click-demo"
+/>
+
+### Auto Rotation
+
+Enable automatic rotation through reviews with customizable interval.
+
+<ComponentSource
+  reTrigger={false}
+  className="md:px-0"
+  name="animated-review-cards-auto-rotate-demo"
+/>
+
+### Themes
+
+Choose from multiple pre-built themes.
+
+<ComponentSource
+  reTrigger={false}
+  className="md:px-0"
+  name="animated-review-cards-theme-demo"
+/>
+
+## API Reference
+
+### AnimatedReviewCards Props
+
+<TypeTable
+  type={{
+    reviews: {
+      type: "Review[]",
+      description: "Array of review objects to display",
+    },
+    interactionType: {
+      type: '"drag" | "click"',
+      default: '"drag"',
+      description: "Type of interaction for navigating reviews",
+    },
+    animationDuration: {
+      type: "number",
+      default: "0.3",
+      description: "Duration of transition animations in seconds",
+    },
+    scaleStep: {
+      type: "number",
+      default: "0.05",
+      description: "Scale increment for stacked cards",
+    },
+    verticalSpacing: {
+      type: "number",
+      default: "10",
+      description: "Vertical spacing between stacked cards",
+    },
+    horizontalSpacing: {
+      type: "number",
+      default: "20",
+      description: "Horizontal spacing between stacked cards",
+    },
+    autoRotate: {
+      type: "boolean",
+      default: "true",
+      description: "Enable automatic rotation through reviews",
+    },
+    rotateInterval: {
+      type: "number",
+      default: "6000",
+      description: "Interval between automatic rotations in milliseconds",
+    },
+    theme: {
+      type: '"default" | "primary" | "elegant" | "vibrant" | "minimal"',
+      default: '"default"',
+      description: "Visual theme for the review cards",
+    },
+    showBorderBeam: {
+      type: "boolean",
+      default: "true",
+      description:
+        "Controls visibility of the border beam animation on the top card",
+    },
+  }}
+/>
+
+### Review Object
+
+<TypeTable
+  type={{
+    id: {
+      type: "number | string",
+      required: true,
+      description: "Unique identifier for the review",
+    },
+    name: {
+      type: "string",
+      required: true,
+      description: "Name of the reviewer",
+    },
+    avatar: {
+      type: "string",
+      required: true,
+      description: "URL of the reviewer's avatar image",
+    },
+    text: {
+      type: "string",
+      required: true,
+      description: "The review content",
+    },
+    rating: {
+      type: "number",
+      required: true,
+      description: "Rating value (1-5)",
+    },
+  }}
+/>
+
+### ClassNames
+
+<TypeTable
+  type={{
+    container: {
+      type: "string",
+      description: "Class name for the container element",
+    },
+    card: {
+      type: "string",
+      description: "Class name for each card element",
+    },
+    cardContent: {
+      type: "string",
+      description: "Class name for the card content wrapper",
+    },
+    header: {
+      type: "string",
+      description: "Class name for the review header section",
+    },
+    avatar: {
+      type: "string",
+      description: "Class name for the avatar component",
+    },
+    name: {
+      type: "string",
+      description: "Class name for the reviewer's name",
+    },
+    text: {
+      type: "string",
+      description: "Class name for the review text",
+    },
+    rating: {
+      type: "string",
+      description: "Class name for the rating container",
+    },
+    star: {
+      type: "string",
+      description: "Class name for individual star icons",
+    },
+    activeStarColor: {
+      type: "string",
+      description: "Class name for active star color",
+    },
+    inactiveStarColor: {
+      type: "string",
+      description: "Class name for inactive star color",
+    },
+  }}
+/>

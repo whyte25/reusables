@@ -6,6 +6,164 @@
 import * as React from "react"
 
 export const Index: Record<string, any> = {
+  "border-beam": {
+    name: "border-beam",
+    description:
+      "An animated beam of light which travels along the border of its container.",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/reusables/border-beam.tsx",
+        type: "registry:ui",
+        target: "components/border-beam.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/reusables/border-beam.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "animated-review-cards": {
+    name: "animated-review-cards",
+    description: "",
+    type: "registry:component",
+    registryDependencies: ["utils", "avatar", "border-beam"],
+    files: [
+      {
+        path: "registry/reusables/animated-review-cards.tsx",
+        type: "registry:component",
+        target: "components/animated-review-cards.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/reusables/animated-review-cards.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "animated-review-cards-theme-demo": {
+    name: "animated-review-cards-theme-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: [
+      "https://reusables.vercel.app/r/animated-review-cards",
+      "button",
+    ],
+    files: [
+      {
+        path: "registry/example/animated-review-cards-theme-demo.tsx",
+        type: "registry:example",
+        target: "components/animated-review-cards-theme-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/example/animated-review-cards-theme-demo.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "animated-review-cards-click-demo": {
+    name: "animated-review-cards-click-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: [
+      "https://reusables.vercel.app/r/animated-review-cards",
+    ],
+    files: [
+      {
+        path: "registry/example/animated-review-cards-click-demo.tsx",
+        type: "registry:example",
+        target: "components/animated-review-cards-click-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/example/animated-review-cards-click-demo.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "animated-review-cards-drag-demo": {
+    name: "animated-review-cards-drag-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: [
+      "https://reusables.vercel.app/r/animated-review-cards",
+    ],
+    files: [
+      {
+        path: "registry/example/animated-review-cards-drag-demo.tsx",
+        type: "registry:example",
+        target: "components/animated-review-cards-drag-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/example/animated-review-cards-drag-demo.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "animated-review-cards-auto-rotate-demo": {
+    name: "animated-review-cards-auto-rotate-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: [
+      "https://reusables.vercel.app/r/animated-review-cards",
+      "button",
+      "select",
+    ],
+    files: [
+      {
+        path: "registry/example/animated-review-cards-auto-rotate-demo.tsx",
+        type: "registry:example",
+        target: "components/animated-review-cards-auto-rotate-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/example/animated-review-cards-auto-rotate-demo.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "floating-elements": {
     name: "floating-elements",
     description: "",
