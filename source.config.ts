@@ -4,7 +4,6 @@ import {
   remarkDocGen,
   remarkInstall,
   remarkTypeScriptToJavaScript,
-  typescriptGenerator,
 } from "fumadocs-docgen"
 import {
   defineCollections,
@@ -47,7 +46,7 @@ export default defineConfig({
       [
         remarkDocGen,
         {
-          generators: [fileGenerator(), typescriptGenerator()],
+          generators: [fileGenerator()],
         },
       ],
       [remarkTypeScriptToJavaScript],

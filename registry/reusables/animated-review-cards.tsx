@@ -54,9 +54,12 @@ const cardVariants = cva(
       theme: {
         default: "border border-border bg-background",
         primary: "bg-primary-50 border border-primary/20",
-        elegant: "border border-zinc-800 bg-zinc-950 text-zinc-100",
-        vibrant: "bg-gradient-to-br from-pink-500 to-orange-400 text-white",
-        minimal: "border bg-white dark:bg-black",
+        elegant:
+          "border border-zinc-200 bg-zinc-50 text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100",
+        vibrant:
+          "border border-fuchsia-400 bg-gradient-to-br from-fuchsia-500 to-pink-500 text-white dark:border-fuchsia-700 dark:from-fuchsia-600 dark:to-pink-600",
+        minimal:
+          "border border-gray-100 bg-gray-50 text-gray-900 dark:border-gray-900 dark:bg-gray-950 dark:text-gray-100",
       },
       cursor: {
         drag: "cursor-grab active:cursor-grabbing",
@@ -72,9 +75,9 @@ const nameVariants = cva("text-lg font-semibold", {
       default: "text-foreground",
       primary: "text-primary",
       secondary: "text-secondary",
-      elegant: "text-zinc-100",
+      elegant: "text-zinc-900 dark:text-zinc-100",
       vibrant: "text-white",
-      minimal: "text-foreground",
+      minimal: "text-gray-900 dark:text-gray-100",
     },
   },
 })
@@ -84,9 +87,9 @@ const textVariants = cva("select-none text-start text-sm", {
     theme: {
       default: "text-foreground",
       primary: "text-primary/80",
-      elegant: "text-zinc-400",
+      elegant: "text-zinc-600 dark:text-zinc-300",
       vibrant: "text-white/90",
-      minimal: "text-muted-foreground",
+      minimal: "text-gray-600 dark:text-gray-400",
     },
   },
 })
@@ -101,16 +104,16 @@ const starColorVariants = {
     inactive: "text-primary/20",
   },
   elegant: {
-    active: "text-zinc-200 ",
-    inactive: "text-zinc-700",
+    active: "text-zinc-700 dark:text-zinc-300 fill-current",
+    inactive: "text-zinc-300 dark:text-zinc-600",
   },
   vibrant: {
-    active: "text-white",
-    inactive: "text-white/30",
+    active: "text-white fill-current",
+    inactive: "text-white/40",
   },
   minimal: {
-    active: "text-yellow-400",
-    inactive: "text-muted stroke-muted-foreground/20",
+    active: "text-gray-900 dark:text-gray-100 fill-current",
+    inactive: "text-gray-200 dark:text-gray-700",
   },
 }
 
