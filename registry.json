@@ -70,6 +70,22 @@
       ]
     },
     {
+      "name": "animated-card-carousel",
+      "type": "registry:component",
+      "dependencies": ["framer-motion", "lucide-react"],
+      "registryDependencies": [
+        "utils",
+        "https://reusables.vercel.app/r/use-screen-size"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/animated-card-carousel.tsx",
+          "type": "registry:component",
+          "target": "components/animated-card-carousel.tsx"
+        }
+      ]
+    },
+    {
       "name": "single-image-upload",
       "type": "registry:component",
       "dependencies": [
@@ -497,6 +513,22 @@
           "path": "registry/example/animated-review-cards-auto-rotate-demo.tsx",
           "type": "registry:example",
           "target": "components/animated-review-cards-auto-rotate-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-card-carousel-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/animated-card-carousel",
+        "select",
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-card-carousel-demo.tsx",
+          "type": "registry:example",
+          "target": "components/animated-card-carousel-demo.tsx"
         }
       ]
     },
@@ -1136,6 +1168,20 @@
           "path": "registry/lib/platform-detector.ts",
           "type": "registry:lib",
           "target": "lib/platform-detector.ts"
+        }
+      ]
+    },
+    {
+      "name": "animated-card-carousel-simple-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/animated-card-carousel"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-card-carousel-simple-demo.tsx",
+          "type": "registry:example",
+          "target": "components/animated-card-carousel-simple-demo.tsx"
         }
       ]
     }

@@ -115,6 +115,9 @@ a[href="/docs/animations/floating-elements"] {
 a[href="/docs/animations/animated-review-card"] {
   @apply badge new;
 }
+a[href="/docs/animations/animated-card-carousel"] {
+  @apply badge new;
+}
 
 a[href="/docs/hooks/use-multiple-file-upload"] {
   @apply badge new;
