@@ -70,7 +70,7 @@ export default function AnimatedCardDemo() {
       description:
         "Create stunning professional portfolios with our intuitive drag-and-drop interface.",
       imgSrc: "/images/portfolio.webp",
-      bgColor: "#3b82f6",
+      color: "#3b82f6",
       href: "#",
     },
     {
@@ -78,7 +78,7 @@ export default function AnimatedCardDemo() {
       description:
         "Monitor your fitness journey with comprehensive health analytics.",
       imgSrc: "/images/health.webp",
-      bgColor: "#10b981",
+      color: "#10b981",
       href: "#",
     },
     // Add more cards as needed
@@ -92,7 +92,7 @@ export default function AnimatedCardDemo() {
           title={card.title}
           description={card.description}
           imgSrc={card.imgSrc}
-          bgColor={card.bgColor}
+          color={card.color}
           href={card.href}
           isActive={index === activeIndex}
           onMouseEnter={() => setActiveIndex(index)}
@@ -170,7 +170,7 @@ export default function RotatingAnimatedCardDemo() {
           title={card.title}
           description={card.description}
           imgSrc={card.imgSrc}
-          bgColor={card.bgColor}
+          color={card.color}
           href={card.href}
           isActive={index === activeIndex}
           onMouseEnter={() => handleMouseEnter(index)}
@@ -191,7 +191,7 @@ Custom Styling
   title="Project Title"
   description="Project description goes here"
   imgSrc="/path/to/image.png"
-  bgColor="#2e428a"
+  color="#2e428a"
   href="#"
   isActive={true}
   onMouseEnter={() => {}}
@@ -225,7 +225,7 @@ API Reference
       required: true,
       description: "The image source for the card",
     },
-    bgColor: {
+    color: {
       type: "string",
       required: true,
       description: "The background color of the card when active",

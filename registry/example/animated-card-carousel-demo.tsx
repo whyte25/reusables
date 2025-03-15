@@ -24,7 +24,7 @@ export default function RotateAnimatedDemo() {
         "Create stunning professional portfolios with our intuitive drag-and-drop interface. Showcase your work with beautiful layouts and responsive designs.",
       imgSrc:
         "https://res.cloudinary.com/duli9q35f/image/upload/v1742067091/reading-dark_kfnwvb.webp",
-      bgColor: "#3b82f6",
+      color: "#3b82f6",
       href: "#",
     },
     {
@@ -33,7 +33,7 @@ export default function RotateAnimatedDemo() {
         "Monitor your fitness journey with comprehensive health analytics. Track workouts, nutrition, and wellness metrics all in one secure application.",
       imgSrc:
         "https://res.cloudinary.com/duli9q35f/image/upload/v1742067091/reading-dark_kfnwvb.webp",
-      bgColor: "#10b981",
+      color: "#10b981",
       href: "#",
     },
     {
@@ -42,7 +42,7 @@ export default function RotateAnimatedDemo() {
         "Access world-class educational content with our interactive learning platform. Master new skills with personalized courses and expert-led tutorials.",
       imgSrc:
         "https://res.cloudinary.com/duli9q35f/image/upload/v1742067091/reading-dark_kfnwvb.webp",
-      bgColor: "#8b5cf6",
+      color: "#8b5cf6",
       href: "#",
     },
     {
@@ -51,7 +51,7 @@ export default function RotateAnimatedDemo() {
         "Launch your online store with our comprehensive e-commerce platform. Manage inventory, process payments, and grow your business with powerful analytics.",
       imgSrc:
         "https://res.cloudinary.com/duli9q35f/image/upload/v1742067091/reading-dark_kfnwvb.webp",
-      bgColor: "#f43f5e",
+      color: "#f43f5e",
       href: "#",
     },
   ]
@@ -186,7 +186,7 @@ export default function RotateAnimatedDemo() {
             title={card.title}
             description={card.description}
             imgSrc={card.imgSrc}
-            bgColor={card.bgColor}
+            color={card.color}
             href={card.href}
             isActive={index === activeIndex}
             onMouseEnter={() => handleMouseEnter(index)}

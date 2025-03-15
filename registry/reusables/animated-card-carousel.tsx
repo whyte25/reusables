@@ -27,8 +27,9 @@ interface AnimatedCardProps {
   title: string
   description: string
   imgSrc: string
-  bgColor: string
+  color: string
   href: string
+  linkText?: string
   isActive: boolean
   onMouseEnter: () => void
   onMouseLeave: () => void
@@ -46,9 +47,10 @@ const AnimatedCard: FC<AnimatedCardProps> = ({
   title,
   description,
   imgSrc,
-  bgColor,
+  color,
   isActive,
   href,
+  linkText,
   onMouseEnter,
   onMouseLeave,
   className,
@@ -98,9 +100,9 @@ const AnimatedCard: FC<AnimatedCardProps> = ({
           isActive ? "text-white" : "bg-white"
         )}
         style={{
-          backgroundColor: isActive ? bgColor : "white",
+          backgroundColor: isActive ? color : "white",
           borderWidth: "2px",
-          borderColor: isActive ? "transparent" : bgColor,
+          borderColor: isActive ? "transparent" : color,
           borderStyle: "solid",
         }}
         tabIndex={0}
@@ -108,7 +110,7 @@ const AnimatedCard: FC<AnimatedCardProps> = ({
         <div className={cn("space-y-3", isMobile ? "w-full" : "w-1/2")}>
           <h3
             style={{
-              color: isActive ? "white" : bgColor,
+              color: isActive ? "white" : color,
             }}
             className={cn(
               "not-prose text-start text-xl font-semibold md:text-start",
@@ -168,7 +170,7 @@ const AnimatedCard: FC<AnimatedCardProps> = ({
           href={href}
           scroll={false}
           style={{
-            color: isActive ? "white" : bgColor,
+            color: isActive ? "white" : color,
           }}
           className={cn(
             "2xsm:left-5 absolute bottom-5 left-3 flex items-center gap-3 text-[13px] font-medium sm:text-base",
@@ -177,7 +179,7 @@ const AnimatedCard: FC<AnimatedCardProps> = ({
           )}
           aria-label={`View ${title} project`}
         >
-          View Project
+          {linkText || "View Project"}
           <ArrowRight
             size={18}
             className="hidden sm:block"
