@@ -1,0 +1,331 @@
+---
+title: Animated Card Carousel
+description: A component that creates an animated card carousel with customizable transitions, perfect for showcasing projects, testimonials, or featured content.
+---
+
+**Installation**
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+    ```package-install
+    npx shadcn@latest add "https://reusables.vercel.app/r/animated-card-carousel"
+    ```
+  </Tab>
+  <Tab value="Manual">
+    <Steps>
+      <Step>
+        Copy and paste this code into your `animated-card-carousel.tsx` file:
+
+        <CodeBlockWrapper>
+        ```json doc-gen:file
+        {
+          "file": "registry/reusables/animated-card-carousel.tsx",
+          "codeblock": {
+            "lang": "tsx",
+            "meta": "title=\"animated-card-carousel.tsx\""
+          }
+        }
+        ```
+        </CodeBlockWrapper>
+      </Step>
+
+      <Step>
+        Create and copy the following code into your `lib` folder:
+
+        <CodeBlockWrapper>
+        ```json doc-gen:file
+        {
+          "file": "registry/lib/utils.ts",
+          "codeblock": {
+            "lang": "ts",
+            "meta": "title=\"utils.ts\""
+          }
+        }
+        ```
+        </CodeBlockWrapper>
+      </Step>
+    </Steps>
+
+  </Tab>
+</Tabs>
+
+**Usage**
+
+Basic Usage
+
+Here's a simple example of using the Animated Card Carousel component:
+
+```tsx
+import { useState } from "react"
+
+import AnimatedCard from "@/components/ui/animated-card-carousel"
+
+export default function AnimatedCardDemo() {
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  // Example cards data
+  const cards = [
+    {
+      title: "Portfolio Builder",
+      description:
+        "Create stunning professional portfolios with our intuitive drag-and-drop interface.",
+      imgSrc: "/images/portfolio.webp",
+      bgColor: "#3b82f6",
+      href: "#",
+    },
+    {
+      title: "Health Tracker",
+      description:
+        "Monitor your fitness journey with comprehensive health analytics.",
+      imgSrc: "/images/health.webp",
+      bgColor: "#10b981",
+      href: "#",
+    },
+    // Add more cards as needed
+  ]
+
+  return (
+    <div className="grid gap-3 md:grid-cols-2">
+      {cards.map((card, index) => (
+        <AnimatedCard
+          key={index}
+          title={card.title}
+          description={card.description}
+          imgSrc={card.imgSrc}
+          bgColor={card.bgColor}
+          href={card.href}
+          isActive={index === activeIndex}
+          onMouseEnter={() => setActiveIndex(index)}
+          onMouseLeave={() => {}}
+          animationDuration={0.5}
+          animationEase="easeInOut"
+        />
+      ))}
+    </div>
+  )
+}
+```
+
+**Example**
+
+<ComponentSource
+  className="md:px-0"
+  showV0Button={true}
+  name="animated-card-carousel-simple-demo"
+/>
+
+**Customize Animation**
+
+<ComponentSource
+  className="md:px-0"
+  showV0Button={true}
+  name="animated-card-carousel-demo"
+/>
+
+**Auto-Rotation Functionality**
+
+Add auto-rotation to your cards with this implementation:
+
+```tsx
+import { useEffect, useState } from "react"
+
+import AnimatedCard from "@/components/ui/animated-card-carousel"
+
+export default function RotatingAnimatedCardDemo() {
+  const cards = [
+    // Your card data here
+  ]
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [isHovering, setIsHovering] = useState(false)
+  const [rotationSpeed, setRotationSpeed] = useState(3000)
+  const [animationDuration, setAnimationDuration] = useState(0.5)
+  const [animationEase, setAnimationEase] = useState("easeInOut")
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout
+
+    if (!isHovering) {
+      interval = setInterval(() => {
+        setActiveIndex((prevIndex) => (prevIndex + 1) % cards.length)
+      }, rotationSpeed)
+    }
+
+    return () => clearInterval(interval)
+  }, [isHovering, cards.length, rotationSpeed])
+
+  const handleMouseEnter = (index: number) => {
+    setIsHovering(true)
+    setActiveIndex(index)
+  }
+
+  const handleMouseLeave = () => {
+    setIsHovering(false)
+  }
+
+  return (
+    <div className="grid gap-3 md:grid-cols-2">
+      {cards.map((card, index) => (
+        <AnimatedCard
+          key={index}
+          title={card.title}
+          description={card.description}
+          imgSrc={card.imgSrc}
+          bgColor={card.bgColor}
+          href={card.href}
+          isActive={index === activeIndex}
+          onMouseEnter={() => handleMouseEnter(index)}
+          onMouseLeave={handleMouseLeave}
+          animationDuration={animationDuration}
+          animationEase={animationEase}
+        />
+      ))}
+    </div>
+  )
+}
+```
+
+Custom Styling
+
+```tsx
+<AnimatedCard
+  title="Project Title"
+  description="Project description goes here"
+  imgSrc="/path/to/image.png"
+  bgColor="#2e428a"
+  href="#"
+  isActive={true}
+  onMouseEnter={() => {}}
+  onMouseLeave={() => {}}
+  className="my-custom-class"
+  imageClassName="my-image-class"
+  titleClassName="text-2xl font-bold"
+  descriptionClassName="text-sm"
+  linkClassName="font-medium"
+  animationDuration={0.7}
+  animationEase="backOut"
+/>
+```
+
+API Reference
+
+<TypeTable
+  type={{
+    title: {
+      type: "string",
+      required: true,
+      description: "The title of the card",
+    },
+    description: {
+      type: "string",
+      required: true,
+      description: "The description text for the card",
+    },
+    imgSrc: {
+      type: "StaticImageData | string",
+      required: true,
+      description: "The image source for the card",
+    },
+    bgColor: {
+      type: "string",
+      required: true,
+      description: "The background color of the card when active",
+    },
+    href: {
+      type: "string",
+      required: true,
+      description: "The URL the card links to",
+    },
+    isActive: {
+      type: "boolean",
+      required: true,
+      description: "Whether the card is currently active/selected",
+    },
+    onMouseEnter: {
+      type: "() => void",
+      required: true,
+      description: "Function called when mouse enters the card",
+    },
+    onMouseLeave: {
+      type: "() => void",
+      required: true,
+      description: "Function called when mouse leaves the card",
+    },
+    className: {
+      type: "string",
+      description: "Additional classes for the card container",
+    },
+    imageClassName: {
+      type: "string",
+      description: "Classes applied to the image wrapper",
+    },
+    titleClassName: {
+      type: "string",
+      description: "Classes applied to the title element",
+    },
+    descriptionClassName: {
+      type: "string",
+      description: "Classes applied to the description element",
+    },
+    linkClassName: {
+      type: "string",
+      description: "Classes applied to the link element",
+    },
+    animationDuration: {
+      type: "number",
+      default: "0.5",
+      description: "Duration of the animation in seconds",
+    },
+    animationEase: {
+      type: "AnimationEase",
+      default: "easeInOut",
+      description: "Easing function for the animation",
+    },
+  }}
+/>
+
+AnimationEase
+
+<TypeTable
+  type={{
+    easeInOut: {
+      type: "string",
+      description: "Acceleration until halfway, then deceleration",
+    },
+    easeIn: {
+      type: "string",
+      description: "Slow start, then accelerates",
+    },
+    easeOut: {
+      type: "string",
+      description: "Fast start, then decelerates",
+    },
+    linear: {
+      type: "string",
+      description: "Constant speed throughout",
+    },
+    circIn: {
+      type: "string",
+      description: "Circular easing in",
+    },
+    circOut: {
+      type: "string",
+      description: "Circular easing out",
+    },
+    circInOut: {
+      type: "string",
+      description: "Circular easing in and out",
+    },
+    backIn: {
+      type: "string",
+      description: "Overshooting easing in",
+    },
+    backOut: {
+      type: "string",
+      description: "Overshooting easing out",
+    },
+    backInOut: {
+      type: "string",
+      description: "Overshooting easing in and out",
+    },
+  }}
+/>
