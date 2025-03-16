@@ -70,7 +70,7 @@ export default function SimpleAnimatedCardDemo() {
   }
 
   return (
-    <div className="space-y-8 md:px-5">
+    <div className="space-y-8 py-8 md:px-5 md:py-0">
       <div
         className="mx-auto grid max-w-5xl gap-3 md:grid-cols-1 lg:grid-cols-2"
         role="region"

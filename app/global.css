@@ -119,29 +119,6 @@ a[href="/docs/animations/animated-card-carousel"] {
   @apply badge new;
 }
 
-a[href="/docs/hooks/use-multiple-file-upload"] {
-  @apply badge new;
-}
-
-a[href="/docs/components/notify"] {
-  @apply badge new;
-}
-
-a[href="/docs/components/file-uploaders/single-image-upload"] {
-  @apply badge new;
-}
-a[href="/docs/components/file-uploaders/multiple-image-upload"] {
-  @apply badge new;
-}
-
-a[href="/docs/components/file-uploaders/universal-file-upload"] {
-  @apply badge new;
-}
-
-a[href="/docs/components/file-uploaders/multiple-file-upload"] {
-  @apply badge new;
-}
-
 .dot[aria-controls] {
   position: relative;
 }
@@ -192,18 +169,6 @@ a[href="/docs/components/file-uploaders/multiple-file-upload"] {
 .updated-dot[aria-controls]::before {
   background-color: hsl(var(--updated-badge) / 0.4);
 }
-
-/* button[aria-controls^="radix-"] {
-  position: relative;
-}
-
-button[aria-controls="radix-:r42:"] {
-  @apply dot new-dot;
-}
-
-button[aria-controls="radix-:r43:"] {
-  @apply dot new-dot;
-} */
 
 .fd-codeblock code {
   display: block !important;

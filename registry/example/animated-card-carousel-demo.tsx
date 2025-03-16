@@ -85,7 +85,7 @@ export default function RotateAnimatedDemo() {
   }
 
   return (
-    <div className="space-y-8 md:px-5">
+    <div className="space-y-8 py-8 md:px-5 md:py-0">
       {/* Controls for customization */}
       <div className="rounded-lg">
         <div className="grid gap-4 md:grid-cols-4">
