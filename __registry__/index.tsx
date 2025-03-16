@@ -81,6 +81,34 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "animated-card-carousel": {
+    name: "animated-card-carousel",
+    description: "",
+    type: "registry:component",
+    registryDependencies: [
+      "utils",
+      "https://reusables.vercel.app/r/use-screen-size",
+    ],
+    files: [
+      {
+        path: "registry/reusables/animated-card-carousel.tsx",
+        type: "registry:component",
+        target: "components/animated-card-carousel.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/reusables/animated-card-carousel.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "single-image-upload": {
     name: "single-image-upload",
     description: "",
@@ -772,6 +800,35 @@ export const Index: Record<string, any> = {
     component: React.lazy(async () => {
       const mod = await import(
         "@/registry/example/animated-review-cards-auto-rotate-demo.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "animated-card-carousel-demo": {
+    name: "animated-card-carousel-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: [
+      "https://reusables.vercel.app/r/animated-card-carousel",
+      "select",
+      "slider",
+    ],
+    files: [
+      {
+        path: "registry/example/animated-card-carousel-demo.tsx",
+        type: "registry:example",
+        target: "components/animated-card-carousel-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/example/animated-card-carousel-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1937,6 +1994,33 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/lib/platform-detector.ts")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "animated-card-carousel-simple-demo": {
+    name: "animated-card-carousel-simple-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: [
+      "https://reusables.vercel.app/r/animated-card-carousel",
+    ],
+    files: [
+      {
+        path: "registry/example/animated-card-carousel-simple-demo.tsx",
+        type: "registry:example",
+        target: "components/animated-card-carousel-simple-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/example/animated-card-carousel-simple-demo.tsx"
+      )
       const exportName =
         Object.keys(mod).find(
           (key) =>
