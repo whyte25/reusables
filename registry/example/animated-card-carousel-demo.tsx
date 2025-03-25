@@ -85,7 +85,7 @@ export default function RotateAnimatedDemo() {
   }
 
   return (
-    <div className="space-y-8 py-8 md:px-5 md:py-0">
+    <div className="not-prose space-y-8 py-8 md:px-5 md:py-0">
       {/* Controls for customization */}
       <div className="rounded-lg">
         <div className="grid gap-4 md:grid-cols-4">
@@ -176,7 +176,7 @@ export default function RotateAnimatedDemo() {
         </div>
       </div>
       <div
-        className="mx-auto grid max-w-5xl gap-3 md:grid-cols-1 lg:grid-cols-2"
+        className="not-prose mx-auto grid max-w-5xl gap-3 md:grid-cols-1 lg:grid-cols-2"
         role="region"
         aria-label="Project showcase"
       >
