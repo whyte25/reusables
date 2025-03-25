@@ -176,7 +176,7 @@ export default function RotateAnimatedDemo() {
         </div>
       </div>
       <div
-        className="mx-auto grid max-w-5xl gap-3 md:grid-cols-1 lg:grid-cols-2"
+        className="mx-auto grid max-w-5xl grid-cols-1 gap-3 md:grid-cols-2"
         role="region"
         aria-label="Project showcase"
       >
