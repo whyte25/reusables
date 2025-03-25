@@ -121,7 +121,7 @@ const AnimatedCard: FC<AnimatedCardProps> = ({
           </h3>
           <p
             className={cn(
-              "not-prose w-10/12 text-pretty pr-1 text-start text-base md:text-lg",
+              "not-prose w-10/12 text-pretty pr-1 text-start text-base md:w-full md:text-lg",
               isActive ? "text-white" : "text-black",
               descriptionClassName
             )}
