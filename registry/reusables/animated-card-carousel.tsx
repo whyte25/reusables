@@ -95,8 +95,8 @@ const AnimatedCard: FC<AnimatedCardProps> = ({
         className={cn(
           "shadow-small 2xsm:px-5 relative cursor-pointer items-start gap-3 overflow-hidden rounded-3xl px-3 py-5 transition-all duration-500 ease-in-out sm:px-5 sm:py-10 md:px-5 md:py-10 md:pt-5 lg:px-5 lg:pb-10",
           size === "featured" ?
-            "h-[350px] lg:h-[450px]"
-          : "h-[320px] lg:h-[380px]",
+            "h-[380px] lg:h-[450px]"
+          : "h-[340px] lg:h-[350px]",
           isActive ? "text-white" : "bg-white"
         )}
         style={{
@@ -107,13 +107,13 @@ const AnimatedCard: FC<AnimatedCardProps> = ({
         }}
         tabIndex={0}
       >
-        <div className={cn("space-y-3", isMobile ? "w-full" : "w-1/2")}>
+        <div className={cn("space-y-3", isMobile ? "w-full" : "w-[60%]")}>
           <h3
             style={{
               color: isActive ? "white" : color,
             }}
             className={cn(
-              "not-prose text-start text-xl font-semibold md:text-start",
+              "not-prose text-start text-xl font-semibold md:text-start md:text-2xl",
               titleClassName
             )}
           >
@@ -121,7 +121,7 @@ const AnimatedCard: FC<AnimatedCardProps> = ({
           </h3>
           <p
             className={cn(
-              "not-prose pr-1 text-start text-base md:text-lg",
+              "not-prose text-pretty pr-1 text-start text-base md:text-lg",
               isActive ? "text-white" : "text-black",
               descriptionClassName
             )}
@@ -154,13 +154,14 @@ const AnimatedCard: FC<AnimatedCardProps> = ({
             width={1000}
             height={1000}
             className={cn(
+              "transition-all duration-500 ease-in-out",
               size === "featured" ?
                 "h-[320px] w-[320px]"
-              : "h-[280px] w-[280px]",
+              : "h-[260px] w-[270px]",
               "lg:right-0",
               isMobile &&
                 (size === "featured" ?
-                  "h-[200px] w-[220px]"
+                  "h-[200px] w-[200px]"
                 : "h-[180px] w-[200px]")
             )}
           />
