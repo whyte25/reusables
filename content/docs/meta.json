@@ -8,6 +8,7 @@
     "---Animations---",
     "animations/floating-elements",
     "animations/animated-review-card",
+    "animations/animated-card-carousel",
 
     "---Components---",
     "components/buttons",
