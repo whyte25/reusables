@@ -6,7 +6,7 @@ import { Loader, LoaderCircle, X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-import { ToastClassNames, ToastParams } from "./notify-provider"
+import type { ToastClassNames, ToastParams } from "./notify-provider"
 
 export const statusStyles = {
   error:

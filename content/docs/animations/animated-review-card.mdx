@@ -51,6 +51,34 @@ Create and copy the following code  into `utils` file in your `lib` folder:
 </CodeBlockWrapper>
 
 </Step>
+<Step>
+Add the following keyframe animation to your `tailwind.config.ts` file
+
+<CodeBlockWrapper>
+
+```ts title="tailwind.config.ts"
+module.exports = {
+  theme: {
+    extend: {
+      // [!code highlight:10]
+      keyframes: {
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
+          },
+        },
+      },
+      animation: {
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+      },
+    },
+  },
+}
+```
+
+</CodeBlockWrapper>
+
+</Step>
 
 </Steps>
 </Tab> 
@@ -119,7 +147,7 @@ Choose from multiple pre-built themes.
 ## V0 Known Issue
 
 <Callout>
-    V0 does not support cssVars or Tailwind properties. Please see [shadcn/ui](https://ui.shadcn.com/docs/registry/open-in-v0#known-issues) for more details.  
+   Incase you want to open in V0, it doesn't support cssVars or Tailwind properties. Please see [shadcn/ui](https://ui.shadcn.com/docs/registry/open-in-v0#known-issues) for more details.  
    
   To enable border-beam to function as expected, you need to instruct V0 to add the following animation config to `tailwind.config.js` file:
 
@@ -127,15 +155,16 @@ Choose from multiple pre-built themes.
 module.exports = {
   theme: {
     extend: {
-      animation: {
-        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
-      },
+      // [!code highlight:10]
       keyframes: {
         "border-beam": {
           "100%": {
             "offset-distance": "100%",
           },
         },
+      },
+      animation: {
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
       },
     },
   },

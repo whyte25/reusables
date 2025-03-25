@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useMemo, useRef, useState } from "react"
-import { cva, VariantProps } from "class-variance-authority"
+import { cva, type VariantProps } from "class-variance-authority"
 import { AnimatePresence, motion } from "framer-motion"
 
 import { cn } from "@/lib/utils"
@@ -109,7 +109,7 @@ export function ToastProvider({
   hideProgressBar = DEFAULT_CONFIG.hideProgressBar,
 }: ToastProviderProps) {
   const [toasts, setToasts] = useState<ToastState[]>([])
-  const toastsRef = useRef<{ [key: string]: NodeJS.Timeout }>({})
+  const toastsRef = useRef<{ [key: string]: ReturnType<typeof setTimeout> }>({})
 
   // Optimized grouping of toasts by position
   const toastsByPosition = useMemo(() => {
