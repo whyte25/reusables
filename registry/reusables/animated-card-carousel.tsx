@@ -121,7 +121,7 @@ const AnimatedCard: FC<AnimatedCardProps> = ({
           </h3>
           <p
             className={cn(
-              "not-prose text-pretty pr-1 text-start text-base md:text-lg",
+              "not-prose w-10/12 text-pretty pr-1 text-start text-base md:text-lg",
               isActive ? "text-white" : "text-black",
               descriptionClassName
             )}
@@ -161,8 +161,8 @@ const AnimatedCard: FC<AnimatedCardProps> = ({
               "lg:right-0",
               isMobile &&
                 (size === "featured" ?
-                  "h-[200px] w-[200px]"
-                : "h-[180px] w-[200px]")
+                  "h-[225px] w-[225px]"
+                : "h-[190px] w-[200px]")
             )}
           />
         </motion.div>
