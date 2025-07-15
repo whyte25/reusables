@@ -1,32 +1,36 @@
-import type { ToastParams, ToastPromiseOptions } from "./notify-provider"
+"use client"
 
-export type ToastFunction = (
-  text: React.ReactNode,
-  options?: Partial<ToastParams>
-) => string
+import type {
+  PromiseHandler,
+  ToastFunction,
+  ToastMethods,
+  ToastParams,
+  ToastPromiseOptions,
+} from "./notify-types"
 
-export type PromiseHandler = <T>(
-  promise: () => Promise<T>,
-  options: ToastPromiseOptions<T>
-) => string
+/**
+ * Simple ID generator for toast notifications
+ */
+let toastId = 0
 
-export interface ToastMethods {
-  success: ToastFunction
-  error: ToastFunction
-  warning: ToastFunction
-  info: ToastFunction
-  loading: ToastFunction
-  default: ToastFunction
-  push: (params: ToastParams) => string
-  promise: PromiseHandler
-  dismiss: (id: string | number) => void
-}
+/**
+ * Generate a unique ID for a toast
+ */
+export const generateId = () => String(toastId++)
 
+/**
+ * Toast API class implementing ToastMethods interface
+ * Provides a single point of access for creating and managing toast notifications
+ */
 class Toast implements ToastMethods {
   private emit: ((params: ToastParams) => string) | null = null
   private emitPromise: PromiseHandler | null = null
   private emitDismiss: ((id: string | number) => void) | null = null
 
+  /**
+   * Sets up the handlers for the Toast API
+   * Called by ToastProvider on initialization
+   */
   setHandlers(
     emit: (params: ToastParams) => string,
     promiseHandler: PromiseHandler,
@@ -39,10 +43,11 @@ class Toast implements ToastMethods {
 
   private createToastFn(status: ToastParams["status"]): ToastFunction {
     return (text, options = {}) => {
-      if (!this.emit)
+      if (!this.emit) {
         throw new Error(
           "Toast not initialized: wrap your app with ToastProvider"
         )
+      }
       return this.emit({
         text,
         status,
@@ -133,6 +138,7 @@ class Toast implements ToastMethods {
    *   duration: 3000,
    *   description: 'This is a custom toast',
    *   position: 'top-right'
+   *   preventDuplicates: true,
    * })
    */
   push = (params: ToastParams) => {
@@ -162,4 +168,7 @@ class Toast implements ToastMethods {
   }
 }
 
+/**
+ * Exported toast instance for use throughout the application
+ */
 export const toast = new Toast()
