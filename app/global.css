@@ -118,6 +118,9 @@ a[href="/docs/animations/animated-review-card"] {
 a[href="/docs/animations/animated-card-carousel"] {
   @apply badge new;
 }
+a[href="/docs/components/notify"] {
+  @apply badge updated;
+}
 
 .dot[aria-controls] {
   position: relative;

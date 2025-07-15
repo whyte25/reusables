@@ -162,6 +162,32 @@ toast.info("Event has been created")
   name="toast-demo"
 />
 
+### Interactive Toasts
+
+Toasts are interactive by default. You can pause the dismiss timer and progress bar animation by hovering over a toast, and dismiss it by dragging it on either the horizontal or vertical axis.
+
+### Toast With JSX
+
+Pass JSX directly to the toast function to render rich content.
+
+<ComponentSource
+  showV0Button={false}
+  reTrigger={false}
+  className="md:px-0"
+  name="toast-with-jsx-demo"
+/>
+
+### Toast With Action
+
+Add rich, interactive actions to your toasts. Configure a primary action and a dismiss button, with support for both text and icon variants.
+
+<ComponentSource
+  showV0Button={false}
+  reTrigger={false}
+  className="md:px-0"
+  name="toast-with-action-demo"
+/>
+
 ### Toast With Description
 
 Enhance toast messages with additional details.
@@ -182,6 +208,17 @@ Control where toasts appear on the screen.
   reTrigger={false}
   className="md:px-0"
   name="toast-positions-demo"
+/>
+
+### Animations
+
+Customize the entrance and exit animations for toasts.
+
+<ComponentSource
+  showV0Button={false}
+  reTrigger={false}
+  className="md:px-0"
+  name="toast-animations-demo"
 />
 
 ### Progress Bar
@@ -246,6 +283,7 @@ Override default toast behavior using the ToastProvider.
 ```tsx
 <ToastProvider
   position="bottom-right"
+  animation="slide"
   duration={4000}
   closable={true}
   classNames={{
@@ -269,9 +307,10 @@ For complete control over toast configuration, use the `toast.push` method:
 
 ```tsx
 toast.push({
-  title: "Custom Toast",
+  text: "Custom Toast",
   status: "info", // 'error' | 'warning' | 'success' | 'info' | 'default' | 'loading'
   position: "top-right",
+  animation: "bounce",
   duration: 5000,
   description: "This is a custom toast",
   closable: true,
@@ -295,6 +334,11 @@ toast.push({
       default: '"bottom-right"',
       description: "Default position for toasts",
     },
+    animation: {
+      type: '"slide" | "fade" | "scale" | "bounce"',
+      default: '"slide"',
+      description: "Default animation for toasts",
+    },
     duration: {
       type: "number",
       default: "4000",
@@ -316,8 +360,13 @@ toast.push({
     },
     maxToast: {
       type: "number",
-      default: "",
+      default: "4",
       description: "Maximum number of toasts shown at once globally",
+    },
+    animation: {
+      type: '"slide" | "fade" | "scale" | "bounce"',
+      default: '"slide"',
+      description: "Default animation style for all toasts",
     },
   }}
 />
@@ -327,27 +376,27 @@ toast.push({
 <TypeTable
   type={{
     "toast.success": {
-      type: "(title: string, options?: ToastParams) => string",
+      type: "(text: React.ReactNode, options?: ToastParams) => string",
       description: "Display a success toast notification",
     },
     "toast.error": {
-      type: "(title: string, options?: ToastParams) => string",
+      type: "(text: React.ReactNode, options?: ToastParams) => string",
       description: "Display an error toast notification",
     },
     "toast.warning": {
-      type: "(title: string, options?: ToastParams) => string",
+      type: "(text: React.ReactNode, options?: ToastParams) => string",
       description: "Display a warning toast notification",
     },
     "toast.info": {
-      type: "(title: string, options?: ToastParams) => string",
+      type: "(text: React.ReactNode, options?: ToastParams) => string",
       description: "Display an info toast notification",
     },
     "toast.loading": {
-      type: "(title: string, options?: ToastParams) => string",
+      type: "(text: React.ReactNode, options?: ToastParams) => string",
       description: "Display a loading toast notification",
     },
     "toast.default": {
-      type: "(title: string, options?: ToastParams) => string",
+      type: "(text: React.ReactNode, options?: ToastParams) => string",
       description: "Display a default toast notification",
     },
     "toast.push": {
@@ -366,10 +415,20 @@ toast.push({
 
 <TypeTable
   type={{
-    title: {
-      type: "string",
+    text: {
+      type: "React.ReactNode",
       required: true,
-      description: "Main message of the toast",
+      description: "Main message of the toast, can be a string or JSX.",
+    },
+    animation: {
+      type: '"slide" | "fade" | "scale" | "bounce"',
+      description:
+        "Overrides the default animation for a specific toast. Each animation has distinct characteristics: slide (moves in from the side), fade (simple opacity transition), scale (grows/shrinks with opacity), and bounce (spring physics for playful effect).",
+    },
+    actions: {
+      type: "{ primary: Action; dismiss?: boolean | Omit<Action, 'icon' | 'variant'> }",
+      description:
+        "Add interactive actions. The primary action can be a button or icon. The dismiss action can be a boolean (to show a default dismiss button) or a custom action object.",
     },
     description: {
       type: "React.ReactNode",

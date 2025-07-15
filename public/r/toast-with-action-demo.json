@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast-with-action-demo",
+  "type": "registry:example",
+  "registryDependencies": ["https://reusables.vercel.app/r/notify"],
+  "files": [
+    {
+      "path": "registry/example/toast-with-action-demo.tsx",
+      "content": "\"use client\"\n\nimport { Button } from \"@/components/ui/button\"\n\nimport { toast } from \"@/components/ui/notify\"\n\nexport default function ToastWithActionDemo() {\n  return (\n    <div className=\"flex w-full flex-wrap justify-center gap-3 p-4\">\n      <Button\n        variant=\"outline\"\n        onClick={() =>\n          toast.push({\n            status: \"default\",\n            description:\n              \"The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence again.\",\n            actions: {\n              primary: {\n                label: \"Undo\",\n                onClick: () => console.log(\"Undo!\"),\n              },\n              dismiss: {\n                label: \"Dismiss\",\n              },\n            },\n            duration: 10000,\n          })\n        }\n      >\n        Toast With Actions\n      </Button>\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": "components/toast-with-action-demo.tsx"
+    }
+  ]
+}

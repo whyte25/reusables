@@ -10,12 +10,17 @@ interface CookieOptions {
   secure?: boolean
   sameSite?: SameSiteOption
   domain?: string
+  expires?: Date
+  maxAge?: number
+  httpOnly?: boolean
 }
-
 const COOKIES_DEFAULT_OPTIONS: Required<Omit<CookieOptions, "domain">> = {
   path: "/",
   secure: true,
   sameSite: "lax",
+  httpOnly: true,
+  expires: new Date(Date.now() + 60 * 60 * 24 * 7),
+  maxAge: 60 * 60 * 24 * 7,
 }
 
 /**
@@ -33,13 +38,17 @@ const COOKIES_DEFAULT_OPTIONS: Required<Omit<CookieOptions, "domain">> = {
 
 export const ServerCookies = {
   set(name: string, value: string, options: Partial<CookieOptions> = {}) {
-    const cookieOptions: ResponseCookie = {
+   const cookieOptions: ResponseCookie = {
       name,
       value,
       path: options.path || COOKIES_DEFAULT_OPTIONS.path,
       secure: options.secure ?? COOKIES_DEFAULT_OPTIONS.secure,
       sameSite: options.sameSite || COOKIES_DEFAULT_OPTIONS.sameSite,
-    }
+      httpOnly: options.httpOnly ?? COOKIES_DEFAULT_OPTIONS.httpOnly,
+      expires: options.expires || COOKIES_DEFAULT_OPTIONS.expires,
+      maxAge: options.maxAge || COOKIES_DEFAULT_OPTIONS.maxAge,
+    };
+
 
     if (options.domain) {
       cookieOptions.domain = options.domain
@@ -66,6 +75,9 @@ export const ServerCookiesNext15 = {
       path: options.path || COOKIES_DEFAULT_OPTIONS.path,
       secure: options.secure ?? COOKIES_DEFAULT_OPTIONS.secure,
       sameSite: options.sameSite || COOKIES_DEFAULT_OPTIONS.sameSite,
+      httpOnly: options.httpOnly ?? COOKIES_DEFAULT_OPTIONS.httpOnly,
+      expires: options.expires || COOKIES_DEFAULT_OPTIONS.expires,
+      maxAge: options.maxAge || COOKIES_DEFAULT_OPTIONS.maxAge,
     }
 
     if (options.domain) {

@@ -1152,6 +1152,75 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "toast-with-jsx-demo": {
+    name: "toast-with-jsx-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["https://reusables.vercel.app/r/notify"],
+    files: [
+      {
+        path: "registry/example/toast-with-jsx-demo.tsx",
+        type: "registry:example",
+        target: "components/toast-with-jsx-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/toast-with-jsx-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "toast-animations-demo": {
+    name: "toast-animations-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["https://reusables.vercel.app/r/notify"],
+    files: [
+      {
+        path: "registry/example/toast-animations-demo.tsx",
+        type: "registry:example",
+        target: "components/toast-animations-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/toast-animations-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "toast-with-action-demo": {
+    name: "toast-with-action-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["https://reusables.vercel.app/r/notify"],
+    files: [
+      {
+        path: "registry/example/toast-with-action-demo.tsx",
+        type: "registry:example",
+        target: "components/toast-with-action-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/toast-with-action-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "toast-positions-demo": {
     name: "toast-positions-demo",
     description: "",

@@ -26,6 +26,42 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "toast-with-jsx-demo",
+    type: "registry:example",
+    registryDependencies: ["https://reusables.vercel.app/r/notify"],
+    files: [
+      {
+        path: "registry/example/toast-with-jsx-demo.tsx",
+        type: "registry:example",
+        target: "components/toast-with-jsx-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "toast-with-action-demo",
+    type: "registry:example",
+    registryDependencies: ["https://reusables.vercel.app/r/notify"],
+    files: [
+      {
+        path: "registry/example/toast-with-action-demo.tsx",
+        type: "registry:example",
+        target: "components/toast-with-action-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "toast-with-description-demo",
+    type: "registry:example",
+    registryDependencies: ["https://reusables.vercel.app/r/notify"],
+    files: [
+      {
+        path: "registry/example/toast-with-description-demo.tsx",
+        type: "registry:example",
+        target: "components/toast-with-description-demo.tsx",
+      },
+    ],
+  },
+  {
     name: "time-ago-demo",
     type: "registry:example",
     registryDependencies: ["https://reusables.vercel.app/r/time-ago"],

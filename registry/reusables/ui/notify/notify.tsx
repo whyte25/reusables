@@ -48,19 +48,32 @@ const progressBarVariants = cva("absolute bottom-0 left-0 h-[2px]", {
   },
 })
 
+const toastActionVariants = cva(
+  "inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  {
+    variants: {
+      variant: {
+        primary:
+          "bg-white text-black hover:bg-white/90 dark:text-black dark:hover:bg-white/90",
+        dismiss: "bg-transparent hover:bg-black/10 dark:hover:bg-white/10",
+      },
+    },
+    defaultVariants: {
+      variant: "primary",
+    },
+  }
+)
+
 const ToastTitle = React.forwardRef<
   HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement> & { title: string }
->(({ title, className, ...props }, ref) => (
+  React.HTMLAttributes<HTMLParagraphElement> & { text: React.ReactNode }
+>(({ text, className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn(
-      "mr-auto text-[0.8125rem] font-medium leading-none tracking-tight",
-      className
-    )}
+    className={cn("mr-auto text-sm font-medium", className)}
     {...props}
   >
-    {title}
+    {text}
   </p>
 ))
 
@@ -75,7 +88,7 @@ const ToastDescription = React.forwardRef<
   return (
     <p
       ref={ref}
-      className={cn("text-[0.8125rem] opacity-80", className)}
+      className={cn("text-[0.8125rem] leading-5 opacity-80", className)}
       {...props}
     >
       {description}
@@ -96,7 +109,7 @@ const ToastCloseButton = React.forwardRef<
       ref={ref}
       onClick={onClose}
       className={cn(
-        "rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+        "cursor-pointer rounded-sm p-1 opacity-90 ring-offset-background transition-opacity hover:bg-black/5 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 dark:opacity-70 dark:hover:bg-white/10",
         className
       )}
       {...props}
@@ -132,8 +145,9 @@ const ToastProgressBar = React.forwardRef<
     duration?: number
     status: ToastParams["status"]
     hideProgressBar?: boolean
+    paused?: boolean
   }
->(({ duration, status, hideProgressBar, className, ...props }, ref) => {
+>(({ duration, status, hideProgressBar, className, paused, ...props }, ref) => {
   if (!duration || status === "loading" || hideProgressBar) return null
   return (
     <div
@@ -141,6 +155,7 @@ const ToastProgressBar = React.forwardRef<
       className={cn(progressBarVariants({ status }), className)}
       style={{
         animation: `shrink ${duration}ms linear forwards`,
+        animationPlayState: paused ? "paused" : "running",
       }}
       {...props}
     >
@@ -156,17 +171,50 @@ const ToastProgressBar = React.forwardRef<
   )
 })
 
+export function ToastAction({
+  label,
+  onClick,
+  variant,
+  status,
+}: {
+  label: string
+  onClick: () => void
+  variant: "primary" | "dismiss"
+  status: ToastParams["status"]
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={cn(
+        toastActionVariants({ variant }),
+        status === "default" &&
+          variant === "primary" &&
+          "bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90"
+      )}
+    >
+      {label}
+    </button>
+  )
+}
+
+// Animation variants are now handled directly in the Toast provider
+
 export function Toast({
   closable,
   description,
   duration,
   onClose,
+  text,
   title,
   status = "default",
   loaderVariant,
   classNames = {},
   hideProgressBar,
-}: ToastParams & { classNames?: ToastClassNames }) {
+  actions,
+  paused,
+  animation = "slide",
+  position,
+}: ToastParams & { classNames?: ToastClassNames; paused?: boolean }) {
   return (
     <div
       className={cn(
@@ -175,32 +223,52 @@ export function Toast({
       )}
       role={status === "error" ? "alert" : "status"}
     >
-      <div className="flex w-full items-center">
+      <div className="flex w-full items-center justify-between">
         <ToastLoader
           status={status}
           className={cn("mr-2", classNames.loader)}
           variant={loaderVariant}
         />
-        <ToastTitle title={title} className={classNames.title} />
-        {closable && (
+        <div className="flex flex-1 flex-col gap-1">
+          <ToastTitle text={text ?? title} className={classNames.title} />
+          <ToastDescription
+            description={description}
+            status={status}
+            className={classNames.description}
+          />
+        </div>
+        {closable && !actions && (
           <ToastCloseButton
             onClose={onClose!}
             status={status}
-            className={classNames.closeButton}
+            className={cn("ml-2", classNames.closeButton)}
           />
         )}
       </div>
-
-      <ToastDescription
-        description={description}
-        status={status}
-        className={classNames.description}
-      />
+      {actions && (
+        <div className="mt-3 flex justify-end gap-2">
+          {actions.dismiss && (
+            <ToastAction
+              label={actions.dismiss.label}
+              onClick={actions.dismiss.onClick || onClose!}
+              variant="dismiss"
+              status={status}
+            />
+          )}
+          <ToastAction
+            label={actions.primary.label}
+            onClick={actions.primary.onClick}
+            variant="primary"
+            status={status}
+          />
+        </div>
+      )}
       <ToastProgressBar
         duration={duration}
         status={status}
         hideProgressBar={hideProgressBar}
         className={classNames.progressBar}
+        paused={paused}
       />
     </div>
   )

@@ -705,6 +705,42 @@
       ]
     },
     {
+      "name": "toast-with-jsx-demo",
+      "type": "registry:example",
+      "registryDependencies": ["https://reusables.vercel.app/r/notify"],
+      "files": [
+        {
+          "path": "registry/example/toast-with-jsx-demo.tsx",
+          "type": "registry:example",
+          "target": "components/toast-with-jsx-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-animations-demo",
+      "type": "registry:example",
+      "registryDependencies": ["https://reusables.vercel.app/r/notify"],
+      "files": [
+        {
+          "path": "registry/example/toast-animations-demo.tsx",
+          "type": "registry:example",
+          "target": "components/toast-animations-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-with-action-demo",
+      "type": "registry:example",
+      "registryDependencies": ["https://reusables.vercel.app/r/notify"],
+      "files": [
+        {
+          "path": "registry/example/toast-with-action-demo.tsx",
+          "type": "registry:example",
+          "target": "components/toast-with-action-demo.tsx"
+        }
+      ]
+    },
+    {
       "name": "toast-positions-demo",
       "type": "registry:example",
       "registryDependencies": ["https://reusables.vercel.app/r/notify"],

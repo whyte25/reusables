@@ -11,7 +11,7 @@ export default function ToastDemo() {
       <Button
         variant="outline"
         className={cn("w-32", statusStyles["info"])}
-        onClick={() => toast.info("Information")}
+        onClick={() => toast.info("This is an information message.")}
       >
         Info Toast
       </Button>
@@ -19,7 +19,7 @@ export default function ToastDemo() {
       <Button
         variant="outline"
         className={cn("w-32", statusStyles["success"])}
-        onClick={() => toast.success("Success")}
+        onClick={() => toast.success("Your action was successful.")}
       >
         Success Toast
       </Button>
@@ -27,7 +27,7 @@ export default function ToastDemo() {
       <Button
         variant="outline"
         className={cn("w-32", statusStyles["warning"])}
-        onClick={() => toast.warning("Warning")}
+        onClick={() => toast.warning("Please be cautious.")}
       >
         Warning Toast
       </Button>
@@ -35,7 +35,7 @@ export default function ToastDemo() {
       <Button
         variant="outline"
         className={cn("w-32", statusStyles["error"])}
-        onClick={() => toast.error("Error")}
+        onClick={() => toast.error("An error has occurred.")}
       >
         Error Toast
       </Button>
@@ -43,14 +43,14 @@ export default function ToastDemo() {
       <Button
         variant="outline"
         className={cn("w-32", statusStyles["default"])}
-        onClick={() => toast.default("Default Toast")}
+        onClick={() => toast.default("This is a default notification.")}
       >
         Default Toast
       </Button>
       <Button
         variant="outline"
         className={cn("w-32", statusStyles["loading"])}
-        onClick={() => toast.loading("loading")}
+        onClick={() => toast.loading("Processing your request...")}
       >
         Loading Toast 1
       </Button>
@@ -58,7 +58,7 @@ export default function ToastDemo() {
         variant="outline"
         className={cn("w-32", statusStyles["loading"])}
         onClick={() =>
-          toast.loading("loading", {
+          toast.loading("Processing your request...", {
             loaderVariant: "loader-2",
           })
         }

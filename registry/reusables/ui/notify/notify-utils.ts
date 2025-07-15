@@ -1,11 +1,11 @@
 import type { ToastParams, ToastPromiseOptions } from "./notify-provider"
 
 export type ToastFunction = (
-  title: string,
+  text: React.ReactNode,
   options?: Partial<ToastParams>
 ) => string
 
-type PromiseHandler = <T>(
+export type PromiseHandler = <T>(
   promise: () => Promise<T>,
   options: ToastPromiseOptions<T>
 ) => string
@@ -19,28 +19,32 @@ export interface ToastMethods {
   default: ToastFunction
   push: (params: ToastParams) => string
   promise: PromiseHandler
+  dismiss: (id: string | number) => void
 }
 
 class Toast implements ToastMethods {
   private emit: ((params: ToastParams) => string) | null = null
   private emitPromise: PromiseHandler | null = null
+  private emitDismiss: ((id: string | number) => void) | null = null
 
   setHandlers(
     emit: (params: ToastParams) => string,
-    promiseHandler: PromiseHandler
+    promiseHandler: PromiseHandler,
+    dismissHandler: (id: string | number) => void
   ) {
     this.emit = emit
     this.emitPromise = promiseHandler
+    this.emitDismiss = dismissHandler
   }
 
   private createToastFn(status: ToastParams["status"]): ToastFunction {
-    return (title, options = {}) => {
+    return (text, options = {}) => {
       if (!this.emit)
         throw new Error(
           "Toast not initialized: wrap your app with ToastProvider"
         )
       return this.emit({
-        title,
+        text,
         status,
         ...options,
       })
@@ -49,7 +53,7 @@ class Toast implements ToastMethods {
 
   /**
    * Display a success toast notification
-   * @param title - The main message to display
+   * @param text - The main message to display
    * @param options - Optional configuration for the toast
    * @example
    * toast.success('Profile updated successfully')
@@ -59,7 +63,7 @@ class Toast implements ToastMethods {
 
   /**
    * Display an error toast notification
-   * @param title - The error message to display
+   * @param text - The error message to display
    * @param options - Optional configuration for the toast
    * @example
    * toast.error('Failed to save changes')
@@ -69,7 +73,7 @@ class Toast implements ToastMethods {
 
   /**
    * Display a warning toast notification
-   * @param title - The warning message to display
+   * @param text - The warning message to display
    * @param options - Optional configuration for the toast
    * @example
    * toast.warning('Low storage space')
@@ -79,7 +83,7 @@ class Toast implements ToastMethods {
 
   /**
    * Display an info toast notification
-   * @param title - The information message to display
+   * @param text - The information message to display
    * @param options - Optional configuration for the toast
    * @example
    * toast.info('New updates available')
@@ -89,7 +93,7 @@ class Toast implements ToastMethods {
 
   /**
    * Display a loading toast notification
-   * @param title - The loading message to display
+   * @param text - The loading message to display
    * @param options - Optional configuration for the toast
    * @example
    * toast.loading('Uploading files...')
@@ -99,12 +103,25 @@ class Toast implements ToastMethods {
 
   /**
    * Display a default toast notification
-   * @param title - The message to display
+   * @param text - The message to display
    * @param options - Optional configuration for the toast
    * @example
    * toast.default('Something happened')
    */
   default = this.createToastFn("default")
+
+  /**
+   * Dismiss a toast notification by its ID
+   * @param id - The ID of the toast to dismiss
+   * @example
+   * const toastId = toast.info('Loading...');
+   * toast.dismiss(toastId);
+   */
+  dismiss = (id: string | number) => {
+    if (this.emitDismiss) {
+      this.emitDismiss(id)
+    }
+  }
 
   /**
    * Create a custom toast notification with full control over its properties
