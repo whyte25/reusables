@@ -145,7 +145,11 @@ export function ToastAction({
   )
 }
 
-// Animation variants are now handled directly in the Toast provider
+/**
+ * Renders a toast notification with optional title, description, actions, loader, close button, and progress bar.
+ *
+ * Supports different visual styles and behaviors based on the toast status, duration, and provided actions. The toast can display a loading indicator, be closable, and show a progress bar unless hidden. Action buttons for primary and dismiss actions are supported.
+ */
 
 export function Toast({
   closable,

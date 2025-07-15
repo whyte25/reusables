@@ -13,11 +13,12 @@ import type {
 import { generateId } from "./notify-utils"
 
 /**
- * Custom hook for managing toast state and notifications
- * Provides functions for creating, updating, and dismissing toast notifications
+ * React hook for managing toast notifications with configurable options.
  *
- * @param config Configuration options for toast state management
- * @returns Toast state manager with functions for toast operations
+ * Provides state and functions to create, update, dismiss, pause, and resume toast notifications, including support for promise-based toasts and duplicate prevention.
+ *
+ * @param config - Toast configuration options such as default position, duration, animation, appearance, and behavior.
+ * @returns An object containing the current toasts, toasts grouped by position, and functions to push, update, dismiss, pause, and resume toasts.
  */
 export function useToastStateManager({
   position: defaultPosition = "bottom-right",
