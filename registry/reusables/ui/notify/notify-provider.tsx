@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { createPortal } from "react-dom"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/registry/lib/utils"
 
 import { Toast } from "./notify"
 import { getAnimationProps } from "./notify-animations"
