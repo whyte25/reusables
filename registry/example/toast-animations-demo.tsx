@@ -11,7 +11,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { toast } from "@/registry/reusables/ui/notify"
-import type { AnimationType } from "@/registry/reusables/ui/notify/notify-provider"
+
+import type { AnimationType } from "../reusables/ui/notify/notify-types"
 
 type ToastPosition =
   | "top-left"

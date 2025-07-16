@@ -427,6 +427,31 @@ export const Index: Record<string, any> = {
         type: "registry:ui",
         target: "components/ui/notify/index.ts",
       },
+      {
+        path: "registry/reusables/ui/notify/notify-state-manager.ts",
+        type: "registry:ui",
+        target: "components/ui/notify/notify-state-manager.ts",
+      },
+      {
+        path: "registry/reusables/ui/notify/notify-variants.ts",
+        type: "registry:ui",
+        target: "components/ui/notify/notify-variants.ts",
+      },
+      {
+        path: "registry/reusables/ui/notify/notify-config.ts",
+        type: "registry:ui",
+        target: "components/ui/notify/notify-config.ts",
+      },
+      {
+        path: "registry/reusables/ui/notify/notify-animations.ts",
+        type: "registry:ui",
+        target: "components/ui/notify/notify-animations.ts",
+      },
+      {
+        path: "registry/reusables/ui/notify/notify-types.ts",
+        type: "registry:ui",
+        target: "components/ui/notify/notify-types.ts",
+      },
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/reusables/ui/notify/notify.tsx")
