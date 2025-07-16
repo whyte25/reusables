@@ -43,7 +43,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils",
+        "https://reusables.vercel.app/r/utils.json",
         "avatar",
         "https://reusables.vercel.app/r/border-beam",
         "https://reusables.vercel.app/r/use-screen-size"
@@ -60,7 +60,7 @@
     {
       "name": "floating-elements",
       "type": "registry:component",
-      "registryDependencies": ["utils"],
+      "registryDependencies": ["https://reusables.vercel.app/r/utils.json"],
       "files": [
         {
           "path": "registry/reusables/floating-elements.tsx",
@@ -74,7 +74,7 @@
       "type": "registry:component",
       "dependencies": ["framer-motion", "lucide-react"],
       "registryDependencies": [
-        "utils",
+        "https://reusables.vercel.app/r/utils.json",
         "https://reusables.vercel.app/r/use-screen-size"
       ],
       "files": [
@@ -94,7 +94,7 @@
         "class-variance-authority",
         "axios"
       ],
-      "registryDependencies": ["utils"],
+      "registryDependencies": ["https://reusables.vercel.app/r/utils.json"],
       "files": [
         {
           "path": "registry/reusables/single-image-upload.tsx",
@@ -117,7 +117,7 @@
         "class-variance-authority",
         "axios"
       ],
-      "registryDependencies": ["utils"],
+      "registryDependencies": ["https://reusables.vercel.app/r/utils.json"],
       "files": [
         {
           "path": "registry/reusables/multiple-image-upload.tsx",
@@ -140,7 +140,7 @@
         "class-variance-authority",
         "axios"
       ],
-      "registryDependencies": ["utils"],
+      "registryDependencies": ["https://reusables.vercel.app/r/utils.json"],
       "files": [
         {
           "path": "registry/reusables/multi-file-upload.tsx",
@@ -163,7 +163,7 @@
         "class-variance-authority",
         "axios"
       ],
-      "registryDependencies": ["utils"],
+      "registryDependencies": ["https://reusables.vercel.app/r/utils.json"],
       "files": [
         {
           "path": "registry/reusables/universal-file-upload.tsx",
@@ -293,7 +293,7 @@
         "framer-motion",
         "class-variance-authority"
       ],
-      "registryDependencies": ["utils"],
+      "registryDependencies": ["https://reusables.vercel.app/r/utils.json"],
       "files": [
         {
           "path": "registry/reusables/ui/notify/notify.tsx",
@@ -345,7 +345,7 @@
     {
       "name": "theme-image",
       "type": "registry:ui",
-      "registryDependencies": ["utils"],
+      "registryDependencies": ["https://reusables.vercel.app/r/utils.json"],
       "files": [
         {
           "path": "registry/reusables/ui/theme-image.tsx",
@@ -358,7 +358,7 @@
       "name": "spinner",
       "type": "registry:ui",
       "dependencies": ["class-variance-authority", "lucide-react"],
-      "registryDependencies": ["utils"],
+      "registryDependencies": ["https://reusables.vercel.app/r/utils.json"],
       "files": [
         {
           "path": "registry/reusables/ui/spinner.tsx",
@@ -370,7 +370,10 @@
     {
       "name": "submit-button",
       "type": "registry:ui",
-      "registryDependencies": ["button", "utils"],
+      "registryDependencies": [
+        "button",
+        "https://reusables.vercel.app/r/utils.json"
+      ],
       "files": [
         {
           "path": "registry/reusables/ui/submit-button.tsx",
@@ -388,7 +391,10 @@
       "name": "copy-button",
       "type": "registry:ui",
       "dependencies": ["lucide-react"],
-      "registryDependencies": ["button", "utils"],
+      "registryDependencies": [
+        "button",
+        "https://reusables.vercel.app/r/utils.json"
+      ],
       "files": [
         {
           "path": "registry/reusables/ui/copy-button.tsx",
@@ -401,7 +407,11 @@
       "name": "split-button",
       "type": "registry:ui",
       "dependencies": ["lucide-react"],
-      "registryDependencies": ["button", "dropdown-menu", "utils"],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu",
+        "https://reusables.vercel.app/r/utils.json"
+      ],
       "files": [
         {
           "path": "registry/reusables/ui/split-button.tsx",
@@ -414,7 +424,11 @@
       "name": "split-button-action",
       "type": "registry:ui",
       "dependencies": ["lucide-react"],
-      "registryDependencies": ["button", "dropdown-menu", "utils"],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu",
+        "https://reusables.vercel.app/r/utils.json"
+      ],
       "files": [
         {
           "path": "registry/reusables/ui/split-button-action.tsx",
