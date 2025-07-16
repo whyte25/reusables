@@ -6,9 +6,8 @@ export function getAnimationProps(
   animationType: AnimationType,
   position: ToastPosition
 ) {
-  const isTop = position?.toString().includes("top")
-  const isRight = position?.toString().includes("right")
-
+  const isTop = position === "top-left" || position === "top-right"
+  const isRight = position === "top-right" || position === "bottom-right"
   switch (animationType) {
     case "slide":
       return {

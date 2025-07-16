@@ -96,7 +96,7 @@ export function ToastProvider({
         >
           <AnimatePresence mode="popLayout">
             {positionToasts.map((toast) => {
-              const { id, dismiss: dismissToast, params, paused } = toast
+              const { id, params, paused } = toast
               const toastAnimation = params.animation || animation
               const toastPosition = params.position || position
 

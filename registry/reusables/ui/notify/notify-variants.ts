@@ -57,7 +57,7 @@ export const statusStyles = {
     "dark:bg-[#1E1A1B] bg-[#fefae1] text-[#3b2212] dark:text-[#EADB90] dark:border-[#5C431B] border-[#ddcab8]",
   success:
     "dark:bg-[#131d1e] bg-[#e7fef6] text-[#0d311e] dark:text-[#abf9de] dark:border-[#1e5643] border-green-200",
-  info: "dark:bg-[#161831] bg-[#edf4ff] text-[#1e3a8a] dark:text-[#DCE6FF] dark:border-[#2f3873] pborder-[#bfdbfe]",
+  info: "dark:bg-[#161831] bg-[#edf4ff] text-[#1e3a8a] dark:text-[#DCE6FF] dark:border-[#2f3873] border-[#bfdbfe]",
   default:
     "dark:bg-[#13141b] bg-white text-gray-900 dark:text-[#e4e5e9] dark:border-[#3a3c4a] border-gray-200",
   loading: "bg-white text-gray-900 border-gray-200  ",
