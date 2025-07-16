@@ -108,16 +108,6 @@
   color: hsl(var(--updated-badge));
 }
 
-a[href="/docs/animations/floating-elements"] {
-  @apply badge new;
-}
-
-a[href="/docs/animations/animated-review-card"] {
-  @apply badge new;
-}
-a[href="/docs/animations/animated-card-carousel"] {
-  @apply badge new;
-}
 a[href="/docs/components/notify"] {
   @apply badge updated;
 }
