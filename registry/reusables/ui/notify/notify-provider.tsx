@@ -19,8 +19,10 @@ import { toast } from "./notify-utils"
 import { toastPositionVariants } from "./notify-variants"
 
 /**
- * Portal component that mounts toast notifications to the document body
- * @param children Content to render within the portal
+ * Renders its children into a React portal attached to the document body, ensuring client-side mounting.
+ *
+ * @param children - The content to render inside the portal
+ * @returns The portal element containing the children, or `null` if not yet mounted
  */
 function ToastPortal({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false)
@@ -33,18 +35,11 @@ function ToastPortal({ children }: { children: React.ReactNode }) {
 }
 
 /**
- * Provider component for toast notifications
- * Must wrap the application to enable toast functionality
+ * Provides toast notification functionality to its child components.
  *
- * @param children Child components to render
- * @param position Default position for toasts
- * @param duration Default duration in milliseconds
- * @param classNames Default CSS class names
- * @param closable Whether toasts are closable by default
- * @param preventDuplicates Whether to prevent duplicate toasts
- * @param maxToast Maximum number of toasts to show at once
- * @param hideProgressBar Whether to hide progress bars
- * @param animation Default animation style
+ * Wraps the application to enable toast notifications, managing their state, display, animation, and dismissal. Renders toasts in a portal at the document body level, supporting configuration for position, duration, appearance, animation, and duplicate prevention.
+ *
+ * @param children - The components that will have access to toast notifications.
  */
 export function ToastProvider({
   children,

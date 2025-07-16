@@ -2,6 +2,15 @@
 
 import type { AnimationType, ToastPosition } from "./notify-types"
 
+/**
+ * Returns animation configuration objects for toast notifications based on the specified animation type and position.
+ *
+ * The returned object includes `initial`, `animate`, and `exit` states, as well as transition settings, tailored to the animation style and toast placement.
+ *
+ * @param animationType - The animation style to use for the toast ("slide", "fade", "scale", "bounce", or others).
+ * @param position - The position of the toast, which determines the direction of certain animations.
+ * @returns An object containing animation state definitions and transition parameters for use with animation libraries.
+ */
 export function getAnimationProps(
   animationType: AnimationType,
   position: ToastPosition
