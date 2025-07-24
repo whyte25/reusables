@@ -3,7 +3,11 @@
   "name": "split-button",
   "type": "registry:ui",
   "dependencies": ["lucide-react"],
-  "registryDependencies": ["button", "dropdown-menu", "utils"],
+  "registryDependencies": [
+    "button",
+    "dropdown-menu",
+    "https://reusables.vercel.app/r/utils.json"
+  ],
   "files": [
     {
       "path": "registry/reusables/ui/split-button.tsx",

@@ -12,6 +12,7 @@ export interface ComponentSourceProps {
   showPreviewButton?: boolean
   reTrigger?: boolean
   className?: string
+  hideCode?: boolean
 }
 
 export async function ComponentSource({
@@ -21,6 +22,7 @@ export async function ComponentSource({
   showV0Button,
   reTrigger,
   className,
+  hideCode,
 }: ComponentSourceProps) {
   // Get component details from registry
   const component = Index[name]
@@ -61,6 +63,7 @@ export async function ComponentSource({
       showPreviewOnly={showPreviewOnly}
       showPreviewButton={showPreviewButton}
       reTrigger={reTrigger}
+      hideCode
     >
       <CodeBlock code={sourceCode} compact />
     </ComponentPreview>

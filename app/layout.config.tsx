@@ -25,5 +25,9 @@ export const baseOptions: BaseLayoutProps = {
       text: "Components",
       url: "/docs/components/buttons",
     },
+    {
+      text: "Showcase",
+      url: "/showcase",
+    },
   ],
 }

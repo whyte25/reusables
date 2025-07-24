@@ -35,7 +35,7 @@ export const Index: Record<string, any> = {
     description: "",
     type: "registry:component",
     registryDependencies: [
-      "utils",
+      "https://reusables.vercel.app/r/utils.json",
       "avatar",
       "https://reusables.vercel.app/r/border-beam",
       "https://reusables.vercel.app/r/use-screen-size",
@@ -62,7 +62,7 @@ export const Index: Record<string, any> = {
     name: "floating-elements",
     description: "",
     type: "registry:component",
-    registryDependencies: ["utils"],
+    registryDependencies: ["https://reusables.vercel.app/r/utils.json"],
     files: [
       {
         path: "registry/reusables/floating-elements.tsx",
@@ -86,7 +86,7 @@ export const Index: Record<string, any> = {
     description: "",
     type: "registry:component",
     registryDependencies: [
-      "utils",
+      "https://reusables.vercel.app/r/utils.json",
       "https://reusables.vercel.app/r/use-screen-size",
     ],
     files: [
@@ -113,7 +113,7 @@ export const Index: Record<string, any> = {
     name: "single-image-upload",
     description: "",
     type: "registry:component",
-    registryDependencies: ["utils"],
+    registryDependencies: ["https://reusables.vercel.app/r/utils.json"],
     files: [
       {
         path: "registry/reusables/single-image-upload.tsx",
@@ -141,7 +141,7 @@ export const Index: Record<string, any> = {
     name: "multiple-image-upload",
     description: "",
     type: "registry:component",
-    registryDependencies: ["utils"],
+    registryDependencies: ["https://reusables.vercel.app/r/utils.json"],
     files: [
       {
         path: "registry/reusables/multiple-image-upload.tsx",
@@ -169,7 +169,7 @@ export const Index: Record<string, any> = {
     name: "multi-file-upload",
     description: "",
     type: "registry:component",
-    registryDependencies: ["utils"],
+    registryDependencies: ["https://reusables.vercel.app/r/utils.json"],
     files: [
       {
         path: "registry/reusables/multi-file-upload.tsx",
@@ -197,7 +197,7 @@ export const Index: Record<string, any> = {
     name: "universal-file-upload",
     description: "",
     type: "registry:component",
-    registryDependencies: ["utils"],
+    registryDependencies: ["https://reusables.vercel.app/r/utils.json"],
     files: [
       {
         path: "registry/reusables/universal-file-upload.tsx",
@@ -405,7 +405,7 @@ export const Index: Record<string, any> = {
     name: "notify",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["utils"],
+    registryDependencies: ["https://reusables.vercel.app/r/utils.json"],
     files: [
       {
         path: "registry/reusables/ui/notify/notify.tsx",
@@ -468,7 +468,7 @@ export const Index: Record<string, any> = {
     name: "theme-image",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["utils"],
+    registryDependencies: ["https://reusables.vercel.app/r/utils.json"],
     files: [
       {
         path: "registry/reusables/ui/theme-image.tsx",
@@ -491,7 +491,7 @@ export const Index: Record<string, any> = {
     name: "spinner",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["utils"],
+    registryDependencies: ["https://reusables.vercel.app/r/utils.json"],
     files: [
       {
         path: "registry/reusables/ui/spinner.tsx",
@@ -514,7 +514,10 @@ export const Index: Record<string, any> = {
     name: "submit-button",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button", "utils"],
+    registryDependencies: [
+      "button",
+      "https://reusables.vercel.app/r/utils.json",
+    ],
     files: [
       {
         path: "registry/reusables/ui/submit-button.tsx",
@@ -542,7 +545,10 @@ export const Index: Record<string, any> = {
     name: "copy-button",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button", "utils"],
+    registryDependencies: [
+      "button",
+      "https://reusables.vercel.app/r/utils.json",
+    ],
     files: [
       {
         path: "registry/reusables/ui/copy-button.tsx",
@@ -565,7 +571,11 @@ export const Index: Record<string, any> = {
     name: "split-button",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button", "dropdown-menu", "utils"],
+    registryDependencies: [
+      "button",
+      "dropdown-menu",
+      "https://reusables.vercel.app/r/utils.json",
+    ],
     files: [
       {
         path: "registry/reusables/ui/split-button.tsx",
@@ -588,7 +598,11 @@ export const Index: Record<string, any> = {
     name: "split-button-action",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button", "dropdown-menu", "utils"],
+    registryDependencies: [
+      "button",
+      "dropdown-menu",
+      "https://reusables.vercel.app/r/utils.json",
+    ],
     files: [
       {
         path: "registry/reusables/ui/split-button-action.tsx",
@@ -2115,6 +2129,75 @@ export const Index: Record<string, any> = {
       const mod = await import(
         "@/registry/example/animated-card-carousel-simple-demo.tsx"
       )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "complete-app-demo": {
+    name: "complete-app-demo",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/blocks/complete-app-demo.tsx",
+        type: "registry:block",
+        target: "components/blocks/complete-app-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/complete-app-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "slots-layout-demo": {
+    name: "slots-layout-demo",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/blocks/slots-layout-demo.tsx",
+        type: "registry:block",
+        target: "components/blocks/slots-layout-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/slots-layout-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "splash-screen-demo": {
+    name: "splash-screen-demo",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/blocks/splash-screen-demo.tsx",
+        type: "registry:block",
+        target: "components/blocks/splash-screen-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/splash-screen-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>

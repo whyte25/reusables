@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "floating-elements",
   "type": "registry:component",
-  "registryDependencies": ["utils"],
+  "registryDependencies": ["https://reusables.vercel.app/r/utils.json"],
   "files": [
     {
       "path": "registry/reusables/floating-elements.tsx",

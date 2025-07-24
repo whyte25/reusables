@@ -25,6 +25,7 @@ export function ComponentPreview({
   showPreviewButton = true,
   reTrigger = true,
   children,
+  hideCode = true,
   ...props
 }: ComponentPreviewProps) {
   const [key, setKey] = React.useState(0)
@@ -70,7 +71,7 @@ export function ComponentPreview({
       >
         <Tabs
           defaultValue="Preview"
-          items={["Preview", "Code"]}
+          items={hideCode ? ["Preview"] : ["Preview", "Code"]}
           className="relative mr-auto w-full"
         >
           <Tab value="Preview" className="relative rounded-md" key={key}>
@@ -113,7 +114,8 @@ export function ComponentPreview({
               </React.Suspense>
             </ComponentWrapper>
           </Tab>
-          <Tab value="Code">{children}</Tab>
+
+          {!hideCode && <Tab value="Code">{children}</Tab>}
         </Tabs>
       </div>
 }

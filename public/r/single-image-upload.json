@@ -8,7 +8,7 @@
     "class-variance-authority",
     "axios"
   ],
-  "registryDependencies": ["utils"],
+  "registryDependencies": ["https://reusables.vercel.app/r/utils.json"],
   "files": [
     {
       "path": "registry/reusables/single-image-upload.tsx",

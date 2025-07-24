@@ -4,7 +4,7 @@
   "type": "registry:component",
   "dependencies": ["framer-motion", "class-variance-authority", "lucide-react"],
   "registryDependencies": [
-    "utils",
+    "https://reusables.vercel.app/r/utils.json",
     "avatar",
     "https://reusables.vercel.app/r/border-beam",
     "https://reusables.vercel.app/r/use-screen-size"

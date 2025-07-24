@@ -1259,6 +1259,39 @@
           "target": "components/animated-card-carousel-simple-demo.tsx"
         }
       ]
+    },
+    {
+      "name": "complete-app-demo",
+      "type": "registry:block",
+      "files": [
+        {
+          "path": "registry/blocks/complete-app-demo.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/complete-app-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slots-layout-demo",
+      "type": "registry:block",
+      "files": [
+        {
+          "path": "registry/blocks/slots-layout-demo.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/slots-layout-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "splash-screen-demo",
+      "type": "registry:block",
+      "files": [
+        {
+          "path": "registry/blocks/splash-screen-demo.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/splash-screen-demo.tsx"
+        }
+      ]
     }
   ]
 }

@@ -4,7 +4,7 @@
   "type": "registry:component",
   "dependencies": ["framer-motion", "lucide-react"],
   "registryDependencies": [
-    "utils",
+    "https://reusables.vercel.app/r/utils.json",
     "https://reusables.vercel.app/r/use-screen-size"
   ],
   "files": [

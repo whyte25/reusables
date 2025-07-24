@@ -1,0 +1,31 @@
+import { registryCategories } from "@/constant/registry-categories"
+import { getAllBlockIds } from "@/lib/blocks"
+import { BlockDisplay } from "@/components/block-display"
+
+export const revalidate = false
+export const dynamic = "force-static"
+export const dynamicParams = false
+
+export async function generateStaticParams() {
+  return registryCategories.map((category) => ({
+    categories: [category.slug],
+  }))
+}
+
+export default async function BlocksPage({
+  params,
+}: {
+  params: Promise<{ categories?: string[] }>
+}) {
+  const { categories = [] } = await params
+  const blocks = await getAllBlockIds(["registry:block"], categories)
+  console.log("==========================>", blocks)
+
+  return (
+    <div className="not-prose flex flex-col gap-12 md:gap-24">
+      {blocks.map((name) => (
+        <BlockDisplay name={name} key={name} />
+      ))}
+    </div>
+  )
+}
