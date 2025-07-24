@@ -1,6 +1,7 @@
 import React from "react"
 import { Metadata } from "next"
 import Link from "next/link"
+import { HomeLayout } from "fumadocs-ui/layouts/home"
 
 import { Button } from "@/components/ui/button"
 import { Announcement } from "@/components/announcement"
@@ -12,6 +13,8 @@ import {
   PageHeaderHeading,
 } from "@/components/page-header"
 import { PageNav } from "@/components/page-nav"
+
+import { baseOptions } from "../layout.config"
 
 const title = "Building Blocks for the Web"
 const description =
@@ -47,36 +50,36 @@ export default function ShowcaseLayout({
   children: React.ReactNode
 }) {
   return (
-    // <HomeLayout {...baseOptions}>
-    <>
-      <PageHeader>
-        <Announcement />
-        <PageHeaderHeading>{title}</PageHeaderHeading>
-        <PageHeaderDescription>{description}</PageHeaderDescription>
-        <PageActions>
-          <Button asChild size="sm">
-            <a href="#blocks">Browse Blocks</a>
+    <HomeLayout {...baseOptions}>
+      <>
+        <PageHeader>
+          <Announcement />
+          <PageHeaderHeading>{title}</PageHeaderHeading>
+          <PageHeaderDescription>{description}</PageHeaderDescription>
+          <PageActions>
+            <Button asChild size="sm">
+              <a href="#blocks">Browse Blocks</a>
+            </Button>
+            <Button asChild variant="ghost" size="sm">
+              <Link href="/docs/blocks">Add a block</Link>
+            </Button>
+          </PageActions>
+        </PageHeader>
+        <PageNav id="blocks">
+          <BlocksNav />
+          <Button
+            asChild
+            variant="secondary"
+            size="sm"
+            className="mr-7 hidden shadow-none lg:flex"
+          >
+            <Link href="/blocks/sidebar">Browse all blocks</Link>
           </Button>
-          <Button asChild variant="ghost" size="sm">
-            <Link href="/docs/blocks">Add a block</Link>
-          </Button>
-        </PageActions>
-      </PageHeader>
-      <PageNav id="blocks">
-        <BlocksNav />
-        <Button
-          asChild
-          variant="secondary"
-          size="sm"
-          className="mr-7 hidden shadow-none lg:flex"
-        >
-          <Link href="/blocks/sidebar">Browse all blocks</Link>
-        </Button>
-      </PageNav>
-      <div className="container-wrapper section-soft flex-1 md:py-12">
-        <div className="container">{children}</div>
-      </div>
-    </>
-    // </HomeLayout>
+        </PageNav>
+        <div className="container-wrapper section-soft flex-1 md:py-12">
+          <div className="container">{children}</div>
+        </div>
+      </>
+    </HomeLayout>
   )
 }

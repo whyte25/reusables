@@ -1,7 +1,6 @@
-import fs from "node:fs"
-import path from "path"
 import { Index } from "__registry__"
 
+import { readComponentSource } from "../utils/source-code"
 import { CodeBlock } from "./code-block"
 import { ComponentPreview } from "./component-preview"
 
@@ -24,7 +23,7 @@ export async function ComponentSource({
   className,
   hideCode,
 }: ComponentSourceProps) {
-  // Get component details from registry
+  // Get component from registry for validation
   const component = Index[name]
 
   if (!component) {
@@ -32,28 +31,8 @@ export async function ComponentSource({
     return null
   }
 
-  // Read source code
-  const filePath = path.join(process.cwd(), component.files[0].path)
-
-  let sourceCode = ""
-
-  try {
-    sourceCode = await fs.promises.readFile(filePath, "utf8")
-
-    // Clean up imports - handle both registry and reusables paths
-    sourceCode = sourceCode
-      // Handle absolute paths
-      .replaceAll("@/registry/reusables/", "@/components/")
-      // Handle relative paths to reusables
-      .replaceAll(/"\.\.\/reusables\/(.*?)"/g, '"@/components/$1"')
-      .replaceAll(/"\.\.\/hooks\/(.*?)"/g, '"@/hooks/$1"')
-      .replaceAll(/"\.\.\/lib\/(.*?)"/g, '"@/lib/$1"')
-      .replaceAll(/"\.\.\/utils\/(.*?)"/g, '"@/utils/$1"')
-      // Handle exports
-      .replaceAll("export default", "export")
-  } catch (error) {
-    console.error(`Error reading component source: ${error}`)
-  }
+  // Read and process source code using the utility function
+  const sourceCode = await readComponentSource(name)
 
   return (
     <ComponentPreview
@@ -63,7 +42,7 @@ export async function ComponentSource({
       showPreviewOnly={showPreviewOnly}
       showPreviewButton={showPreviewButton}
       reTrigger={reTrigger}
-      hideCode
+      hideCode={hideCode}
     >
       <CodeBlock code={sourceCode} compact />
     </ComponentPreview>

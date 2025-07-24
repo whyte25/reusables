@@ -19,10 +19,9 @@ export default async function BlocksPage({
 }) {
   const { categories = [] } = await params
   const blocks = await getAllBlockIds(["registry:block"], categories)
-  console.log("==========================>", blocks)
 
   return (
-    <div className="not-prose flex flex-col gap-12 md:gap-24">
+    <div className="flex flex-col gap-12 md:gap-24">
       {blocks.map((name) => (
         <BlockDisplay name={name} key={name} />
       ))}
