@@ -134,9 +134,6 @@ export default function CustomStyleDemo() {
             <TabsTrigger value="dark" className="w-full">
               Dark
             </TabsTrigger>
-            <TabsTrigger value="playful" className="w-full">
-              Playful
-            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="custom" className="mt-4 space-y-4">

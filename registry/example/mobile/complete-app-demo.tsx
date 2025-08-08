@@ -92,7 +92,7 @@ export default function CompleteAppDemo() {
   )
 
   const splashContent = (
-    <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-primary text-primary-foreground">
+    <div className="flex flex-col items-center justify-center bg-primary text-primary-foreground">
       <div className="flex flex-col items-center gap-4">
         <AppLogo className="h-16 w-16" />
         <h1 className="text-2xl font-bold">AppDemo</h1>
@@ -162,12 +162,6 @@ export default function CompleteAppDemo() {
       badge: 3,
       badgeVariant: "dot",
       badgeStatus: "error",
-    },
-    {
-      href: "#profile",
-      icon: User,
-      label: "Profile",
-      badge: true,
     },
   ]
 
@@ -520,7 +514,6 @@ export default function CompleteAppDemo() {
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-3 border-b p-4">
-                <Badge className="h-2 w-2 rounded-full p-0" />
                 <Avatar className="h-10 w-10">
                   <AvatarImage src="/avatars/01.png" alt="User" />
                   <AvatarFallback>AJ</AvatarFallback>
@@ -530,13 +523,12 @@ export default function CompleteAppDemo() {
                     <p className="font-medium">Alex Johnson</p>
                     <span className="text-xs text-muted-foreground">12m</span>
                   </div>
-                  <p className="truncate text-sm text-muted-foreground">
+                  <p className="break-words text-sm text-muted-foreground">
                     Hey! What do you think about the new mobile container?
                   </p>
                 </div>
               </div>
               <div className="flex items-center gap-3 border-b p-4">
-                <Badge className="h-2 w-2 rounded-full p-0" />
                 <Avatar className="h-10 w-10">
                   <AvatarImage src="/avatars/02.png" alt="User" />
                   <AvatarFallback>SW</AvatarFallback>
@@ -546,13 +538,12 @@ export default function CompleteAppDemo() {
                     <p className="font-medium">Sam Wilson</p>
                     <span className="text-xs text-muted-foreground">1h</span>
                   </div>
-                  <p className="truncate text-sm text-muted-foreground">
+                  <p className="break-words text-sm text-muted-foreground">
                     The accessibility features are really impressive!
                   </p>
                 </div>
               </div>
               <div className="flex items-center gap-3 border-b p-4">
-                <Badge className="h-2 w-2 rounded-full p-0" />
                 <Avatar className="h-10 w-10">
                   <AvatarImage src="/avatars/03.png" alt="User" />
                   <AvatarFallback>TS</AvatarFallback>
@@ -562,7 +553,7 @@ export default function CompleteAppDemo() {
                     <p className="font-medium">Taylor Swift</p>
                     <span className="text-xs text-muted-foreground">3h</span>
                   </div>
-                  <p className="truncate text-sm text-muted-foreground">
+                  <p className="break-words text-sm text-muted-foreground">
                     Love the animations! How did you implement them?
                   </p>
                 </div>

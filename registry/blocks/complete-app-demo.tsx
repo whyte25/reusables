@@ -163,12 +163,6 @@ export default function CompleteAppDemo() {
       badgeVariant: "dot",
       badgeStatus: "error",
     },
-    {
-      href: "#profile",
-      icon: User,
-      label: "Profile",
-      badge: true,
-    },
   ]
 
   // Handle tab changes
@@ -769,7 +763,7 @@ export default function CompleteAppDemo() {
                     Modal dialog for important interactions
                   </p>
 
-                  <Dialog>
+                  <Dialog open={drawerOpen} onOpenChange={setDrawerOpen}>
                     <DialogTrigger asChild>
                       <Button className="w-full">Open Dialog</Button>
                     </DialogTrigger>

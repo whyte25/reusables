@@ -23,7 +23,7 @@ export const bottomNavVariants = cva(
     variants: {
       variant: {
         // Standard bottom navigation with top border
-        default: "grid-cols-4 border-t",
+        default: "grid-cols-4 border-t backdrop-blur-lg",
         // Horizontal layout with no visual changes to container
         horizontal: "grid-cols-4 border-t",
         // Rounded container with shadow and margin
@@ -163,9 +163,9 @@ export const bottomNavBadgeVariants = cva(
       },
       status: {
         error: "bg-destructive text-destructive-foreground",
-        warning: "bg-warning text-warning-foreground",
-        success: "bg-success text-success-foreground",
-        info: "bg-info text-info-foreground",
+        warning: "bg-yellow-500 text-white",
+        success: "bg-green-500 text-white",
+        info: "bg-blue-500 text-white",
       },
     },
     defaultVariants: {
