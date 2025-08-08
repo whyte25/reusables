@@ -3,7 +3,7 @@
   "name": "spinner",
   "type": "registry:ui",
   "dependencies": ["class-variance-authority", "lucide-react"],
-  "registryDependencies": ["utils"],
+  "registryDependencies": ["https://reusables.vercel.app/r/utils.json"],
   "files": [
     {
       "path": "registry/reusables/ui/spinner.tsx",

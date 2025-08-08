@@ -2,7 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "submit-button",
   "type": "registry:ui",
-  "registryDependencies": ["button", "utils"],
+  "registryDependencies": [
+    "button",
+    "https://reusables.vercel.app/r/utils.json"
+  ],
   "files": [
     {
       "path": "registry/reusables/ui/submit-button.tsx",

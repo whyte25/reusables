@@ -3,7 +3,10 @@
   "name": "copy-button",
   "type": "registry:ui",
   "dependencies": ["lucide-react"],
-  "registryDependencies": ["button", "utils"],
+  "registryDependencies": [
+    "button",
+    "https://reusables.vercel.app/r/utils.json"
+  ],
   "files": [
     {
       "path": "registry/reusables/ui/copy-button.tsx",
