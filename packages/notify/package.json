@@ -3,6 +3,23 @@
   "version": "0.1.1",
   "description": "A composable toast notification package for React.",
   "license": "MIT",
+  "homepage": "https://reusables.vercel.app/docs/components/notify",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whyte25/reusables.git",
+    "directory": "packages/notify"
+  },
+  "bugs": {
+    "url": "https://github.com/whyte25/reusables/issues"
+  },
+  "keywords": [
+    "toast",
+    "notification",
+    "react",
+    "nextjs",
+    "shadcn",
+    "reusables"
+  ],
   "type": "module",
   "sideEffects": false,
   "files": [
