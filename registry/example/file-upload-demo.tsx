@@ -35,7 +35,7 @@ export default function FileUploadDemo() {
               `flex w-full cursor-pointer flex-col items-center justify-center rounded-lg`
             )}
           >
-            <div className="flex flex-col items-center justify-center pb-6 pt-5">
+            <div className="flex flex-col items-center justify-center pt-5 pb-6">
               <Upload className="mb-3 h-10 w-10 text-gray-400" />
               <p className="mb-2 text-sm text-gray-500">
                 <span className="font-semibold">Click to upload image</span>

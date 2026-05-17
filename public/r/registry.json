@@ -1,0 +1,1410 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "Reusables",
+  "homepage": "https://reusables.vercel.app",
+  "items": [
+    {
+      "name": "border-beam",
+      "type": "registry:component",
+      "title": "Border Beam",
+      "description": "An animated beam of light which travels along the border of its container.",
+      "files": [
+        {
+          "path": "registry/reusables/border-beam.tsx",
+          "type": "registry:component",
+          "target": "components/border-beam.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-review-cards",
+      "type": "registry:component",
+      "dependencies": [
+        "framer-motion",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/utils.json",
+        "avatar",
+        "https://reusables.vercel.app/r/border-beam",
+        "https://reusables.vercel.app/r/use-screen-size"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/animated-review-cards.tsx",
+          "type": "registry:component",
+          "target": "components/animated-review-cards.tsx"
+        }
+      ]
+    },
+    {
+      "name": "floating-elements",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/floating-elements.tsx",
+          "type": "registry:component",
+          "target": "components/floating-elements.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-card-carousel",
+      "type": "registry:component",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/utils.json",
+        "https://reusables.vercel.app/r/use-screen-size"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/animated-card-carousel.tsx",
+          "type": "registry:component",
+          "target": "components/animated-card-carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "single-image-upload",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react",
+        "react-dropzone",
+        "class-variance-authority",
+        "axios"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/single-image-upload.tsx",
+          "type": "registry:component",
+          "target": "components/single-image-upload.tsx"
+        },
+        {
+          "path": "registry/hooks/use-file-upload.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-file-upload.tsx"
+        }
+      ]
+    },
+    {
+      "name": "multiple-image-upload",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react",
+        "react-dropzone",
+        "class-variance-authority",
+        "axios"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/multiple-image-upload.tsx",
+          "type": "registry:component",
+          "target": "components/multiple-image-upload.tsx"
+        },
+        {
+          "path": "registry/hooks/use-multiple-file-upload.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-multiple-file-upload.tsx"
+        }
+      ]
+    },
+    {
+      "name": "multi-file-upload",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react",
+        "react-dropzone",
+        "class-variance-authority",
+        "axios"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/multi-file-upload.tsx",
+          "type": "registry:component",
+          "target": "components/multi-file-upload.tsx"
+        },
+        {
+          "path": "registry/hooks/use-multiple-file-upload.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-multiple-file-upload.tsx"
+        }
+      ]
+    },
+    {
+      "name": "universal-file-upload",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react",
+        "react-dropzone",
+        "class-variance-authority",
+        "axios"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/universal-file-upload.tsx",
+          "type": "registry:component",
+          "target": "components/universal-file-upload.tsx"
+        },
+        {
+          "path": "registry/hooks/use-multiple-file-upload.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-multiple-file-upload.tsx"
+        }
+      ]
+    },
+    {
+      "name": "compact-viewer",
+      "type": "registry:component",
+      "dependencies": [
+        "react-pdf",
+        "@wojtekmaj/react-hooks",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/pdf-viewers/compact-viewer.tsx",
+          "type": "registry:component",
+          "target": "components/pdf-viewers/compact-viewer.tsx"
+        },
+        {
+          "path": "registry/reusables/pdf-viewers/loading-spinner.tsx",
+          "type": "registry:component",
+          "target": "components/pdf-viewers/loading-spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fullscreen-viewer",
+      "type": "registry:component",
+      "dependencies": [
+        "react-pdf",
+        "@wojtekmaj/react-hooks",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/pdf-viewers/fullscreen-viewer.tsx",
+          "type": "registry:component",
+          "target": "components/pdf-viewers/fullscreen-viewer.tsx"
+        },
+        {
+          "path": "registry/reusables/pdf-viewers/loading-spinner.tsx",
+          "type": "registry:component",
+          "target": "components/pdf-viewers/loading-spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-navigation-viewer",
+      "type": "registry:component",
+      "dependencies": [
+        "react-pdf",
+        "@wojtekmaj/react-hooks",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/pdf-viewers/hover-navigation-viewer.tsx",
+          "type": "registry:component",
+          "target": "components/pdf-viewers/hover-navigation-viewer.tsx"
+        },
+        {
+          "path": "registry/reusables/pdf-viewers/loading-spinner.tsx",
+          "type": "registry:component",
+          "target": "components/pdf-viewers/loading-spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "minimal-viewer",
+      "type": "registry:component",
+      "dependencies": [
+        "react-pdf",
+        "@wojtekmaj/react-hooks",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/pdf-viewers/minimal-viewer.tsx",
+          "type": "registry:component",
+          "target": "components/pdf-viewers/minimal-viewer.tsx"
+        },
+        {
+          "path": "registry/reusables/pdf-viewers/loading-spinner.tsx",
+          "type": "registry:component",
+          "target": "components/pdf-viewers/loading-spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-viewer",
+      "type": "registry:component",
+      "dependencies": [
+        "react-pdf",
+        "@wojtekmaj/react-hooks",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/pdf-viewers/sidebar-viewer.tsx",
+          "type": "registry:component",
+          "target": "components/pdf-viewers/sidebar-viewer.tsx"
+        },
+        {
+          "path": "registry/reusables/pdf-viewers/loading-spinner.tsx",
+          "type": "registry:component",
+          "target": "components/pdf-viewers/loading-spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "thumbnail-viewer",
+      "type": "registry:component",
+      "dependencies": [
+        "react-pdf",
+        "@wojtekmaj/react-hooks",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/pdf-viewers/thumbnail-viewer.tsx",
+          "type": "registry:component",
+          "target": "components/pdf-viewers/thumbnail-viewer.tsx"
+        },
+        {
+          "path": "registry/reusables/pdf-viewers/loading-spinner.tsx",
+          "type": "registry:component",
+          "target": "components/pdf-viewers/loading-spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notify",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react",
+        "framer-motion",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "packages/notify/src/notify.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/notify/notify.tsx"
+        },
+        {
+          "path": "packages/notify/src/notify-provider.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/notify/notify-provider.tsx"
+        },
+        {
+          "path": "packages/notify/src/notify-utils.ts",
+          "type": "registry:ui",
+          "target": "components/ui/notify/notify-utils.ts"
+        },
+        {
+          "path": "packages/notify/src/index.ts",
+          "type": "registry:ui",
+          "target": "components/ui/notify/index.ts"
+        },
+        {
+          "path": "packages/notify/src/notify-state-manager.ts",
+          "type": "registry:ui",
+          "target": "components/ui/notify/notify-state-manager.ts"
+        },
+        {
+          "path": "packages/notify/src/notify-variants.ts",
+          "type": "registry:ui",
+          "target": "components/ui/notify/notify-variants.ts"
+        },
+        {
+          "path": "packages/notify/src/notify-config.ts",
+          "type": "registry:ui",
+          "target": "components/ui/notify/notify-config.ts"
+        },
+        {
+          "path": "packages/notify/src/notify-animations.ts",
+          "type": "registry:ui",
+          "target": "components/ui/notify/notify-animations.ts"
+        },
+        {
+          "path": "packages/notify/src/notify-types.ts",
+          "type": "registry:ui",
+          "target": "components/ui/notify/notify-types.ts"
+        },
+        {
+          "path": "packages/notify/src/cn.ts",
+          "type": "registry:ui",
+          "target": "components/ui/notify/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "theme-image",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/ui/theme-image.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/theme-image.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/ui/spinner.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "submit-button",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "button",
+        "https://reusables.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/ui/submit-button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/submit-button.tsx"
+        },
+        {
+          "path": "registry/reusables/ui/spinner.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://reusables.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/ui/copy-button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/copy-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-button",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu",
+        "https://reusables.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/ui/split-button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/split-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-button-action",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu",
+        "https://reusables.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/reusables/ui/split-button-action.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/split-button-action.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-online-status",
+      "type": "registry:hook",
+      "dependencies": [
+        "lodash"
+      ],
+      "files": [
+        {
+          "path": "registry/hooks/use-online-status.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-online-status.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-screen-size",
+      "type": "registry:hook",
+      "files": [
+        {
+          "path": "registry/hooks/use-screen-size.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-screen-size.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-inview",
+      "type": "registry:hook",
+      "dependencies": [
+        "react-intersection-observer"
+      ],
+      "files": [
+        {
+          "path": "registry/hooks/use-inview.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-inview.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-file-upload",
+      "type": "registry:hook",
+      "dependencies": [
+        "axios"
+      ],
+      "files": [
+        {
+          "path": "registry/hooks/use-file-upload.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-file-upload.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-multiple-file-upload",
+      "type": "registry:hook",
+      "dependencies": [
+        "axios"
+      ],
+      "files": [
+        {
+          "path": "registry/hooks/use-multiple-file-upload.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-multiple-file-upload.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-review-cards-theme-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/animated-review-cards",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-review-cards-theme-demo.tsx",
+          "type": "registry:example",
+          "target": "components/animated-review-cards-theme-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-review-cards-click-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/animated-review-cards"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-review-cards-click-demo.tsx",
+          "type": "registry:example",
+          "target": "components/animated-review-cards-click-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-review-cards-drag-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/animated-review-cards"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-review-cards-drag-demo.tsx",
+          "type": "registry:example",
+          "target": "components/animated-review-cards-drag-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-review-cards-auto-rotate-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/animated-review-cards",
+        "button",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-review-cards-auto-rotate-demo.tsx",
+          "type": "registry:example",
+          "target": "components/animated-review-cards-auto-rotate-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-card-carousel-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/animated-card-carousel",
+        "select",
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-card-carousel-demo.tsx",
+          "type": "registry:example",
+          "target": "components/animated-card-carousel-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "floating-elements-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/floating-elements"
+      ],
+      "files": [
+        {
+          "path": "registry/example/floating-elements-demo.tsx",
+          "type": "registry:example",
+          "target": "components/floating-elements-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/toast-demo.tsx",
+          "type": "registry:example",
+          "target": "components/toast-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "time-ago-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/time-ago"
+      ],
+      "files": [
+        {
+          "path": "registry/example/time-ago-demo.tsx",
+          "type": "registry:example",
+          "target": "components/time-ago-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "online-status-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/submit-button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/online-status-demo.tsx",
+          "type": "registry:example",
+          "target": "components/online-status-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theme-image-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/theme-image"
+      ],
+      "files": [
+        {
+          "path": "registry/example/theme-image-demo.tsx",
+          "type": "registry:example",
+          "target": "components/theme-image-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "copy-button-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/copy-button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/copy-button-demo.tsx",
+          "type": "registry:example",
+          "target": "components/copy-button-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "submit-button-position-left",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/submit-button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/submit-button-position-left.tsx",
+          "type": "registry:example",
+          "target": "components/submit-button-position-left.tsx"
+        }
+      ]
+    },
+    {
+      "name": "submit-button-hidetext-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/submit-button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/submit-button-hidetext-demo.tsx",
+          "type": "registry:example",
+          "target": "components/submit-button-hidetext-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "submit-button-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/submit-button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/submit-button-demo.tsx",
+          "type": "registry:example",
+          "target": "components/submit-button-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "screen-size-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/use-screen-size"
+      ],
+      "files": [
+        {
+          "path": "registry/example/screen-size-demo.tsx",
+          "type": "registry:example",
+          "target": "components/screen-size-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "inview-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/use-inview",
+        "card",
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/example/inview-demo.tsx",
+          "type": "registry:example",
+          "target": "components/inview-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "file-upload-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/use-file-upload",
+        "progress",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/file-upload-demo.tsx",
+          "type": "registry:example",
+          "target": "components/file-upload-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-with-description-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/toast-with-description-demo.tsx",
+          "type": "registry:example",
+          "target": "components/toast-with-description-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-with-jsx-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/toast-with-jsx-demo.tsx",
+          "type": "registry:example",
+          "target": "components/toast-with-jsx-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-animations-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/toast-animations-demo.tsx",
+          "type": "registry:example",
+          "target": "components/toast-animations-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-with-action-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/toast-with-action-demo.tsx",
+          "type": "registry:example",
+          "target": "components/toast-with-action-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-positions-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/toast-positions-demo.tsx",
+          "type": "registry:example",
+          "target": "components/toast-positions-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-promise-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/toast-promise-demo.tsx",
+          "type": "registry:example",
+          "target": "components/toast-promise-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-prevent-duplicates-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/toast-prevent-duplicates-demo.tsx",
+          "type": "registry:example",
+          "target": "components/toast-prevent-duplicates-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-custom-config-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/toast-custom-config-demo.tsx",
+          "type": "registry:example",
+          "target": "components/toast-custom-config-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-progress-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/toast-progress-demo.tsx",
+          "type": "registry:example",
+          "target": "components/toast-progress-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-close-button-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/toast-close-button-demo.tsx",
+          "type": "registry:example",
+          "target": "components/toast-close-button-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-button-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/split-button",
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/split-button-demo.tsx",
+          "type": "registry:example",
+          "target": "components/split-button-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-button-action-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/split-button-action",
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/split-button-action-demo.tsx",
+          "type": "registry:example",
+          "target": "components/split-button-action-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "split-button-preview-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/split-button",
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/split-button-preview-demo.tsx",
+          "type": "registry:example",
+          "target": "components/split-button-preview-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "direct-image-upload-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/single-image-upload",
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/direct-image-upload-demo.tsx",
+          "type": "registry:example",
+          "target": "components/direct-image-upload-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "manual-image-upload-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "shttps://reusables.vercel.app/r/single-image-upload",
+        "https://reusables.vercel.app/r/notify"
+      ],
+      "files": [
+        {
+          "path": "registry/example/manual-image-upload-demo.tsx",
+          "type": "registry:example",
+          "target": "components/manual-image-upload-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "direct-multiple-image-upload-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/multiple-image-upload"
+      ],
+      "files": [
+        {
+          "path": "registry/example/direct-multiple-image-upload-demo.tsx",
+          "type": "registry:example",
+          "target": "components/direct-multiple-image-upload-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "manual-multiple-image-upload-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/multiple-image-upload"
+      ],
+      "files": [
+        {
+          "path": "registry/example/manual-multiple-image-upload-demo.tsx",
+          "type": "registry:example",
+          "target": "components/manual-multiple-image-upload-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "multiple-image-upload-form-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "react-hook-form",
+        "@hookform/resolvers/zod",
+        "zod"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/multiple-image-upload",
+        "button",
+        "input",
+        "form",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/example/multiple-image-upload-form-demo.tsx",
+          "type": "registry:example",
+          "target": "components/multiple-image-upload-form-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "single-image-upload-form-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "react-hook-form",
+        "@hookform/resolvers/zod",
+        "zod"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/single-image-upload",
+        "https://reusables.vercel.app/r/notify",
+        "button",
+        "input",
+        "textarea",
+        "form",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/example/single-image-upload-form-demo.tsx",
+          "type": "registry:example",
+          "target": "components/single-image-upload-form-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "compact-viewer-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "react-pdf",
+        "@wojtekmaj/react-hooks"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/compact-viewer"
+      ],
+      "files": [
+        {
+          "path": "registry/example/compact-viewer-demo.tsx",
+          "type": "registry:example",
+          "target": "components/compact-viewer-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fullscreen-viewer-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "react-pdf",
+        "@wojtekmaj/react-hooks"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/fullscreen-viewer",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/fullscreen-viewer-demo.tsx",
+          "type": "registry:example",
+          "target": "components/fullscreen-viewer-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-navigation-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "react-pdf",
+        "@wojtekmaj/react-hooks"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/hover-navigation-viewer"
+      ],
+      "files": [
+        {
+          "path": "registry/example/hover-navigation-demo.tsx",
+          "type": "registry:example",
+          "target": "components/hover-navigation-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "minimal-viewer-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "react-pdf",
+        "@wojtekmaj/react-hooks"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/minimal-viewer"
+      ],
+      "files": [
+        {
+          "path": "registry/example/minimal-viewer-demo.tsx",
+          "type": "registry:example",
+          "target": "components/minimal-viewer-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-viewer-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "react-pdf",
+        "@wojtekmaj/react-hooks"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/sidebar-viewer"
+      ],
+      "files": [
+        {
+          "path": "registry/example/sidebar-viewer-demo.tsx",
+          "type": "registry:example",
+          "target": "components/sidebar-viewer-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "thumbnail-viewer-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "react-pdf",
+        "@wojtekmaj/react-hooks"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/thumbnail-viewer"
+      ],
+      "files": [
+        {
+          "path": "registry/example/thumbnail-viewer-demo.tsx",
+          "type": "registry:example",
+          "target": "components/thumbnail-viewer-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "direct-multi-file-upload-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/multi-file-upload"
+      ],
+      "files": [
+        {
+          "path": "registry/example/direct-multi-file-upload-demo.tsx",
+          "type": "registry:example",
+          "target": "components/direct-multi-file-upload-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "manual-multi-file-upload-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/multi-file-upload",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/manual-multi-file-upload-demo.tsx",
+          "type": "registry:example",
+          "target": "components/manual-multi-file-upload-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "multi-file-upload-form-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "react-hook-form",
+        "@hookform/resolvers/zod",
+        "zod"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/multi-file-upload",
+        "https://reusables.vercel.app/r/notify",
+        "button",
+        "input",
+        "form",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/example/multi-file-upload-form-demo.tsx",
+          "type": "registry:example",
+          "target": "components/multi-file-upload-form-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "universal-file-upload-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/universal-file-upload",
+        "https://reusables.vercel.app/r/notify",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/universal-file-upload-demo.tsx",
+          "type": "registry:example",
+          "target": "components/universal-file-upload-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "universal-file-upload-direct-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/universal-file-upload"
+      ],
+      "files": [
+        {
+          "path": "registry/example/universal-file-upload-direct-demo.tsx",
+          "type": "registry:example",
+          "target": "components/universal-file-upload-direct-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "universal-file-upload-form-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "react-hook-form",
+        "@hookform/resolvers/zod",
+        "zod"
+      ],
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/universal-file-upload",
+        "button",
+        "input",
+        "form",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/example/universal-file-upload-form-demo.tsx",
+          "type": "registry:example",
+          "target": "components/universal-file-upload-form-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "time-ago",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "registry/lib/time-ago.ts",
+          "type": "registry:lib",
+          "target": "lib/time-ago.ts"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "registry/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "cookies-client",
+      "type": "registry:lib",
+      "dependencies": [
+        "js-cookie"
+      ],
+      "devDependencies": [
+        "@types/js-cookie"
+      ],
+      "files": [
+        {
+          "path": "registry/lib/cookies.client.ts",
+          "type": "registry:lib",
+          "target": "lib/cookies.client.ts"
+        }
+      ]
+    },
+    {
+      "name": "cookies-server",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "registry/lib/cookies.server.ts",
+          "type": "registry:lib",
+          "target": "lib/cookies.server.ts"
+        }
+      ]
+    },
+    {
+      "name": "permission",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "registry/lib/permission.ts",
+          "type": "registry:lib",
+          "target": "lib/permission.ts"
+        }
+      ]
+    },
+    {
+      "name": "platform-detector",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "registry/lib/platform-detector.ts",
+          "type": "registry:lib",
+          "target": "lib/platform-detector.ts"
+        }
+      ]
+    },
+    {
+      "name": "animated-card-carousel-simple-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://reusables.vercel.app/r/animated-card-carousel"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-card-carousel-simple-demo.tsx",
+          "type": "registry:example",
+          "target": "components/animated-card-carousel-simple-demo.tsx"
+        }
+      ]
+    }
+  ]
+}

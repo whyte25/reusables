@@ -1,9 +1,13 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sidebar-viewer-demo",
-  "type": "registry:example",
-  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks"],
-  "registryDependencies": ["https://reusables.vercel.app/r/sidebar-viewer"],
+  "dependencies": [
+    "react-pdf",
+    "@wojtekmaj/react-hooks"
+  ],
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/sidebar-viewer"
+  ],
   "files": [
     {
       "path": "registry/example/sidebar-viewer-demo.tsx",
@@ -11,5 +15,6 @@
       "type": "registry:example",
       "target": "components/sidebar-viewer-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

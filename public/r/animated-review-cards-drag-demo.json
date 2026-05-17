@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "animated-review-cards-drag-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "https://reusables.vercel.app/r/animated-review-cards"
   ],
@@ -12,5 +11,6 @@
       "type": "registry:example",
       "target": "components/animated-review-cards-drag-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

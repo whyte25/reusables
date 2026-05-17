@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "platform-detector",
-  "type": "registry:lib",
   "files": [
     {
       "path": "registry/lib/platform-detector.ts",
@@ -9,5 +8,6 @@
       "type": "registry:lib",
       "target": "lib/platform-detector.ts"
     }
-  ]
+  ],
+  "type": "registry:lib"
 }

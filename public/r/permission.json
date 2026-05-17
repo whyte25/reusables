@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "permission",
-  "type": "registry:lib",
   "files": [
     {
       "path": "registry/lib/permission.ts",
@@ -9,5 +8,6 @@
       "type": "registry:lib",
       "target": "lib/permission.ts"
     }
-  ]
+  ],
+  "type": "registry:lib"
 }

@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ChevronRight, Github } from "lucide-react"
+import { ChevronRight, CodeXml } from "lucide-react"
 import { motion } from "motion/react"
 
 import { paths } from "@/constant/paths"
@@ -57,7 +57,7 @@ export const Hero = () => {
               projects.
             </motion.p>
             <motion.div
-              className="mt-6 flex flex-col items-center justify-center sm:flex-row sm:space-x-4 sm:space-y-0"
+              className="mt-6 flex flex-col items-center justify-center sm:flex-row sm:space-y-0 sm:space-x-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.4 }}
@@ -82,7 +82,7 @@ export const Hero = () => {
                     target="_blank"
                     className="flex flex-row items-center gap-2"
                   >
-                    <Github />
+                    <CodeXml />
                     Github
                   </Link>
                 </Button>

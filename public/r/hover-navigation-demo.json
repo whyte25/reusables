@@ -1,8 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "hover-navigation-demo",
-  "type": "registry:example",
-  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks"],
+  "dependencies": [
+    "react-pdf",
+    "@wojtekmaj/react-hooks"
+  ],
   "registryDependencies": [
     "https://reusables.vercel.app/r/hover-navigation-viewer"
   ],
@@ -13,5 +15,6 @@
       "type": "registry:example",
       "target": "components/hover-navigation-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -59,7 +59,7 @@ function LoadingSpinner({ size, className, hideText }: LoadingSpinnerProps) {
     <div
       className={cn(
         hideText &&
-          "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+          "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       )}
     >
       <Spinner size={size} className={className} />

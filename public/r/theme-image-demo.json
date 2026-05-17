@@ -1,8 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "theme-image-demo",
-  "type": "registry:example",
-  "registryDependencies": ["https://reusables.vercel.app/r/theme-image"],
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/theme-image"
+  ],
   "files": [
     {
       "path": "registry/example/theme-image-demo.tsx",
@@ -10,5 +11,6 @@
       "type": "registry:example",
       "target": "components/theme-image-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

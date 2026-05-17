@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "manual-multi-file-upload-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "https://reusables.vercel.app/r/multi-file-upload",
     "button"
@@ -13,5 +12,6 @@
       "type": "registry:example",
       "target": "components/manual-multi-file-upload-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "cookies-server",
-  "type": "registry:lib",
   "files": [
     {
       "path": "registry/lib/cookies.server.ts",
@@ -9,5 +8,6 @@
       "type": "registry:lib",
       "target": "lib/cookies.server.ts"
     }
-  ]
+  ],
+  "type": "registry:lib"
 }

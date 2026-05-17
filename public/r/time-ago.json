@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "time-ago",
-  "type": "registry:lib",
   "files": [
     {
       "path": "registry/lib/time-ago.ts",
@@ -9,5 +8,6 @@
       "type": "registry:lib",
       "target": "lib/time-ago.ts"
     }
-  ]
+  ],
+  "type": "registry:lib"
 }

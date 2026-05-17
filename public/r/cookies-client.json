@@ -1,9 +1,12 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "cookies-client",
-  "type": "registry:lib",
-  "dependencies": ["js-cookie"],
-  "devDependencies": ["@types/js-cookie"],
+  "dependencies": [
+    "js-cookie"
+  ],
+  "devDependencies": [
+    "@types/js-cookie"
+  ],
   "files": [
     {
       "path": "registry/lib/cookies.client.ts",
@@ -11,5 +14,6 @@
       "type": "registry:lib",
       "target": "lib/cookies.client.ts"
     }
-  ]
+  ],
+  "type": "registry:lib"
 }

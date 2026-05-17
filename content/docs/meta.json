@@ -4,7 +4,6 @@
   "pages": [
     "---Getting started---",
     "index",
-    "installation",
     "---Animations---",
     "animations/floating-elements",
     "animations/animated-review-card",

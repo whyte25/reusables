@@ -1,8 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "copy-button",
-  "type": "registry:ui",
-  "dependencies": ["lucide-react"],
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [
     "button",
     "https://reusables.vercel.app/r/utils.json"
@@ -14,5 +15,6 @@
       "type": "registry:ui",
       "target": "components/ui/copy-button.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

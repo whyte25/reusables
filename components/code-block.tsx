@@ -1,21 +1,21 @@
 import { CodeBlockProps } from "@/code-block"
-import { highlight } from "fumadocs-core/server"
-import {
-  CodeBlock as FumaDocsCodeBlock,
-  Pre,
-} from "fumadocs-ui/components/codeblock"
+import { ServerCodeBlock } from "fumadocs-ui/components/codeblock.rsc"
 
-export async function CodeBlock({ code, ...props }: CodeBlockProps) {
-  const renderedCode = await highlight(code, {
-    lang: "tsx",
-    themes: {
-      light: "github-light",
-      dark: "github-dark",
-    },
-  })
+export async function CodeBlock({
+  code,
+  lang = "tsx",
+  ...props
+}: CodeBlockProps) {
   return (
-    <FumaDocsCodeBlock {...props}>
-      <Pre>{renderedCode}</Pre>
-    </FumaDocsCodeBlock>
+    <ServerCodeBlock
+      code={code}
+      lang={lang}
+      codeblock={props}
+      defaultColor={false}
+      themes={{
+        light: "github-light",
+        dark: "github-dark",
+      }}
+    />
   )
 }

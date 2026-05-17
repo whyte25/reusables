@@ -55,9 +55,9 @@ export const ThumbnailViewer = ({ url }: ThumbnailViewerProps) => {
         <div
           className={cn(
             "flex gap-2 overflow-x-auto p-4",
-            "lg:max-h-screen lg:flex-col lg:overflow-y-auto lg:overflow-x-hidden",
+            "lg:max-h-screen lg:flex-col lg:overflow-x-hidden lg:overflow-y-auto",
             "rounded-xl bg-background/50 shadow-lg backdrop-blur-sm",
-            "h-fit min-w-full max-w-full lg:min-w-[150px] lg:max-w-[150px]",
+            "h-fit max-w-full min-w-full lg:max-w-[150px] lg:min-w-[150px]",
             "scrollbar-thin scrollbar-thumb-secondary scrollbar-track-transparent"
           )}
         >

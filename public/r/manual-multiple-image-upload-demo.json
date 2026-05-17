@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "manual-multiple-image-upload-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "https://reusables.vercel.app/r/multiple-image-upload"
   ],
@@ -12,5 +11,6 @@
       "type": "registry:example",
       "target": "components/manual-multiple-image-upload-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }
