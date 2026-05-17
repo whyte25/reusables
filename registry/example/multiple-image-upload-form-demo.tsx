@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+import { toast } from "@/packages/notify/src"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -22,7 +23,6 @@ import {
   FileState,
   MultiImageDropzone,
 } from "../reusables/multiple-image-upload"
-import { toast } from "../reusables/ui/notify"
 
 const formSchema = z.object({
   title: z.string().min(2).max(50),

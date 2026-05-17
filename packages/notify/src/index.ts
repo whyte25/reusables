@@ -1,5 +1,7 @@
 export * from "./notify-provider"
 
+export type * from "./notify-types"
+
 export { toast } from "./notify-utils"
 
 export { Toast } from "./notify"

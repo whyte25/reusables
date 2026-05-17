@@ -11,6 +11,8 @@
 /.next/
 /out/
 /build
+/packages/notify/dist
+/packages/notify/node_modules
 *.tsbuildinfo
 
 # misc
