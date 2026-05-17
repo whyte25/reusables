@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "animated-review-cards-auto-rotate-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "https://reusables.vercel.app/r/animated-review-cards",
     "button",
@@ -14,5 +13,6 @@
       "type": "registry:example",
       "target": "components/animated-review-cards-auto-rotate-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

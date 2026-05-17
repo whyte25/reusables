@@ -1,9 +1,12 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "screen-size-demo",
-  "type": "registry:example",
-  "dependencies": ["lucide-react"],
-  "registryDependencies": ["https://reusables.vercel.app/r/use-screen-size"],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/use-screen-size"
+  ],
   "files": [
     {
       "path": "registry/example/screen-size-demo.tsx",
@@ -11,5 +14,6 @@
       "type": "registry:example",
       "target": "components/screen-size-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

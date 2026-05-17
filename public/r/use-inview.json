@@ -1,8 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-inview",
-  "type": "registry:hook",
-  "dependencies": ["react-intersection-observer"],
+  "dependencies": [
+    "react-intersection-observer"
+  ],
   "files": [
     {
       "path": "registry/hooks/use-inview.tsx",
@@ -10,5 +11,6 @@
       "type": "registry:hook",
       "target": "hooks/use-inview.tsx"
     }
-  ]
+  ],
+  "type": "registry:hook"
 }

@@ -44,7 +44,7 @@ export function ComponentPreview({
         {reTrigger && (
           <Button
             onClick={() => setKey((prev) => prev + 1)}
-            className="absolute right-1.5 top-1.5 z-10 ml-4 flex items-center rounded-lg px-3 py-1"
+            className="absolute top-1.5 right-1.5 z-10 ml-4 flex items-center rounded-lg px-3 py-1"
             variant="ghost"
           >
             <RotateCcw aria-label="restart-btn" size={16} />
@@ -68,11 +68,7 @@ export function ComponentPreview({
         )}
         {...props}
       >
-        <Tabs
-          defaultValue="Preview"
-          items={["Preview", "Code"]}
-          className="relative mr-auto w-full"
-        >
+        <Tabs items={["Preview", "Code"]} className="relative mr-auto w-full">
           <Tab value="Preview" className="relative rounded-md" key={key}>
             <ComponentWrapper className={className}>
               <div className="absolute -top-1 right-1.5 z-10 ml-4 flex items-center gap-2 md:top-2">

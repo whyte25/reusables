@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-screen-size",
-  "type": "registry:hook",
   "files": [
     {
       "path": "registry/hooks/use-screen-size.tsx",
@@ -9,5 +8,6 @@
       "type": "registry:hook",
       "target": "hooks/use-screen-size.tsx"
     }
-  ]
+  ],
+  "type": "registry:hook"
 }

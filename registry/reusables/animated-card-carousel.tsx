@@ -121,7 +121,7 @@ const AnimatedCard: FC<AnimatedCardProps> = ({
           </h3>
           <p
             className={cn(
-              "not-prose w-10/12 text-pretty pr-1 text-start text-base md:w-full md:text-lg",
+              "not-prose w-10/12 pr-1 text-start text-base text-pretty md:w-full md:text-lg",
               isActive ? "text-white" : "text-black",
               descriptionClassName
             )}
@@ -131,7 +131,7 @@ const AnimatedCard: FC<AnimatedCardProps> = ({
         </div>
         <motion.div
           className={cn(
-            "not-prose absolute -bottom-5 right-2 block",
+            "not-prose absolute right-2 -bottom-5 block",
             imageClassName
           )}
           animate={controls}

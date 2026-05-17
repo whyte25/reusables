@@ -1,7 +1,7 @@
 "use client"
 
-import { AnimatePresence, motion } from "framer-motion"
 import { useEffect, useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
 import { createPortal } from "react-dom"
 
 import { cn } from "./cn"
@@ -144,7 +144,7 @@ export function ToastProvider({
   return (
     <ToastPortal>
       {children}
-     {toastContainer}
-     </ToastPortal>
+      {toastContainer}
+    </ToastPortal>
   )
 }

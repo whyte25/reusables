@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="absolute bottom-0 left-1/2 -translate-x-1/2 md:left-2 md:-translate-x-0">
       <div className="container-wrapper">
         <div className="container py-4">
-          <div className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
+          <div className="text-center text-sm leading-loose text-balance text-muted-foreground md:text-left">
             Built by{" "}
             <a
               href={siteConfig.links.twitter}

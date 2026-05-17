@@ -63,6 +63,7 @@
 ### Task 1: Framework Baseline
 
 **Files:**
+
 - Modify: `package.json`
 - Modify: `packages/notify/package.json`
 - Modify: `bun.lock`
@@ -129,6 +130,7 @@ git commit -m "chore: upgrade next and react baseline"
 ### Task 2: Tailwind CSS v4 Migration
 
 **Files:**
+
 - Modify: `package.json`
 - Modify: `postcss.config.js`
 - Modify: `app/global.css`
@@ -274,6 +276,7 @@ git commit -m "chore: migrate to tailwind v4"
 ### Task 3: Fumadocs v16 Migration
 
 **Files:**
+
 - Modify: `package.json`
 - Modify: `source.config.ts`
 - Modify: `components/provider/provider.tsx`
@@ -366,6 +369,7 @@ git commit -m "chore: upgrade fumadocs to v16"
 ### Task 4: shadcn CLI, Registry, and Component Migration
 
 **Files:**
+
 - Modify: `package.json`
 - Modify: `components.json`
 - Modify: `registry.json`
@@ -518,6 +522,7 @@ git commit -m "chore: update shadcn registry for tailwind v4"
 ### Task 5: Final Verification
 
 **Files:**
+
 - Modify only files needed to fix verification failures.
 
 - [ ] **Step 1: Full static verification**

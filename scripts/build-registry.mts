@@ -1,7 +1,7 @@
 import { promises as fs } from "fs"
 import path from "path"
 import { rimraf } from "rimraf"
-import { type Registry } from "shadcn/registry"
+import { type Registry } from "shadcn/schema"
 
 const registryData = await import("../registry.json")
 

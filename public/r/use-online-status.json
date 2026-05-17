@@ -1,8 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-online-status",
-  "type": "registry:hook",
-  "dependencies": ["lodash"],
+  "dependencies": [
+    "lodash"
+  ],
   "files": [
     {
       "path": "registry/hooks/use-online-status.tsx",
@@ -10,5 +11,6 @@
       "type": "registry:hook",
       "target": "hooks/use-online-status.tsx"
     }
-  ]
+  ],
+  "type": "registry:hook"
 }

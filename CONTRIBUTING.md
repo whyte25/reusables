@@ -135,12 +135,10 @@ npx shadcn@latest add "https://reusables.vercel.app/r/component-name"
 ## Submitting Your Contribution
 
 1. **Fork & Branch**
-
    - Fork the repository
    - Create a feature branch: `feature/component-name`
 
 2. **Commit Guidelines**
-
    - Write clear, concise commit messages
    - Keep commits focused and atomic
 
@@ -152,14 +150,12 @@ npx shadcn@latest add "https://reusables.vercel.app/r/component-name"
 ## Best Practices
 
 1. **Component Design**
-
    - Keep components focused and single-purpose
    - Use TypeScript for type safety
    - Follow React best practices
    - Ensure accessibility (ARIA attributes, keyboard navigation)
 
 2. **Code Style**
-
    - Follow the project's ESLint and Prettier configurations
    - Use meaningful variable and function names
    - Add JSDoc comments for complex functions

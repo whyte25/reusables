@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "manual-image-upload-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "shttps://reusables.vercel.app/r/single-image-upload",
     "https://reusables.vercel.app/r/notify"
@@ -13,5 +12,6 @@
       "type": "registry:example",
       "target": "components/manual-image-upload-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -56,7 +56,10 @@ export async function ComponentSource({
   }
 
   // Read source code
-  const filePath = path.join(process.cwd(), component.files[0].path)
+  const filePath = path.join(
+    /*turbopackIgnore: true*/ process.cwd(),
+    component.files[0].path
+  )
 
   let sourceCode = ""
   let npmSourceCode = ""

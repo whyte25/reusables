@@ -11,13 +11,13 @@ export const toastPositionVariants = cva(
   {
     variants: {
       position: {
-        "top-left": "left-0 top-0 md:top-0",
-        "top-center": "left-1/2 top-0 -translate-x-1/2 transform md:top-0",
-        "top-right": "right-0 top-0 md:top-0",
+        "top-left": "top-0 left-0 md:top-0",
+        "top-center": "top-0 left-1/2 -translate-x-1/2 transform md:top-0",
+        "top-right": "top-0 right-0 md:top-0",
         "bottom-left": "bottom-0 left-0 md:bottom-0",
         "bottom-center":
           "bottom-0 left-1/2 -translate-x-1/2 transform md:bottom-0",
-        "bottom-right": "bottom-0 right-0 md:bottom-0",
+        "bottom-right": "right-0 bottom-0 md:bottom-0",
       },
     },
     defaultVariants: {
@@ -103,7 +103,7 @@ export const progressBarVariants = cva("absolute bottom-0 left-0 h-[2px]", {
  * Defines style classes for success, error, warning, etc.
  */
 export const toastActionVariants = cva(
-  "inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  "inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium transition-colors focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-hidden",
   {
     variants: {
       variant: {

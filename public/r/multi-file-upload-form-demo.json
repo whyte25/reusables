@@ -1,8 +1,11 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "multi-file-upload-form-demo",
-  "type": "registry:example",
-  "dependencies": ["react-hook-form", "@hookform/resolvers/zod", "zod"],
+  "dependencies": [
+    "react-hook-form",
+    "@hookform/resolvers/zod",
+    "zod"
+  ],
   "registryDependencies": [
     "https://reusables.vercel.app/r/multi-file-upload",
     "https://reusables.vercel.app/r/notify",
@@ -18,5 +21,6 @@
       "type": "registry:example",
       "target": "components/multi-file-upload-form-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

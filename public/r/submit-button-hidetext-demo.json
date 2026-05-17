@@ -1,8 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "submit-button-hidetext-demo",
-  "type": "registry:example",
-  "registryDependencies": ["https://reusables.vercel.app/r/submit-button"],
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/submit-button"
+  ],
   "files": [
     {
       "path": "registry/example/submit-button-hidetext-demo.tsx",
@@ -10,5 +11,6 @@
       "type": "registry:example",
       "target": "components/submit-button-hidetext-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

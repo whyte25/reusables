@@ -1,8 +1,11 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "universal-file-upload-form-demo",
-  "type": "registry:example",
-  "dependencies": ["react-hook-form", "@hookform/resolvers/zod", "zod"],
+  "dependencies": [
+    "react-hook-form",
+    "@hookform/resolvers/zod",
+    "zod"
+  ],
   "registryDependencies": [
     "https://reusables.vercel.app/r/universal-file-upload",
     "button",
@@ -17,5 +20,6 @@
       "type": "registry:example",
       "target": "components/universal-file-upload-form-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

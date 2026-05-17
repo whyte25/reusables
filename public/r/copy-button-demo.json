@@ -1,8 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "copy-button-demo",
-  "type": "registry:example",
-  "registryDependencies": ["https://reusables.vercel.app/r/copy-button"],
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/copy-button"
+  ],
   "files": [
     {
       "path": "registry/example/copy-button-demo.tsx",
@@ -10,5 +11,6 @@
       "type": "registry:example",
       "target": "components/copy-button-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

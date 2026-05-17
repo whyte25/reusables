@@ -222,7 +222,7 @@ const MultiFileUpload = React.forwardRef<HTMLInputElement, InputProps>(
                 key={index}
                 className={dropzoneVariants({ variant: "file" })}
               >
-                <div className="h-full w-full flex-shrink-0 overflow-hidden rounded-md bg-gray-100 dark:bg-gray-700">
+                <div className="h-full w-full shrink-0 overflow-hidden rounded-md bg-gray-100 dark:bg-gray-700">
                   {typeof file !== "string" ?
                     isPDF(file) ?
                       <FileText className="h-full w-full p-8 text-gray-400 dark:text-gray-500" />
@@ -239,7 +239,7 @@ const MultiFileUpload = React.forwardRef<HTMLInputElement, InputProps>(
                 </div>
                 {/* Progress Bar */}
                 {typeof progress === "number" && (
-                  <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-md bg-black bg-opacity-70">
+                  <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center rounded-md bg-black/70">
                     <CircleProgress progress={progress} />
                   </div>
                 )}
@@ -247,7 +247,7 @@ const MultiFileUpload = React.forwardRef<HTMLInputElement, InputProps>(
                 {/* Remove File Icon */}
                 {fileUrls[index] && !disabled && progress === "PENDING" && (
                   <div
-                    className="group absolute right-0 top-0 -translate-y-1/4 translate-x-1/4 transform"
+                    className="group absolute top-0 right-0 translate-x-1/4 -translate-y-1/4 transform"
                     onClick={(e) => {
                       e.stopPropagation()
                       void onChange?.(value.filter((_, i) => i !== index) ?? [])
@@ -274,7 +274,7 @@ const MultiFileUpload = React.forwardRef<HTMLInputElement, InputProps>(
                 <div className="flex min-w-0 flex-1 items-center gap-3">
                   {/* Success Check Icon */}
                   {progress === "COMPLETE" && (
-                    <CheckCircle className="h-5 w-5 flex-shrink-0 text-green-500" />
+                    <CheckCircle className="h-5 w-5 shrink-0 text-green-500" />
                   )}
                   <div className="min-w-0 flex-1 space-y-1">
                     <div className="flex items-center gap-2">
@@ -315,7 +315,7 @@ const MultiFileUpload = React.forwardRef<HTMLInputElement, InputProps>(
                       e.stopPropagation()
                       onChange?.(value.filter((_, i) => i !== index))
                     }}
-                    className="ml-4 rounded-lg p-1 opacity-0 transition-opacity hover:bg-zinc-900/10 group-hover:opacity-100 dark:hover:bg-white/10"
+                    className="ml-4 rounded-lg p-1 opacity-0 transition-opacity group-hover:opacity-100 hover:bg-zinc-900/10 dark:hover:bg-white/10"
                   >
                     <X className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
                   </button>
@@ -344,7 +344,7 @@ function CircleProgress({ progress }: { progress: number }) {
   return (
     <div className="relative h-16 w-16">
       <svg
-        className="absolute left-0 top-0 -rotate-90 transform"
+        className="absolute top-0 left-0 -rotate-90 transform"
         width="100%"
         height="100%"
         viewBox={`0 0 ${(radius + strokeWidth) * 2} ${
@@ -374,7 +374,7 @@ function CircleProgress({ progress }: { progress: number }) {
           r={radius}
         />
       </svg>
-      <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center text-xs text-white">
+      <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center text-xs text-white">
         {Math.round(progress)}%
       </div>
     </div>

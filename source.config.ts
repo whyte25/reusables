@@ -1,33 +1,24 @@
 import { rehypeCode, rehypeCodeDefaultOptions } from "fumadocs-core/mdx-plugins"
+import { fileGenerator, remarkDocGen, remarkInstall } from "fumadocs-docgen"
+import { remarkTypeScriptToJavaScript } from "fumadocs-docgen/remark-ts2js"
 import {
-  fileGenerator,
-  remarkDocGen,
-  remarkInstall,
-  remarkTypeScriptToJavaScript,
-} from "fumadocs-docgen"
-import {
-  defineCollections,
   defineConfig,
+  defineDocs,
   frontmatterSchema,
-  metaSchema,
 } from "fumadocs-mdx/config"
+import lastModified from "fumadocs-mdx/plugins/last-modified"
 import { transformerTwoslash } from "fumadocs-twoslash"
 import remarkSmartypants from "remark-smartypants"
 
-export const docs = defineCollections({
-  type: "doc",
+export const docs = defineDocs({
   dir: "content/docs",
-  schema: frontmatterSchema,
-})
-
-export const meta = defineCollections({
-  type: "meta",
-  dir: "content/docs",
-  schema: metaSchema,
+  docs: {
+    schema: frontmatterSchema,
+  },
 })
 
 export default defineConfig({
-  lastModifiedTime: "git",
+  plugins: [lastModified()],
   mdxOptions: {
     rehypeCodeOptions: {
       themes: {

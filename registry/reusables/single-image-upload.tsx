@@ -186,16 +186,16 @@ export const SingleImageDropzone = React.forwardRef<
 
               <div
                 className={cn(
-                  "absolute inset-0 flex items-center justify-center bg-black",
-                  progress ? "bg-opacity-90" : (
-                    "bg-opacity-20 group-hover:bg-opacity-90"
+                  "absolute inset-0 flex items-center justify-center",
+                  progress ? "bg-black/90" : (
+                    "bg-black/20 group-hover:bg-black/90"
                   )
                 )}
               >
                 {progress ?
                   <>
                     {progressType === "linear" && (
-                      <span className="duration-[3000ms] animate-pulse text-lg font-medium text-white transition-opacity">
+                      <span className="animate-pulse text-lg font-medium text-white transition-opacity duration-[3000ms]">
                         Uploading...
                       </span>
                     )}
@@ -221,7 +221,7 @@ export const SingleImageDropzone = React.forwardRef<
               <button
                 type="button"
                 disabled={disabled}
-                className="rounded-full bg-gray-800 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:bg-gray-400 dark:bg-gray-200 dark:text-gray-800 dark:hover:bg-gray-300 dark:disabled:bg-gray-600"
+                className="rounded-full bg-gray-800 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-700 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-hidden disabled:bg-gray-400 dark:bg-gray-200 dark:text-gray-800 dark:hover:bg-gray-300 dark:disabled:bg-gray-600"
               >
                 Browse files
               </button>
@@ -236,7 +236,7 @@ export const SingleImageDropzone = React.forwardRef<
             <button
               type="button"
               onClick={handleClear}
-              className="absolute right-2 top-2 rounded-full bg-white p-1 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+              className="absolute top-2 right-2 rounded-full bg-white p-1 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-hidden dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
             >
               <X className="h-5 w-5" />
             </button>

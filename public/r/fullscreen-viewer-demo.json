@@ -1,8 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "fullscreen-viewer-demo",
-  "type": "registry:example",
-  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks"],
+  "dependencies": [
+    "react-pdf",
+    "@wojtekmaj/react-hooks"
+  ],
   "registryDependencies": [
     "https://reusables.vercel.app/r/fullscreen-viewer",
     "button"
@@ -14,5 +16,6 @@
       "type": "registry:example",
       "target": "components/fullscreen-viewer-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }
