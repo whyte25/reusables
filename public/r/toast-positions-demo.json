@@ -1,8 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toast-positions-demo",
-  "type": "registry:example",
-  "registryDependencies": ["https://reusables.vercel.app/r/notify"],
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/notify"
+  ],
   "files": [
     {
       "path": "registry/example/toast-positions-demo.tsx",
@@ -10,5 +11,6 @@
       "type": "registry:example",
       "target": "components/toast-positions-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

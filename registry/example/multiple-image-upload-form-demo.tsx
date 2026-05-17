@@ -83,7 +83,7 @@ export default function MultipleImageUploadFormDemo() {
               fileState.file.name === filename
           )
           if (fileState) {
-            ;(fileState.file = url), (fileState.progress = "COMPLETE")
+            ;((fileState.file = url), (fileState.progress = "COMPLETE"))
           }
         })
 

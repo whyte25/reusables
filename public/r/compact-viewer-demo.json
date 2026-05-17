@@ -1,9 +1,13 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "compact-viewer-demo",
-  "type": "registry:example",
-  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks"],
-  "registryDependencies": ["https://reusables.vercel.app/r/compact-viewer"],
+  "dependencies": [
+    "react-pdf",
+    "@wojtekmaj/react-hooks"
+  ],
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/compact-viewer"
+  ],
   "files": [
     {
       "path": "registry/example/compact-viewer-demo.tsx",
@@ -11,5 +15,6 @@
       "type": "registry:example",
       "target": "components/compact-viewer-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -97,9 +97,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/reusables/animated-card-carousel.tsx"
-      )
+      const mod =
+        await import("@/registry/reusables/animated-card-carousel.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -239,9 +238,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/reusables/pdf-viewers/compact-viewer.tsx"
-      )
+      const mod =
+        await import("@/registry/reusables/pdf-viewers/compact-viewer.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -269,9 +267,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/reusables/pdf-viewers/fullscreen-viewer.tsx"
-      )
+      const mod =
+        await import("@/registry/reusables/pdf-viewers/fullscreen-viewer.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -299,9 +296,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/reusables/pdf-viewers/hover-navigation-viewer.tsx"
-      )
+      const mod =
+        await import("@/registry/reusables/pdf-viewers/hover-navigation-viewer.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -329,9 +325,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/reusables/pdf-viewers/minimal-viewer.tsx"
-      )
+      const mod =
+        await import("@/registry/reusables/pdf-viewers/minimal-viewer.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -359,9 +354,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/reusables/pdf-viewers/sidebar-viewer.tsx"
-      )
+      const mod =
+        await import("@/registry/reusables/pdf-viewers/sidebar-viewer.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -389,9 +383,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/reusables/pdf-viewers/thumbnail-viewer.tsx"
-      )
+      const mod =
+        await import("@/registry/reusables/pdf-viewers/thumbnail-viewer.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -616,9 +609,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/reusables/ui/split-button-action.tsx"
-      )
+      const mod =
+        await import("@/registry/reusables/ui/split-button-action.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -759,9 +751,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/animated-review-cards-theme-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/animated-review-cards-theme-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -786,9 +777,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/animated-review-cards-click-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/animated-review-cards-click-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -813,9 +803,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/animated-review-cards-drag-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/animated-review-cards-drag-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -842,9 +831,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/animated-review-cards-auto-rotate-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/animated-review-cards-auto-rotate-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -871,9 +859,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/animated-card-carousel-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/animated-card-carousel-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1034,9 +1021,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/submit-button-position-left.tsx"
-      )
+      const mod =
+        await import("@/registry/example/submit-button-position-left.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1059,9 +1045,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/submit-button-hidetext-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/submit-button-hidetext-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1184,9 +1169,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/toast-with-description-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/toast-with-description-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1324,9 +1308,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/toast-prevent-duplicates-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/toast-prevent-duplicates-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1349,9 +1332,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/toast-custom-config-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/toast-custom-config-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1449,9 +1431,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/split-button-action-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/split-button-action-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1477,9 +1458,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/split-button-preview-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/split-button-preview-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1505,9 +1485,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/direct-image-upload-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/direct-image-upload-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1533,9 +1512,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/manual-image-upload-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/manual-image-upload-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1560,9 +1538,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/direct-multiple-image-upload-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/direct-multiple-image-upload-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1587,9 +1564,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/manual-multiple-image-upload-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/manual-multiple-image-upload-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1618,9 +1594,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/multiple-image-upload-form-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/multiple-image-upload-form-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1651,9 +1626,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/single-image-upload-form-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/single-image-upload-form-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1819,9 +1793,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/direct-multi-file-upload-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/direct-multi-file-upload-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1847,9 +1820,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/manual-multi-file-upload-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/manual-multi-file-upload-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1879,9 +1851,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/multi-file-upload-form-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/multi-file-upload-form-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1908,9 +1879,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/universal-file-upload-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/universal-file-upload-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1935,9 +1905,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/universal-file-upload-direct-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/universal-file-upload-direct-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1966,9 +1935,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/universal-file-upload-form-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/universal-file-upload-form-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -2131,9 +2099,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/animated-card-carousel-simple-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/animated-card-carousel-simple-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>

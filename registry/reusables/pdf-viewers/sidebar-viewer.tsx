@@ -65,7 +65,7 @@ export const SidebarViewer = ({ url }: SidebarViewerProps) => {
       {/* Sidebar */}
       <div
         className={cn(
-          "absolute left-0 top-0 z-50 h-full w-64 border-r bg-background/95 backdrop-blur-sm",
+          "absolute top-0 left-0 z-50 h-full w-64 border-r bg-background/95 backdrop-blur-sm",
           "transform transition-transform duration-300 ease-in-out",
           showSidebar ? "translate-x-0" : "-translate-x-full"
         )}

@@ -1,9 +1,13 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "spinner",
-  "type": "registry:ui",
-  "dependencies": ["class-variance-authority", "lucide-react"],
-  "registryDependencies": ["https://reusables.vercel.app/r/utils.json"],
+  "dependencies": [
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/utils.json"
+  ],
   "files": [
     {
       "path": "registry/reusables/ui/spinner.tsx",
@@ -11,5 +15,6 @@
       "type": "registry:ui",
       "target": "components/ui/spinner.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

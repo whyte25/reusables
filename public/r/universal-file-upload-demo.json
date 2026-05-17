@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "universal-file-upload-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "https://reusables.vercel.app/r/universal-file-upload",
     "https://reusables.vercel.app/r/notify",
@@ -14,5 +13,6 @@
       "type": "registry:example",
       "target": "components/universal-file-upload-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

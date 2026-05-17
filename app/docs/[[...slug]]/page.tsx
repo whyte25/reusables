@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { getGithubLastEdit } from "fumadocs-core/server"
 import {
   DocsBody,
   DocsDescription,
@@ -18,23 +17,16 @@ export default async function Page(props: {
   const page = source.getPage(params.slug)
   if (!page) notFound()
 
-  const time = await getGithubLastEdit({
-    owner: "whyte25",
-    repo: "reusables",
-    path: `content/docs/${page.file.path}`,
-    token: `Bearer ${process.env.GITHUB_TOKEN}`,
-  })
-
   return (
     <DocsPage
       toc={page.data.toc}
-      lastUpdate={new Date(time!)}
+      lastUpdate={page.data.lastModified}
       full={page.data.full}
       editOnGithub={{
         owner: "whyte25",
         repo: "reusables",
         sha: "main",
-        path: `content/docs/${page.file.path}`,
+        path: `content/docs/${page.path}`,
       }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>

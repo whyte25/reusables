@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "split-button-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "https://reusables.vercel.app/r/split-button",
     "https://reusables.vercel.app/r/notify"
@@ -13,5 +12,6 @@
       "type": "registry:example",
       "target": "components/split-button-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

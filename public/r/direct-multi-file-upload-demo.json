@@ -1,8 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "direct-multi-file-upload-demo",
-  "type": "registry:example",
-  "registryDependencies": ["https://reusables.vercel.app/r/multi-file-upload"],
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/multi-file-upload"
+  ],
   "files": [
     {
       "path": "registry/example/direct-multi-file-upload-demo.tsx",
@@ -10,5 +11,6 @@
       "type": "registry:example",
       "target": "components/direct-multi-file-upload-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

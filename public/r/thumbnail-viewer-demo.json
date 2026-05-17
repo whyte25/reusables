@@ -1,9 +1,13 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "thumbnail-viewer-demo",
-  "type": "registry:example",
-  "dependencies": ["react-pdf", "@wojtekmaj/react-hooks"],
-  "registryDependencies": ["https://reusables.vercel.app/r/thumbnail-viewer"],
+  "dependencies": [
+    "react-pdf",
+    "@wojtekmaj/react-hooks"
+  ],
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/thumbnail-viewer"
+  ],
   "files": [
     {
       "path": "registry/example/thumbnail-viewer-demo.tsx",
@@ -11,5 +15,6 @@
       "type": "registry:example",
       "target": "components/thumbnail-viewer-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

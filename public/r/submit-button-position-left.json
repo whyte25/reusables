@@ -1,8 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "submit-button-position-left",
-  "type": "registry:example",
-  "registryDependencies": ["https://reusables.vercel.app/r/submit-button"],
+  "registryDependencies": [
+    "https://reusables.vercel.app/r/submit-button"
+  ],
   "files": [
     {
       "path": "registry/example/submit-button-position-left.tsx",
@@ -10,5 +11,6 @@
       "type": "registry:example",
       "target": "components/submit-button-position-left.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

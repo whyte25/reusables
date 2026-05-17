@@ -1,8 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-multiple-file-upload",
-  "type": "registry:hook",
-  "dependencies": ["axios"],
+  "dependencies": [
+    "axios"
+  ],
   "files": [
     {
       "path": "registry/hooks/use-multiple-file-upload.tsx",
@@ -10,5 +11,6 @@
       "type": "registry:hook",
       "target": "hooks/use-multiple-file-upload.tsx"
     }
-  ]
+  ],
+  "type": "registry:hook"
 }

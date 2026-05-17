@@ -20,8 +20,7 @@ export interface SplitButtonOption {
   variant?: "default" | "destructive"
 }
 
-interface SplitButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface SplitButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   options: SplitButtonOption[]
   mainAction: () => void
   variant?: ButtonProps["variant"]
@@ -49,7 +48,7 @@ export default function SplitButtonAction({
 
   const baseClassName = cn(
     "relative transition-all duration-200",
-    glassMorphism && "bg-opacity-80 shadow-lg backdrop-blur-sm",
+    glassMorphism && "shadow-lg backdrop-blur-sm backdrop-saturate-150",
     className
   )
 
@@ -58,7 +57,7 @@ export default function SplitButtonAction({
     "hover:translate-y-[-1px]",
     "active:translate-y-[1px]",
     "transition-all duration-200",
-    glassMorphism && "bg-opacity-80 backdrop-blur-sm"
+    glassMorphism && "backdrop-blur-sm backdrop-saturate-150"
   )
 
   const dropdownTriggerClassName = cn(
@@ -72,7 +71,7 @@ export default function SplitButtonAction({
     variant === "destructive" && "border-destructive-foreground/20",
     variant === "outline" && "border-input",
     variant === "secondary" && "border-secondary-foreground/20",
-    glassMorphism && "bg-opacity-80 backdrop-blur-sm"
+    glassMorphism && "backdrop-blur-sm backdrop-saturate-150"
   )
 
   return (
@@ -116,7 +115,7 @@ export default function SplitButtonAction({
             align={dropdownAlign}
             className={cn(
               "animate-in fade-in-0 zoom-in-95",
-              glassMorphism && "bg-opacity-90 backdrop-blur-sm"
+              glassMorphism && "backdrop-blur-sm backdrop-saturate-150"
             )}
           >
             {options.map((option, index) => (

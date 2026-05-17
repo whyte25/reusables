@@ -3,19 +3,19 @@
 import { useState } from "react"
 import { toast } from "@/packages/notify/src"
 import {
+  BriefcaseBusiness,
+  CodeXml,
   Copy,
   Download,
-  Facebook,
   File,
   FileDown,
   FileJson,
   FileText,
-  Github,
   Image,
   Link,
-  Linkedin,
+  MessagesSquare,
   Share2,
-  Twitter,
+  ThumbsUp,
 } from "lucide-react"
 
 import SplitButtonAction from "../reusables/ui/split-button-action"
@@ -80,7 +80,7 @@ export default function SplitButton2Demo() {
           description: "Opening Twitter share dialog...",
         })
       },
-      icon: <Twitter className="h-4 w-4" />,
+      icon: <MessagesSquare className="h-4 w-4" />,
     },
     {
       label: "Share on Facebook",
@@ -89,7 +89,7 @@ export default function SplitButton2Demo() {
           description: "Opening Facebook share dialog...",
         })
       },
-      icon: <Facebook className="h-4 w-4" />,
+      icon: <ThumbsUp className="h-4 w-4" />,
     },
     {
       label: "Share on LinkedIn",
@@ -98,7 +98,7 @@ export default function SplitButton2Demo() {
           description: "Opening LinkedIn share dialog...",
         })
       },
-      icon: <Linkedin className="h-4 w-4" />,
+      icon: <BriefcaseBusiness className="h-4 w-4" />,
     },
   ]
 
@@ -176,7 +176,7 @@ export default function SplitButton2Demo() {
             options={options}
             mainAction={() => handleAction("small")}
             size="sm"
-            icon={<Github className="h-3 w-3" />}
+            icon={<CodeXml className="h-3 w-3" />}
             variant="outline"
             isLoading={loadingStates.small}
           >
@@ -186,7 +186,7 @@ export default function SplitButton2Demo() {
           <SplitButtonAction
             options={options}
             mainAction={() => handleAction("default")}
-            icon={<Github className="h-4 w-4" />}
+            icon={<CodeXml className="h-4 w-4" />}
             variant="outline"
             isLoading={loadingStates.default}
           >
@@ -197,7 +197,7 @@ export default function SplitButton2Demo() {
             options={options}
             mainAction={() => handleAction("large")}
             size="lg"
-            icon={<Github className="h-5 w-5" />}
+            icon={<CodeXml className="h-5 w-5" />}
             variant="outline"
             isLoading={loadingStates.large}
           >

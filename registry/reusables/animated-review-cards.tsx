@@ -82,7 +82,7 @@ const nameVariants = cva("text-lg font-semibold", {
   },
 })
 
-const textVariants = cva("select-none text-start text-sm", {
+const textVariants = cva("text-start text-sm select-none", {
   variants: {
     theme: {
       default: "text-foreground",

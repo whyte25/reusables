@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "animated-card-carousel-simple-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "https://reusables.vercel.app/r/animated-card-carousel"
   ],
@@ -12,5 +11,6 @@
       "type": "registry:example",
       "target": "components/animated-card-carousel-simple-demo.tsx"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -17,8 +17,7 @@ export interface SplitButtonOption {
   onClick: () => void
 }
 
-interface SplitButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface SplitButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   options: SplitButtonOption[]
   mainAction: () => void
   variant?:
