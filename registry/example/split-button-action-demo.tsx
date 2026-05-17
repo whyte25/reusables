@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { toast } from "@/packages/notify/src"
 import {
   Copy,
   Download,
@@ -17,7 +18,6 @@ import {
   Twitter,
 } from "lucide-react"
 
-import { toast } from "../reusables/ui/notify"
 import SplitButtonAction from "../reusables/ui/split-button-action"
 
 export default function SplitButton2Demo() {

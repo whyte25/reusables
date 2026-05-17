@@ -1,11 +1,10 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
+import { useEffect, useState } from "react"
 import { createPortal } from "react-dom"
 
-import { cn } from "@/registry/lib/utils"
-
+import { cn } from "./cn"
 import { Toast } from "./notify"
 import { getAnimationProps } from "./notify-animations"
 import { DEFAULT_CONFIG } from "./notify-config"
@@ -143,9 +142,9 @@ export function ToastProvider({
   )
 
   return (
-    <>
+    <ToastPortal>
       {children}
-      <ToastPortal>{toastContainer}</ToastPortal>
-    </>
+     {toastContainer}
+     </ToastPortal>
   )
 }

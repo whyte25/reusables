@@ -1,0 +1,84 @@
+name: Publish notify package
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "npm dist-tag to publish with"
+        required: true
+        default: "latest"
+      dry_run:
+        description: "Build and pack without publishing"
+        required: true
+        default: false
+        type: boolean
+  release:
+    types:
+      - published
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: publish-notify
+  cancel-in-progress: false
+
+env:
+  PACKAGE_DIR: packages/notify
+
+jobs:
+  publish:
+    name: Publish reusables-notify
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'notify-v') }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
+      - name: Install package dependencies
+        run: bun install --cwd "$PACKAGE_DIR" --frozen-lockfile
+
+      - name: Typecheck
+        run: bun run --cwd "$PACKAGE_DIR" typecheck
+
+      - name: Build
+        run: bun run --cwd "$PACKAGE_DIR" build
+
+      - name: Check package version
+        id: package
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: |
+          NAME="$(node -p "require('./package.json').name")"
+          VERSION="$(node -p "require('./package.json').version")"
+          echo "name=$NAME" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+          if npm view "$NAME@$VERSION" version >/dev/null 2>&1; then
+            echo "::error::$NAME@$VERSION is already published. Bump packages/notify/package.json before publishing."
+            exit 1
+          fi
+
+      - name: Pack dry run
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: npm pack --dry-run
+
+      - name: Publish dry run
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: npm publish --dry-run --provenance --access public --tag "${{ inputs.tag }}"
+
+      - name: Publish to npm
+        if: ${{ github.event_name == 'release' || !inputs.dry_run }}
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: npm publish --provenance --access public --tag "${{ inputs.tag || 'latest' }}"

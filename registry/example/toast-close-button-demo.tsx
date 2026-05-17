@@ -1,8 +1,8 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import { toast } from "@/packages/notify/src"
 
-import { toast } from "../reusables/ui/notify"
+import { Button } from "@/components/ui/button"
 
 export default function ToastCloseButtonDemo() {
   return (

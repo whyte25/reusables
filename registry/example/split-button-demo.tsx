@@ -1,6 +1,7 @@
 "use client"
 
-import { toast } from "../reusables/ui/notify"
+import { toast } from "@/packages/notify/src"
+
 import { SplitButton } from "../reusables/ui/split-button"
 
 export default function Demo() {

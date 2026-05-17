@@ -5,12 +5,27 @@ description: A toast notification system with customizable positioning and styli
 
 ## Installation
 
-<Tabs items={['CLI', 'Manual']}>
+<Tabs items={['CLI', 'NPM', 'Manual']}>
 
   <Tab value="CLI">
     ```package-install
 npx shadcn@latest add "https://reusables.vercel.app/r/notify"
 ````
+Use the CLI when you want the source files copied into your project, like other shadcn components.
+</Tab> 
+<Tab value="NPM">
+Install Notify as a standalone package when you want to import it directly instead of copying the component files into your app.
+
+```package-install
+npm install reusables-notify
+```
+
+Import from the package:
+
+```tsx
+import { toast, ToastProvider } from "reusables-notify"
+```
+
 </Tab> 
 <Tab value="Manual">
 Create a `notify` folder in your `ui` folder.
@@ -23,7 +38,7 @@ Copy and paste this code into your `notify-provider.tsx` file.
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/reusables/ui/notify/notify-provider.tsx",
+  "file": "packages/notify/src/notify-provider.tsx",
   "codeblock": {
     "lang": "tsx",
     "meta": "title=\"notify-provider.tsx\""
@@ -38,7 +53,7 @@ Copy and paste this code into your `notify.tsx` file.
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/reusables/ui/notify/notify.tsx",
+  "file": "packages/notify/src/notify.tsx",
   "codeblock": {
     "lang": "tsx",
     "meta": "title=\"notify.tsx\""
@@ -53,7 +68,7 @@ Copy and paste this code into your `notify-animations.ts` file.
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/reusables/ui/notify/notify-animations.ts",
+  "file": "packages/notify/src/notify-animations.ts",
   "codeblock": {
     "lang": "ts",
     "meta": "title=\"notify-animations.ts\""
@@ -68,7 +83,7 @@ Copy and paste this code into your `notify-config.ts` file.
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/reusables/ui/notify/notify-config.ts",
+  "file": "packages/notify/src/notify-config.ts",
   "codeblock": {
     "lang": "ts",
     "meta": "title=\"notify-config.ts\""
@@ -83,7 +98,7 @@ Copy and paste this code into your `notify-state-manager.ts` file.
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/reusables/ui/notify/notify-state-manager.ts",
+  "file": "packages/notify/src/notify-state-manager.ts",
   "codeblock": {
     "lang": "ts",
     "meta": "title=\"notify-state-manager.ts\""
@@ -98,7 +113,7 @@ Copy and paste this code into your `notify-types.ts` file.
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/reusables/ui/notify/notify-types.ts",
+  "file": "packages/notify/src/notify-types.ts",
   "codeblock": {
     "lang": "ts",
     "meta": "title=\"notify-types.ts\""
@@ -113,7 +128,7 @@ Copy and paste this code into your `notify-variants.ts` file.
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/reusables/ui/notify/notify-variants.ts",
+  "file": "packages/notify/src/notify-variants.ts",
   "codeblock": {
     "lang": "ts",
     "meta": "title=\"notify-variants.ts\""
@@ -128,7 +143,7 @@ Copy and paste this code into your `notify-utils.ts` file.
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/reusables/ui/notify/notify-utils.ts",
+  "file": "packages/notify/src/notify-utils.ts",
   "codeblock": {
     "lang": "ts",
     "meta": "title=\"notify-utils.ts\""
@@ -143,7 +158,7 @@ Copy and paste this code into your `index.ts` file.
 <CodeBlockWrapper>
 ```json doc-gen:file
 {
-  "file": "registry/reusables/ui/notify/index.ts",
+  "file": "packages/notify/src/index.ts",
   "codeblock": {
     "lang": "ts",
     "meta": "title=\"index.ts\""
@@ -154,20 +169,18 @@ Copy and paste this code into your `index.ts` file.
 </Step>
 
 <Step>
-Create and copy the following code  into `utils` file in your `lib` folder:
+Copy and paste this code into your `cn.ts` file.
 
 <CodeBlockWrapper>
-
 ```json doc-gen:file
 {
-  "file": "registry/lib/utils.ts",
+  "file": "packages/notify/src/cn.ts",
   "codeblock": {
     "lang": "ts",
-    "meta": "title=\"utils.ts\""
+    "meta": "title=\"cn.ts\""
   }
 }
 ```
-
 </CodeBlockWrapper>
 
 </Step>
@@ -178,7 +191,7 @@ Create and copy the following code  into `utils` file in your `lib` folder:
 
 Add the Toast Provider to your layout
 
-<Tabs items={["Next.js", "React"]}>
+<Tabs items={["Next.js", "React", "NPM"]}>
   <Tab value="Next.js">
   ```tsx title="layout.tsx"
 import { ToastProvider } from "@/components/ui/notify";
@@ -211,13 +224,45 @@ return (
 }
 ```
 </Tab> 
+<Tab value="NPM">
+  ```tsx title="layout.tsx"
+import { ToastProvider } from "reusables-notify";
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        <ToastProvider>{children}</ToastProvider>
+      </body>
+    </html>
+  );
+}
+  ```
+</Tab> 
 </Tabs>
 
 ## Usage
 
+<Tabs items={["Source Files", "NPM"]} groupId="notify-install" persist>
+<Tab value="Source Files">
+
 ```tsx
 import { toast } from "@/components/ui/notify"
 ```
+
+</Tab>
+<Tab value="NPM">
+
+```tsx
+import { toast } from "reusables-notify"
+```
+
+</Tab>
+</Tabs>
 
 ```tsx
 toast.info("Event has been created")

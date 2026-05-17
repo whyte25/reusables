@@ -1,9 +1,10 @@
 "use client"
 
+import { toast } from "@/packages/notify/src"
+
 import { useFileUpload } from "@/hooks/use-file-upload"
 
 import { SingleImageDropzone } from "../reusables/single-image-upload"
-import { toast } from "../reusables/ui/notify"
 
 export default function DirectImageUploadDemo() {
   const autoUpload = useFileUpload({

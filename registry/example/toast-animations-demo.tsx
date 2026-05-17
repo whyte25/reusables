@@ -1,6 +1,8 @@
 "use client"
 
 import { useState } from "react"
+import { toast } from "@/packages/notify/src"
+import type { AnimationType } from "@/packages/notify/src/notify-types"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -10,9 +12,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { toast } from "@/registry/reusables/ui/notify"
-
-import type { AnimationType } from "../reusables/ui/notify/notify-types"
 
 type ToastPosition =
   | "top-left"
