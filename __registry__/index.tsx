@@ -405,56 +405,61 @@ export const Index: Record<string, any> = {
     name: "notify",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["https://reusables.vercel.app/r/utils.json"],
+    registryDependencies: undefined,
     files: [
       {
-        path: "registry/reusables/ui/notify/notify.tsx",
+        path: "packages/notify/src/notify.tsx",
         type: "registry:ui",
         target: "components/ui/notify/notify.tsx",
       },
       {
-        path: "registry/reusables/ui/notify/notify-provider.tsx",
+        path: "packages/notify/src/notify-provider.tsx",
         type: "registry:ui",
         target: "components/ui/notify/notify-provider.tsx",
       },
       {
-        path: "registry/reusables/ui/notify/notify-utils.ts",
+        path: "packages/notify/src/notify-utils.ts",
         type: "registry:ui",
         target: "components/ui/notify/notify-utils.ts",
       },
       {
-        path: "registry/reusables/ui/notify/index.ts",
+        path: "packages/notify/src/index.ts",
         type: "registry:ui",
         target: "components/ui/notify/index.ts",
       },
       {
-        path: "registry/reusables/ui/notify/notify-state-manager.ts",
+        path: "packages/notify/src/notify-state-manager.ts",
         type: "registry:ui",
         target: "components/ui/notify/notify-state-manager.ts",
       },
       {
-        path: "registry/reusables/ui/notify/notify-variants.ts",
+        path: "packages/notify/src/notify-variants.ts",
         type: "registry:ui",
         target: "components/ui/notify/notify-variants.ts",
       },
       {
-        path: "registry/reusables/ui/notify/notify-config.ts",
+        path: "packages/notify/src/notify-config.ts",
         type: "registry:ui",
         target: "components/ui/notify/notify-config.ts",
       },
       {
-        path: "registry/reusables/ui/notify/notify-animations.ts",
+        path: "packages/notify/src/notify-animations.ts",
         type: "registry:ui",
         target: "components/ui/notify/notify-animations.ts",
       },
       {
-        path: "registry/reusables/ui/notify/notify-types.ts",
+        path: "packages/notify/src/notify-types.ts",
         type: "registry:ui",
         target: "components/ui/notify/notify-types.ts",
       },
+      {
+        path: "packages/notify/src/cn.ts",
+        type: "registry:ui",
+        target: "components/ui/notify/cn.ts",
+      },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/reusables/ui/notify/notify.tsx")
+      const mod = await import("@/packages/notify/src/notify.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>

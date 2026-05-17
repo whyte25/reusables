@@ -4,20 +4,63 @@ export const ui: Registry["items"] = [
   {
     name: "notify",
     type: "registry:ui",
-    dependencies: ["lucide-react", "framer-motion", "class-variance-authority"],
-    registryDependencies: ["utils"],
+    dependencies: [
+      "lucide-react",
+      "framer-motion",
+      "class-variance-authority",
+      "clsx",
+      "tailwind-merge",
+    ],
     files: [
       {
-        path: "reusables/ui/notify.tsx",
+        path: "packages/notify/src/notify.tsx",
         type: "registry:ui",
+        target: "components/ui/notify/notify.tsx",
       },
       {
-        path: "reusables/ui/notify-provider.tsx",
+        path: "packages/notify/src/notify-provider.tsx",
         type: "registry:ui",
+        target: "components/ui/notify/notify-provider.tsx",
       },
       {
-        path: "reusables/ui/notify-utils.ts",
+        path: "packages/notify/src/notify-utils.ts",
         type: "registry:ui",
+        target: "components/ui/notify/notify-utils.ts",
+      },
+      {
+        path: "packages/notify/src/index.ts",
+        type: "registry:ui",
+        target: "components/ui/notify/index.ts",
+      },
+      {
+        path: "packages/notify/src/notify-state-manager.ts",
+        type: "registry:ui",
+        target: "components/ui/notify/notify-state-manager.ts",
+      },
+      {
+        path: "packages/notify/src/notify-variants.ts",
+        type: "registry:ui",
+        target: "components/ui/notify/notify-variants.ts",
+      },
+      {
+        path: "packages/notify/src/notify-config.ts",
+        type: "registry:ui",
+        target: "components/ui/notify/notify-config.ts",
+      },
+      {
+        path: "packages/notify/src/notify-animations.ts",
+        type: "registry:ui",
+        target: "components/ui/notify/notify-animations.ts",
+      },
+      {
+        path: "packages/notify/src/notify-types.ts",
+        type: "registry:ui",
+        target: "components/ui/notify/notify-types.ts",
+      },
+      {
+        path: "packages/notify/src/cn.ts",
+        type: "registry:ui",
+        target: "components/ui/notify/cn.ts",
       },
     ],
   },

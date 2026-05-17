@@ -1,5 +1,6 @@
 "use client"
 
+import { toast } from "@/packages/notify/src"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -20,7 +21,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
 import { SingleImageDropzone } from "../reusables/single-image-upload"
-import { toast } from "../reusables/ui/notify"
 
 type FormValues = z.infer<typeof formSchema>
 
