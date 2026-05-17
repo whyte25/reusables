@@ -1,6 +1,6 @@
 {
   "name": "reusables-notify",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A composable toast notification package for React.",
   "license": "MIT",
   "homepage": "https://reusables.vercel.app/docs/components/notify",

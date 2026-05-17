@@ -1,5 +1,11 @@
 # reusables-notify
 
+## 0.1.2
+
+### Patch Changes
+
+- d7a443b: Update the npm README with documentation, GitHub, usage, and shadcn registry links.
+
 ## 0.1.1
 
 ### Patch Changes
